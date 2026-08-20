@@ -97,3 +97,30 @@ Reflejos en IONM
       Téllez/Ulkatan/Sinclair — LAR; Fernández-Conejero/Deletis — Blink Reflex;
       Ulkatan2017 — masetero) · LimaMedeiros2024 (TCR) · Urriza2025 (TVcR)
 ```
+
+## Ampliación — profundizar
+
+```
+Reflejos en IONM — ampliación
+├─ LAR — fisiología reformulada (no clásica)
+│  ├─ R1 es BILATERAL (iR1 ipsilateral + cR1 contralateral), no unilateral como se
+│  │  pensaba — elicitable en el 100% de los pacientes bajo TIVA a cualquier
+│  │  profundidad anestésica
+│  └─ R2 menos fiable: solo en un subgrupo bajo TIVA y tiende a desvanecerse durante
+│     la cirugía · cR1 sin habituación incluso con estimulación repetida a 0.7-1 Hz
+│     durante >90 s
+├─ LAR — datos detrás del criterio ">60%"
+│  ├─ Serie de 134 nervios en riesgo (cirugía tiroides/paratiroides): decremento
+│  │  mediano 16.5% (máx. 56.4%) con función laríngea normal · en los 6 con lesión
+│  │  inesperada del n. laríngeo recurrente, el decremento fue SIEMPRE >60%
+│  └─ Amplitud basal mínima fiable: 150-200 µV — por debajo, la contaminación por
+│     actividad de campo lejano (músculo contralateral) aporta 50-100 µV
+└─ Reflejo maseterino — serie de viabilidad (10 pacientes)
+   ├─ H-reflejo fiable en masetero 7/10 (70%) y en temporal 3/4 (75%)
+   ├─ Facilitación pasiva con mordedor blando (sustituye al apriete voluntario del
+   │  paciente despierto, activa tónicamente aferentes Ia del huso)
+   └─ Latencias: H maseterino 5.4±1.3 ms vs. M 2.6±0.6 ms (amplitud H ≈21% de M
+      máxima) · H temporal 5.3±0.8 ms
+Referencia: Téllez/Ulkatan/Sinclair, cap. 15 pp.211-212 y 216 · Téllez/Ulkatan,
+cap. 16 pp.224 y 226
+```

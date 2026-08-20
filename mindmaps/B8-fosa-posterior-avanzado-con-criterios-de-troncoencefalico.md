@@ -89,3 +89,31 @@ Fosa posterior avanzado — criterios troncoencefálicos
       mapeo) · Romstock2000 (trenes A/B/C) · LimaMedeiros2024 (TCR) · Urriza2025 (TVcR,
       mención de reflejos autonómicos troncoencefálicos)
 ```
+
+## Ampliación — profundizar
+
+```
+Fosa posterior avanzado — ampliación
+├─ Técnica de mapeo alternativa: sonda de aspiración monopolar continua
+│  ├─ Dispositivo de succión eléctricamente aislado salvo la punta (2 mm), usado como
+│  │  sonda de estimulación mientras se aspira/diseca — mapeo dinámico continuo, no
+│  │  puntual como la sonda de mano
+│  ├─ Parámetros: 0.3 ms, 2 Hz, 0.05-2 mA
+│  └─ "Radio de alerta" acústico: ~0.5-1 cm a 2 mA · ~0.3-0.6 cm a 1 mA — identifica el
+│     nervio facial por sonido ANTES de verlo
+├─ Outcome ligado al hallazgo intraoperatorio (schwannoma vestibular grande)
+│  ├─ MEP facial fiable desde el inicio en 75% de los pacientes → solo 6% empeora
+│  │  House-Brackmann a 3 meses · sin MEP fiable basal (25%) → 40% empeora
+│  └─ Estrategia "no-touch CN VII" con mapeo continuo: 90% resección de volumen con
+│     déficit casi nulo, frente a resección maximizada incompleta (93% volumen) con
+│     23% de déficit facial
+└─ Series adicionales — límites de sensibilidad del ION en tronco
+   ├─ Kodama: alteración de SEP y/o MEP en 47.5% de cirugías de lesión troncoencefálica
+   │  (la tasa más alta de toda la fosa posterior) — pero >50% de esos pacientes con
+   │  esa alteración terminaron con hemiparesia al alta PESE al ION
+   └─ Neuloh: deterioro irreversible o pérdida predijo déficit motor transitorio solo
+      en 37% de los casos — confirma que el criterio "todo o nada" (válido en médula)
+      es insuficientemente sensible a nivel de tronco
+Referencia: Seidel/Zubak/Raabe, cap. 23 pp.310-314 · Sala/D'Amico/Bricolo, cap. 22
+pp.304-305
+```

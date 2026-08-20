@@ -200,6 +200,17 @@ function extractTree(body) {
   return m ? m[1].replace(/\n+$/, '') : '';
 }
 
+function extractSections(body) {
+  const idx = body.search(/^##\s*Ampliaci[oó]n/im);
+  if (idx === -1) {
+    return { base: extractTree(body), ampliacion: null };
+  }
+  return {
+    base: extractTree(body.slice(0, idx)),
+    ampliacion: extractTree(body.slice(idx)),
+  };
+}
+
 function buildIndexHtml(temas, grupos) {
   const total = temas.length;
   const completos = temas.filter((t) => t.estado === 'completo').length;
@@ -231,7 +242,13 @@ function buildIndexHtml(temas, grupos) {
     .map(({ bloque, temas: temasBloque }) => {
       const temasHtml = temasBloque
         .map((t) => {
-          const tree = extractTree(t.body);
+          const { base, ampliacion } = extractSections(t.body);
+          const ampliacionHtml = ampliacion
+            ? `<details class="ampliacion">
+                <summary>Ampliación — profundizar</summary>
+                <div class="tree-wrap"><pre class="tree">${escapeHtml(ampliacion)}</pre></div>
+              </details>`
+            : '';
           return `<article class="tema" id="${t.codigo}" style="--bloque-color:${colorPorBloque[bloque]}">
             <header class="tema-header">
               <span class="tema-codigo">${t.codigo}</span>
@@ -239,7 +256,8 @@ function buildIndexHtml(temas, grupos) {
               <span class="badge estado-${t.estado}">${ESTADO_LABEL[t.estado] || t.estado}</span>
               <span class="badge plantilla-badge">Plantilla ${escapeHtml(t.plantilla)}</span>
             </header>
-            <div class="tree-wrap"><pre class="tree">${escapeHtml(tree)}</pre></div>
+            <div class="tree-wrap"><pre class="tree">${escapeHtml(base)}</pre></div>
+            ${ampliacionHtml}
           </article>`;
         })
         .join('\n');
@@ -448,6 +466,38 @@ main {
   font-size: 0.85rem;
   line-height: 1.5;
   white-space: pre;
+}
+
+.ampliacion {
+  margin-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 0.6rem;
+}
+
+.ampliacion summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--bloque-color);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ampliacion summary::-webkit-details-marker { display: none; }
+
+.ampliacion summary::before {
+  content: "▸";
+  transition: transform 0.15s ease;
+}
+
+.ampliacion[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.ampliacion .tree-wrap {
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 800px) {

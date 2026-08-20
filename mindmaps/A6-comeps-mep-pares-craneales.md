@@ -8,7 +8,8 @@ estado: en-progreso
 
 # A6 — Corticobulbares / MEP de pares craneales (CoMEPs)
 
-> Pendiente: no hay umbral numérico de alarma consolidado en las fuentes consultadas.
+> Pendiente: no hay umbral numérico de alarma consolidado en las fuentes consultadas —
+> distintos autores usan criterios distintos, ver Ampliación.
 
 ```
 Corticobulbares / MEP de pares craneales (CoMEPs)
@@ -61,4 +62,26 @@ Corticobulbares / MEP de pares craneales (CoMEPs)
 └─ Referencia
    └─ Deletis&FernándezConejero (Neurophysiology in Neurosurgery 2ª ed., caps. 10 y 17)
       · Téllez2016 (activación periférica confundente)
+```
+
+## Ampliación — profundizar
+
+```
+Corticobulbares / CoMEPs — ampliación
+├─ VCoMEPs (CoMEP vagal/laríngeo) — subtipo no cubierto arriba
+│  ├─ Vocalis (n. laríngeo recurrente): hook-wire vía laringoscopio suspensorio
+│  │  (requiere ORL) · Cricotiroideo/CTHY (rama externa del laríngeo superior):
+│  │  electrodo colocado con el paciente DESPIERTO antes de intubar, guiado por EMG
+│  │  durante fonación de sonido agudo
+│  └─ TES hemisférico UNILATERAL → VCoMEP BILATERAL — evidencia de inervación
+│     corticobulbar bilateral de los músculos vocales
+├─ Discrepancia de criterios de alarma entre autores (por eso no hay umbral único)
+│  ├─ Dong/Fukuda: decremento 50% · Acioly: 80% · Sarnthein: ↑umbral de estimulación
+│  │  >20 mA vs. basal como predictor de déficit facial
+│  └─ Filtro pasa-alto óptimo para CoMEP: 50 Hz (no 5 Hz, el estándar de MEP de miembro)
+├─ Limitación adicional
+│  └─ No detecta daño en raíces aferentes intramedulares ni conexiones internucleares
+│     → puede haber disfagia o reflejo nauseoso ausente con CoMEP mantenido toda la
+│     cirugía
+└─ Referencia: Deletis&FernándezConejero, cap. 10, pp.142-147
 ```

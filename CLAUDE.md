@@ -80,6 +80,32 @@ Después del front-matter va el título (`# CODIGO — Título`) y el árbol en 
 código con conectores `├─ │ └─`. La última rama siempre es `Referencia`, con la clave de
 cita de la fuente. Cualquier dato numérico no confirmado se marca `(verificar)`.
 
+### Ampliación (opcional): ramas de profundización
+
+Un mindmap puede tener, después del árbol base, una sección opcional para quien quiera
+estudiar ese tema más a fondo — no es para dibujar a mano junto con la base, es contenido
+extra que en el visor aparece plegado y se despliega con un clic:
+
+```markdown
+## Ampliación — profundizar
+
+\`\`\`
+Tema — ampliación
+├─ Rama extra 1
+├─ Rama extra 2 (opcional)
+└─ Rama extra 3 (opcional)
+\`\`\`
+```
+
+Reglas:
+- El encabezado debe ser exactamente `## Ampliación` (con o sin texto después, ej.
+  "Ampliación — profundizar"). `build.js` lo busca así para separar el árbol base del de
+  ampliación; si no coincide, no se renderiza como plegable.
+- 1 a 3 ramas nuevas, con la misma densidad y exigencia de citas que el árbol base —
+  nunca inventar datos, marcar `(verificar)` igual que en el resto.
+- Es opcional: la mayoría de los temas no la necesitan. Solo se añade cuando la fuente da
+  para profundizar de verdad en ese tema.
+
 ## Operaciones del sistema vivo
 
 **Añadir un tema (automatizado, recomendado):**
