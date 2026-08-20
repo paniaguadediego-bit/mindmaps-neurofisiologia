@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mindmaps de Neurofisiología</title>
+<style>
+:root {
+  --bg: #f7f7f8;
+  --bg-elevated: #ffffff;
+  --text: #1a1a1e;
+  --text-muted: #6b6b74;
+  --border: #e2e2e7;
+  --accent: #3b82f6;
+  --estado-esqueleto: #9ca3af;
+  --estado-en-progreso: #f59e0b;
+  --estado-completo: #10b981;
+  --code-bg: #f0f0f3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16161a;
+    --bg-elevated: #1e1e23;
+    --text: #ececef;
+    --text-muted: #9a9aa2;
+    --border: #2e2e35;
+    --code-bg: #101013;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  padding: 1.25rem 1rem;
+  overflow-y: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar h1 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+
+.progreso {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.progreso-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--code-bg);
+  overflow: hidden;
+  margin-top: 0.35rem;
+}
+
+.progreso-fill {
+  height: 100%;
+  background: var(--estado-completo);
+}
+
+.nav-bloque {
+  margin-bottom: 1rem;
+}
+
+.nav-bloque-titulo {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bloque-color);
+  font-weight: 600;
+  margin: 0.75rem 0 0.35rem;
+}
+
+.nav-item {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 0.2rem 0.3rem;
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+}
+
+.nav-item:hover {
+  background: var(--code-bg);
+  border-left-color: var(--bloque-color);
+}
+
+.nav-codigo {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+  color: var(--bloque-color);
+  flex-shrink: 0;
+}
+
+.nav-titulo {
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  max-width: 900px;
+}
+
+.bloque-seccion {
+  margin-bottom: 2.5rem;
+}
+
+.bloque-titulo {
+  color: var(--bloque-color);
+  border-bottom: 2px solid var(--bloque-color);
+  padding-bottom: 0.35rem;
+  font-size: 1.3rem;
+}
+
+.tema {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--bloque-color);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.tema-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.tema-codigo {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  color: var(--bloque-color);
+}
+
+.tema-titulo {
+  margin: 0;
+  font-size: 1.05rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.badge.estado-esqueleto { color: var(--estado-esqueleto); border-color: var(--estado-esqueleto); }
+.badge.estado-en-progreso { color: var(--estado-en-progreso); border-color: var(--estado-en-progreso); }
+.badge.estado-completo { color: var(--estado-completo); border-color: var(--estado-completo); }
+
+.nav-item.estado-completo .nav-codigo::after { content: " ●"; color: var(--estado-completo); }
+.nav-item.estado-en-progreso .nav-codigo::after { content: " ●"; color: var(--estado-en-progreso); }
+.nav-item.estado-esqueleto .nav-codigo::after { content: " ○"; color: var(--estado-esqueleto); }
+
+.tree-wrap {
+  overflow-x: auto;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+
+.tree {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+@media (max-width: 800px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
+  main { padding: 1.25rem; }
+}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+  <h1>Mindmaps de Neurofisiología</h1>
+  <div class="progreso">
+    3/22 completos (14%) · 3 en progreso · 16 esqueletos
+    <div class="progreso-bar"><div class="progreso-fill" style="width:14%"></div></div>
+  </div>
+  <div class="nav-bloque" style="--bloque-color:#3b82f6">
+        <div class="nav-bloque-titulo">Bloque A</div>
+        <a href="#A1" class="nav-item estado-completo"><span class="nav-codigo">A1</span><span class="nav-titulo">PESS / SSEP</span></a>
+<a href="#A2" class="nav-item estado-en-progreso"><span class="nav-codigo">A2</span><span class="nav-titulo">PEM / MEP transcraneal (miogénico)</span></a>
+<a href="#A3" class="nav-item estado-completo"><span class="nav-codigo">A3</span><span class="nav-titulo">Onda D (D-wave epidural)</span></a>
+<a href="#A4" class="nav-item estado-completo"><span class="nav-codigo">A4</span><span class="nav-titulo">EMG libre (free-running)</span></a>
+<a href="#A5" class="nav-item estado-esqueleto"><span class="nav-codigo">A5</span><span class="nav-titulo">EMG estimulado — umbral de tornillo pedicular</span></a>
+<a href="#A6" class="nav-item estado-en-progreso"><span class="nav-codigo">A6</span><span class="nav-titulo">Corticobulbares / MEP de pares craneales (CoMEPs)</span></a>
+<a href="#A7" class="nav-item estado-esqueleto"><span class="nav-codigo">A7</span><span class="nav-titulo">PEATC / BAEP</span></a>
+<a href="#A8" class="nav-item estado-esqueleto"><span class="nav-codigo">A8</span><span class="nav-titulo">EEG intraoperatorio</span></a>
+<a href="#A9" class="nav-item estado-en-progreso"><span class="nav-codigo">A9</span><span class="nav-titulo">Reflejos en IONM</span></a>
+      </div>
+<div class="nav-bloque" style="--bloque-color:#10b981">
+        <div class="nav-bloque-titulo">Bloque B</div>
+        <a href="#B1" class="nav-item estado-esqueleto"><span class="nav-codigo">B1</span><span class="nav-titulo">Columna — deformidad / escoliosis</span></a>
+<a href="#B2" class="nav-item estado-esqueleto"><span class="nav-codigo">B2</span><span class="nav-titulo">Columna — degenerativa / instrumentación</span></a>
+<a href="#B3" class="nav-item estado-esqueleto"><span class="nav-codigo">B3</span><span class="nav-titulo">Tumores medulares intramedulares (IMSCT)</span></a>
+<a href="#B4" class="nav-item estado-esqueleto"><span class="nav-codigo">B4</span><span class="nav-titulo">Tumores medulares extramedulares / cono-cola de caballo</span></a>
+<a href="#B5" class="nav-item estado-esqueleto"><span class="nav-codigo">B5</span><span class="nav-titulo">Fosa posterior / tronco encefálico</span></a>
+<a href="#B6" class="nav-item estado-esqueleto"><span class="nav-codigo">B6</span><span class="nav-titulo">Tumores de cuarto ventrículo</span></a>
+<a href="#B7" class="nav-item estado-esqueleto"><span class="nav-codigo">B7</span><span class="nav-titulo">Craneotomía despierta / mapeo cortical-subcortical</span></a>
+      </div>
+<div class="nav-bloque" style="--bloque-color:#f59e0b">
+        <div class="nav-bloque-titulo">Bloque C</div>
+        <a href="#C1" class="nav-item estado-esqueleto"><span class="nav-codigo">C1</span><span class="nav-titulo">Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales)</span></a>
+<a href="#C2" class="nav-item estado-esqueleto"><span class="nav-codigo">C2</span><span class="nav-titulo">Colocación de electrodos 10-20 / 10-10</span></a>
+<a href="#C3" class="nav-item estado-esqueleto"><span class="nav-codigo">C3</span><span class="nav-titulo">TIVA y farmacología anestésica en MIO</span></a>
+<a href="#C4" class="nav-item estado-esqueleto"><span class="nav-codigo">C4</span><span class="nav-titulo">Relajantes musculares en MIO</span></a>
+<a href="#C5" class="nav-item estado-esqueleto"><span class="nav-codigo">C5</span><span class="nav-titulo">Marco general de criterios de alarma</span></a>
+<a href="#C6" class="nav-item estado-esqueleto"><span class="nav-codigo">C6</span><span class="nav-titulo">Troubleshooting general</span></a>
+      </div>
+</nav>
+<main>
+  <section class="bloque-seccion" style="--bloque-color:#3b82f6">
+        <h2 class="bloque-titulo">Bloque A</h2>
+        <article class="tema" id="A1" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A1</span>
+              <h3 class="tema-titulo">PESS / SSEP</h3>
+              <span class="badge estado-completo">Completo</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">PESS/SSEP
+├─ Vía anatómica
+│  ├─ N. mediano / n. tibial posterior → cordón posterior → núcleos gracilis/cuneatus
+│  │  (bulbo) → lemnisco medial → tálamo (VPL) → corteza somatosensorial (S1)
+│  └─ N9 (punto de Erb) — marcador de conducción periférica pura
+├─ Estimulación
+│  ├─ N. mediano (MMSS) / n. tibial posterior (MMII)
+│  ├─ ~20-40 mA, 0.2-0.3 ms, 2.7-4.7 Hz (evitar armónicos de red)
+│  └─ Confirmar twitch motor visible como control de intensidad efectiva
+├─ Registro / montaje
+│  ├─ Cortical: C3'/C4'-Fz (MMSS) · CPz/Cz'-Fz (MMII)
+│  ├─ Subcortical: Erb's point (N9) · cervical (Cv2-Fz)
+│  └─ Requiere promediado — señal pequeña, ruido de fondo alto
+├─ Morfología normal
+│  └─ N20 (mediano, cortical) / P37 (tibial, cortical)
+│     └─ Línea base tras posicionamiento final
+├─ Efecto anestesia/fisiología
+│  ├─ Muy sensible a halogenados (dosis-dependiente) → preferir TIVA
+│  ├─ N2O: efecto aditivo negativo con halogenados
+│  ├─ Hipotensión / hipotermia / hipocapnia → ↓ amplitud, ↑ latencia
+│  └─ Relajante muscular → sin efecto (vía sensitiva pura)
+├─ Criterios de alarma
+│  └─ Clásico: ↓ amplitud &gt;50% o ↑ latencia &gt;10% vs. basal
+│     └─ MacDonald: criterios adaptativos más recientes
+├─ Causas de cambio no quirúrgico
+│  ├─ Técnico: desconexión, impedancia, artefacto de bisturí eléctrico
+│  ├─ Anestésico: bolo de halogenado, cambio brusco de plano
+│  └─ Sistémico: PAM, Hb, temperatura, compresión de plexo/nervio por posición
+├─ Troubleshooting
+│  └─ Técnico → anestésico → correlacionar con MEP/onda D si hay riesgo motor
+│     → avisar a cirugía si persiste
+├─ Limitaciones
+│  └─ Columnas dorsales ≠ tracto corticoespinal
+│     └─ SEP normal NO garantiza indemnidad motora
+└─ Referencia
+   └─ Nuwer2012 (AAN/ACNS) · MacDonald2019 (ISION) · Toleikis2024 (ASNM)</pre></div>
+          </article>
+<article class="tema" id="A2" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A2</span>
+              <h3 class="tema-titulo">PEM / MEP transcraneal (miogénico)</h3>
+              <span class="badge estado-en-progreso">En progreso</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">PEM/MEP transcraneal (miogénico)
+├─ Vía anatómica
+│  └─ M1 → cápsula interna → decusación piramidal bulbar → tracto corticoespinal
+│     → asta anterior → n. periférico → músculo
+├─ Estimulación
+│  ├─ TES, electrodos C1/C2 o C3/C4 (10-20), tren de pulsos (train-of-five habitual)
+│  ├─ Estimulación anodal — ánodo sobre el hemisferio a estimular
+│  └─ Umbral de estimulación — parámetro clave a vigilar (↑ umbral = alerta precoz)
+├─ Registro / montaje
+│  ├─ EMG miogénico en músculos diana según nivel en riesgo (APB/ADM · TA/AH)
+│  └─ Alternativa epidural → onda D (ver A3)
+├─ Morfología normal
+│  └─ Respuesta polifásica muscular
+│     └─ Presencia/ausencia como criterio cualitativo principal
+├─ Efecto anestesia/fisiología
+│  ├─ Muy sensible a halogenados y a relajante muscular (a diferencia de SEP y onda D)
+│  ├─ TIVA (propofol + opioide) de elección — evitar bolo antes de un test crítico
+│  └─ Si se relaja: solo relajación parcial monitorizada (TOF), nunca bloqueo completo
+├─ Criterios de alarma
+│  ├─ Cualitativo: pérdida/ausencia de respuesta
+│  ├─ Umbral: aumento significativo del umbral de estimulación
+│  └─ Cuantitativo (más discutido): caída de amplitud — (verificar rango exacto en
+│     MacDonald2013 / Legatt2016)
+├─ Causas de cambio no quirúrgico
+│  ├─ Anestésico: profundización brusca, bolo de relajante
+│  ├─ Técnico: desplazamiento de electrodo TES, mal contacto
+│  └─ Sistémico: hipotermia, hipotensión
+├─ Troubleshooting
+│  └─ Descartar anestesia/técnico → correlacionar con onda D (jerarquía onda D &gt; MEP)
+│     → comunicar a cirugía
+├─ Limitaciones
+│  └─ Alta sensibilidad a anestesia/relajación
+│     └─ Riesgo de falsos positivos si el plano no está controlado
+└─ Referencia
+   └─ MacDonald2013 (ASNM) · Legatt2016 (ACNS) · Sloan2012 (relajantes)</pre></div>
+          </article>
+<article class="tema" id="A3" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A3</span>
+              <h3 class="tema-titulo">Onda D (D-wave epidural)</h3>
+              <span class="badge estado-completo">Completo</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Onda D (D-wave epidural)
+├─ Vía anatómica
+│  └─ Activación directa de axones piramidales rápidos del CST
+│     └─ Potencial ASINÁPTICO — no depende de transmisión sináptica espinal
+├─ Estimulación
+│  └─ Igual que MEP (TES transcraneal)
+│     └─ Interesa el registro epidural, no la respuesta muscular
+├─ Registro / montaje
+│  ├─ Electrodo epidural rostral a la lesión (imprescindible)
+│  │  └─ ± caudal (compara amplitud proximal/distal)
+│  └─ Mantener colocado hasta cierre dural completo
+│     └─ El riesgo no termina con la resección: hemostasia y cierre también comprometen
+├─ Morfología normal
+│  └─ Onda única, robusta, amplitud relativamente estable durante el procedimiento
+├─ Efecto anestesia/fisiología
+│  └─ Mínimamente afectada por anestésicos y relajantes (potencial asináptico)
+│     └─ Su gran ventaja frente al MEP
+├─ Criterios de alarma
+│  ├─ Declive gradual 20-30% → alerta precoz → protocolo tipo TIP
+│  │  └─ TIP: detener disección, irrigar suero templado, ↑PAM ≥80-85 mmHg
+│  └─ Caída &gt;50% → predictor de déficit motor PERMANENTE
+│     └─ Sobre todo si coincide con pérdida de MEP
+├─ Jerarquía diagnóstica (discordancia con MEP)
+│  ├─ Onda D estable + MEP perdido → déficit transitorio probable
+│  └─ Onda D caída &gt;50% + MEP perdido → déficit permanente probable
+├─ Limitaciones
+│  ├─ Poco o nada registrable en tumores del cono medular
+│  │  └─ Menos axones CST + mayor longitud a nivel torácico bajo
+│  └─ Señal global, no lateralizada — no sustituye al MEP para detectar asimetría
+└─ Referencia
+   └─ Boaro2026 · Costa2015 · MacDonald2013</pre></div>
+          </article>
+<article class="tema" id="A4" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A4</span>
+              <h3 class="tema-titulo">EMG libre (free-running)</h3>
+              <span class="badge estado-completo">Completo</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">EMG libre (free-running)
+├─ Qué es
+│  └─ Registro continuo y pasivo de actividad muscular espontánea con electrodos
+│     intramusculares — sin estimulación provocada, &quot;escucha&quot; el músculo en tiempo
+│     real durante toda la cirugía
+├─ Mecanismo / fisiología
+│  ├─ Detecta activación mecánica de la raíz motora (o de fibras del CST en cirugía
+│  │  intramedular) por manipulación quirúrgica directa
+│  ├─ Zona de mayor vulnerabilidad de la raíz: región de transición central-periférica
+│  │  (raicillas sin epineuro/perineuro) y zona hipovascular del tercio proximal-medio
+│  └─ En tumores intramedulares: ráfagas por irritación directa del CST, no solo de raíz
+├─ Técnica / montaje
+│  ├─ Electrodos intramusculares: aguja subdérmica EEG, EMG monopolar, o hilo de
+│  │  teflón-plata
+│  ├─ Filtro AF 10-30 kHz · filtro BF 2-30 Hz (evitar &lt;50 Hz y &gt;3 kHz)
+│  ├─ Barrido 200 ms - 5 s según resolución deseada
+│  └─ Línea de base ANTES de empezar cirugía — detecta irritación radicular preexistente
+├─ Nomenclatura de la actividad espontánea
+│  └─ Prass &amp; Lüders, retomada por Romstöck, Strauss &amp; Fahlbusch 2000 (pares craneales
+│     motores en cirugía de ángulo pontocerebeloso)
+│     └─ 5 patrones de onda: spikes, bursts, y trenes A, B y C
+├─ Spikes
+│  └─ Potencial bi/trifásico, un pico grande (≥2000 µV), inicio y fin abruptos,
+│     aspecto uniforme en un canal
+│     ├─ Pueden contarse miles en una cirugía larga (musculatura mimética)
+│     └─ Repetitivos y de baja amplitud → irritación PREEXISTENTE (ondas positivas /
+│        fibrilación-like)
+├─ Bursts
+│  └─ Complejo aislado de spikes superpuestos, forma de huso, hasta varios cientos de
+│     ms, picos hasta 5000 µV
+│     ├─ Menos frecuentes que los spikes
+│     ├─ Típicos al separar plano aracnoideo tumor-nervio o al fresar/descomprimir CAI
+│     └─ RARAMENTE indica lesión neural real
+├─ Trains (actividad periódica sostenida, dura segundos)
+│  ├─ A-train
+│  │  ├─ Sinusoidal, inicio brusco, sonido agudo característico por altavoz
+│  │  ├─ Amplitud típica 100-200 µV (nunca &gt;500 µV)
+│  │  ├─ Frecuencia 60-210 Hz · duración de ms a varios segundos
+│  │  ├─ ÚNICO patrón con correlación alta y específica con paresia facial
+│  │  │  postoperatoria (serie original: 1 FP y 3 FN sobre 30 pacientes)
+│  │  ├─ La frecuencia (&lt;150 vs ≥150 Hz) NO se correlacionó con el grado de deterioro
+│  │  ├─ Mecanismo propuesto: símil de descarga repetitiva compleja — fibra muscular
+│  │  │  desestabilizada actúa como marcapasos y reactiva efápticamente a las vecinas
+│  │  └─ Falso positivo descrito: manipulación del n. intermediario genera A-trains sin
+│  │     correlación clínica real (Prell2007)
+│  ├─ B-train
+│  │  ├─ Secuencia regular o irregular de componentes aislados, intervalo máximo 500 ms,
+│  │  │  dura minutos u horas — inicio gradual con spikes/bursts de baja amplitud
+│  │  ├─ Subtipos: BS (predominio de spikes) y BB (predominio de bursts)
+│  │  └─ Morfológicamente similar a descargas mioquímicas — mecanismo NO aclarado por
+│  │     los propios autores; sin correlación pronóstica establecida
+│  └─ C-train
+│     ├─ Actividad irregular continua, numerosos componentes solapados, amplitud
+│     │  distribuida al azar entre 20 y &gt;5000 µV
+│     ├─ Aspecto de patrón de interferencia (como contracción voluntaria máxima) pese
+│     │  a anestesia profunda estable — los propios autores cuestionan el mecanismo
+│     └─ Sin valor predictivo establecido
+├─ Patrón fásico vs. tónico (contexto de raíz espinal)
+│  ├─ Fásico/burst: potencial único o salva no repetitiva, asíncrona, polifásica →
+│  │  trauma directo puntual (tracción, irrigación libre, electrocauterio, torundas)
+│  └─ Tónico/train: descargas repetitivas sincrónicas prolongadas (hasta minutos) →
+│     tracción/compresión SOSTENIDA → patología más seria, puede ser lesión neural
+├─ Contexto de pares craneales (MVD/CPA)
+│  └─ fEMG = spikes + bursts + trains combinados
+│     └─ Tras irrigar con suero caliente al terminar una MVD es NORMAL ver disparo
+│        sostenido SIN significado clínico — no confundir con train patológico
+├─ Causas de cambio no quirúrgico
+│  └─ Plano anestésico superficial → actividad tipo unidad motora en TODOS los músculos
+│     a la vez → sospechar esto antes que patología
+├─ Qué hacer
+│  ├─ Spike/burst aislado → avisar, vigilar, raramente implica lesión
+│  ├─ Train sostenido (o A-train en facial) → avisar de inmediato al cirujano
+│  │  (tracción/compresión mantenida)
+│  └─ En IMSCT: verificar MEP y onda D antes de continuar tras ráfagas sostenidas
+├─ Limitaciones
+│  ├─ Señal &quot;a posteriori&quot; — informa de un evento ya ocurrido, no lo previene por sí sola
+│  ├─ No localiza con precisión el nivel (para eso, EMG estimulado → A5)
+│  └─ En pares craneales da falsos positivos/negativos relevantes → no sustituye a los
+│     CoMEPs (A6) como técnica continua más precisa
+└─ Referencia
+   └─ Leppänen2005 / Leppänen2006 (ASNM) · Romstöck2000 (J Neurosurg 93:586-593,
+      clasificación spikes/bursts/A-B-C trains) · Prell2007 (falsos positivos A-train)
+      · Boaro2026 (EMG libre en IMSCT)</pre></div>
+          </article>
+<article class="tema" id="A5" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A5</span>
+              <h3 class="tema-titulo">EMG estimulado — umbral de tornillo pedicular</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">EMG estimulado — umbral de tornillo pedicular
+├─ Vía anatómica
+├─ Estimulación
+├─ Registro / montaje
+├─ Morfología normal
+├─ Efecto anestesia/fisiología
+├─ Criterios de alarma
+├─ Causas de cambio no quirúrgico
+├─ Troubleshooting
+├─ Limitaciones
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="A6" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A6</span>
+              <h3 class="tema-titulo">Corticobulbares / MEP de pares craneales (CoMEPs)</h3>
+              <span class="badge estado-en-progreso">En progreso</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Corticobulbares / MEP de pares craneales (CoMEPs)
+├─ Qué es / vía anatómica
+│  └─ MEP registrado en músculos inervados por pares craneales motores (facial,
+│     trigémino motor, hipogloso) tras TES
+│     └─ Vía corticobulbar en paralelo a la corticoespinal, pero termina en núcleos
+│        de tronco, no en asta anterior medular
+├─ Estimulación
+│  ├─ TES igual que MEP de miembro
+│  │  └─ Montaje C3(+)/Cz(-) para hemisferio izquierdo, C4(+)/Cz(-) para derecho
+│  │     (Verst propone C5/C6 por mejor correspondencia con M1 corticobulbar)
+│  ├─ Tren corto de 3-5 estímulos, 0.5 ms, ISI 2 ms, 2 Hz, 50-150 mA
+│  └─ Estímulo único 90 ms después del tren, como control
+│     └─ Solo el TREN activa la vía central; si responde al estímulo ÚNICO, la
+│        respuesta es periférica por difusión de corriente
+├─ Registro / montaje
+│  ├─ Músculos diana: orbicularis oculi/oris y mentalis (facial) · masetero (trigémino
+│  │  motor) · lengua (hipogloso)
+│  └─ Electrodos de aguja o hook-wire intramusculares
+├─ Pitfall característico
+│  ├─ El CoMEP de orbicularis oculi puede ser en realidad un Blink Reflex R1
+│  │  contaminante — misma latencia, mismo comportamiento
+│  │  └─ Origen: la corriente del TES se propaga por cuero cabelludo anterior y activa
+│  │     ramas del n. supraorbitario (aferentes trigeminales)
+│  ├─ Estrategia: correr Blink Reflex EN PARALELO al CoMEP para diferenciar origen
+│  │  cortical real de reflejo trigémino-facial (ver A9)
+│  └─ Núcleo facial superior con inervación bicortical → lesión unilateral
+│     cortical/subcortical no siempre da parálisis facial superior clínica, aunque
+│     el CoMEP cambie
+├─ Efecto anestesia/fisiología
+│  └─ Igual que MEP miogénico — sensible a halogenados y relajante; TIVA de elección
+├─ Criterios de alarma
+│  ├─ Misma lógica que MEP de miembro (presencia/ausencia, cambio de amplitud)
+│  ├─ Sin umbral numérico consolidado en las fuentes disponibles (verificar)
+│  └─ Serie de 100 cirugías de base de cráneo (facial):
+│     ├─ Sin cambios → sin déficit
+│     ├─ Caída &gt;80% vs. basal → déficit transitorio o ausente
+│     └─ Pérdida → parálisis completa permanente (HB IV-VI)
+├─ Causas de cambio no quirúrgico
+│  └─ Comportamiento errático del CoMEP facial → sospechar activación periférica por
+│     corriente dispersa a intensidad sub/cercana al umbral
+├─ Troubleshooting
+│  └─ Comprobar respuesta a estímulo único vs. tren → correlacionar con Blink Reflex
+│     → pausa de manipulación + irrigación templada (puede revertir el bloqueo temporal
+│     de conducción del facial)
+├─ Limitaciones
+│  ├─ Difícil de interpretar en infratentorial si no se corre Blink Reflex en paralelo
+│  └─ Sensible a corriente dispersa por cuero cabelludo, no solo a la vía corticobulbar
+└─ Referencia
+   └─ Deletis&amp;FernándezConejero (Neurophysiology in Neurosurgery 2ª ed., caps. 10 y 17)
+      · Téllez2016 (activación periférica confundente)</pre></div>
+          </article>
+<article class="tema" id="A7" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A7</span>
+              <h3 class="tema-titulo">PEATC / BAEP</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">PEATC / BAEP
+├─ Vía anatómica
+├─ Estimulación
+├─ Registro / montaje
+├─ Morfología normal
+├─ Efecto anestesia/fisiología
+├─ Criterios de alarma
+├─ Causas de cambio no quirúrgico
+├─ Troubleshooting
+├─ Limitaciones
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="A8" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A8</span>
+              <h3 class="tema-titulo">EEG intraoperatorio</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">EEG intraoperatorio
+├─ Vía anatómica
+├─ Estimulación
+├─ Registro / montaje
+├─ Morfología normal
+├─ Efecto anestesia/fisiología
+├─ Criterios de alarma
+├─ Causas de cambio no quirúrgico
+├─ Troubleshooting
+├─ Limitaciones
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="A9" style="--bloque-color:#3b82f6">
+            <header class="tema-header">
+              <span class="tema-codigo">A9</span>
+              <h3 class="tema-titulo">Reflejos en IONM</h3>
+              <span class="badge estado-en-progreso">En progreso</span>
+              <span class="badge plantilla-badge">Plantilla A</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Reflejos en IONM
+├─ Reflejo H (espinal)
+│  ├─ Arco: monosináptico Ia (huso muscular) → motoneurona alfa
+│  │  └─ Análogo electrofisiológico del reflejo miotático
+│  ├─ Técnica: estimulación submáxima del n. tibial en hueco poplíteo, registro en sóleo
+│  └─ Utilidad: integridad del arco lumbosacro / raíz S1
+│     └─ Muy sensible a profundidad anestésica y a relajación muscular
+│        (verificar umbral de alarma si se usa como monitorización continua)
+├─ Blink Reflex (BR)
+│  ├─ Arco: aferente V1 (n. supraorbitario) → núcleo espinal del trigémino →
+│  │  interneuronas de tronco → núcleo facial (VII) → orbicularis oculi
+│  ├─ Componentes: R1 (oligosináptico, ipsilateral, pontino) y R2 (polisináptico,
+│  │  bilateral, más tardío, ~30 ms)
+│  ├─ Técnica: tren corto de estímulos sobre n. supraorbitario
+│  │  └─ Bajo anestesia general se necesita TREN, no estímulo único
+│  ├─ Utilidad: monitoriza el arco V-tronco-VII en cirugía de base de cráneo / ángulo
+│  │  pontocerebeloso
+│  │  └─ Distingue lesión de V1 de lesión del propio nervio facial, en paralelo al
+│  │     CoMEP facial (A6)
+│  └─ Pitfall: se pierde con planos anestésicos profundos sin que haya lesión
+│     └─ Es más sensible al propofol que las otras técnicas → correlacionar con CoMEP
+│        antes de dar la alarma
+├─ Reflejo bulbocavernoso (RBC)
+│  ├─ Arco: aferente pudendo (glande/clítoris, S2-S4) → eferente pudendo (esfínter anal
+│  │  externo / bulbocavernoso)
+│  ├─ Técnica: estimulación del dorso del pene/clítoris o sonda vesical, registro EMG
+│  │  del esfínter anal externo
+│  └─ Utilidad: cirugía de cono medular / cola de caballo
+│     └─ Integridad del arco sacro, función esfinteriana y sexual
+├─ Reflejo maseterino (jaw jerk / H del masetero)
+│  ├─ Arco: monosináptico puro V-V
+│  │  └─ Aferente propioceptivo del huso del masetero (cuerpo celular en el núcleo
+│  │     MESENCEFÁLICO del trigémino, único núcleo sensitivo primario dentro del SNC)
+│  │     → motoneurona V3 eferente
+│  ├─ Técnica: estimulación percutánea del n. maseterino bajo el arco cigomático,
+│  │  0.5 cm anterior a la ATM; registro en masetero y temporal (control)
+│  │  └─ Criterios de reflejo: umbral por debajo de la respuesta M directa, y la
+│  │     amplitud H disminuye al aumentar la M con estímulos más fuertes
+│  ├─ Utilidad: sonda la integridad mesencéfalo-protuberancial de forma pura V-V
+│  │  └─ A diferencia del Blink Reflex (V→VII), permite localizar el nivel de lesión
+│  │     con más precisión si se corren ambos reflejos juntos
+│  └─ Estado: método relativamente nuevo — falta validación quirúrgica y criterios de
+│     alarma precisos
+├─ Reflejo trigémino-cervical (TCR)
+│  ├─ Arco: aferente trigeminal (n. supraorbitario / infraorbitario) → tracto y núcleo
+│  │  espinal del trigémino → convergencia con motoneuronas cervicales en asta gris
+│  │  C1-C2 → eferente hacia esternocleidomastoideo
+│  ├─ Técnica: estimulación de n. supraorbitario o infraorbitario, registro en ECM
+│  │  ipsilateral
+│  │  └─ Estímulo LARGO (0.5-1.0 ms) favorece su aparición bajo anestesia general
+│  ├─ Componentes: latencia corta (~15-19 ms, el más constante bajo anestesia) y
+│  │  latencia larga (~65-70 ms, menos constante)
+│  └─ Estado: estudio de viabilidad — se obtiene bajo anestesia general en la mayoría,
+│     pero su papel práctico en MIO está por establecer
+├─ Reflejo trigémino-vocal (TVcR)
+│  ├─ Arco propuesto: rama mentoniana del trigémino (V3) → tracto y núcleo espinal del
+│  │  trigémino → núcleo ambiguo (vía neuronas reticulares próximas, con o sin paso
+│  │  previo por el núcleo del tracto solitario) → n. laríngeo recurrente → músculos
+│  │  laríngeos
+│  ├─ Técnica: estimulación del n. mentoniano en el foramen mandibular (pulso único o
+│  │  tren de 2-4 según profundidad anestésica), registro con electrodo-tubo adhesivo
+│  │  sobre cuerda vocal — mismo montaje que el LAR
+│  ├─ Componentes: R1 ~30 ms (rango 17-39 ms), bilateral en la mayoría · R2 ~65 ms
+│  │  (rango 56-76 ms), presente solo en la mitad, más polifásico
+│  ├─ Relación con el LAR: latencia de R1 del TVcR similar a la del R1 del LAR
+│  │  └─ Sugiere fibras aferentes de calibre comparable; se propone también un posible
+│  │     reflejo trigémino-hipogloso emparentado
+│  └─ Estado: descrito en 2025 — demuestra conectividad funcional trigémino-vagal bajo
+│     anestesia, pero utilidad clínica intraoperatoria y criterios de alarma AÚN NO
+│     establecidos. Hallazgo de investigación, todavía no estándar de MIO
+├─ Reflejo laríngeo aductor (LAR) — relacionado, arco vago-vagal
+│  ├─ Arco: mucosa supraglótica → rama interna del n. laríngeo superior → n. vago →
+│  │  núcleo del tracto solitario → núcleo ambiguo ipsi y contralateral → n. laríngeo
+│  │  recurrente → músculos aductores
+│  ├─ Técnica: tubo endotraqueal con electrodos de superficie sobre las cuerdas vocales
+│  │  └─ Amplitud media en función laríngea normal: 313.5 ± 167.4 µV
+│  ├─ Criterio de alarma: caída de amplitud &gt;60% sin recuperación al liberar el tejido
+│  │  → alta probabilidad de disfunción de cuerda vocal postoperatoria
+│  └─ La LATENCIA (22.4 ± 2.5 ms) es muy variable y NO sirve como parámetro de alarma
+└─ Referencia
+   └─ Deletis&amp;FernándezConejero (Neurophysiology in Neurosurgery 2ª ed., caps. 15-17:
+      Téllez/Ulkatan/Sinclair — LAR; Fernández-Conejero/Deletis — Blink Reflex;
+      Ulkatan2017 — masetero) · LimaMedeiros2024 (TCR) · Urriza2025 (TVcR)</pre></div>
+          </article>
+      </section>
+<section class="bloque-seccion" style="--bloque-color:#10b981">
+        <h2 class="bloque-titulo">Bloque B</h2>
+        <article class="tema" id="B1" style="--bloque-color:#10b981">
+            <header class="tema-header">
+              <span class="tema-codigo">B1</span>
+              <h3 class="tema-titulo">Columna — deformidad / escoliosis</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla B</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Columna — deformidad / escoliosis
+├─ Modalidades combinadas
+├─ Fases del procedimiento
+├─ Riesgo neurológico específico
+├─ Posicionamiento
+├─ Jerarquía de alarma
+├─ Protocolo de reacción
+├─ Técnica de mapeo específica
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="B2" style="--bloque-color:#10b981">
+            <header class="tema-header">
+              <span class="tema-codigo">B2</span>
+              <h3 class="tema-titulo">Columna — degenerativa / instrumentación</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla B</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Columna — degenerativa / instrumentación
+├─ Modalidades combinadas
+├─ Fases del procedimiento
+├─ Riesgo neurológico específico
+├─ Posicionamiento
+├─ Jerarquía de alarma
+├─ Protocolo de reacción
+├─ Técnica de mapeo específica
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="B3" style="--bloque-color:#10b981">
+            <header class="tema-header">
+              <span class="tema-codigo">B3</span>
+              <h3 class="tema-titulo">Tumores medulares intramedulares (IMSCT)</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla B</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Tumores medulares intramedulares (IMSCT)
+├─ Modalidades combinadas
+├─ Fases del procedimiento
+├─ Riesgo neurológico específico
+├─ Posicionamiento
+├─ Jerarquía de alarma
+├─ Protocolo de reacción
+├─ Técnica de mapeo específica
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="B4" style="--bloque-color:#10b981">
+            <header class="tema-header">
+              <span class="tema-codigo">B4</span>
+              <h3 class="tema-titulo">Tumores medulares extramedulares / cono-cola de caballo</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla B</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Tumores medulares extramedulares / cono-cola de caballo
+├─ Modalidades combinadas
+├─ Fases del procedimiento
+├─ Riesgo neurológico específico
+├─ Posicionamiento
+├─ Jerarquía de alarma
+├─ Protocolo de reacción
+├─ Técnica de mapeo específica
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="B5" style="--bloque-color:#10b981">
+            <header class="tema-header">
+              <span class="tema-codigo">B5</span>
+              <h3 class="tema-titulo">Fosa posterior / tronco encefálico</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla B</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Fosa posterior / tronco encefálico
+├─ Modalidades combinadas
+├─ Fases del procedimiento
+├─ Riesgo neurológico específico
+├─ Posicionamiento
+├─ Jerarquía de alarma
+├─ Protocolo de reacción
+├─ Técnica de mapeo específica
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="B6" style="--bloque-color:#10b981">
+            <header class="tema-header">
+              <span class="tema-codigo">B6</span>
+              <h3 class="tema-titulo">Tumores de cuarto ventrículo</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla B</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Tumores de cuarto ventrículo
+├─ Modalidades combinadas
+├─ Fases del procedimiento
+├─ Riesgo neurológico específico
+├─ Posicionamiento
+├─ Jerarquía de alarma
+├─ Protocolo de reacción
+├─ Técnica de mapeo específica
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="B7" style="--bloque-color:#10b981">
+            <header class="tema-header">
+              <span class="tema-codigo">B7</span>
+              <h3 class="tema-titulo">Craneotomía despierta / mapeo cortical-subcortical</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla B</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Craneotomía despierta / mapeo cortical-subcortical
+├─ Modalidades combinadas
+├─ Fases del procedimiento
+├─ Riesgo neurológico específico
+├─ Posicionamiento
+├─ Jerarquía de alarma
+├─ Protocolo de reacción
+├─ Técnica de mapeo específica
+└─ Referencia</pre></div>
+          </article>
+      </section>
+<section class="bloque-seccion" style="--bloque-color:#f59e0b">
+        <h2 class="bloque-titulo">Bloque C</h2>
+        <article class="tema" id="C1" style="--bloque-color:#f59e0b">
+            <header class="tema-header">
+              <span class="tema-codigo">C1</span>
+              <h3 class="tema-titulo">Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales)</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla C</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales)
+├─ Concepto central
+├─ A qué modalidades afecta
+├─ Parámetros clave
+├─ Aplicación práctica
+├─ Errores frecuentes
+├─ Conexión con otros nodos
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="C2" style="--bloque-color:#f59e0b">
+            <header class="tema-header">
+              <span class="tema-codigo">C2</span>
+              <h3 class="tema-titulo">Colocación de electrodos 10-20 / 10-10</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla C</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Colocación de electrodos 10-20 / 10-10
+├─ Concepto central
+├─ A qué modalidades afecta
+├─ Parámetros clave
+├─ Aplicación práctica
+├─ Errores frecuentes
+├─ Conexión con otros nodos
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="C3" style="--bloque-color:#f59e0b">
+            <header class="tema-header">
+              <span class="tema-codigo">C3</span>
+              <h3 class="tema-titulo">TIVA y farmacología anestésica en MIO</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla C</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">TIVA y farmacología anestésica en MIO
+├─ Concepto central
+├─ A qué modalidades afecta
+├─ Parámetros clave
+├─ Aplicación práctica
+├─ Errores frecuentes
+├─ Conexión con otros nodos
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="C4" style="--bloque-color:#f59e0b">
+            <header class="tema-header">
+              <span class="tema-codigo">C4</span>
+              <h3 class="tema-titulo">Relajantes musculares en MIO</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla C</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Relajantes musculares en MIO
+├─ Concepto central
+├─ A qué modalidades afecta
+├─ Parámetros clave
+├─ Aplicación práctica
+├─ Errores frecuentes
+├─ Conexión con otros nodos
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="C5" style="--bloque-color:#f59e0b">
+            <header class="tema-header">
+              <span class="tema-codigo">C5</span>
+              <h3 class="tema-titulo">Marco general de criterios de alarma</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla C</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Marco general de criterios de alarma
+├─ Concepto central
+├─ A qué modalidades afecta
+├─ Parámetros clave
+├─ Aplicación práctica
+├─ Errores frecuentes
+├─ Conexión con otros nodos
+└─ Referencia</pre></div>
+          </article>
+<article class="tema" id="C6" style="--bloque-color:#f59e0b">
+            <header class="tema-header">
+              <span class="tema-codigo">C6</span>
+              <h3 class="tema-titulo">Troubleshooting general</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla C</span>
+            </header>
+            <div class="tree-wrap"><pre class="tree">Troubleshooting general
+├─ Concepto central
+├─ A qué modalidades afecta
+├─ Parámetros clave
+├─ Aplicación práctica
+├─ Errores frecuentes
+├─ Conexión con otros nodos
+└─ Referencia</pre></div>
+          </article>
+      </section>
+</main>
+</body>
+</html>
