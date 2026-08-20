@@ -1,4 +1,7 @@
 # Material con copyright: libros y artículos, no se redistribuyen en un repo público.
+# Incluye cualquier extracción de texto de esas fuentes (ej. volcados de pdftotext),
+# no solo el binario original.
 fuentes/*.pdf
 fuentes/*.docx
 fuentes/*.doc
+fuentes/*.txt

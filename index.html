@@ -241,8 +241,8 @@ main {
 <nav class="sidebar">
   <h1>Mindmaps de Neurofisiología</h1>
   <div class="progreso">
-    3/23 completos (13%) · 4 en progreso · 16 esqueletos
-    <div class="progreso-bar"><div class="progreso-fill" style="width:13%"></div></div>
+    5/23 completos (22%) · 5 en progreso · 13 esqueletos
+    <div class="progreso-bar"><div class="progreso-fill" style="width:22%"></div></div>
   </div>
   <div class="nav-bloque" style="--bloque-color:#3b82f6">
         <div class="nav-bloque-titulo">Bloque A</div>
@@ -250,10 +250,10 @@ main {
 <a href="#A2" class="nav-item estado-en-progreso"><span class="nav-codigo">A2</span><span class="nav-titulo">PEM / MEP transcraneal (miogénico)</span></a>
 <a href="#A3" class="nav-item estado-completo"><span class="nav-codigo">A3</span><span class="nav-titulo">Onda D (D-wave epidural)</span></a>
 <a href="#A4" class="nav-item estado-completo"><span class="nav-codigo">A4</span><span class="nav-titulo">EMG libre (free-running)</span></a>
-<a href="#A5" class="nav-item estado-esqueleto"><span class="nav-codigo">A5</span><span class="nav-titulo">EMG estimulado — umbral de tornillo pedicular</span></a>
+<a href="#A5" class="nav-item estado-completo"><span class="nav-codigo">A5</span><span class="nav-titulo">EMG estimulado — umbral de tornillo pedicular</span></a>
 <a href="#A6" class="nav-item estado-en-progreso"><span class="nav-codigo">A6</span><span class="nav-titulo">Corticobulbares / MEP de pares craneales (CoMEPs)</span></a>
-<a href="#A7" class="nav-item estado-esqueleto"><span class="nav-codigo">A7</span><span class="nav-titulo">PEATC / BAEP</span></a>
-<a href="#A8" class="nav-item estado-esqueleto"><span class="nav-codigo">A8</span><span class="nav-titulo">EEG intraoperatorio</span></a>
+<a href="#A7" class="nav-item estado-completo"><span class="nav-codigo">A7</span><span class="nav-titulo">PEATC / BAEP</span></a>
+<a href="#A8" class="nav-item estado-en-progreso"><span class="nav-codigo">A8</span><span class="nav-titulo">EEG intraoperatorio</span></a>
 <a href="#A9" class="nav-item estado-en-progreso"><span class="nav-codigo">A9</span><span class="nav-titulo">Reflejos en IONM</span></a>
       </div>
 <div class="nav-bloque" style="--bloque-color:#10b981">
@@ -598,20 +598,55 @@ pp.179-181 · cap. 27 (Pasquali/Tramontano/Sala) pp.369-371</pre></div>
             <header class="tema-header">
               <span class="tema-codigo">A5</span>
               <h3 class="tema-titulo">EMG estimulado — umbral de tornillo pedicular</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-completo">Completo</span>
               <span class="badge plantilla-badge">Plantilla A</span>
             </header>
             <div class="tree-wrap"><pre class="tree">EMG estimulado — umbral de tornillo pedicular
 ├─ Vía anatómica
+│  ├─ Raíz nerviosa lumbosacra en riesgo por brecha pedicular (bajo T12-L1/cono medular)
+│  └─ A nivel torácico/cervical alto el riesgo pasa a ser MEDULAR, no radicular —
+│     pedículos más pequeños y ángulos más variables
 ├─ Estimulación
+│  ├─ Cátodo: sonda sobre el tornillo · ánodo: aguja intramuscular subcutánea
+│  ├─ Corriente CONSTANTE preferible a voltaje constante — la impedancia ósea varía
+│  │  por individuo y por osteoporosis
+│  └─ Rampa creciente desde 0 mA hasta respuesta o tope 40-50 mA · 1-5 Hz, 200 µs
+│     (protocolo original de Calancie: 3.1 Hz, 200 µs)
 ├─ Registro / montaje
+│  ├─ Electrodos intramusculares (preferibles a superficie) según correspondencia
+│  │  miotoma-nivel (cervical a sacro)
+│  └─ Filtro 30 Hz-3 kHz · modo &quot;free-run&quot; · ≥6 canales simultáneos
 ├─ Morfología normal
+│  └─ Umbral medio de excitación de raíz sana: 2-4.33 mA según serie (rango descrito
+│     0.2-5.7 mA)
 ├─ Efecto anestesia/fisiología
+│  ├─ El factor MÁS crítico: grado de relajación muscular — bloqueo excesivo eleva el
+│  │  umbral artificialmente (falso negativo)
+│  ├─ Relajación aceptable para testear: TOF con 4º twitch presente, ratio T4/T1
+│  │  ≥0.1-0.2
+│  └─ Caso ilustrativo: mismo tornillo, 50 mA con 1 twitch → 12 mA con 4 twitches
 ├─ Criterios de alarma
+│  ├─ Umbral clásico (Calancie): &lt;10 mA sugiere brecha cortical del pedículo — un
+│  │  tornillo bien alojado en hueso intacto no evoca respuesta a 10 mA
+│  └─ Estratificación de riesgo real (Toleikis): &gt;7 mA sin amenaza · 5-7 mA intermedio
+│     · ≤5 mA alto riesgo — el &quot;warning threshold&quot; publicado varía 6-11 mA según autor
 ├─ Causas de cambio no quirúrgico
+│  ├─ Shunting de corriente por sangre/LCR en contacto con el tornillo → eleva umbral
+│  │  12-20 mA (falso NEGATIVO)
+│  ├─ Tornillo de titanio o cabeza poliaxial mal conductores → falso negativo
+│  └─ Radiculopatía crónica/diabetes/osteoporosis → umbral basal ya elevado (&gt;20 mA en
+│     raíces crónicamente comprimidas)
 ├─ Troubleshooting
+│  ├─ Confirmar TOF adecuado ANTES de testear
+│  └─ Si hay sospecha de radiculopatía crónica, estimular la raíz directamente (2-5 mA)
+│     para confirmar respuesta normal antes de interpretar el umbral del tornillo
 ├─ Limitaciones
-└─ Referencia</pre></div>
+│  ├─ Definición de &quot;brecha real&quot; varía entre estudios (ej. exigir &gt;25% de exposición
+│  │  del diámetro del tornillo) → sensibilidad/especificidad muy dispersas entre series
+│  └─ EMG espontánea aislada es poco sensible — nunca debe usarse como única modalidad
+└─ Referencia
+   └─ Deletis, cap. 13 (Toleikis), pp.177-190 · Moller2011, cap. 10 &quot;Placement of
+      Pedicle Screws for Spinal Fixation&quot;, pp.222-224</pre></div>
             
           </article>
 <article class="tema" id="A6" style="--bloque-color:#3b82f6">
@@ -696,40 +731,105 @@ pp.179-181 · cap. 27 (Pasquali/Tramontano/Sala) pp.369-371</pre></div>
             <header class="tema-header">
               <span class="tema-codigo">A7</span>
               <h3 class="tema-titulo">PEATC / BAEP</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-completo">Completo</span>
               <span class="badge plantilla-badge">Plantilla A</span>
             </header>
             <div class="tree-wrap"><pre class="tree">PEATC / BAEP
-├─ Vía anatómica
+├─ Vía anatómica (generadores)
+│  ├─ Onda I: porción distal del n. auditivo (cóclea) · onda III: núcleo coclear
+│  │  (protuberancia)
+│  └─ Onda V: terminación del lemnisco lateral en el colículo inferior CONTRALATERAL
+│     — ondas I-III generadas ipsilateralmente, IV en adelante mixtas/contralaterales
 ├─ Estimulación
+│  ├─ Click monoaural con enmascaramiento del oído contralateral, ~105 dB PeSPL
+│  │  (≈65-70 dB HL)
+│  ├─ Tasa práctica hasta 50-70 pps (límite absoluto 100 pps) — a mayor tasa, las
+│  │  ondas I-III caen más que la V
+│  └─ Polaridad rarefacción o condensación, NO alternante — distorsiona la forma de
+│     onda en hipoacusia, aunque cancele el artefacto de estímulo
 ├─ Registro / montaje
+│  ├─ Dos canales: vértex-nuca (realza onda V) · lóbulo-lóbulo (realza ondas I-III)
+│  └─ Electrodos cortos y trenzados — minimizar interferencia de transformadores y del
+│     microscopio quirúrgico
 ├─ Morfología normal
+│  └─ Secuencia de picos I-VII, atención clínica centrada en I/III/V
+│     └─ Intervalo interpico I-II ≈1.04-1.08 ms (coherente con la longitud/velocidad
+│        de conducción del VIII par)
 ├─ Efecto anestesia/fisiología
+│  ├─ Notablemente INSENSIBLE a la anestesia — el tipo de anestésico puede elegirse
+│  │  sin ninguna consideración sobre el BAEP (a diferencia de SEP/EEG)
+│  └─ Sí sensible a temperatura: por debajo de 35.0 °C aumenta notablemente las
+│     latencias
 ├─ Criterios de alarma
+│  └─ Dependen del contexto quirúrgico — en cirugía de tronco/ángulo pontocerebeloso:
+│     ↓50% amplitud onda V + ↑latencia &gt;0.5 ms (ver B8)
 ├─ Causas de cambio no quirúrgico
+│  └─ Interferencia eléctrica/magnética del quirófano (transformadores, luz del
+│     microscopio) · impedancia de electrodo · ruido EEG de fondo (reduce SNR, obliga
+│     a promediar más)
 ├─ Troubleshooting
+│  └─ Inspeccionar la forma de onda CRUDA (no solo el promedio) para identificar la
+│     fuente de interferencia antes de asumir patología
 ├─ Limitaciones
-└─ Referencia</pre></div>
+│  ├─ Requiere promediado (≥1000 respuestas en condiciones óptimas) → demora
+│  │  inherente; la hipoacusia previa exige aún más barridos, retrasando la detección
+│  └─ No capta actividad más allá del colículo inferior — no informa de tálamo ni
+│     corteza
+└─ Referencia
+   └─ Deletis, cap. 5 (Møller), §5.1-5.9, pp.65-82 · Moller2011, cap. 7 &quot;Monitoring of
+      Auditory Evoked Potentials&quot;, p.158</pre></div>
             
           </article>
 <article class="tema" id="A8" style="--bloque-color:#3b82f6">
             <header class="tema-header">
               <span class="tema-codigo">A8</span>
               <h3 class="tema-titulo">EEG intraoperatorio</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-en-progreso">En progreso</span>
               <span class="badge plantilla-badge">Plantilla A</span>
             </header>
             <div class="tree-wrap"><pre class="tree">EEG intraoperatorio
 ├─ Vía anatómica
+│  └─ No aplica en sentido clásico — registro de actividad cortical ESPONTÁNEA, no
+│     evocada; refleja actividad cortical, no subcortical
 ├─ Estimulación
+│  └─ No aplica — registro pasivo continuo (excepción: la electrocorticografía puede
+│     combinarse con estimulación cortical para mapeo, ver B7)
 ├─ Registro / montaje
+│  ├─ Sistema 10-20 multicanal, comparación bihemisférica obligatoria (ver C2)
+│  └─ ECoG (variante intracraneal, cirugía de epilepsia): amplitud 100-1000 µV vs.
+│     10-50 µV del EEG de superficie, mucho menos artefacto muscular
 ├─ Morfología normal
+│  └─ Actividad bilateral simétrica · predominio regional fisiológico (más beta
+│     frontal, más theta/delta temporal)
 ├─ Efecto anestesia/fisiología
-├─ Criterios de alarma
+│  └─ MUY sensible, dosis-dependiente (a diferencia del BAEP) — enlentecimiento
+│     progresivo hasta burst-suppression
+│     └─ Efecto varía por fármaco: enflurano/metohexital/etomidato/fentanilo tienden
+│        a aumentar la actividad epileptiforme · isoflurano/sevoflurano/propofol
+│        relativamente neutros
+├─ Criterios de alarma (contexto endarterectomía carotídea — isquemia)
+│  ├─ Caída de amplitud &gt;50-80% o pérdida completa · ↑actividad delta ≥2x · pérdida
+│  │  de ritmos rápidos alfa/beta
+│  └─ Asimetría interhemisférica: 15-20% moderada, &gt;20% severa (brain symmetry index)
 ├─ Causas de cambio no quirúrgico
+│  ├─ Cambio de plano anestésico — principal factor de confusión, MIMETIZA el
+│  │  enlentecimiento isquémico → exige plano estable en momentos críticos
+│  └─ Hipotermia · línea de base ya anormal (ictus previo) hasta en el 40% de los
+│     pacientes
 ├─ Troubleshooting
+│  └─ Comparar HEMISFERIOS entre sí, no valores absolutos · el EEG cuantitativo
+│     (CSA/DSA/frecuencia de borde espectral) es solo adyuvante, con menor evidencia
+│     que el EEG crudo multicanal
 ├─ Limitaciones
-└─ Referencia</pre></div>
+│  ├─ Gran volumen de datos crudos, requiere intérprete experto · no detecta isquemia
+│  │  subcortical ni infartos de zona limítrofe (watershed)
+│  └─ En ECoG: la correlación entre espigas residuales y resultado quirúrgico es
+│     inconsistente entre series — es herramienta de localización, no de &quot;alarma de
+│     seguridad&quot; como el EEG isquémico
+└─ Referencia
+   └─ Deletis, cap. 25 (Malcharek/Schneider/Dinkel), §25.2.1, pp.339-340 (isquemia en
+      endarterectomía carotídea) · cap. 32, §32.4-32.6, pp.446-451 (ECoG en cirugía de
+      epilepsia)</pre></div>
             
           </article>
 <article class="tema" id="A9" style="--bloque-color:#3b82f6">

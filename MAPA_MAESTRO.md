@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-20T20:02:15.612Z
+Generado: 2026-08-20T20:24:16.241Z
 
-Progreso: 3 completos · 4 en progreso · 16 esqueletos · 23 temas totales.
+Progreso: 5 completos · 5 en progreso · 13 esqueletos · 23 temas totales.
 
 ## Bloque A
 
@@ -16,10 +16,10 @@ Progreso: 3 completos · 4 en progreso · 16 esqueletos · 23 temas totales.
 | A2 | PEM / MEP transcraneal (miogénico) | A | En progreso | `mindmaps/A2-pem-mep-transcraneal.md` |
 | A3 | Onda D (D-wave epidural) | A | Completo | `mindmaps/A3-onda-d-epidural.md` |
 | A4 | EMG libre (free-running) | A | Completo | `mindmaps/A4-emg-libre-free-running.md` |
-| A5 | EMG estimulado — umbral de tornillo pedicular | A | Esqueleto | `mindmaps/A5-emg-estimulado-umbral-tornillo-pedicular.md` |
+| A5 | EMG estimulado — umbral de tornillo pedicular | A | Completo | `mindmaps/A5-emg-estimulado-umbral-tornillo-pedicular.md` |
 | A6 | Corticobulbares / MEP de pares craneales (CoMEPs) | A | En progreso | `mindmaps/A6-comeps-mep-pares-craneales.md` |
-| A7 | PEATC / BAEP | A | Esqueleto | `mindmaps/A7-peatc-baep.md` |
-| A8 | EEG intraoperatorio | A | Esqueleto | `mindmaps/A8-eeg-intraoperatorio.md` |
+| A7 | PEATC / BAEP | A | Completo | `mindmaps/A7-peatc-baep.md` |
+| A8 | EEG intraoperatorio | A | En progreso | `mindmaps/A8-eeg-intraoperatorio.md` |
 | A9 | Reflejos en IONM | A | En progreso | `mindmaps/A9-reflejos-ionm.md` |
 
 ## Bloque B
