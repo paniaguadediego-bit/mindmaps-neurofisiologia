@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-20T20:24:16.241Z
+Generado: 2026-08-20T21:05:52.809Z
 
-Progreso: 5 completos · 5 en progreso · 13 esqueletos · 23 temas totales.
+Progreso: 5 completos · 7 en progreso · 11 esqueletos · 23 temas totales.
 
 ## Bloque A
 
@@ -26,8 +26,8 @@ Progreso: 5 completos · 5 en progreso · 13 esqueletos · 23 temas totales.
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
-| B1 | Columna — deformidad / escoliosis | B | Esqueleto | `mindmaps/B1-columna-deformidad-escoliosis.md` |
-| B2 | Columna — degenerativa / instrumentación | B | Esqueleto | `mindmaps/B2-columna-degenerativa-instrumentacion.md` |
+| B1 | Columna — deformidad / escoliosis | B | En progreso | `mindmaps/B1-columna-deformidad-escoliosis.md` |
+| B2 | Columna — degenerativa / instrumentación | B | En progreso | `mindmaps/B2-columna-degenerativa-instrumentacion.md` |
 | B3 | Tumores medulares intramedulares (IMSCT) | B | Esqueleto | `mindmaps/B3-tumores-medulares-intramedulares-imsct.md` |
 | B4 | Tumores medulares extramedulares / cono-cola de caballo | B | Esqueleto | `mindmaps/B4-tumores-medulares-extramedulares-cono-cauda.md` |
 | B5 | Fosa posterior / tronco encefálico | B | Esqueleto | `mindmaps/B5-fosa-posterior-tronco-encefalico.md` |

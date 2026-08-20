@@ -241,7 +241,7 @@ main {
 <nav class="sidebar">
   <h1>Mindmaps de Neurofisiología</h1>
   <div class="progreso">
-    5/23 completos (22%) · 5 en progreso · 13 esqueletos
+    5/23 completos (22%) · 7 en progreso · 11 esqueletos
     <div class="progreso-bar"><div class="progreso-fill" style="width:22%"></div></div>
   </div>
   <div class="nav-bloque" style="--bloque-color:#3b82f6">
@@ -258,8 +258,8 @@ main {
       </div>
 <div class="nav-bloque" style="--bloque-color:#10b981">
         <div class="nav-bloque-titulo">Bloque B</div>
-        <a href="#B1" class="nav-item estado-esqueleto"><span class="nav-codigo">B1</span><span class="nav-titulo">Columna — deformidad / escoliosis</span></a>
-<a href="#B2" class="nav-item estado-esqueleto"><span class="nav-codigo">B2</span><span class="nav-titulo">Columna — degenerativa / instrumentación</span></a>
+        <a href="#B1" class="nav-item estado-en-progreso"><span class="nav-codigo">B1</span><span class="nav-titulo">Columna — deformidad / escoliosis</span></a>
+<a href="#B2" class="nav-item estado-en-progreso"><span class="nav-codigo">B2</span><span class="nav-titulo">Columna — degenerativa / instrumentación</span></a>
 <a href="#B3" class="nav-item estado-esqueleto"><span class="nav-codigo">B3</span><span class="nav-titulo">Tumores medulares intramedulares (IMSCT)</span></a>
 <a href="#B4" class="nav-item estado-esqueleto"><span class="nav-codigo">B4</span><span class="nav-titulo">Tumores medulares extramedulares / cono-cola de caballo</span></a>
 <a href="#B5" class="nav-item estado-esqueleto"><span class="nav-codigo">B5</span><span class="nav-titulo">Fosa posterior / tronco encefálico</span></a>
@@ -955,37 +955,194 @@ cap. 16 pp.224 y 226</pre></div>
             <header class="tema-header">
               <span class="tema-codigo">B1</span>
               <h3 class="tema-titulo">Columna — deformidad / escoliosis</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-en-progreso">En progreso</span>
               <span class="badge plantilla-badge">Plantilla B</span>
             </header>
             <div class="tree-wrap"><pre class="tree">Columna — deformidad / escoliosis
 ├─ Modalidades combinadas
+│  ├─ SEP + MEP transcraneal (TES) + EMG libre según nivel — sustituyó al wake-up test
+│  │  como estándar
+│  ├─ MEP aporta lo que SEP no cubre: disrupción de tractos ANTERIORES en segundos-
+│  │  minutos (SEP solo cubre columnas dorsolaterales — ej. clásico: infarto de arteria
+│  │  espinal anterior pasa inadvertido con SEP solo)
+│  ├─ Bite blocks obligatorios con TES/MEP (riesgo de laceración lingual/labial,
+│  │  disfunción de ATM si el bloque es rígido y prolongado) — recomendados blandos
+│  └─ Considerar anomalía anatómica: en algunos escolióticos el tracto corticoespinal y
+│     el lemnisco medial dorsal NO decusan en el bulbo
 ├─ Fases del procedimiento
+│  ├─ Secuencia general: exposición → colocación de tornillos → descompresión/
+│  │  osteotomías → colocación de cage (si aplica) → realineamiento/corrección
+│  ├─ Ejemplo VCR (resección de columna vertebral): osteotomía amplia → barra temporal
+│  │  → cierre de la osteotomía por compresión en la convexidad
+│  └─ Ejemplo mínimamente invasivo: osteotomías de Ponte por tubo + tornillos
+│     pediculares bilaterales bajo navegación
 ├─ Riesgo neurológico específico
+│  ├─ Lesión medular iatrogénica en CUALQUIER maniobra de corrección — mecanismo dual:
+│  │  isquemia + lesión mecánica, mayor en curvas grandes
+│  ├─ La maniobra MÁS peligrosa: distracción — riesgo de isquemia mayor que con
+│  │  compresión (demostrado en modelo animal porcino)
+│  ├─ Derotación/reducción: figuran en el protocolo de reversión junto a distracción,
+│  │  pero sin diferenciación cuantitativa de riesgo frente a distracción/compresión
+│  │  (verificar)
+│  └─ La causa de una caída de señal puede NO ser la maniobra en sí — descrito un caso
+│     de hematoma epidural como causa real, no la corrección
 ├─ Posicionamiento
+│  ├─ Prono estándar (ejemplo descrito: marco Jackson abierto + tracción craneal)
+│  ├─ &quot;Prepositioning ION&quot;: basal en camilla (supino) tras inducción, antes de prono y
+│     manipulación — usado en inestabilidad/trauma/unión craneocervical; limita la
+│     técnica anestésica porque el paciente no puede quedar totalmente paralizado
+│     (necesario para MEP)
+│  └─ Protección ocular/plexo braquial en prono (verificar — no encontrado en estas
+│     fuentes de ION, es manejo anestésico/quirúrgico estándar de posicionamiento)
 ├─ Jerarquía de alarma
+│  ├─ Wake-up test (Vauzelle 1973, popularizado por Stagnara) — primer método histórico;
+│  │  hoy reservado a resultados equívocos o ION no disponible
+│  ├─ SEP: caída de amplitud &gt;50% + incremento de latencia &gt;10%
+│  ├─ MEP: todo-o-nada como regla general, PERO en eventos quirúrgicos críticos (durante
+│  │  la maniobra de corrección) se avisa con caída del 80% en cualquier músculo
+│  ├─ Deformity Angular Ratio (DAR): predictor cuantitativo de riesgo de pérdida de
+│  │  señal a partir de la geometría de la curva (coronal + cifosis)
+│  └─ El SEP puede retrasarse 20-30 min en su caída y su recuperación respecto al evento
+│     real → seguir monitorizando el mayor tiempo posible
 ├─ Protocolo de reacción
+│  ├─ Protocolo de pérdida de señal en 3 niveles:
+│  │  · Awareness: pausa quirúrgica, avisar a todo el equipo, parar descansos/cambios de
+│  │    personal, llamar a anestesia adjunta, pedir imagen y hemoderivados
+│  │  · Nivel 1 — Cirujano: REVERTIR la maniobra previa a la pérdida (barras,
+│  │    distracción, derrotación, reducción), retirar implante si se colocó
+│  │    inmediatamente antes · Neurofisiología: revisar electrodos/técnica ·
+│  │    Anestesia: PAM &gt;80 mmHg, optimizar hematocrito/pH/pO2, normotermia, minimizar
+│  │    halogenados (&lt;1/3 CAM)
+│  │  · Nivel 2 — Cirujano: imagen 3D, inspeccionar/reducir tracción · Neurofisiología:
+│  │    revisar patrón/timing del cambio, considerar MEP epidural · Anestesia: preparar
+│  │    wake-up test, considerar bolo de esteroide
+│  │  · Nivel 3: considerar wake-up test, abortar vs. continuar, reevaluar en 15 min,
+│  │    solicitar cama de UCI
+│  └─ Aplicación real de un caso: parada + reducción de agente inhalado → cierre rápido
+│     de la osteotomía → pausa total de manipulación → chequeo MEP cada 5 min →
+│     recuperación a los 15 min
 ├─ Técnica de mapeo específica
-└─ Referencia</pre></div>
-            
+│  ├─ EMG estimulado/umbral de tornillo pedicular — parámetros completos en A5; aquí
+│  │  solo la correlación: umbral tEMG bajo ↔ mayor probabilidad de mala colocación del
+│  │  tornillo, analizado sobre miles de tornillos
+│  ├─ EMG libre + estimulado obligatorios en fusión intersomática lateral transpsoas
+│  │  (XLIF/DLIF) al dilatar a través del psoas y anclar el retractor — estándar de
+│  │  cuidado; déficit sensitivomotor transitorio 20-25%, mayoría resuelto al año
+│  └─ D-wave collision technique (mapeo del tracto corticoespinal): útil específicamente
+│     en escoliosis con anomalías anatómicas de los tractos motores/sensitivos —
+│     estimulación transcraneal simultánea + estimulación de médula expuesta, colisión
+│     de la onda D descendente con actividad ascendente
+└─ Referencia
+   └─ Deletis, cap. 28 (Guiroy/Candocia/Fontes), pp.381-393 · Moller2011, cap. 10
+      &quot;Placement of Pedicle Screws for Spinal Fixation&quot; / &quot;Scoliosis Operations&quot;,
+      pp.219-224 · cap. 14, pp.281-282 (D-wave collision)</pre></div>
+            <details class="ampliacion">
+                <summary>Ampliación — profundizar</summary>
+                <div class="tree-wrap"><pre class="tree">Columna deformidad/escoliosis — ampliación
+├─ Caso 1 (VCR por cifoescoliosis congénita): SEP estable en TODO el procedimiento, MEP
+│  en pierna derecha se pierde en la aplicación de barra temporal, se recupera a los
+│  15 min tras protocolo — ilustra disociación SEP/MEP y la reversibilidad si se actúa a
+│  tiempo
+├─ Caso 2 (escoliosis idiopática del adolescente): MEP basal ya pobre por profundidad
+│  anestésica → SEP como única señal fiable, caída bilateral tras tornillos torácicos,
+│  causa real = hematoma epidural, no la corrección — ilustra por qué &quot;seguir
+│  monitorizando el máximo tiempo posible&quot; y no descartar causas no mecánicas
+└─ Indicación de ION según evidencia: estándar de cuidado en cirugía de deformidad,
+   tumor intramedular y fusión intersomática lateral; en cirugía puramente descompresiva
+   sin maniobra reversible se desaconseja su uso rutinario — un cambio ahí &quot;solo
+   indicaría una lesión sobre la que el cirujano no puede hacer nada&quot;
+Referencia: Deletis, cap. 28 (Guiroy/Candocia/Fontes), pp.381-393</pre></div>
+              </details>
           </article>
 <article class="tema" id="B2" style="--bloque-color:#10b981">
             <header class="tema-header">
               <span class="tema-codigo">B2</span>
               <h3 class="tema-titulo">Columna — degenerativa / instrumentación</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-en-progreso">En progreso</span>
               <span class="badge plantilla-badge">Plantilla B</span>
             </header>
             <div class="tree-wrap"><pre class="tree">Columna — degenerativa / instrumentación
 ├─ Modalidades combinadas
+│  ├─ SEP + MEP transcraneal + EMG (libre + estimulado) — mismo estándar multimodal que
+│  │  en deformidad (B1)
+│  ├─ Trigger EMG (tEMG) de tornillo pedicular: la modalidad con más evidencia acumulada
+│  │  específicamente en columna degenerativa/instrumentación (parámetros en A5)
+│  └─ Debate de indicación por escenario: descompresión lumbar simple → &quot;innecesario&quot; ·
+│     mielopatía cervical espondilótica → &quot;opcional&quot;, con series publicadas de cirugía
+│     SIN ION · deformidad/intramedular/XLIF → estándar de cuidado
 ├─ Fases del procedimiento
+│  ├─ Exposición → colocación de tornillos pediculares → descompresión (laminectomía/
+│  │  foraminotomía) ± osteotomía → artrodesis/fusión intersomática (cage) — mismo
+│  │  esquema general que B1 pero SIN fase mayor de realineamiento
+│  └─ Fusión intersomática lateral transpsoas (XLIF/DLIF): gana altura foraminal y
+│     descomprime indirectamente evitando abordaje posterior grande, pero expone el
+│     plexo lumbosacro y el nervio femoral en su trayecto a través del psoas
 ├─ Riesgo neurológico específico
+│  ├─ Mala colocación de tornillo pedicular sin monitorización: incidencia de lesión
+│  │  neurológica reportada 1-11%, hasta 40% si se suman otros factores agravantes
+│  ├─ Abordaje transpsoas: déficit sensitivomotor transitorio 20-25% por exposición del
+│  │  plexo lumbosacro/nervio femoral, mayoría resuelto al año
+│  ├─ Radiculopatía por retracción de raíz durante descompresión (verificar — sin dato
+│  │  cuantitativo propio en estas fuentes)
+│  ├─ Nivel cervical: el riesgo pasa de radicular a MEDULAR (mismo principio anatómico
+│  │  que A5, aquí aplicado a descompresión cervical degenerativa)
+│  └─ EMG libre aislado: pobre sensibilidad para lesión de raíz, tasa relevante de
+│     falsos negativos — no debe sustituir al tEMG
 ├─ Posicionamiento
+│  ├─ Prono estándar (igual que B1)
+│  ├─ &quot;Prepositioning ION&quot; aplicable cuando hay inestabilidad asociada (ej. degenerativa
+│  │  con listesis/estenosis severa que requiere reducción antes de fijar) — mismo
+│  │  concepto que en B1
+│  └─ Protección ocular/plexo braquial en prono (verificar — sin dato propio en estas
+│     fuentes de ION, manejo anestésico estándar de posicionamiento)
 ├─ Jerarquía de alarma
+│  ├─ Mismo criterio SEP (&gt;50% amplitud + &gt;10% latencia) y MEP (todo-o-nada, 80% en
+│  │  eventos críticos) que B1 — con el matiz de que en descompresión pura sin maniobra
+│  │  reversible el valor accionable de un cambio es menor
+│  ├─ Umbral tEMG del tornillo ya insertado: &lt;10 mA sugiere brecha (protocolo Calancie,
+│  │  detalle completo en A5); &gt;11 mA se asocia a mayor probabilidad de colocación
+│  │  correcta, con matices por osteoporosis y nivel torácico
+│  └─ Umbral de &quot;exploración&quot; del awl ANTES de insertar el tornillo (fase de apertura
+│     pedicular): corriente constante 7 mA (protocolo Calancie original) — dato distinto
+│     del umbral post-inserción
 ├─ Protocolo de reacción
+│  ├─ Mismo protocolo de pérdida de señal en 3 niveles que B1 (ver B1 para el detalle
+│  │  completo, no se duplica aquí)
+│  ├─ Matiz específico de instrumentación: &quot;si el implante se colocó inmediatamente
+│  │  antes de la pérdida, retirarlo&quot; es la acción de primer nivel más relevante en este
+│  │  contexto (frente a &quot;revertir maniobra de corrección&quot; en B1)
+│  └─ Fluoroscopia intraoperatoria: uso común pero con falsos positivos/negativos
+│     relevantes — NO sustituye la monitorización electrofisiológica
 ├─ Técnica de mapeo específica
-└─ Referencia</pre></div>
-            
+│  ├─ EMG estimulado/umbral de tornillo pedicular — técnica de mapeo PRINCIPAL en
+│  │  instrumentación degenerativa; parámetros técnicos completos ya en A5
+│  ├─ EMG libre durante dilatación transpsoas y anclaje del retractor en XLIF/DLIF —
+│  │  estándar de cuidado, no sustituible
+│  ├─ Estimulación de la lámina antes de insertar el tornillo (umbral óseo basal):
+│  │  electrodo de mano, umbral ~25 mA con variación individual considerable
+│  └─ Corriente constante vs. voltaje constante: el shunting por humedad del campo
+│     quirúrgico hace variar el umbral con corriente constante; voltaje constante es
+│     teóricamente más robusto frente al shunting pero la práctica mayoritaria usa
+│     corriente constante
+└─ Referencia
+   └─ Deletis, cap. 28 (Guiroy/Candocia/Fontes), pp.381-385 · Moller2011, cap. 10
+      &quot;Placement of Pedicle Screws for Spinal Fixation&quot;, pp.221-224</pre></div>
+            <details class="ampliacion">
+                <summary>Ampliación — profundizar</summary>
+                <div class="tree-wrap"><pre class="tree">Columna degenerativa/instrumentación — ampliación
+├─ Umbral de screw testing y edad/sexo: pacientes jóvenes tienen umbrales más altos que
+│  los mayores; mujeres mayores con osteoporosis pueden tener umbrales en decenas de mA
+│  — complementa el umbral estándar ya fijado en A5
+├─ Cirugía mínimamente invasiva percutánea: la dificultad de testear el tornillo aumenta
+│  porque no hay visualización directa del pedículo/estructuras vecinas y el tejido
+│  circundante genera más shunting de corriente — mayor incertidumbre que en cirugía
+│  abierta convencional
+└─ Descompresión sin corrección de deformidad ni maniobra reversible: la evidencia no
+   respalda el uso rutinario de ION y puede incluso perjudicar el curso quirúrgico por
+   falsos positivos
+Referencia: Deletis, cap. 28 (Guiroy/Candocia/Fontes) p.384 · Moller2011, cap. 10
+pp.221-224</pre></div>
+              </details>
           </article>
 <article class="tema" id="B3" style="--bloque-color:#10b981">
             <header class="tema-header">
