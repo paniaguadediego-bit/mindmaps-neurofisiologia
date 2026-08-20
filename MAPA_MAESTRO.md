@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-20T18:44:16.928Z
+Generado: 2026-08-20T19:21:13.021Z
 
-Progreso: 3 completos · 3 en progreso · 16 esqueletos · 22 temas totales.
+Progreso: 3 completos · 4 en progreso · 16 esqueletos · 23 temas totales.
 
 ## Bloque A
 
@@ -33,6 +33,7 @@ Progreso: 3 completos · 3 en progreso · 16 esqueletos · 22 temas totales.
 | B5 | Fosa posterior / tronco encefálico | B | Esqueleto | `mindmaps/B5-fosa-posterior-tronco-encefalico.md` |
 | B6 | Tumores de cuarto ventrículo | B | Esqueleto | `mindmaps/B6-tumores-cuarto-ventriculo.md` |
 | B7 | Craneotomía despierta / mapeo cortical-subcortical | B | Esqueleto | `mindmaps/B7-craneotomia-despierta-mapeo-cortical-subcortical.md` |
+| B8 | Fosa posterior avanzado con criterios de troncoencefálico | B | En progreso | `mindmaps/B8-fosa-posterior-avanzado-con-criterios-de-troncoencefalico.md` |
 
 ## Bloque C
 
@@ -51,3 +52,5 @@ Básico → avanzado. Se mantiene a mano; si aparecen temas nuevos no listados a
 añádelos donde tengan sentido.
 
 C1 → C2 → A1 → A2 → A3 → C5 → A4 → A5 → C3 → C4 → C6 → B2 → B1 → B3 → B4 → A6 → A9 → A7 → B5 → B6 → B7 → A8
+
+Temas nuevos aún sin ubicar en el orden de trabajo: B8

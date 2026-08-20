@@ -82,7 +82,21 @@ cita de la fuente. Cualquier dato numérico no confirmado se marca `(verificar)`
 
 ## Operaciones del sistema vivo
 
-**Añadir un tema:**
+**Añadir un tema (automatizado, recomendado):**
+
+```
+node nuevo-tema.js --bloque A --titulo "Título del tema nuevo"
+```
+
+Calcula solo el siguiente código libre del bloque, genera `mindmaps/CODIGO-slug.md` con
+el front-matter y el esqueleto de ramas de la plantilla (leídas en vivo de
+`PLANTILLAS.md`, así que si se edita la plantilla el script lo respeta sin tocar código),
+y ejecuta `node build.js` al final. Si se omiten `--bloque` o `--titulo`, pregunta por
+consola. No hace `git commit` ni `git push` — eso sigue siendo manual (ver más abajo).
+Opciones: `--plantilla LETRA` (por defecto la misma letra que el bloque), `--codigo` para
+forzar uno concreto, `--no-build` para no regenerar el visor.
+
+**Añadir un tema (a mano):**
 1. Elige el siguiente código libre del bloque (ej. si el último de A es A9, el nuevo es A10).
 2. Crea `mindmaps/CODIGO-slug.md` con el front-matter completo y el esqueleto de ramas de
    su plantilla (ver `PLANTILLAS.md`).
@@ -132,5 +146,6 @@ cita de la fuente. Cualquier dato numérico no confirmado se marca `(verificar)`
 ├── fuentes/                     # PDFs de libros y artículos
 │   └── INDICE_FUENTES.md        # qué cubre cada fuente, editable a mano
 ├── build.js                     # genera MAPA_MAESTRO.md e index.html (node build.js)
+├── nuevo-tema.js                # crea un esqueleto de tema y ejecuta el build
 └── .claude/skills/mindmap/SKILL.md
 ```
