@@ -93,3 +93,26 @@ EMG libre (free-running)
       clasificación spikes/bursts/A-B-C trains) · Prell2007 (falsos positivos A-train)
       · Boaro2026 (EMG libre en IMSCT)
 ```
+
+## Ampliación — profundizar
+
+```
+EMG libre — ampliación
+├─ EMG libre en instrumentación pedicular/columna (contexto distinto a pares craneales)
+│  ├─ Ráfagas cortas (<1 s) → generalmente no significativas, rara vez con secuela ·
+│  │  trenes largos sostenidos (hasta varios minutos) → más serios, asociados a
+│  │  tracción/compresión sostenida, mayor probabilidad de daño radicular
+│  └─ En cordón anclado, mal predictor aislado: sensibilidad 100% pero especificidad
+│     solo 19% — "nunca debe usarse como única modalidad" (cita textual del capítulo)
+├─ Contraste de series + valor predictivo temporal
+│  ├─ Otra serie de cordón anclado con mejor equilibrio: sensibilidad 87.5%,
+│  │  especificidad 83.3%, VPP 87.5%, VPN 83.3%
+│  └─ La actividad EMG sostenida suele PRECEDER el cambio en los potenciales evocados
+│     — actúa como señal de alarma temprana, se anticipa al MEP en vez de solo
+│     acompañarlo
+└─ Base anatómica del falso positivo de Prell2007 (ya citado, aquí el mecanismo)
+   └─ El n. intermedio lleva fibras motoras que inervan la musculatura perioral facial
+      → explica por qué su manipulación genera A-trains sin correlación clínica real
+Referencia: Deletis, cap. 10 (Fernández-Conejero) p.138 · cap. 13 (Toleikis)
+pp.179-181 · cap. 27 (Pasquali/Tramontano/Sala) pp.369-371
+```

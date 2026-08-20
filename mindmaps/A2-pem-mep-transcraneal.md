@@ -8,8 +8,8 @@ estado: en-progreso
 
 # A2 — PEM / MEP transcraneal (miogénico)
 
-> Pendiente: confirmar el umbral cuantitativo de caída de amplitud en MacDonald 2013 /
-> Legatt 2016 antes de darlo por definitivo.
+> Pendiente: el umbral cuantitativo de caída de amplitud no es un número único — depende
+> del contexto quirúrgico (columna vs. tronco), ver Ampliación.
 
 ```
 PEM/MEP transcraneal (miogénico)
@@ -47,4 +47,29 @@ PEM/MEP transcraneal (miogénico)
 │     └─ Riesgo de falsos positivos si el plano no está controlado
 └─ Referencia
    └─ MacDonald2013 (ASNM) · Legatt2016 (ACNS) · Sloan2012 (relajantes)
+```
+
+## Ampliación — profundizar
+
+```
+PEM/MEP transcraneal — ampliación
+├─ El umbral cuantitativo NO es universal
+│  ├─ Columna compleja: criterio primario todo-o-nada; en eventos quirúrgicos críticos
+│  │  se avisa si hay caída de amplitud del 80% en cualquier músculo
+│  └─ Tronco encefálico: el todo-o-nada (habitual en tumor medular) resulta
+│     insuficientemente sensible → se prefiere caída de amplitud >50% como predictor
+│     de déficit irreversible
+├─ Series con sensibilidad/especificidad del MEP muscular
+│  ├─ Cavernoma de tronco (Shiban): sensibilidad 33%/especificidad 88% · (Sarnthein):
+│  │  sensibilidad 94%/especificidad 74%
+│  └─ Cirugía de cordón anclado: sensibilidad 75-100%, especificidad 25-100%,
+│     VPP 63-100%, VPN 75-97% — rango amplio según la serie
+└─ Parámetro técnico: ISI óptimo del tren
+   ├─ ISI ~4 ms permite recuperación completa entre pulsos (duración de pulso 500 µs);
+   │  con ISI 2 ms se necesitan 5 estímulos en vez de 3 por recuperación incompleta
+   └─ En columna/pediatría: trenes de 5-7 pulsos de 0.5 ms, ISI ~4 ms, repetición
+      1-2 Hz, intensidad habitual <200 mA, montaje C1/C2
+Referencia: Deletis, cap. 2 pp.27-28 · cap. 22 (Sala/D'Amico/Bricolo) p.305 ·
+cap. 27 (Pasquali/Tramontano/Sala) pp.369-370 · cap. 28 (Guiroy/Candocia/Fontes)
+pp.388-389
 ```
