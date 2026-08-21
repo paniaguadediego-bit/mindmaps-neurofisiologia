@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-21T20:56:36.883Z
+Generado: 2026-08-21T21:30:29.495Z
 
-Progreso: 8 completos · 9 en progreso · 6 esqueletos · 23 temas totales.
+Progreso: 13 completos · 10 en progreso · 0 esqueletos · 23 temas totales.
 
 ## Bloque A
 
@@ -39,12 +39,12 @@ Progreso: 8 completos · 9 en progreso · 6 esqueletos · 23 temas totales.
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
-| C1 | Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales) | C | Esqueleto | `mindmaps/C1-anatomia-vias-largas.md` |
-| C2 | Colocación de electrodos 10-20 / 10-10 | C | Esqueleto | `mindmaps/C2-colocacion-electrodos-10-20-10-10.md` |
-| C3 | TIVA y farmacología anestésica en MIO | C | Esqueleto | `mindmaps/C3-tiva-farmacologia-anestesica.md` |
-| C4 | Relajantes musculares en MIO | C | Esqueleto | `mindmaps/C4-relajantes-musculares.md` |
-| C5 | Marco general de criterios de alarma | C | Esqueleto | `mindmaps/C5-criterios-alarma-marco-general.md` |
-| C6 | Troubleshooting general | C | Esqueleto | `mindmaps/C6-troubleshooting-general.md` |
+| C1 | Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales) | C | Completo | `mindmaps/C1-anatomia-vias-largas.md` |
+| C2 | Colocación de electrodos 10-20 / 10-10 | C | En progreso | `mindmaps/C2-colocacion-electrodos-10-20-10-10.md` |
+| C3 | TIVA y farmacología anestésica en MIO | C | Completo | `mindmaps/C3-tiva-farmacologia-anestesica.md` |
+| C4 | Relajantes musculares en MIO | C | Completo | `mindmaps/C4-relajantes-musculares.md` |
+| C5 | Marco general de criterios de alarma | C | Completo | `mindmaps/C5-criterios-alarma-marco-general.md` |
+| C6 | Troubleshooting general | C | Completo | `mindmaps/C6-troubleshooting-general.md` |
 
 ## Orden de trabajo sugerido
 
