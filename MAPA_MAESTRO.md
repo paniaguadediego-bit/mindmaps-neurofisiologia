@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-21T04:43:12.125Z
+Generado: 2026-08-21T20:56:36.883Z
 
-Progreso: 7 completos · 7 en progreso · 9 esqueletos · 23 temas totales.
+Progreso: 8 completos · 9 en progreso · 6 esqueletos · 23 temas totales.
 
 ## Bloque A
 
@@ -30,9 +30,9 @@ Progreso: 7 completos · 7 en progreso · 9 esqueletos · 23 temas totales.
 | B2 | Columna — degenerativa / instrumentación | B | En progreso | `mindmaps/B2-columna-degenerativa-instrumentacion.md` |
 | B3 | Tumores medulares intramedulares (IMSCT) | B | Completo | `mindmaps/B3-tumores-medulares-intramedulares-imsct.md` |
 | B4 | Tumores medulares extramedulares / cono-cola de caballo | B | Completo | `mindmaps/B4-tumores-medulares-extramedulares-cono-cauda.md` |
-| B5 | Fosa posterior / tronco encefálico | B | Esqueleto | `mindmaps/B5-fosa-posterior-tronco-encefalico.md` |
-| B6 | Tumores de cuarto ventrículo | B | Esqueleto | `mindmaps/B6-tumores-cuarto-ventriculo.md` |
-| B7 | Craneotomía despierta / mapeo cortical-subcortical | B | Esqueleto | `mindmaps/B7-craneotomia-despierta-mapeo-cortical-subcortical.md` |
+| B5 | Fosa posterior / tronco encefálico | B | En progreso | `mindmaps/B5-fosa-posterior-tronco-encefalico.md` |
+| B6 | Tumores de cuarto ventrículo | B | En progreso | `mindmaps/B6-tumores-cuarto-ventriculo.md` |
+| B7 | Craneotomía despierta / mapeo cortical-subcortical | B | Completo | `mindmaps/B7-craneotomia-despierta-mapeo-cortical-subcortical.md` |
 | B8 | Fosa posterior avanzado con criterios de troncoencefálico | B | En progreso | `mindmaps/B8-fosa-posterior-avanzado-con-criterios-de-troncoencefalico.md` |
 
 ## Bloque C
