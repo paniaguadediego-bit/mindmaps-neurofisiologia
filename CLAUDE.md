@@ -19,6 +19,15 @@ por encima de investigación primaria, salvo que se pida explícitamente lo cont
 
 **Plataforma:** Windows. No asumas comandos Unix ni que exista `python3`.
 
+**Repositorio y publicación:** el proyecto vive en GitHub —
+[github.com/paniaguadediego-bit/mindmaps-neurofisiologia](https://github.com/paniaguadediego-bit/mindmaps-neurofisiologia)
+(repo público, solo Pani tiene permiso de escritura) — con GitHub Pages sirviendo
+`index.html` en
+[paniaguadediego-bit.github.io/mindmaps-neurofisiologia](https://paniaguadediego-bit.github.io/mindmaps-neurofisiologia/).
+Publicar es siempre `git add` + `git commit` + `git push`: hasta el `push` todo se queda
+en local, es el único paso que hace público un cambio (confirmar con ella antes de
+hacerlo, salvo que ya lo haya pedido explícitamente en la misma conversación).
+
 ## Qué es este proyecto
 
 Un repositorio **vivo** de mindmaps de neurofisiología. Cada tema es UN mindmap = UNA
@@ -108,6 +117,29 @@ Reglas:
 - Es opcional: la mayoría de los temas no la necesitan. Solo se añade cuando la fuente da
   para profundizar de verdad en ese tema.
 
+## El visor (`index.html`)
+
+Autocontenido, sin JavaScript de terceros ni dependencias — todo el JS es un script
+propio embebido para dos cosas: el acordeón nativo de temas y el checkbox de estudiado.
+
+- **Bloques y temas son `<details>` nativos.** Los bloques (A/B/C) empiezan abiertos;
+  cada tema empieza cerrado. Los temas comparten `name="tema"`, así que abrir uno cierra
+  el resto automáticamente (acordeón nativo del navegador, sin JS) — soportado en
+  navegadores razonablemente recientes; en uno antiguo simplemente pueden quedar varios
+  abiertos a la vez, no rompe nada.
+- **La Ampliación va fusionada dentro del cuerpo del tema**, no en un desplegable propio
+  — al abrir un tema se ve todo de una vez.
+- **Checkbox "estudiado a mano" por tema**, con contador en la barra lateral. Se guarda en
+  `localStorage` del navegador — **no es contenido del proyecto, no toca los `.md`**, es
+  solo progreso de lectura personal. Por eso **no se sincroniza entre dispositivos**: el
+  estado marcado en el móvil no aparece en el PC ni en la tablet, cada navegador lleva su
+  propia cuenta. Si algún día hace falta sincronizarlo entre dispositivos, hará falta algo
+  más que HTML estático (backend/servicio) — no está planteado por ahora.
+- **Icono/PWA:** `icon.svg` (vectorial, recreado a partir del logo que dio Pani) y
+  `manifest.webmanifest` hacen que el sitio sea instalable como app desde Chrome en
+  Android ("Añadir a pantalla de inicio"). Si el logo cambia, se edita `icon.svg`
+  directamente — no hay generación automática de icono en `build.js`.
+
 ## Operaciones del sistema vivo
 
 **Añadir un tema (automatizado, recomendado):**
@@ -156,24 +188,37 @@ forzar uno concreto, `--no-build` para no regenerar el visor.
   marcar `(verificar)`.
 - No hardcodear el catálogo de temas ni de bloques en `build.js`: debe salir siempre de
   los archivos de `mindmaps/`.
-- No añadir tags, taxonomías ni base de datos más allá del front-matter de 5 campos.
+- No añadir tags, taxonomías ni base de datos más allá del front-matter de 5 campos. El
+  checkbox de "estudiado" del visor no cuenta como excepción — vive solo en
+  `localStorage` del navegador, nunca en los `.md`.
 - No usar frameworks, npm ni dependencias externas en el build.
 - No editar `MAPA_MAESTRO.md` ni `index.html` a mano — se pierden en el siguiente build.
 - No duplicar el mapa maestro ni las plantillas dentro de los archivos individuales de
   `mindmaps/`.
+- **No dejar nunca volcados de texto de los PDFs/docx de `fuentes/` sueltos en el repo**
+  (ej. salidas de `pdftotext`, notas de extracción). El repo es **público** — el `.gitignore`
+  excluye `fuentes/*.pdf`, `*.docx`, `*.doc` y `*.txt`, pero si se usa una herramienta que
+  escriba extracciones de texto en otro formato o ubicación, hay que borrarlas antes de
+  cualquier `git add`/`commit`. Ya pasó una vez (texto íntegro de dos libros con copyright
+  subido por error, tuvo que purgarse del historial con force-push) — verificar `git
+  status` después de cualquier tarea de investigación en fuentes antes de publicar.
 
 ## Estructura del repositorio
 
 ```
 ./
 ├── CLAUDE.md                    # este archivo
+├── README.md                    # presentación del proyecto para GitHub, editable a mano
 ├── MAPA_MAESTRO.md              # GENERADO por build.js, nunca a mano
 ├── index.html                   # GENERADO por build.js, nunca a mano
+├── icon.svg                     # logo/favicon/icono PWA, editable a mano
+├── manifest.webmanifest         # hace el visor instalable como app, editable a mano
 ├── PLANTILLAS.md                # las plantillas de ramas, editable a mano
 ├── mindmaps/                    # un .md por tema, nombre = CODIGO-slug.md
-├── fuentes/                     # PDFs de libros y artículos
-│   └── INDICE_FUENTES.md        # qué cubre cada fuente, editable a mano
+├── fuentes/                     # PDFs/docx de libros y artículos — NO se suben a git
+│   └── INDICE_FUENTES.md        # qué cubre cada fuente, editable a mano (sí se sube)
 ├── build.js                     # genera MAPA_MAESTRO.md e index.html (node build.js)
 ├── nuevo-tema.js                # crea un esqueleto de tema y ejecuta el build
+├── .gitignore                   # excluye fuentes/*.pdf|docx|doc|txt (copyright)
 └── .claude/skills/mindmap/SKILL.md
 ```
