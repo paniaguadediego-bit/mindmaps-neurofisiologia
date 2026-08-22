@@ -83,8 +83,10 @@ cita de la fuente. Cualquier dato numérico no confirmado se marca `(verificar)`
 ### Ampliación (opcional): ramas de profundización
 
 Un mindmap puede tener, después del árbol base, una sección opcional para quien quiera
-estudiar ese tema más a fondo — no es para dibujar a mano junto con la base, es contenido
-extra que en el visor aparece plegado y se despliega con un clic:
+estudiar ese tema más a fondo — no es para dibujar a mano junto con la base. En el visor
+se muestra fusionada dentro del mismo desplegable del tema (bajo un separador y la
+etiqueta "Ampliación — profundizar"), no como un desplegable aparte: al abrir un tema se
+ve todo de una vez, sin clics adicionales.
 
 ```markdown
 ## Ampliación — profundizar

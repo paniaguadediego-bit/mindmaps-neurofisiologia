@@ -228,7 +228,7 @@ function buildIndexHtml(temas, grupos) {
       const items = temasBloque
         .map(
           (t) =>
-            `<a href="#${t.codigo}" class="nav-item estado-${t.estado}"><span class="nav-codigo">${t.codigo}</span><span class="nav-titulo">${escapeHtml(t.titulo)}</span></a>`
+            `<a href="#${t.codigo}" class="nav-item estado-${t.estado}" data-codigo="${t.codigo}"><span class="nav-codigo">${t.codigo}</span><span class="nav-titulo">${escapeHtml(t.titulo)}</span></a>`
         )
         .join('\n');
       return `<div class="nav-bloque" style="--bloque-color:${colorPorBloque[bloque]}">
@@ -244,27 +244,32 @@ function buildIndexHtml(temas, grupos) {
         .map((t) => {
           const { base, ampliacion } = extractSections(t.body);
           const ampliacionHtml = ampliacion
-            ? `<details class="ampliacion">
-                <summary>Ampliación — profundizar</summary>
+            ? `<div class="ampliacion-inline">
+                <div class="ampliacion-label">Ampliación — profundizar</div>
                 <div class="tree-wrap"><pre class="tree">${escapeHtml(ampliacion)}</pre></div>
-              </details>`
+              </div>`
             : '';
-          return `<article class="tema" id="${t.codigo}" style="--bloque-color:${colorPorBloque[bloque]}">
-            <header class="tema-header">
+          return `<details class="tema" id="${t.codigo}" style="--bloque-color:${colorPorBloque[bloque]}" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="${t.codigo}" onclick="event.stopPropagation()" aria-label="Marcar ${t.codigo} como estudiado">
               <span class="tema-codigo">${t.codigo}</span>
               <h3 class="tema-titulo">${escapeHtml(t.titulo)}</h3>
               <span class="badge estado-${t.estado}">${ESTADO_LABEL[t.estado] || t.estado}</span>
               <span class="badge plantilla-badge">Plantilla ${escapeHtml(t.plantilla)}</span>
-            </header>
-            <div class="tree-wrap"><pre class="tree">${escapeHtml(base)}</pre></div>
-            ${ampliacionHtml}
-          </article>`;
+            </summary>
+            <div class="tema-body">
+              <div class="tree-wrap"><pre class="tree">${escapeHtml(base)}</pre></div>
+              ${ampliacionHtml}
+            </div>
+          </details>`;
         })
         .join('\n');
-      return `<section class="bloque-seccion" style="--bloque-color:${colorPorBloque[bloque]}">
-        <h2 class="bloque-titulo">Bloque ${escapeHtml(bloque)}</h2>
-        ${temasHtml}
-      </section>`;
+      return `<details class="bloque-seccion" style="--bloque-color:${colorPorBloque[bloque]}" open>
+        <summary class="bloque-titulo">Bloque ${escapeHtml(bloque)}</summary>
+        <div class="bloque-body">
+          ${temasHtml}
+        </div>
+      </details>`;
     })
     .join('\n');
 
@@ -396,14 +401,38 @@ main {
 }
 
 .bloque-seccion {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  border: none;
 }
 
 .bloque-titulo {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--bloque-color);
   border-bottom: 2px solid var(--bloque-color);
   padding-bottom: 0.35rem;
   font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.bloque-titulo::-webkit-details-marker { display: none; }
+
+.bloque-titulo::before {
+  content: "▾";
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.bloque-seccion:not([open]) .bloque-titulo::before {
+  transform: rotate(-90deg);
+}
+
+.bloque-body {
+  padding-top: 0.9rem;
 }
 
 .tema {
@@ -411,16 +440,53 @@ main {
   border: 1px solid var(--border);
   border-left: 4px solid var(--bloque-color);
   border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .tema-header {
+  cursor: pointer;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 0.6rem;
+  padding: 0.85rem 1.1rem;
+}
+
+.tema-header::-webkit-details-marker { display: none; }
+
+.tema-header::before {
+  content: "▾";
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.tema:not([open]) .tema-header::before {
+  transform: rotate(-90deg);
+}
+
+.estudiado-check {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: var(--estado-completo);
+  cursor: pointer;
+}
+
+.tema.estudiado {
+  opacity: 0.7;
+}
+
+.tema.estudiado .tema-titulo {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-muted);
+  text-decoration-thickness: 1.5px;
+}
+
+.tema-body {
+  padding: 0 1.1rem 1rem;
 }
 
 .tema-codigo {
@@ -453,6 +519,11 @@ main {
 .nav-item.estado-en-progreso .nav-codigo::after { content: " ●"; color: var(--estado-en-progreso); }
 .nav-item.estado-esqueleto .nav-codigo::after { content: " ○"; color: var(--estado-esqueleto); }
 
+.nav-item.estudiado .nav-titulo {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
 .tree-wrap {
   overflow-x: auto;
   background: var(--code-bg);
@@ -468,36 +539,19 @@ main {
   white-space: pre;
 }
 
-.ampliacion {
-  margin-top: 0.75rem;
+.ampliacion-inline {
+  margin-top: 0.85rem;
+  padding-top: 0.65rem;
   border-top: 1px dashed var(--border);
-  padding-top: 0.6rem;
 }
 
-.ampliacion summary {
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 600;
+.ampliacion-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--bloque-color);
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.ampliacion summary::-webkit-details-marker { display: none; }
-
-.ampliacion summary::before {
-  content: "▸";
-  transition: transform 0.15s ease;
-}
-
-.ampliacion[open] summary::before {
-  transform: rotate(90deg);
-}
-
-.ampliacion .tree-wrap {
-  margin-top: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
 }
 
 @media (max-width: 800px) {
@@ -514,11 +568,67 @@ main {
     ${completos}/${total} completos (${pct}%) · ${enProgreso} en progreso · ${esqueletos} esqueletos
     <div class="progreso-bar"><div class="progreso-fill" style="width:${pct}%"></div></div>
   </div>
+  <div class="progreso progreso-estudiado" id="estudiado-contador">0/${total} estudiados a mano</div>
   ${navHtml}
 </nav>
 <main>
   ${seccionesHtml}
 </main>
+<script>
+(function () {
+  var KEY = 'mio-mindmaps-estudiado';
+
+  function load() {
+    try {
+      return JSON.parse(localStorage.getItem(KEY)) || {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function save(state) {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(state));
+    } catch (e) {
+      /* localStorage no disponible (modo privado, etc.) — se ignora */
+    }
+  }
+
+  var state = load();
+  var checks = document.querySelectorAll('.estudiado-check');
+
+  function aplicar(codigo, estudiado) {
+    var tema = document.getElementById(codigo);
+    var nav = document.querySelector('.nav-item[data-codigo="' + codigo + '"]');
+    if (tema) tema.classList.toggle('estudiado', estudiado);
+    if (nav) nav.classList.toggle('estudiado', estudiado);
+  }
+
+  function actualizarContador() {
+    var hechos = 0;
+    checks.forEach(function (c) {
+      if (state[c.getAttribute('data-codigo')]) hechos++;
+    });
+    var el = document.getElementById('estudiado-contador');
+    if (el) el.textContent = hechos + '/' + checks.length + ' estudiados a mano';
+  }
+
+  checks.forEach(function (check) {
+    var codigo = check.getAttribute('data-codigo');
+    var estudiado = !!state[codigo];
+    check.checked = estudiado;
+    aplicar(codigo, estudiado);
+    check.addEventListener('change', function () {
+      state[codigo] = check.checked;
+      save(state);
+      aplicar(codigo, check.checked);
+      actualizarContador();
+    });
+  });
+
+  actualizarContador();
+})();
+</script>
 </body>
 </html>
 `;
