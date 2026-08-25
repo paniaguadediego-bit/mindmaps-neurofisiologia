@@ -1,7 +1,8 @@
 ---
 codigo: B1
 titulo: Columna — deformidad / escoliosis
-bloque: B
+area: IONM
+bloque: B — Contextos quirúrgicos
 plantilla: B
 estado: en-progreso
 ---

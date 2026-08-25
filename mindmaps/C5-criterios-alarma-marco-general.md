@@ -1,7 +1,8 @@
 ---
 codigo: C5
 titulo: Marco general de criterios de alarma
-bloque: C
+area: IONM
+bloque: C — Transversales
 plantilla: C
 estado: completo
 ---

@@ -1,7 +1,8 @@
 ---
 codigo: A8
 titulo: EEG intraoperatorio
-bloque: A
+area: IONM
+bloque: A — Modalidades de señal
 plantilla: A
 estado: en-progreso
 ---

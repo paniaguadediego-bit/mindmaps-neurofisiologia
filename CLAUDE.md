@@ -37,8 +37,29 @@ dibujo.
 
 **Vivo** significa que el catálogo de temas no es fijo: se añaden temas nuevos, se dividen
 temas existentes en versiones más específicas, se crean versiones más abiertas, y pueden
-sumarse bloques enteros nuevos (por ejemplo VEP intraoperatorios). El sistema debe
-soportar todo eso sin reorganizaciones manuales.
+sumarse bloques o **áreas** enteras nuevas. El sistema debe soportar todo eso sin
+reorganizaciones manuales.
+
+## Áreas
+
+El proyecto cubre varias áreas de neurofisiología, cada una con **su propia página** en el
+visor. `index.html` es el portal que las lista; cada área se descubre sola en cuanto un
+`.md` la declara en su front-matter.
+
+| Área | Estado | Página |
+|---|---|---|
+| `IONM` | 23 temas, bloques A/B/C | `ionm.html` |
+| `PPEE` | 19 temas, bloques A/B/V | `ppee.html` |
+| EMG, EEG, EEG infantil, EEG UCI | previstas, aún no creadas | — |
+
+**Códigos por área.** IONM usa códigos sin prefijo por motivos históricos (`A1`, `B7`,
+`C3`). **Toda área nueva lleva prefijo** para que el código sea autoexplicativo en la
+página de la libreta: PPEE usa `PE-A1`, `PE-B3`, `PE-V9`. `nuevo-tema.js` deduce el
+prefijo solo a partir de los temas que ya existan en esa área; para un área nueva se le
+pasa con `--prefijo "XX-"`.
+
+**Nunca recodificar un tema ya publicado** sin motivo de peso: Pani puede tener ya esa
+página dibujada a mano con ese código escrito.
 
 ## Reglas fundamentales
 
@@ -56,8 +77,22 @@ soportar todo eso sin reorganizaciones manuales.
    disponibles, escríbelo con `(verificar)` y dilo explícitamente. **Nunca inventes
    cifras, umbrales, latencias ni criterios de alarma**, ni los presentes como si
    vinieran de una guía. Prioriza ASNM/ACNS/ISION/IFCN sobre investigación primaria.
-5. **Equipo:** ver arriba (Inomed → Cadwell en octubre de 2026).
-6. **Después de cualquier cambio en `mindmaps/` o `PLANTILLAS.md`, ejecuta el build:**
+5. **Cada tema es AUTOCONTENIDO. No estudia en orden.** Está prohibido escribir un tema
+   que remita a otro para un dato ("los parámetros completos están en A5", "ver B8"): si
+   abre A7 sin haber leído A1, el tema tiene que sostenerse solo. Repite el dato con su
+   cita, aunque ya aparezca en otro mindmap. Los enlaces del tipo "esto se amplía en X"
+   solo valen como **añadido**, nunca como sustituto de la información.
+   - Corolario: **si un tema necesita más ramas de las que trae su plantilla, se añaden.**
+     La plantilla es un punto de partida, no un límite. Antes perder brevedad que perder
+     información.
+   - Tensión a vigilar: autocontenido + "una página de libreta" tiran en direcciones
+     opuestas. Si un tema se hace inabarcable para una página, **se parte en dos temas**
+     con códigos propios; no se resuelve recortando información ni volviendo a referenciar.
+   - Deuda conocida: los 23 temas de IONM se escribieron antes de esta regla y están
+     llenos de referencias cruzadas (B5 y B6 son casi solo "ver B8"; el bloque C entero es
+     referencial). Hay un retrofit pendiente, acordado para después de PPEE.
+6. **Equipo:** ver arriba (Inomed → Cadwell en octubre de 2026).
+7. **Después de cualquier cambio en `mindmaps/` o `PLANTILLAS.md`, ejecuta el build:**
 
    ```
    node build.js
@@ -70,19 +105,24 @@ soportar todo eso sin reorganizaciones manuales.
 
 ```yaml
 ---
-codigo: A4
-titulo: EMG libre (free-running)
-bloque: A
-plantilla: A
+codigo: PE-V3
+titulo: PEV normal: componentes N75-P100-N145 y medición
+area: PPEE
+bloque: V — Potenciales evocados visuales
+plantilla: E
 estado: esqueleto        # esqueleto | en-progreso | completo
 ---
 ```
 
-- `codigo`: letra de bloque + número. Los números crecen sin límite (A10, A11...).
-- `bloque`: no está cerrado en el código. Un bloque nuevo se recoge automáticamente por
-  el build en cuanto aparece en el front-matter de algún archivo.
-- `plantilla`: A, B o C según `PLANTILLAS.md` (o una nueva si se añade allí). Un tema
-  puede usar una plantilla de bloque distinto al suyo si tiene sentido.
+- `codigo`: prefijo de área (si lo hay) + letra de bloque + número. Los números crecen sin
+  límite (A10, A11...).
+- `area`: define en qué página del visor sale el tema. Si falta, el build asume `IONM`
+  (compatibilidad con los temas antiguos), pero en temas nuevos se pone siempre.
+- `bloque`: puede ser solo la letra (`A`) o letra + nombre (`V — Potenciales evocados
+  visuales`), que es lo que se muestra como título del bloque. No está cerrado en el
+  código: un bloque nuevo se recoge solo en cuanto aparece en algún archivo.
+- `plantilla`: A-F según `PLANTILLAS.md` (o una nueva si se añade allí). Un tema puede
+  usar una plantilla de otro bloque si tiene sentido.
 - `estado`: lo actualiza quien rellena el mindmap.
 
 Después del front-matter va el título (`# CODIGO — Título`) y el árbol en un bloque de
@@ -117,11 +157,21 @@ Reglas:
 - Es opcional: la mayoría de los temas no la necesitan. Solo se añade cuando la fuente da
   para profundizar de verdad en ese tema.
 
-## El visor (`index.html`)
+## El visor
 
 Autocontenido, sin JavaScript de terceros ni dependencias — todo el JS es un script
 propio embebido para dos cosas: el acordeón nativo de temas y el checkbox de estudiado.
 
+- **`index.html` es el portal de áreas**; cada área tiene su propia página
+  (`ionm.html`, `ppee.html`, ...), generada a partir del campo `area`. Todo lo generado
+  por `build.js` es desechable — nunca se edita a mano.
+- **Jerarquía tipográfica del árbol.** El visor NO pinta el árbol como bloque
+  monoespaciado: `build.js` parsea los conectores `├─ │ └─` y lo renderiza con tamaños y
+  pesos distintos por nivel (título > rama 1 > rama 2 > rama 3). Los `.md` conservan el
+  árbol ASCII intacto porque es lo que se copia a mano. Consecuencia práctica: **respeta
+  la indentación de 3 espacios por nivel** al escribir un árbol, o el parser calculará mal
+  la profundidad. Las líneas de continuación (las que siguen a una rama larga sin conector
+  propio) se fusionan solas con la rama anterior.
 - **Bloques y temas son `<details>` nativos.** Los bloques (A/B/C) empiezan abiertos;
   cada tema empieza cerrado. Los temas comparten `name="tema"`, así que abrir uno cierra
   el resto automáticamente (acordeón nativo del navegador, sin JS) — soportado en
@@ -145,8 +195,11 @@ propio embebido para dos cosas: el acordeón nativo de temas y el checkbox de es
 **Añadir un tema (automatizado, recomendado):**
 
 ```
-node nuevo-tema.js --bloque A --titulo "Título del tema nuevo"
+node nuevo-tema.js --area PPEE --bloque V --titulo "Título del tema nuevo"
 ```
+
+(Si se omite `--area`, usa la primera existente. Para un área nueva, añade
+`--prefijo "XX-"` la primera vez.)
 
 Calcula solo el siguiente código libre del bloque, genera `mindmaps/CODIGO-slug.md` con
 el front-matter y el esqueleto de ramas de la plantilla (leídas en vivo de
@@ -162,10 +215,16 @@ forzar uno concreto, `--no-build` para no regenerar el visor.
    su plantilla (ver `PLANTILLAS.md`).
 3. Ejecuta `node build.js`.
 
-**Añadir un área nueva** (ej. VEP intraoperatorios):
-1. Decide si es una modalidad más del bloque A o merece un bloque propio.
-2. Si es un bloque nuevo, basta con usar esa letra en el `bloque` del front-matter — el
-   build la descubre sola, sin tocar código.
+**Añadir un bloque nuevo** dentro de un área existente:
+1. Basta con usar una letra nueva en el `bloque` del front-matter — el build lo descubre
+   solo, sin tocar código.
+
+**Añadir un área nueva** (ej. EMG, EEG, EEG infantil, EEG UCI):
+1. Decide el prefijo de código (ej. `EMG-`) y las letras de sus bloques.
+2. `node nuevo-tema.js --area EMG --prefijo "EMG-" --bloque "A — Nombre del bloque"
+   --titulo "..."`. A partir del segundo tema el prefijo ya se deduce solo.
+3. El build genera su página (`emg.html`) y la añade al portal automáticamente.
+4. Añade las plantillas que necesite a `PLANTILLAS.md` si las existentes no encajan.
 
 **Dividir un tema** en versiones más específicas:
 1. Crea los archivos hijos con códigos nuevos.
@@ -188,9 +247,11 @@ forzar uno concreto, `--no-build` para no regenerar el visor.
   marcar `(verificar)`.
 - No hardcodear el catálogo de temas ni de bloques en `build.js`: debe salir siempre de
   los archivos de `mindmaps/`.
-- No añadir tags, taxonomías ni base de datos más allá del front-matter de 5 campos. El
+- No añadir tags, taxonomías ni base de datos más allá del front-matter de 6 campos. El
   checkbox de "estudiado" del visor no cuenta como excepción — vive solo en
   `localStorage` del navegador, nunca en los `.md`.
+- **No escribir un tema a base de referencias a otros** (ver regla 5): cada uno se estudia
+  suelto.
 - No usar frameworks, npm ni dependencias externas en el build.
 - No editar `MAPA_MAESTRO.md` ni `index.html` a mano — se pierden en el siguiente build.
 - No duplicar el mapa maestro ni las plantillas dentro de los archivos individuales de
@@ -210,7 +271,8 @@ forzar uno concreto, `--no-build` para no regenerar el visor.
 ├── CLAUDE.md                    # este archivo
 ├── README.md                    # presentación del proyecto para GitHub, editable a mano
 ├── MAPA_MAESTRO.md              # GENERADO por build.js, nunca a mano
-├── index.html                   # GENERADO por build.js, nunca a mano
+├── index.html                   # GENERADO: portal de áreas, nunca a mano
+├── ionm.html, ppee.html, ...    # GENERADOS: una página por área, nunca a mano
 ├── icon.svg                     # logo/favicon/icono PWA, editable a mano
 ├── manifest.webmanifest         # hace el visor instalable como app, editable a mano
 ├── PLANTILLAS.md                # las plantillas de ramas, editable a mano

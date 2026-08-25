@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<title>PPEE — Mindmaps de Neurofisiología</title>
+<style>
+:root {
+  --bg: #f7f7f8;
+  --bg-elevated: #ffffff;
+  --text: #1a1a1e;
+  --text-muted: #6b6b74;
+  --border: #e2e2e7;
+  --accent: #3b82f6;
+  --estado-esqueleto: #9ca3af;
+  --estado-en-progreso: #f59e0b;
+  --estado-completo: #10b981;
+  --code-bg: #f0f0f3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16161a;
+    --bg-elevated: #1e1e23;
+    --text: #ececef;
+    --text-muted: #9a9aa2;
+    --border: #2e2e35;
+    --code-bg: #101013;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+a { color: inherit; }
+
+.sidebar {
+  width: 290px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  padding: 1.25rem 1rem;
+  overflow-y: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar h1 {
+  font-size: 1.05rem;
+  margin: 0 0 0.15rem;
+}
+
+.volver {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+}
+
+.volver:hover { color: var(--accent); }
+
+.progreso {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.progreso-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--code-bg);
+  overflow: hidden;
+  margin-top: 0.35rem;
+}
+
+.progreso-fill { height: 100%; background: var(--estado-completo); }
+
+.nav-bloque { margin-bottom: 1rem; }
+
+.nav-bloque-titulo {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bloque-color);
+  font-weight: 600;
+  margin: 0.75rem 0 0.35rem;
+}
+
+.nav-item {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 0.2rem 0.3rem;
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+}
+
+.nav-item:hover { background: var(--code-bg); border-left-color: var(--bloque-color); }
+
+.nav-codigo {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+  color: var(--bloque-color);
+  flex-shrink: 0;
+}
+
+.nav-titulo {
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-item.estado-completo .nav-codigo::after { content: " ●"; color: var(--estado-completo); }
+.nav-item.estado-en-progreso .nav-codigo::after { content: " ●"; color: var(--estado-en-progreso); }
+.nav-item.estado-esqueleto .nav-codigo::after { content: " ○"; color: var(--estado-esqueleto); }
+
+.nav-item.estudiado .nav-titulo { text-decoration: line-through; opacity: 0.6; }
+
+main { flex: 1; padding: 2rem 2.5rem; max-width: 940px; }
+
+.bloque-seccion { margin-bottom: 2rem; border: none; }
+
+.bloque-titulo {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--bloque-color);
+  border-bottom: 2px solid var(--bloque-color);
+  padding-bottom: 0.35rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.bloque-titulo::-webkit-details-marker { display: none; }
+
+.bloque-titulo::before {
+  content: "▾";
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.bloque-seccion:not([open]) .bloque-titulo::before { transform: rotate(-90deg); }
+
+.bloque-body { padding-top: 0.9rem; }
+
+.tema {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--bloque-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tema-header {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.1rem;
+}
+
+.tema-header::-webkit-details-marker { display: none; }
+
+.tema-header::before {
+  content: "▾";
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.tema:not([open]) .tema-header::before { transform: rotate(-90deg); }
+
+.estudiado-check {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: var(--estado-completo);
+  cursor: pointer;
+}
+
+.tema.estudiado { opacity: 0.7; }
+
+.tema.estudiado .tema-titulo {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-muted);
+  text-decoration-thickness: 1.5px;
+}
+
+.tema-codigo {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  color: var(--bloque-color);
+}
+
+.tema-titulo { margin: 0; font-size: 1.05rem; flex: 1; min-width: 150px; }
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.badge.estado-esqueleto { color: var(--estado-esqueleto); border-color: var(--estado-esqueleto); }
+.badge.estado-en-progreso { color: var(--estado-en-progreso); border-color: var(--estado-en-progreso); }
+.badge.estado-completo { color: var(--estado-completo); border-color: var(--estado-completo); }
+
+.tema-body { padding: 0 1.1rem 1rem; }
+
+/* --- Árbol del mindmap: jerarquía tipográfica por nivel --- */
+
+.mm {
+  background: var(--code-bg);
+  border-radius: 6px;
+  padding: 0.95rem 1.1rem;
+  overflow-x: auto;
+}
+
+.mm-root {
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--bloque-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.mm-node {
+  /* Sangría francesa: al hacer wrap, el texto sigue alineado bajo el texto,
+     no bajo el marcador. */
+  padding-left: calc(var(--d) * 1.25rem + 1.05em);
+  text-indent: -1.05em;
+  line-height: 1.45;
+}
+
+.mm-node::before {
+  color: var(--bloque-color);
+  opacity: 0.8;
+  margin-right: 0.4rem;
+}
+
+.mm-node.n0 {
+  font-size: 1.02rem;
+  font-weight: 650;
+  margin-top: 0.7rem;
+  letter-spacing: -0.005em;
+}
+
+.mm-node.n0::before { content: "▸"; }
+
+.mm-node.n1 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 0.22rem;
+}
+
+.mm-node.n1::before { content: "–"; opacity: 0.55; }
+
+.mm-node.n2 {
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.mm-node.n2::before { content: "·"; opacity: 0.5; }
+
+.mm-node.n3 {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.mm-node.n3::before { content: "·"; opacity: 0.35; }
+
+.tree-wrap { overflow-x: auto; background: var(--code-bg); border-radius: 6px; }
+
+.tree {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.ampliacion-inline {
+  margin-top: 0.85rem;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--border);
+}
+
+.ampliacion-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--bloque-color);
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+/* --- Portal de áreas --- */
+
+.portal { max-width: 820px; margin: 0 auto; padding: 3rem 1.5rem; }
+.portal h1 { font-size: 1.6rem; margin: 0 0 0.3rem; }
+.portal .lead { color: var(--text-muted); margin: 0 0 2rem; font-size: 0.95rem; }
+
+.area-card {
+  display: block;
+  text-decoration: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--bloque-color);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.area-card:hover { border-color: var(--bloque-color); }
+.area-nombre { font-size: 1.2rem; font-weight: 700; color: var(--bloque-color); }
+.area-meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+.area-bloques { font-size: 0.85rem; margin-top: 0.6rem; line-height: 1.6; }
+
+@media (max-width: 800px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
+  main { padding: 1.25rem; }
+}
+
+body { display: flex; }
+</style>
+</head>
+<body class="layout">
+<nav class="sidebar">
+  <a class="volver" href="index.html">← Todas las áreas</a>
+  <h1>PPEE</h1>
+  <div class="progreso">
+    0/19 completos (0%) · 0 en progreso · 19 esqueletos
+    <div class="progreso-bar"><div class="progreso-fill" style="width:0%"></div></div>
+  </div>
+  <div class="progreso" id="estudiado-contador">0/19 estudiados a mano</div>
+  <div class="progreso"><a class="volver" href="ionm.html">IONM →</a></div>
+  <div class="nav-bloque" style="--bloque-color:#3b82f6">
+        <div class="nav-bloque-titulo">A — Bases fisiológicas y anatómicas</div>
+        <a href="#PE-A1" class="nav-item estado-esqueleto" data-codigo="PE-A1"><span class="nav-codigo">PE-A1</span><span class="nav-titulo">Génesis del potencial evocado</span></a>
+<a href="#PE-A2" class="nav-item estado-esqueleto" data-codigo="PE-A2"><span class="nav-codigo">PE-A2</span><span class="nav-titulo">Campo cercano vs. campo lejano</span></a>
+<a href="#PE-A3" class="nav-item estado-esqueleto" data-codigo="PE-A3"><span class="nav-codigo">PE-A3</span><span class="nav-titulo">Generadores: cómo se atribuye un pico a una estructura</span></a>
+<a href="#PE-A4" class="nav-item estado-esqueleto" data-codigo="PE-A4"><span class="nav-codigo">PE-A4</span><span class="nav-titulo">Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial)</span></a>
+      </div>
+<div class="nav-bloque" style="--bloque-color:#10b981">
+        <div class="nav-bloque-titulo">B — Bases técnicas de registro</div>
+        <a href="#PE-B1" class="nav-item estado-esqueleto" data-codigo="PE-B1"><span class="nav-codigo">PE-B1</span><span class="nav-titulo">Promediado y relación señal/ruido</span></a>
+<a href="#PE-B2" class="nav-item estado-esqueleto" data-codigo="PE-B2"><span class="nav-codigo">PE-B2</span><span class="nav-titulo">Cadena de registro: amplificación, filtros y conversión A/D</span></a>
+<a href="#PE-B3" class="nav-item estado-esqueleto" data-codigo="PE-B3"><span class="nav-codigo">PE-B3</span><span class="nav-titulo">Elección de parámetros de estimulación y registro</span></a>
+<a href="#PE-B4" class="nav-item estado-esqueleto" data-codigo="PE-B4"><span class="nav-codigo">PE-B4</span><span class="nav-titulo">Nomenclatura y mediciones de los componentes</span></a>
+<a href="#PE-B5" class="nav-item estado-esqueleto" data-codigo="PE-B5"><span class="nav-codigo">PE-B5</span><span class="nav-titulo">Criterios de anormalidad y factores del sujeto</span></a>
+<a href="#PE-B6" class="nav-item estado-esqueleto" data-codigo="PE-B6"><span class="nav-codigo">PE-B6</span><span class="nav-titulo">Artefactos y problemas frecuentes del registro</span></a>
+      </div>
+<div class="nav-bloque" style="--bloque-color:#f59e0b">
+        <div class="nav-bloque-titulo">V — Potenciales evocados visuales</div>
+        <a href="#PE-V1" class="nav-item estado-esqueleto" data-codigo="PE-V1"><span class="nav-codigo">PE-V1</span><span class="nav-titulo">Anatomía y fisiología de la vía visual</span></a>
+<a href="#PE-V2" class="nav-item estado-esqueleto" data-codigo="PE-V2"><span class="nav-codigo">PE-V2</span><span class="nav-titulo">PEV por damero: técnica y parámetros de registro</span></a>
+<a href="#PE-V3" class="nav-item estado-esqueleto" data-codigo="PE-V3"><span class="nav-codigo">PE-V3</span><span class="nav-titulo">PEV normal: componentes N75-P100-N145 y medición</span></a>
+<a href="#PE-V4" class="nav-item estado-esqueleto" data-codigo="PE-V4"><span class="nav-codigo">PE-V4</span><span class="nav-titulo">Generadores del PEV por damero</span></a>
+<a href="#PE-V5" class="nav-item estado-esqueleto" data-codigo="PE-V5"><span class="nav-codigo">PE-V5</span><span class="nav-titulo">Criterios de anormalidad e interpretación del PEV</span></a>
+<a href="#PE-V6" class="nav-item estado-esqueleto" data-codigo="PE-V6"><span class="nav-codigo">PE-V6</span><span class="nav-titulo">Factores que modifican el PEV</span></a>
+<a href="#PE-V7" class="nav-item estado-esqueleto" data-codigo="PE-V7"><span class="nav-codigo">PE-V7</span><span class="nav-titulo">Estimulación por hemicampos y distribución paradójica</span></a>
+<a href="#PE-V8" class="nav-item estado-esqueleto" data-codigo="PE-V8"><span class="nav-codigo">PE-V8</span><span class="nav-titulo">Flash VEP: indicaciones y limitaciones</span></a>
+<a href="#PE-V9" class="nav-item estado-esqueleto" data-codigo="PE-V9"><span class="nav-codigo">PE-V9</span><span class="nav-titulo">Aplicaciones clínicas del PEV</span></a>
+      </div>
+</nav>
+<main>
+  <details class="bloque-seccion" style="--bloque-color:#3b82f6" open>
+        <summary class="bloque-titulo">A — Bases fisiológicas y anatómicas</summary>
+        <div class="bloque-body">
+          <details class="tema" id="PE-A1" style="--bloque-color:#3b82f6" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-A1" onclick="event.stopPropagation()" aria-label="Marcar PE-A1 como estudiado">
+              <span class="tema-codigo">PE-A1</span>
+              <h3 class="tema-titulo">Génesis del potencial evocado</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Génesis del potencial evocado</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-A2" style="--bloque-color:#3b82f6" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-A2" onclick="event.stopPropagation()" aria-label="Marcar PE-A2 como estudiado">
+              <span class="tema-codigo">PE-A2</span>
+              <h3 class="tema-titulo">Campo cercano vs. campo lejano</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Campo cercano vs. campo lejano</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-A3" style="--bloque-color:#3b82f6" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-A3" onclick="event.stopPropagation()" aria-label="Marcar PE-A3 como estudiado">
+              <span class="tema-codigo">PE-A3</span>
+              <h3 class="tema-titulo">Generadores: cómo se atribuye un pico a una estructura</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Generadores: cómo se atribuye un pico a una estructura</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-A4" style="--bloque-color:#3b82f6" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-A4" onclick="event.stopPropagation()" aria-label="Marcar PE-A4 como estudiado">
+              <span class="tema-codigo">PE-A4</span>
+              <h3 class="tema-titulo">Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial)</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial)</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+        </div>
+      </details>
+<details class="bloque-seccion" style="--bloque-color:#10b981" open>
+        <summary class="bloque-titulo">B — Bases técnicas de registro</summary>
+        <div class="bloque-body">
+          <details class="tema" id="PE-B1" style="--bloque-color:#10b981" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-B1" onclick="event.stopPropagation()" aria-label="Marcar PE-B1 como estudiado">
+              <span class="tema-codigo">PE-B1</span>
+              <h3 class="tema-titulo">Promediado y relación señal/ruido</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Promediado y relación señal/ruido</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-B2" style="--bloque-color:#10b981" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-B2" onclick="event.stopPropagation()" aria-label="Marcar PE-B2 como estudiado">
+              <span class="tema-codigo">PE-B2</span>
+              <h3 class="tema-titulo">Cadena de registro: amplificación, filtros y conversión A/D</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Cadena de registro: amplificación, filtros y conversión A/D</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-B3" style="--bloque-color:#10b981" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-B3" onclick="event.stopPropagation()" aria-label="Marcar PE-B3 como estudiado">
+              <span class="tema-codigo">PE-B3</span>
+              <h3 class="tema-titulo">Elección de parámetros de estimulación y registro</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Elección de parámetros de estimulación y registro</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-B4" style="--bloque-color:#10b981" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-B4" onclick="event.stopPropagation()" aria-label="Marcar PE-B4 como estudiado">
+              <span class="tema-codigo">PE-B4</span>
+              <h3 class="tema-titulo">Nomenclatura y mediciones de los componentes</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Nomenclatura y mediciones de los componentes</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-B5" style="--bloque-color:#10b981" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-B5" onclick="event.stopPropagation()" aria-label="Marcar PE-B5 como estudiado">
+              <span class="tema-codigo">PE-B5</span>
+              <h3 class="tema-titulo">Criterios de anormalidad y factores del sujeto</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Criterios de anormalidad y factores del sujeto</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-B6" style="--bloque-color:#10b981" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-B6" onclick="event.stopPropagation()" aria-label="Marcar PE-B6 como estudiado">
+              <span class="tema-codigo">PE-B6</span>
+              <h3 class="tema-titulo">Artefactos y problemas frecuentes del registro</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Artefactos y problemas frecuentes del registro</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+        </div>
+      </details>
+<details class="bloque-seccion" style="--bloque-color:#f59e0b" open>
+        <summary class="bloque-titulo">V — Potenciales evocados visuales</summary>
+        <div class="bloque-body">
+          <details class="tema" id="PE-V1" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V1" onclick="event.stopPropagation()" aria-label="Marcar PE-V1 como estudiado">
+              <span class="tema-codigo">PE-V1</span>
+              <h3 class="tema-titulo">Anatomía y fisiología de la vía visual</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Anatomía y fisiología de la vía visual</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-V2" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V2" onclick="event.stopPropagation()" aria-label="Marcar PE-V2 como estudiado">
+              <span class="tema-codigo">PE-V2</span>
+              <h3 class="tema-titulo">PEV por damero: técnica y parámetros de registro</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla E</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">PEV por damero: técnica y parámetros de registro</div><div class="mm-node n0" style="--d:0">Vía anatómica completa</div>
+<div class="mm-node n0" style="--d:0">Fisiología de la respuesta</div>
+<div class="mm-node n0" style="--d:0">Estimulación: parámetros</div>
+<div class="mm-node n0" style="--d:0">Registro y montaje</div>
+<div class="mm-node n0" style="--d:0">Morfología normal y componentes</div>
+<div class="mm-node n0" style="--d:0">Generadores de cada componente</div>
+<div class="mm-node n0" style="--d:0">Mediciones y valores de referencia</div>
+<div class="mm-node n0" style="--d:0">Factores que modifican la respuesta</div>
+<div class="mm-node n0" style="--d:0">Criterios de anormalidad</div>
+<div class="mm-node n0" style="--d:0">Interpretación y patrones</div>
+<div class="mm-node n0" style="--d:0">Artefactos y troubleshooting</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-V3" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V3" onclick="event.stopPropagation()" aria-label="Marcar PE-V3 como estudiado">
+              <span class="tema-codigo">PE-V3</span>
+              <h3 class="tema-titulo">PEV normal: componentes N75-P100-N145 y medición</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla E</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">PEV normal: componentes N75-P100-N145 y medición</div><div class="mm-node n0" style="--d:0">Vía anatómica completa</div>
+<div class="mm-node n0" style="--d:0">Fisiología de la respuesta</div>
+<div class="mm-node n0" style="--d:0">Estimulación: parámetros</div>
+<div class="mm-node n0" style="--d:0">Registro y montaje</div>
+<div class="mm-node n0" style="--d:0">Morfología normal y componentes</div>
+<div class="mm-node n0" style="--d:0">Generadores de cada componente</div>
+<div class="mm-node n0" style="--d:0">Mediciones y valores de referencia</div>
+<div class="mm-node n0" style="--d:0">Factores que modifican la respuesta</div>
+<div class="mm-node n0" style="--d:0">Criterios de anormalidad</div>
+<div class="mm-node n0" style="--d:0">Interpretación y patrones</div>
+<div class="mm-node n0" style="--d:0">Artefactos y troubleshooting</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-V4" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V4" onclick="event.stopPropagation()" aria-label="Marcar PE-V4 como estudiado">
+              <span class="tema-codigo">PE-V4</span>
+              <h3 class="tema-titulo">Generadores del PEV por damero</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Generadores del PEV por damero</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-V5" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V5" onclick="event.stopPropagation()" aria-label="Marcar PE-V5 como estudiado">
+              <span class="tema-codigo">PE-V5</span>
+              <h3 class="tema-titulo">Criterios de anormalidad e interpretación del PEV</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla E</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Criterios de anormalidad e interpretación del PEV</div><div class="mm-node n0" style="--d:0">Vía anatómica completa</div>
+<div class="mm-node n0" style="--d:0">Fisiología de la respuesta</div>
+<div class="mm-node n0" style="--d:0">Estimulación: parámetros</div>
+<div class="mm-node n0" style="--d:0">Registro y montaje</div>
+<div class="mm-node n0" style="--d:0">Morfología normal y componentes</div>
+<div class="mm-node n0" style="--d:0">Generadores de cada componente</div>
+<div class="mm-node n0" style="--d:0">Mediciones y valores de referencia</div>
+<div class="mm-node n0" style="--d:0">Factores que modifican la respuesta</div>
+<div class="mm-node n0" style="--d:0">Criterios de anormalidad</div>
+<div class="mm-node n0" style="--d:0">Interpretación y patrones</div>
+<div class="mm-node n0" style="--d:0">Artefactos y troubleshooting</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-V6" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V6" onclick="event.stopPropagation()" aria-label="Marcar PE-V6 como estudiado">
+              <span class="tema-codigo">PE-V6</span>
+              <h3 class="tema-titulo">Factores que modifican el PEV</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Factores que modifican el PEV</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-V7" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V7" onclick="event.stopPropagation()" aria-label="Marcar PE-V7 como estudiado">
+              <span class="tema-codigo">PE-V7</span>
+              <h3 class="tema-titulo">Estimulación por hemicampos y distribución paradójica</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla E</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Estimulación por hemicampos y distribución paradójica</div><div class="mm-node n0" style="--d:0">Vía anatómica completa</div>
+<div class="mm-node n0" style="--d:0">Fisiología de la respuesta</div>
+<div class="mm-node n0" style="--d:0">Estimulación: parámetros</div>
+<div class="mm-node n0" style="--d:0">Registro y montaje</div>
+<div class="mm-node n0" style="--d:0">Morfología normal y componentes</div>
+<div class="mm-node n0" style="--d:0">Generadores de cada componente</div>
+<div class="mm-node n0" style="--d:0">Mediciones y valores de referencia</div>
+<div class="mm-node n0" style="--d:0">Factores que modifican la respuesta</div>
+<div class="mm-node n0" style="--d:0">Criterios de anormalidad</div>
+<div class="mm-node n0" style="--d:0">Interpretación y patrones</div>
+<div class="mm-node n0" style="--d:0">Artefactos y troubleshooting</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-V8" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V8" onclick="event.stopPropagation()" aria-label="Marcar PE-V8 como estudiado">
+              <span class="tema-codigo">PE-V8</span>
+              <h3 class="tema-titulo">Flash VEP: indicaciones y limitaciones</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla E</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Flash VEP: indicaciones y limitaciones</div><div class="mm-node n0" style="--d:0">Vía anatómica completa</div>
+<div class="mm-node n0" style="--d:0">Fisiología de la respuesta</div>
+<div class="mm-node n0" style="--d:0">Estimulación: parámetros</div>
+<div class="mm-node n0" style="--d:0">Registro y montaje</div>
+<div class="mm-node n0" style="--d:0">Morfología normal y componentes</div>
+<div class="mm-node n0" style="--d:0">Generadores de cada componente</div>
+<div class="mm-node n0" style="--d:0">Mediciones y valores de referencia</div>
+<div class="mm-node n0" style="--d:0">Factores que modifican la respuesta</div>
+<div class="mm-node n0" style="--d:0">Criterios de anormalidad</div>
+<div class="mm-node n0" style="--d:0">Interpretación y patrones</div>
+<div class="mm-node n0" style="--d:0">Artefactos y troubleshooting</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-V9" style="--bloque-color:#f59e0b" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-V9" onclick="event.stopPropagation()" aria-label="Marcar PE-V9 como estudiado">
+              <span class="tema-codigo">PE-V9</span>
+              <h3 class="tema-titulo">Aplicaciones clínicas del PEV</h3>
+              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge plantilla-badge">Plantilla F</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Aplicaciones clínicas del PEV</div><div class="mm-node n0" style="--d:0">Contexto clínico y pregunta que responde</div>
+<div class="mm-node n0" style="--d:0">Base fisiopatológica de la alteración</div>
+<div class="mm-node n0" style="--d:0">Protocolo específico en este contexto</div>
+<div class="mm-node n0" style="--d:0">Hallazgos típicos</div>
+<div class="mm-node n0" style="--d:0">Rendimiento diagnóstico</div>
+<div class="mm-node n0" style="--d:0">Diagnóstico diferencial electrofisiológico</div>
+<div class="mm-node n0" style="--d:0">Errores de interpretación</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n0" style="--d:0">Referencia</div></div>
+              
+            </div>
+          </details>
+        </div>
+      </details>
+</main>
+<script>
+(function () {
+  var KEY = 'mio-mindmaps-estudiado';
+  var AREA = "PPEE";
+
+  function loadAll() {
+    var raw;
+    try { raw = JSON.parse(localStorage.getItem(KEY)); } catch (e) { raw = null; }
+    if (!raw || typeof raw !== 'object') return {};
+    // Migración del formato antiguo (plano, sin áreas): era todo de IONM.
+    var plano = Object.keys(raw).some(function (k) { return typeof raw[k] === 'boolean'; });
+    if (plano) {
+      var migrado = { IONM: {} };
+      Object.keys(raw).forEach(function (k) {
+        if (typeof raw[k] === 'boolean') migrado.IONM[k] = raw[k];
+        else migrado[k] = raw[k];
+      });
+      return migrado;
+    }
+    return raw;
+  }
+
+  var all = loadAll();
+  var state = all[AREA] || (all[AREA] = {});
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(all)); } catch (e) {}
+  }
+
+  var checks = document.querySelectorAll('.estudiado-check');
+
+  function aplicar(codigo, estudiado) {
+    var tema = document.getElementById(codigo);
+    var nav = document.querySelector('.nav-item[data-codigo="' + codigo + '"]');
+    if (tema) tema.classList.toggle('estudiado', estudiado);
+    if (nav) nav.classList.toggle('estudiado', estudiado);
+  }
+
+  function actualizarContador() {
+    var hechos = 0;
+    checks.forEach(function (c) { if (state[c.getAttribute('data-codigo')]) hechos++; });
+    var el = document.getElementById('estudiado-contador');
+    if (el) el.textContent = hechos + '/' + checks.length + ' estudiados a mano';
+  }
+
+  checks.forEach(function (check) {
+    var codigo = check.getAttribute('data-codigo');
+    check.checked = !!state[codigo];
+    aplicar(codigo, check.checked);
+    check.addEventListener('change', function () {
+      state[codigo] = check.checked;
+      save();
+      aplicar(codigo, check.checked);
+      actualizarContador();
+    });
+  });
+
+  actualizarContador();
+})();
+</script>
+</body>
+</html>

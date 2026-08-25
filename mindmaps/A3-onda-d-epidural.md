@@ -1,7 +1,8 @@
 ---
 codigo: A3
 titulo: Onda D (D-wave epidural)
-bloque: A
+area: IONM
+bloque: A — Modalidades de señal
 plantilla: A
 estado: completo
 ---

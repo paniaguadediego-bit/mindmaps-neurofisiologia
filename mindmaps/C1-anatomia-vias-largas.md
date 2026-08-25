@@ -1,7 +1,8 @@
 ---
 codigo: C1
 titulo: Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales)
-bloque: C
+area: IONM
+bloque: C — Transversales
 plantilla: C
 estado: completo
 ---

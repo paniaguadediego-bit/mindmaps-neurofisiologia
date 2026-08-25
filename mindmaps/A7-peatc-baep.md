@@ -1,7 +1,8 @@
 ---
 codigo: A7
 titulo: PEATC / BAEP
-bloque: A
+area: IONM
+bloque: A — Modalidades de señal
 plantilla: A
 estado: completo
 ---

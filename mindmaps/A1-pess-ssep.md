@@ -1,7 +1,8 @@
 ---
 codigo: A1
 titulo: PESS / SSEP
-bloque: A
+area: IONM
+bloque: A — Modalidades de señal
 plantilla: A
 estado: completo
 ---

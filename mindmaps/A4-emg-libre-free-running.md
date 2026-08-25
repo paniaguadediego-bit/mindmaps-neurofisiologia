@@ -1,7 +1,8 @@
 ---
 codigo: A4
 titulo: EMG libre (free-running)
-bloque: A
+area: IONM
+bloque: A — Modalidades de señal
 plantilla: A
 estado: completo
 ---

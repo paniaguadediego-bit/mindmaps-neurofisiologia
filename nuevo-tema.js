@@ -58,23 +58,84 @@ function slugify(str) {
     .replace(/-{2,}/g, '-');
 }
 
-function nextCodigo(bloque) {
-  let max = 0;
-  let existe = false;
-  if (fs.existsSync(MINDMAPS_DIR)) {
-    for (const file of fs.readdirSync(MINDMAPS_DIR)) {
-      if (!file.endsWith('.md')) continue;
+/** Lee el front-matter mínimo (area, bloque, codigo) de todos los mindmaps. */
+function leerIndice() {
+  if (!fs.existsSync(MINDMAPS_DIR)) return [];
+  return fs
+    .readdirSync(MINDMAPS_DIR)
+    .filter((f) => f.endsWith('.md'))
+    .map((file) => {
       const raw = fs.readFileSync(path.join(MINDMAPS_DIR, file), 'utf8');
-      const b = raw.match(/^bloque:\s*(.+)$/m);
-      const c = raw.match(/^codigo:\s*(.+)$/m);
-      if (b && c && b[1].trim() === bloque) {
-        existe = true;
-        const n = c[1].trim().match(/(\d+)$/);
-        if (n) max = Math.max(max, parseInt(n[1], 10));
-      }
-    }
+      const get = (campo) => {
+        const m = raw.match(new RegExp('^' + campo + ':\\s*(.+)$', 'm'));
+        return m ? m[1].trim() : null;
+      };
+      return {
+        file,
+        area: get('area') || 'IONM',
+        bloque: get('bloque'),
+        codigo: get('codigo'),
+        plantilla: get('plantilla'),
+      };
+    })
+    .filter((t) => t.codigo && t.bloque);
+}
+
+/**
+ * Deduce el prefijo de código de un área a partir de sus temas existentes:
+ * "PE-V3" -> "PE-", "A1" -> "". Si el área es nueva, no hay prefijo que deducir.
+ */
+function prefijoDeArea(indice, area) {
+  for (const t of indice) {
+    if (t.area !== area) continue;
+    const m = t.codigo.match(/^(.*?)[A-Za-z](\d+)$/);
+    if (m) return m[1];
   }
-  return { codigo: `${bloque}${max + 1}`, esBloqueNuevo: !existe };
+  return null;
+}
+
+/**
+ * Plantilla por defecto de un bloque: la que ya usan sus temas. Solo si el bloque
+ * es nuevo se cae a la letra del bloque o a la primera disponible.
+ */
+function plantillaDeBloque(indice, area, letra) {
+  const usos = {};
+  for (const t of indice) {
+    if (t.area !== area || !t.plantilla) continue;
+    if (letraDeBloque(t.bloque) !== letra) continue;
+    usos[t.plantilla] = (usos[t.plantilla] || 0) + 1;
+  }
+  const orden = Object.keys(usos).sort((a, b) => usos[b] - usos[a]);
+  return orden[0] || null;
+}
+
+/** La letra de bloque es la inicial del campo `bloque` ("V — Visuales" -> "V"). */
+function letraDeBloque(bloque) {
+  const m = String(bloque).trim().match(/^([A-Za-z0-9]+)/);
+  return m ? m[1] : String(bloque).trim();
+}
+
+function nextCodigo(indice, area, bloque, prefijoForzado) {
+  const letra = letraDeBloque(bloque);
+  const prefijo = prefijoForzado !== null && prefijoForzado !== undefined
+    ? prefijoForzado
+    : (prefijoDeArea(indice, area) || '');
+
+  let max = 0;
+  let existeBloque = false;
+  for (const t of indice) {
+    if (t.area !== area) continue;
+    if (letraDeBloque(t.bloque) !== letra) continue;
+    existeBloque = true;
+    const n = t.codigo.match(/(\d+)$/);
+    if (n) max = Math.max(max, parseInt(n[1], 10));
+  }
+
+  return {
+    codigo: `${prefijo}${letra}${max + 1}`,
+    esBloqueNuevo: !existeBloque,
+    esAreaNueva: !indice.some((t) => t.area === area),
+  };
 }
 
 function buildArbol(titulo, ramas) {
@@ -85,7 +146,7 @@ function buildArbol(titulo, ramas) {
   return [titulo, ...lineas].join('\n');
 }
 
-function crearArchivo({ codigo, titulo, bloque, plantilla, ramas }) {
+function crearArchivo({ codigo, titulo, area, bloque, plantilla, ramas }) {
   const slug = slugify(titulo);
   const filename = `${codigo}-${slug}.md`;
   const fullPath = path.join(MINDMAPS_DIR, filename);
@@ -96,6 +157,7 @@ function crearArchivo({ codigo, titulo, bloque, plantilla, ramas }) {
     '---',
     `codigo: ${codigo}`,
     `titulo: ${titulo}`,
+    `area: ${area}`,
     `bloque: ${bloque}`,
     `plantilla: ${plantilla}`,
     'estado: esqueleto',
@@ -139,6 +201,10 @@ async function main() {
   const templates = parsePlantillas(fs.readFileSync(PLANTILLAS_PATH, 'utf8'));
   const letrasDisponibles = Object.keys(templates);
 
+  const indice = leerIndice();
+  const areasExistentes = [...new Set(indice.map((t) => t.area))].sort();
+
+  let area = args.area;
   let bloque = args.bloque;
   let titulo = args.titulo;
   let plantilla = args.plantilla;
@@ -147,18 +213,31 @@ async function main() {
 
   if (modoInteractivo) {
     const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    console.log(`Áreas existentes: ${areasExistentes.join(', ')}`);
     console.log(`Plantillas disponibles: ${letrasDisponibles.join(', ')}`);
-    if (!bloque) bloque = (await preguntar(rl, '¿Bloque del tema nuevo? (ej. A, B, C, o uno nuevo): ')).toUpperCase();
+    if (!area) {
+      const resp = await preguntar(rl, `¿Área? (por defecto ${areasExistentes[0] || 'IONM'}): `);
+      area = resp || areasExistentes[0] || 'IONM';
+    }
+    if (!bloque) {
+      bloque = await preguntar(rl, '¿Bloque? (letra, o "V — Nombre del bloque" si es nuevo): ');
+    }
     if (!titulo) titulo = await preguntar(rl, '¿Título del tema? ');
     if (!plantilla) {
-      const def = letrasDisponibles.includes(bloque) ? bloque : letrasDisponibles[0];
+      const letra = letraDeBloque(bloque);
+      const def = letrasDisponibles.includes(letra) ? letra : letrasDisponibles[0];
       const resp = await preguntar(rl, `¿Plantilla a usar? (por defecto ${def}): `);
       plantilla = resp || def;
     }
     rl.close();
   } else {
-    bloque = bloque.toUpperCase();
-    if (!plantilla) plantilla = letrasDisponibles.includes(bloque) ? bloque : letrasDisponibles[0];
+    area = area || areasExistentes[0] || 'IONM';
+    if (!plantilla) {
+      const letra = letraDeBloque(bloque);
+      plantilla =
+        plantillaDeBloque(indice, area, letra) ||
+        (letrasDisponibles.includes(letra) ? letra : letrasDisponibles[0]);
+    }
   }
 
   if (!titulo) {
@@ -170,9 +249,24 @@ async function main() {
     process.exit(1);
   }
 
-  const { codigo: codigoAuto, esBloqueNuevo } = nextCodigo(bloque);
+  // Si el bloque se dio solo como letra, reutiliza el nombre completo que ya
+  // tengan los temas de ese bloque en esa área.
+  const letraBloque = letraDeBloque(bloque);
+  if (bloque.trim() === letraBloque) {
+    const existente = indice.find((t) => t.area === area && letraDeBloque(t.bloque) === letraBloque);
+    if (existente) bloque = existente.bloque;
+  }
+
+  const prefijoForzado = typeof args.prefijo === 'string' ? args.prefijo : null;
+  const { codigo: codigoAuto, esBloqueNuevo, esAreaNueva } = nextCodigo(indice, area, bloque, prefijoForzado);
   const codigo = args.codigo || codigoAuto;
 
+  if (esAreaNueva) {
+    console.log(`[nuevo-tema] Área "${area}" no existía todavía — tendrá su propia página en el visor.`);
+    if (!prefijoForzado) {
+      console.log('[nuevo-tema] Sin prefijo de código: usa --prefijo "XX-" si quieres uno (ej. PE- para PPEE).');
+    }
+  }
   if (esBloqueNuevo) {
     console.log(`[nuevo-tema] Bloque "${bloque}" no existía todavía — se creará automáticamente.`);
   }
@@ -180,6 +274,7 @@ async function main() {
   const { filename } = crearArchivo({
     codigo,
     titulo,
+    area,
     bloque,
     plantilla,
     ramas: templates[plantilla].ramas,

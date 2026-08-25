@@ -5,7 +5,8 @@
  * Build script del proyecto de mindmaps.
  * Lee mindmaps/*.md, parsea su front-matter YAML y genera:
  *   - MAPA_MAESTRO.md
- *   - index.html
+ *   - index.html            (portal de áreas)
+ *   - <area>.html           (una página por área: ionm.html, ppee.html, ...)
  *
  * Sin dependencias externas. Solo librería estándar de Node.
  * Uso: node build.js
@@ -19,10 +20,16 @@ const MINDMAPS_DIR = path.join(ROOT, 'mindmaps');
 const MAPA_PATH = path.join(ROOT, 'MAPA_MAESTRO.md');
 const INDEX_PATH = path.join(ROOT, 'index.html');
 
-const ORDEN_TRABAJO = [
-  'C1', 'C2', 'A1', 'A2', 'A3', 'C5', 'A4', 'A5', 'C3', 'C4', 'C6', 'B2', 'B1', 'B3', 'B4',
-  'A6', 'A9', 'A7', 'B5', 'B6', 'B7', 'A8',
-];
+const AREA_DEFAULT = 'IONM';
+
+// Orden de estudio sugerido. Solo aplica al área indicada; los temas que no
+// aparezcan aquí se listan aparte, sin romper nada.
+const ORDEN_TRABAJO = {
+  IONM: [
+    'C1', 'C2', 'A1', 'A2', 'A3', 'C5', 'A4', 'A5', 'C3', 'C4', 'C6', 'B2', 'B1', 'B3',
+    'B4', 'A6', 'A9', 'A7', 'B5', 'B6', 'B7', 'A8',
+  ],
+};
 
 const ESTADO_LABEL = {
   esqueleto: 'Esqueleto',
@@ -78,9 +85,10 @@ function parseFrontMatter(raw, filename) {
   return { fm, body };
 }
 
+/** Separa un código en su parte alfabética y su número final: "PE-A10" -> ["PE-A", 10]. */
 function naturalCodeKey(codigo) {
-  const m = codigo.match(/^([A-Za-z]+)(\d+)$/);
-  if (!m) return [codigo, 0];
+  const m = String(codigo).match(/^(.*?)(\d+)$/);
+  if (!m) return [String(codigo), 0];
   return [m[1], parseInt(m[2], 10)];
 }
 
@@ -89,6 +97,16 @@ function compareCodigo(a, b) {
   const [lb, nb] = naturalCodeKey(b);
   if (la !== lb) return la < lb ? -1 : 1;
   return na - nb;
+}
+
+/** "PPEE" -> "ppee"; usado para el nombre de archivo de cada área. */
+function slugify(str) {
+  return String(str)
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'area';
 }
 
 function loadTemas() {
@@ -104,6 +122,7 @@ function loadTemas() {
       temas.push({
         codigo: fm.codigo,
         titulo: fm.titulo,
+        area: fm.area || AREA_DEFAULT,
         bloque: fm.bloque,
         plantilla: fm.plantilla,
         estado: fm.estado,
@@ -124,21 +143,39 @@ function loadTemas() {
   return temas;
 }
 
-function groupByBloque(temas) {
-  const bloques = new Map();
+/** Agrupa en áreas y, dentro de cada una, en bloques. Todo se descubre del front-matter. */
+function groupByArea(temas) {
+  const areas = new Map();
   for (const t of temas) {
-    if (!bloques.has(t.bloque)) bloques.set(t.bloque, []);
-    bloques.get(t.bloque).push(t);
+    if (!areas.has(t.area)) areas.set(t.area, []);
+    areas.get(t.area).push(t);
   }
-  const bloquesOrdenados = [...bloques.keys()].sort();
-  return bloquesOrdenados.map((b) => ({ bloque: b, temas: bloques.get(b) }));
+  return [...areas.keys()].sort().map((area) => {
+    const temasArea = areas.get(area);
+    const bloques = new Map();
+    for (const t of temasArea) {
+      if (!bloques.has(t.bloque)) bloques.set(t.bloque, []);
+      bloques.get(t.bloque).push(t);
+    }
+    const grupos = [...bloques.keys()]
+      .sort()
+      .map((b) => ({ bloque: b, temas: bloques.get(b) }));
+    return { area, slug: slugify(area), temas: temasArea, grupos };
+  });
 }
 
-function buildMapaMaestro(temas, grupos) {
-  const total = temas.length;
-  const completos = temas.filter((t) => t.estado === 'completo').length;
-  const enProgreso = temas.filter((t) => t.estado === 'en-progreso').length;
-  const esqueletos = temas.filter((t) => t.estado === 'esqueleto').length;
+function contarEstados(temas) {
+  return {
+    total: temas.length,
+    completos: temas.filter((t) => t.estado === 'completo').length,
+    enProgreso: temas.filter((t) => t.estado === 'en-progreso').length,
+    esqueletos: temas.filter((t) => t.estado === 'esqueleto').length,
+  };
+}
+
+function buildMapaMaestro(areas) {
+  const todos = areas.flatMap((a) => a.temas);
+  const c = contarEstados(todos);
 
   const lineas = [];
   lineas.push('# Mapa maestro');
@@ -149,40 +186,44 @@ function buildMapaMaestro(temas, grupos) {
   lineas.push('');
   lineas.push(`Generado: ${new Date().toISOString()}`);
   lineas.push('');
-  lineas.push(`Progreso: ${completos} completos · ${enProgreso} en progreso · ${esqueletos} esqueletos · ${total} temas totales.`);
+  lineas.push(
+    `Progreso global: ${c.completos} completos · ${c.enProgreso} en progreso · ${c.esqueletos} esqueletos · ${c.total} temas en ${areas.length} área(s).`
+  );
   lineas.push('');
 
-  for (const { bloque, temas: temasBloque } of grupos) {
-    lineas.push(`## Bloque ${bloque}`);
+  for (const { area, slug, temas: temasArea, grupos } of areas) {
+    const ca = contarEstados(temasArea);
+    lineas.push(`# Área ${area}`);
     lineas.push('');
-    lineas.push('| Código | Título | Plantilla | Estado | Archivo |');
-    lineas.push('|---|---|---|---|---|');
-    for (const t of temasBloque) {
-      const estadoLabel = ESTADO_LABEL[t.estado] || t.estado;
-      lineas.push(`| ${t.codigo} | ${t.titulo} | ${t.plantilla} | ${estadoLabel} | \`${t.archivo}\` |`);
+    lineas.push(`Visor: \`${slug}.html\` · ${ca.completos} completos · ${ca.enProgreso} en progreso · ${ca.esqueletos} esqueletos · ${ca.total} temas.`);
+    lineas.push('');
+
+    for (const { bloque, temas: temasBloque } of grupos) {
+      lineas.push(`## Bloque ${bloque}`);
+      lineas.push('');
+      lineas.push('| Código | Título | Plantilla | Estado | Archivo |');
+      lineas.push('|---|---|---|---|---|');
+      for (const t of temasBloque) {
+        const estadoLabel = ESTADO_LABEL[t.estado] || t.estado;
+        lineas.push(`| ${t.codigo} | ${t.titulo} | ${t.plantilla} | ${estadoLabel} | \`${t.archivo}\` |`);
+      }
+      lineas.push('');
     }
-    lineas.push('');
-  }
 
-  lineas.push('## Orden de trabajo sugerido');
-  lineas.push('');
-  lineas.push('Básico → avanzado. Se mantiene a mano; si aparecen temas nuevos no listados aquí,');
-  lineas.push('añádelos donde tengan sentido.');
-  lineas.push('');
-  const codigosExistentes = new Set(temas.map((t) => t.codigo));
-  const ordenValido = ORDEN_TRABAJO.filter((c) => codigosExistentes.has(c));
-  lineas.push(ordenValido.join(' → '));
-  const faltantes = ORDEN_TRABAJO.filter((c) => !codigosExistentes.has(c));
-  if (faltantes.length) {
-    lineas.push('');
-    lineas.push(`(Códigos del orden sugerido que ya no existen como archivo: ${faltantes.join(', ')})`);
+    const orden = ORDEN_TRABAJO[area];
+    if (orden) {
+      lineas.push('### Orden de trabajo sugerido');
+      lineas.push('');
+      const codigosExistentes = new Set(temasArea.map((t) => t.codigo));
+      lineas.push(orden.filter((c2) => codigosExistentes.has(c2)).join(' → '));
+      const nuevos = temasArea.filter((t) => !orden.includes(t.codigo));
+      if (nuevos.length) {
+        lineas.push('');
+        lineas.push(`Temas aún sin ubicar en el orden: ${nuevos.map((t) => t.codigo).join(', ')}`);
+      }
+      lineas.push('');
+    }
   }
-  const nuevos = temas.filter((t) => !ORDEN_TRABAJO.includes(t.codigo));
-  if (nuevos.length) {
-    lineas.push('');
-    lineas.push(`Temas nuevos aún sin ubicar en el orden de trabajo: ${nuevos.map((t) => t.codigo).join(', ')}`);
-  }
-  lineas.push('');
 
   return lineas.join('\n');
 }
@@ -211,80 +252,65 @@ function extractSections(body) {
   };
 }
 
-function buildIndexHtml(temas, grupos) {
-  const total = temas.length;
-  const completos = temas.filter((t) => t.estado === 'completo').length;
-  const enProgreso = temas.filter((t) => t.estado === 'en-progreso').length;
-  const esqueletos = temas.filter((t) => t.estado === 'esqueleto').length;
-  const pct = total ? Math.round((completos / total) * 100) : 0;
+/**
+ * Convierte el árbol de texto (conectores ├─ │ └─) en una lista de nodos con
+ * profundidad, para poder renderizarlo con jerarquía tipográfica real en el visor.
+ * Los .md siguen guardando el árbol ASCII: es lo que se copia a mano.
+ */
+function parseTree(tree) {
+  const lines = tree.split('\n');
+  const nodos = [];
+  let raiz = '';
 
-  const colorPorBloque = {};
-  grupos.forEach((g, i) => {
-    colorPorBloque[g.bloque] = PALETA[i % PALETA.length];
-  });
+  for (const line of lines) {
+    if (!line.trim()) continue;
 
-  const navHtml = grupos
-    .map(({ bloque, temas: temasBloque }) => {
-      const items = temasBloque
-        .map(
-          (t) =>
-            `<a href="#${t.codigo}" class="nav-item estado-${t.estado}" data-codigo="${t.codigo}"><span class="nav-codigo">${t.codigo}</span><span class="nav-titulo">${escapeHtml(t.titulo)}</span></a>`
-        )
-        .join('\n');
-      return `<div class="nav-bloque" style="--bloque-color:${colorPorBloque[bloque]}">
-        <div class="nav-bloque-titulo">Bloque ${escapeHtml(bloque)}</div>
-        ${items}
-      </div>`;
+    const idx = (() => {
+      const a = line.indexOf('├─');
+      const b = line.indexOf('└─');
+      if (a === -1) return b;
+      if (b === -1) return a;
+      return Math.min(a, b);
+    })();
+
+    if (idx >= 0) {
+      // Nodo nuevo. Cada nivel indenta 3 caracteres ("│  ").
+      nodos.push({ depth: Math.round(idx / 3), text: line.slice(idx + 2).trim() });
+      continue;
+    }
+
+    // Sin conector: o es la raíz, o una continuación, o una línea suelta a nivel 0.
+    if (!nodos.length && !raiz) {
+      raiz = line.trim();
+    } else if (/^[\s│]/.test(line) && nodos.length) {
+      // Continuación de la línea anterior: hay que quitar los conectores de
+      // relleno ("│  │  "), no solo el espacio en blanco.
+      nodos[nodos.length - 1].text += ' ' + line.replace(/^[\s│]+/, '').trim();
+    } else {
+      nodos.push({ depth: 0, text: line.trim() });
+    }
+  }
+
+  return { raiz, nodos };
+}
+
+function renderTree(tree) {
+  const { raiz, nodos } = parseTree(tree);
+  // Si el árbol no se deja parsear, no perdemos el contenido: se pinta tal cual.
+  if (!nodos.length) {
+    return `<div class="tree-wrap"><pre class="tree">${escapeHtml(tree)}</pre></div>`;
+  }
+  const cuerpo = nodos
+    .map((n) => {
+      const nivel = Math.min(n.depth, 3);
+      return `<div class="mm-node n${nivel}" style="--d:${n.depth}">${escapeHtml(n.text)}</div>`;
     })
     .join('\n');
+  const raizHtml = raiz ? `<div class="mm-root">${escapeHtml(raiz)}</div>` : '';
+  return `<div class="mm">${raizHtml}${cuerpo}</div>`;
+}
 
-  const seccionesHtml = grupos
-    .map(({ bloque, temas: temasBloque }) => {
-      const temasHtml = temasBloque
-        .map((t) => {
-          const { base, ampliacion } = extractSections(t.body);
-          const ampliacionHtml = ampliacion
-            ? `<div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">${escapeHtml(ampliacion)}</pre></div>
-              </div>`
-            : '';
-          return `<details class="tema" id="${t.codigo}" style="--bloque-color:${colorPorBloque[bloque]}" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="${t.codigo}" onclick="event.stopPropagation()" aria-label="Marcar ${t.codigo} como estudiado">
-              <span class="tema-codigo">${t.codigo}</span>
-              <h3 class="tema-titulo">${escapeHtml(t.titulo)}</h3>
-              <span class="badge estado-${t.estado}">${ESTADO_LABEL[t.estado] || t.estado}</span>
-              <span class="badge plantilla-badge">Plantilla ${escapeHtml(t.plantilla)}</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">${escapeHtml(base)}</pre></div>
-              ${ampliacionHtml}
-            </div>
-          </details>`;
-        })
-        .join('\n');
-      return `<details class="bloque-seccion" style="--bloque-color:${colorPorBloque[bloque]}" open>
-        <summary class="bloque-titulo">Bloque ${escapeHtml(bloque)}</summary>
-        <div class="bloque-body">
-          ${temasHtml}
-        </div>
-      </details>`;
-    })
-    .join('\n');
-
-  return `<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mindmaps de Neurofisiología</title>
-<link rel="icon" type="image/svg+xml" href="icon.svg">
-<link rel="apple-touch-icon" href="icon.svg">
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#000000">
-<meta name="mobile-web-app-capable" content="yes">
-<style>
+const ESTILOS = `
 :root {
   --bg: #f7f7f8;
   --bg-elevated: #ffffff;
@@ -316,12 +342,13 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  display: flex;
   min-height: 100vh;
 }
 
+a { color: inherit; }
+
 .sidebar {
-  width: 280px;
+  width: 290px;
   flex-shrink: 0;
   border-right: 1px solid var(--border);
   padding: 1.25rem 1rem;
@@ -333,13 +360,23 @@ body {
 
 .sidebar h1 {
   font-size: 1.05rem;
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.15rem;
 }
+
+.volver {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+}
+
+.volver:hover { color: var(--accent); }
 
 .progreso {
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .progreso-bar {
@@ -350,14 +387,9 @@ body {
   margin-top: 0.35rem;
 }
 
-.progreso-fill {
-  height: 100%;
-  background: var(--estado-completo);
-}
+.progreso-fill { height: 100%; background: var(--estado-completo); }
 
-.nav-bloque {
-  margin-bottom: 1rem;
-}
+.nav-bloque { margin-bottom: 1rem; }
 
 .nav-bloque-titulo {
   font-size: 0.7rem;
@@ -380,10 +412,7 @@ body {
   border-left: 2px solid transparent;
 }
 
-.nav-item:hover {
-  background: var(--code-bg);
-  border-left-color: var(--bloque-color);
-}
+.nav-item:hover { background: var(--code-bg); border-left-color: var(--bloque-color); }
 
 .nav-codigo {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -399,16 +428,15 @@ body {
   white-space: nowrap;
 }
 
-main {
-  flex: 1;
-  padding: 2rem 2.5rem;
-  max-width: 900px;
-}
+.nav-item.estado-completo .nav-codigo::after { content: " ●"; color: var(--estado-completo); }
+.nav-item.estado-en-progreso .nav-codigo::after { content: " ●"; color: var(--estado-en-progreso); }
+.nav-item.estado-esqueleto .nav-codigo::after { content: " ○"; color: var(--estado-esqueleto); }
 
-.bloque-seccion {
-  margin-bottom: 2rem;
-  border: none;
-}
+.nav-item.estudiado .nav-titulo { text-decoration: line-through; opacity: 0.6; }
+
+main { flex: 1; padding: 2rem 2.5rem; max-width: 940px; }
+
+.bloque-seccion { margin-bottom: 2rem; border: none; }
 
 .bloque-titulo {
   cursor: pointer;
@@ -432,13 +460,9 @@ main {
   transition: transform 0.15s ease;
 }
 
-.bloque-seccion:not([open]) .bloque-titulo::before {
-  transform: rotate(-90deg);
-}
+.bloque-seccion:not([open]) .bloque-titulo::before { transform: rotate(-90deg); }
 
-.bloque-body {
-  padding-top: 0.9rem;
-}
+.bloque-body { padding-top: 0.9rem; }
 
 .tema {
   background: var(--bg-elevated);
@@ -468,9 +492,7 @@ main {
   transition: transform 0.15s ease;
 }
 
-.tema:not([open]) .tema-header::before {
-  transform: rotate(-90deg);
-}
+.tema:not([open]) .tema-header::before { transform: rotate(-90deg); }
 
 .estudiado-check {
   width: 17px;
@@ -480,18 +502,12 @@ main {
   cursor: pointer;
 }
 
-.tema.estudiado {
-  opacity: 0.7;
-}
+.tema.estudiado { opacity: 0.7; }
 
 .tema.estudiado .tema-titulo {
   text-decoration: line-through;
   text-decoration-color: var(--text-muted);
   text-decoration-thickness: 1.5px;
-}
-
-.tema-body {
-  padding: 0 1.1rem 1rem;
 }
 
 .tema-codigo {
@@ -500,12 +516,7 @@ main {
   color: var(--bloque-color);
 }
 
-.tema-titulo {
-  margin: 0;
-  font-size: 1.05rem;
-  flex: 1;
-  min-width: 150px;
-}
+.tema-titulo { margin: 0; font-size: 1.05rem; flex: 1; min-width: 150px; }
 
 .badge {
   font-size: 0.7rem;
@@ -520,20 +531,76 @@ main {
 .badge.estado-en-progreso { color: var(--estado-en-progreso); border-color: var(--estado-en-progreso); }
 .badge.estado-completo { color: var(--estado-completo); border-color: var(--estado-completo); }
 
-.nav-item.estado-completo .nav-codigo::after { content: " ●"; color: var(--estado-completo); }
-.nav-item.estado-en-progreso .nav-codigo::after { content: " ●"; color: var(--estado-en-progreso); }
-.nav-item.estado-esqueleto .nav-codigo::after { content: " ○"; color: var(--estado-esqueleto); }
+.tema-body { padding: 0 1.1rem 1rem; }
 
-.nav-item.estudiado .nav-titulo {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
+/* --- Árbol del mindmap: jerarquía tipográfica por nivel --- */
 
-.tree-wrap {
-  overflow-x: auto;
+.mm {
   background: var(--code-bg);
   border-radius: 6px;
+  padding: 0.95rem 1.1rem;
+  overflow-x: auto;
 }
+
+.mm-root {
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--bloque-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.mm-node {
+  /* Sangría francesa: al hacer wrap, el texto sigue alineado bajo el texto,
+     no bajo el marcador. */
+  padding-left: calc(var(--d) * 1.25rem + 1.05em);
+  text-indent: -1.05em;
+  line-height: 1.45;
+}
+
+.mm-node::before {
+  color: var(--bloque-color);
+  opacity: 0.8;
+  margin-right: 0.4rem;
+}
+
+.mm-node.n0 {
+  font-size: 1.02rem;
+  font-weight: 650;
+  margin-top: 0.7rem;
+  letter-spacing: -0.005em;
+}
+
+.mm-node.n0::before { content: "▸"; }
+
+.mm-node.n1 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 0.22rem;
+}
+
+.mm-node.n1::before { content: "–"; opacity: 0.55; }
+
+.mm-node.n2 {
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.mm-node.n2::before { content: "·"; opacity: 0.5; }
+
+.mm-node.n3 {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.mm-node.n3::before { content: "·"; opacity: 0.35; }
+
+.tree-wrap { overflow-x: auto; background: var(--code-bg); border-radius: 6px; }
 
 .tree {
   margin: 0;
@@ -559,47 +626,74 @@ main {
   margin-bottom: 0.45rem;
 }
 
+/* --- Portal de áreas --- */
+
+.portal { max-width: 820px; margin: 0 auto; padding: 3rem 1.5rem; }
+.portal h1 { font-size: 1.6rem; margin: 0 0 0.3rem; }
+.portal .lead { color: var(--text-muted); margin: 0 0 2rem; font-size: 0.95rem; }
+
+.area-card {
+  display: block;
+  text-decoration: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--bloque-color);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.area-card:hover { border-color: var(--bloque-color); }
+.area-nombre { font-size: 1.2rem; font-weight: 700; color: var(--bloque-color); }
+.area-meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+.area-bloques { font-size: 0.85rem; margin-top: 0.6rem; line-height: 1.6; }
+
 @media (max-width: 800px) {
-  body { flex-direction: column; }
+  .layout { flex-direction: column; }
   .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
   main { padding: 1.25rem; }
 }
-</style>
-</head>
-<body>
-<nav class="sidebar">
-  <h1>Mindmaps de Neurofisiología</h1>
-  <div class="progreso">
-    ${completos}/${total} completos (${pct}%) · ${enProgreso} en progreso · ${esqueletos} esqueletos
-    <div class="progreso-bar"><div class="progreso-fill" style="width:${pct}%"></div></div>
-  </div>
-  <div class="progreso progreso-estudiado" id="estudiado-contador">0/${total} estudiados a mano</div>
-  ${navHtml}
-</nav>
-<main>
-  ${seccionesHtml}
-</main>
-<script>
+`;
+
+const HEAD_COMUN = `<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">`;
+
+/** Script de progreso "estudiado a mano", persistido por área en localStorage. */
+function scriptEstudiado(area) {
+  return `<script>
 (function () {
   var KEY = 'mio-mindmaps-estudiado';
+  var AREA = ${JSON.stringify(area)};
 
-  function load() {
-    try {
-      return JSON.parse(localStorage.getItem(KEY)) || {};
-    } catch (e) {
-      return {};
+  function loadAll() {
+    var raw;
+    try { raw = JSON.parse(localStorage.getItem(KEY)); } catch (e) { raw = null; }
+    if (!raw || typeof raw !== 'object') return {};
+    // Migración del formato antiguo (plano, sin áreas): era todo de IONM.
+    var plano = Object.keys(raw).some(function (k) { return typeof raw[k] === 'boolean'; });
+    if (plano) {
+      var migrado = { IONM: {} };
+      Object.keys(raw).forEach(function (k) {
+        if (typeof raw[k] === 'boolean') migrado.IONM[k] = raw[k];
+        else migrado[k] = raw[k];
+      });
+      return migrado;
     }
+    return raw;
   }
 
-  function save(state) {
-    try {
-      localStorage.setItem(KEY, JSON.stringify(state));
-    } catch (e) {
-      /* localStorage no disponible (modo privado, etc.) — se ignora */
-    }
+  var all = loadAll();
+  var state = all[AREA] || (all[AREA] = {});
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(all)); } catch (e) {}
   }
 
-  var state = load();
   var checks = document.querySelectorAll('.estudiado-check');
 
   function aplicar(codigo, estudiado) {
@@ -611,21 +705,18 @@ main {
 
   function actualizarContador() {
     var hechos = 0;
-    checks.forEach(function (c) {
-      if (state[c.getAttribute('data-codigo')]) hechos++;
-    });
+    checks.forEach(function (c) { if (state[c.getAttribute('data-codigo')]) hechos++; });
     var el = document.getElementById('estudiado-contador');
     if (el) el.textContent = hechos + '/' + checks.length + ' estudiados a mano';
   }
 
   checks.forEach(function (check) {
     var codigo = check.getAttribute('data-codigo');
-    var estudiado = !!state[codigo];
-    check.checked = estudiado;
-    aplicar(codigo, estudiado);
+    check.checked = !!state[codigo];
+    aplicar(codigo, check.checked);
     check.addEventListener('change', function () {
       state[codigo] = check.checked;
-      save(state);
+      save();
       aplicar(codigo, check.checked);
       actualizarContador();
     });
@@ -633,7 +724,134 @@ main {
 
   actualizarContador();
 })();
-</script>
+</script>`;
+}
+
+function buildAreaPage(areaInfo, todasLasAreas) {
+  const { area, temas, grupos } = areaInfo;
+  const c = contarEstados(temas);
+  const pct = c.total ? Math.round((c.completos / c.total) * 100) : 0;
+
+  const colorPorBloque = {};
+  grupos.forEach((g, i) => {
+    colorPorBloque[g.bloque] = PALETA[i % PALETA.length];
+  });
+
+  const navHtml = grupos
+    .map(({ bloque, temas: temasBloque }) => {
+      const items = temasBloque
+        .map(
+          (t) =>
+            `<a href="#${t.codigo}" class="nav-item estado-${t.estado}" data-codigo="${t.codigo}"><span class="nav-codigo">${escapeHtml(t.codigo)}</span><span class="nav-titulo">${escapeHtml(t.titulo)}</span></a>`
+        )
+        .join('\n');
+      return `<div class="nav-bloque" style="--bloque-color:${colorPorBloque[bloque]}">
+        <div class="nav-bloque-titulo">${escapeHtml(bloque)}</div>
+        ${items}
+      </div>`;
+    })
+    .join('\n');
+
+  const seccionesHtml = grupos
+    .map(({ bloque, temas: temasBloque }) => {
+      const temasHtml = temasBloque
+        .map((t) => {
+          const { base, ampliacion } = extractSections(t.body);
+          const ampliacionHtml = ampliacion
+            ? `<div class="ampliacion-inline">
+                <div class="ampliacion-label">Ampliación — profundizar</div>
+                ${renderTree(ampliacion)}
+              </div>`
+            : '';
+          return `<details class="tema" id="${t.codigo}" style="--bloque-color:${colorPorBloque[bloque]}" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="${t.codigo}" onclick="event.stopPropagation()" aria-label="Marcar ${escapeHtml(t.codigo)} como estudiado">
+              <span class="tema-codigo">${escapeHtml(t.codigo)}</span>
+              <h3 class="tema-titulo">${escapeHtml(t.titulo)}</h3>
+              <span class="badge estado-${t.estado}">${ESTADO_LABEL[t.estado] || t.estado}</span>
+              <span class="badge plantilla-badge">Plantilla ${escapeHtml(t.plantilla)}</span>
+            </summary>
+            <div class="tema-body">
+              ${renderTree(base)}
+              ${ampliacionHtml}
+            </div>
+          </details>`;
+        })
+        .join('\n');
+      return `<details class="bloque-seccion" style="--bloque-color:${colorPorBloque[bloque]}" open>
+        <summary class="bloque-titulo">${escapeHtml(bloque)}</summary>
+        <div class="bloque-body">
+          ${temasHtml}
+        </div>
+      </details>`;
+    })
+    .join('\n');
+
+  const otrasAreas = todasLasAreas
+    .filter((a) => a.area !== area)
+    .map((a) => `<a class="volver" href="${a.slug}.html">${escapeHtml(a.area)} →</a>`)
+    .join(' ');
+
+  return `<!doctype html>
+<html lang="es">
+<head>
+${HEAD_COMUN}
+<title>${escapeHtml(area)} — Mindmaps de Neurofisiología</title>
+<style>${ESTILOS}
+body { display: flex; }
+</style>
+</head>
+<body class="layout">
+<nav class="sidebar">
+  <a class="volver" href="index.html">← Todas las áreas</a>
+  <h1>${escapeHtml(area)}</h1>
+  <div class="progreso">
+    ${c.completos}/${c.total} completos (${pct}%) · ${c.enProgreso} en progreso · ${c.esqueletos} esqueletos
+    <div class="progreso-bar"><div class="progreso-fill" style="width:${pct}%"></div></div>
+  </div>
+  <div class="progreso" id="estudiado-contador">0/${c.total} estudiados a mano</div>
+  ${otrasAreas ? `<div class="progreso">${otrasAreas}</div>` : ''}
+  ${navHtml}
+</nav>
+<main>
+  ${seccionesHtml}
+</main>
+${scriptEstudiado(area)}
+</body>
+</html>
+`;
+}
+
+function buildPortal(areas) {
+  const cards = areas
+    .map((a, i) => {
+      const c = contarEstados(a.temas);
+      const pct = c.total ? Math.round((c.completos / c.total) * 100) : 0;
+      const color = PALETA[i % PALETA.length];
+      const bloques = a.grupos
+        .map((g) => `${escapeHtml(g.bloque)} <span style="color:var(--text-muted)">(${g.temas.length})</span>`)
+        .join(' · ');
+      return `<a class="area-card" href="${a.slug}.html" style="--bloque-color:${color}">
+        <div class="area-nombre">${escapeHtml(a.area)}</div>
+        <div class="area-meta">${c.total} temas · ${c.completos} completos (${pct}%) · ${c.enProgreso} en progreso · ${c.esqueletos} esqueletos</div>
+        <div class="area-bloques">${bloques}</div>
+      </a>`;
+    })
+    .join('\n');
+
+  return `<!doctype html>
+<html lang="es">
+<head>
+${HEAD_COMUN}
+<title>Mindmaps de Neurofisiología</title>
+<style>${ESTILOS}</style>
+</head>
+<body>
+<div class="portal">
+  <h1>Mindmaps de Neurofisiología</h1>
+  <p class="lead">Guiones de mindmap para dibujar a mano. Elige un área.</p>
+  ${cards}
+</div>
 </body>
 </html>
 `;
@@ -646,14 +864,17 @@ function main() {
   }
 
   const temas = loadTemas();
-  const grupos = groupByBloque(temas);
+  const areas = groupByArea(temas);
 
-  fs.writeFileSync(MAPA_PATH, buildMapaMaestro(temas, grupos), 'utf8');
-  fs.writeFileSync(INDEX_PATH, buildIndexHtml(temas, grupos), 'utf8');
+  fs.writeFileSync(MAPA_PATH, buildMapaMaestro(areas), 'utf8');
+  fs.writeFileSync(INDEX_PATH, buildPortal(areas), 'utf8');
+  for (const areaInfo of areas) {
+    fs.writeFileSync(path.join(ROOT, `${areaInfo.slug}.html`), buildAreaPage(areaInfo, areas), 'utf8');
+  }
 
-  console.log(`[build] ${temas.length} temas procesados en ${grupos.length} bloques (${grupos.map((g) => g.bloque).join(', ')}).`);
+  console.log(`[build] ${temas.length} temas en ${areas.length} área(s): ${areas.map((a) => `${a.area} (${a.temas.length})`).join(', ')}`);
   console.log(`[build] Escrito ${path.relative(ROOT, MAPA_PATH)}`);
-  console.log(`[build] Escrito ${path.relative(ROOT, INDEX_PATH)}`);
+  console.log(`[build] Escrito index.html (portal) + ${areas.map((a) => `${a.slug}.html`).join(', ')}`);
 }
 
 main();

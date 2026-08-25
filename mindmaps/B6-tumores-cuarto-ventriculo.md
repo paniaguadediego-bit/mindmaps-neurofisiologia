@@ -1,7 +1,8 @@
 ---
 codigo: B6
 titulo: Tumores de cuarto ventrículo
-bloque: B
+area: IONM
+bloque: B — Contextos quirúrgicos
 plantilla: B
 estado: en-progreso
 ---

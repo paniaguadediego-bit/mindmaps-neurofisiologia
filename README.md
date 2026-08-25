@@ -1,9 +1,18 @@
 # Mindmaps de Neurofisiología
 
-Repositorio personal de estudio de Neurofisiología Clínica intraoperatoria (IONM/MIO):
-23 temas, cada uno el guion de texto de un mindmap que se dibuja después a mano en una
-libreta, como ejercicio de memoria activa. Este repositorio no dibuja nada — guarda el
-árbol jerárquico en Markdown, con cada dato clínico citado a su fuente.
+Repositorio personal de estudio de Neurofisiología Clínica: cada tema es el guion de
+texto de un mindmap que se dibuja después a mano en una libreta, como ejercicio de
+memoria activa. Este repositorio no dibuja nada — guarda el árbol jerárquico en Markdown,
+con cada dato clínico citado a su fuente.
+
+Está organizado en **áreas**, cada una con su propia página en el visor:
+
+| Área | Temas | Contenido |
+|---|---|---|
+| **IONM** | 23 | Monitorización neurofisiológica intraoperatoria |
+| **PPEE** | 19 | Potenciales evocados (bases generales y visuales) |
+
+Previstas: EMG, EEG, EEG infantil y EEG UCI.
 
 **Visor en vivo:** [paniaguadediego-bit.github.io/mindmaps-neurofisiologia](https://paniaguadediego-bit.github.io/mindmaps-neurofisiologia/)
 — accesible desde el navegador del PC o instalable como app desde Chrome en Android
@@ -12,37 +21,38 @@ libreta, como ejercicio de memoria activa. Este repositorio no dibuja nada — g
 ## Qué es esto
 
 Cada mindmap es UN tema = UN archivo `.md` en [`mindmaps/`](mindmaps/) = UNA página de
-libreta. Los temas se agrupan en tres bloques:
+libreta. Dentro de cada área los temas se agrupan en bloques:
 
-- **A — Modalidades de señal**: PESS, MEP, onda D, EMG libre/estimulado, CoMEPs, BAEP,
-  EEG, reflejos.
-- **B — Contextos quirúrgicos**: columna (deformidad, degenerativa), tumores medulares
-  (intra/extramedulares), fosa posterior/tronco, cuarto ventrículo, craneotomía despierta.
-- **C — Transversales**: anatomía de vías largas, electrodos, farmacología anestésica,
-  relajantes musculares, criterios de alarma, troubleshooting.
+- **IONM** — *A* Modalidades de señal (PESS, MEP, onda D, EMG, CoMEPs, BAEP, EEG,
+  reflejos) · *B* Contextos quirúrgicos (columna, tumores medulares, fosa posterior,
+  craneotomía despierta) · *C* Transversales (anatomía, electrodos, anestesia, criterios
+  de alarma, troubleshooting).
+- **PPEE** — *A* Bases fisiológicas y anatómicas · *B* Bases técnicas de registro · *V*
+  Potenciales evocados visuales.
+
+Cada tema se escribe **autocontenido**: no remite a otro para completar un dato, porque
+no se estudian en orden.
 
 El catálogo es **vivo**: crece, se reorganiza y se divide sin tocar código — el visor y
 el índice ([`MAPA_MAESTRO.md`](MAPA_MAESTRO.md)) se generan solos a partir de los
-archivos de `mindmaps/`.
-
-Estado actual: 13 temas completos, 10 en progreso, 23/23 con contenido (ninguno vacío).
+archivos de `mindmaps/`. Un área nueva aparece con solo declararla en un `.md`.
 
 ## Cómo funciona
 
 ```
-mindmaps/*.md  →  node build.js  →  MAPA_MAESTRO.md + index.html
+mindmaps/*.md  →  node build.js  →  MAPA_MAESTRO.md + index.html (portal) + una página por área
 ```
 
 `build.js` no tiene dependencias externas (solo Node.js estándar) y no hardcodea el
-catálogo: lee el front-matter de cada `.md`, agrupa por bloque, ordena los códigos
+catálogo: lee el front-matter de cada `.md`, agrupa por área y bloque, ordena los códigos
 naturalmente (A9 antes que A10) y genera el visor — con tema claro/oscuro automático,
-navegación por bloques y temas desplegables, y un checkbox de progreso de estudio
-guardado en el navegador.
+bloques y temas desplegables, jerarquía tipográfica por nivel de rama, y un checkbox de
+progreso de estudio guardado en el navegador.
 
 **Añadir un tema nuevo:**
 
 ```bash
-node nuevo-tema.js --bloque A --titulo "Título del tema"
+node nuevo-tema.js --area PPEE --bloque V --titulo "Título del tema"
 ```
 
 Calcula el siguiente código libre, genera el esqueleto con la plantilla del bloque y

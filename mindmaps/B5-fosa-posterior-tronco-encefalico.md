@@ -1,7 +1,8 @@
 ---
 codigo: B5
 titulo: Fosa posterior / tronco encefálico
-bloque: B
+area: IONM
+bloque: B — Contextos quirúrgicos
 plantilla: B
 estado: en-progreso
 ---

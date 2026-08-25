@@ -1,7 +1,8 @@
 ---
 codigo: C3
 titulo: TIVA y farmacología anestésica en MIO
-bloque: C
+area: IONM
+bloque: C — Transversales
 plantilla: C
 estado: completo
 ---

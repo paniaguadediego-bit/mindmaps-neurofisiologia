@@ -1,7 +1,8 @@
 ---
 codigo: C6
 titulo: Troubleshooting general
-bloque: C
+area: IONM
+bloque: C — Transversales
 plantilla: C
 estado: completo
 ---

@@ -1,7 +1,8 @@
 ---
 codigo: C2
 titulo: Colocación de electrodos 10-20 / 10-10
-bloque: C
+area: IONM
+bloque: C — Transversales
 plantilla: C
 estado: en-progreso
 ---

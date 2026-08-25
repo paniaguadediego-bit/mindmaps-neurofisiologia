@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mindmaps de Neurofisiología</title>
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
+<title>Mindmaps de Neurofisiología</title>
 <style>
 :root {
   --bg: #f7f7f8;
@@ -41,12 +41,13 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  display: flex;
   min-height: 100vh;
 }
 
+a { color: inherit; }
+
 .sidebar {
-  width: 280px;
+  width: 290px;
   flex-shrink: 0;
   border-right: 1px solid var(--border);
   padding: 1.25rem 1rem;
@@ -58,13 +59,23 @@ body {
 
 .sidebar h1 {
   font-size: 1.05rem;
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.15rem;
 }
+
+.volver {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+}
+
+.volver:hover { color: var(--accent); }
 
 .progreso {
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .progreso-bar {
@@ -75,14 +86,9 @@ body {
   margin-top: 0.35rem;
 }
 
-.progreso-fill {
-  height: 100%;
-  background: var(--estado-completo);
-}
+.progreso-fill { height: 100%; background: var(--estado-completo); }
 
-.nav-bloque {
-  margin-bottom: 1rem;
-}
+.nav-bloque { margin-bottom: 1rem; }
 
 .nav-bloque-titulo {
   font-size: 0.7rem;
@@ -105,10 +111,7 @@ body {
   border-left: 2px solid transparent;
 }
 
-.nav-item:hover {
-  background: var(--code-bg);
-  border-left-color: var(--bloque-color);
-}
+.nav-item:hover { background: var(--code-bg); border-left-color: var(--bloque-color); }
 
 .nav-codigo {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -124,16 +127,15 @@ body {
   white-space: nowrap;
 }
 
-main {
-  flex: 1;
-  padding: 2rem 2.5rem;
-  max-width: 900px;
-}
+.nav-item.estado-completo .nav-codigo::after { content: " ●"; color: var(--estado-completo); }
+.nav-item.estado-en-progreso .nav-codigo::after { content: " ●"; color: var(--estado-en-progreso); }
+.nav-item.estado-esqueleto .nav-codigo::after { content: " ○"; color: var(--estado-esqueleto); }
 
-.bloque-seccion {
-  margin-bottom: 2rem;
-  border: none;
-}
+.nav-item.estudiado .nav-titulo { text-decoration: line-through; opacity: 0.6; }
+
+main { flex: 1; padding: 2rem 2.5rem; max-width: 940px; }
+
+.bloque-seccion { margin-bottom: 2rem; border: none; }
 
 .bloque-titulo {
   cursor: pointer;
@@ -157,13 +159,9 @@ main {
   transition: transform 0.15s ease;
 }
 
-.bloque-seccion:not([open]) .bloque-titulo::before {
-  transform: rotate(-90deg);
-}
+.bloque-seccion:not([open]) .bloque-titulo::before { transform: rotate(-90deg); }
 
-.bloque-body {
-  padding-top: 0.9rem;
-}
+.bloque-body { padding-top: 0.9rem; }
 
 .tema {
   background: var(--bg-elevated);
@@ -193,9 +191,7 @@ main {
   transition: transform 0.15s ease;
 }
 
-.tema:not([open]) .tema-header::before {
-  transform: rotate(-90deg);
-}
+.tema:not([open]) .tema-header::before { transform: rotate(-90deg); }
 
 .estudiado-check {
   width: 17px;
@@ -205,18 +201,12 @@ main {
   cursor: pointer;
 }
 
-.tema.estudiado {
-  opacity: 0.7;
-}
+.tema.estudiado { opacity: 0.7; }
 
 .tema.estudiado .tema-titulo {
   text-decoration: line-through;
   text-decoration-color: var(--text-muted);
   text-decoration-thickness: 1.5px;
-}
-
-.tema-body {
-  padding: 0 1.1rem 1rem;
 }
 
 .tema-codigo {
@@ -225,12 +215,7 @@ main {
   color: var(--bloque-color);
 }
 
-.tema-titulo {
-  margin: 0;
-  font-size: 1.05rem;
-  flex: 1;
-  min-width: 150px;
-}
+.tema-titulo { margin: 0; font-size: 1.05rem; flex: 1; min-width: 150px; }
 
 .badge {
   font-size: 0.7rem;
@@ -245,20 +230,76 @@ main {
 .badge.estado-en-progreso { color: var(--estado-en-progreso); border-color: var(--estado-en-progreso); }
 .badge.estado-completo { color: var(--estado-completo); border-color: var(--estado-completo); }
 
-.nav-item.estado-completo .nav-codigo::after { content: " ●"; color: var(--estado-completo); }
-.nav-item.estado-en-progreso .nav-codigo::after { content: " ●"; color: var(--estado-en-progreso); }
-.nav-item.estado-esqueleto .nav-codigo::after { content: " ○"; color: var(--estado-esqueleto); }
+.tema-body { padding: 0 1.1rem 1rem; }
 
-.nav-item.estudiado .nav-titulo {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
+/* --- Árbol del mindmap: jerarquía tipográfica por nivel --- */
 
-.tree-wrap {
-  overflow-x: auto;
+.mm {
   background: var(--code-bg);
   border-radius: 6px;
+  padding: 0.95rem 1.1rem;
+  overflow-x: auto;
 }
+
+.mm-root {
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--bloque-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.mm-node {
+  /* Sangría francesa: al hacer wrap, el texto sigue alineado bajo el texto,
+     no bajo el marcador. */
+  padding-left: calc(var(--d) * 1.25rem + 1.05em);
+  text-indent: -1.05em;
+  line-height: 1.45;
+}
+
+.mm-node::before {
+  color: var(--bloque-color);
+  opacity: 0.8;
+  margin-right: 0.4rem;
+}
+
+.mm-node.n0 {
+  font-size: 1.02rem;
+  font-weight: 650;
+  margin-top: 0.7rem;
+  letter-spacing: -0.005em;
+}
+
+.mm-node.n0::before { content: "▸"; }
+
+.mm-node.n1 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 0.22rem;
+}
+
+.mm-node.n1::before { content: "–"; opacity: 0.55; }
+
+.mm-node.n2 {
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.mm-node.n2::before { content: "·"; opacity: 0.5; }
+
+.mm-node.n3 {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.mm-node.n3::before { content: "·"; opacity: 0.35; }
+
+.tree-wrap { overflow-x: auto; background: var(--code-bg); border-radius: 6px; }
 
 .tree {
   margin: 0;
@@ -284,1900 +325,49 @@ main {
   margin-bottom: 0.45rem;
 }
 
+/* --- Portal de áreas --- */
+
+.portal { max-width: 820px; margin: 0 auto; padding: 3rem 1.5rem; }
+.portal h1 { font-size: 1.6rem; margin: 0 0 0.3rem; }
+.portal .lead { color: var(--text-muted); margin: 0 0 2rem; font-size: 0.95rem; }
+
+.area-card {
+  display: block;
+  text-decoration: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--bloque-color);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.area-card:hover { border-color: var(--bloque-color); }
+.area-nombre { font-size: 1.2rem; font-weight: 700; color: var(--bloque-color); }
+.area-meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+.area-bloques { font-size: 0.85rem; margin-top: 0.6rem; line-height: 1.6; }
+
 @media (max-width: 800px) {
-  body { flex-direction: column; }
+  .layout { flex-direction: column; }
   .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
   main { padding: 1.25rem; }
 }
 </style>
 </head>
 <body>
-<nav class="sidebar">
+<div class="portal">
   <h1>Mindmaps de Neurofisiología</h1>
-  <div class="progreso">
-    13/23 completos (57%) · 10 en progreso · 0 esqueletos
-    <div class="progreso-bar"><div class="progreso-fill" style="width:57%"></div></div>
-  </div>
-  <div class="progreso progreso-estudiado" id="estudiado-contador">0/23 estudiados a mano</div>
-  <div class="nav-bloque" style="--bloque-color:#3b82f6">
-        <div class="nav-bloque-titulo">Bloque A</div>
-        <a href="#A1" class="nav-item estado-completo" data-codigo="A1"><span class="nav-codigo">A1</span><span class="nav-titulo">PESS / SSEP</span></a>
-<a href="#A2" class="nav-item estado-en-progreso" data-codigo="A2"><span class="nav-codigo">A2</span><span class="nav-titulo">PEM / MEP transcraneal (miogénico)</span></a>
-<a href="#A3" class="nav-item estado-completo" data-codigo="A3"><span class="nav-codigo">A3</span><span class="nav-titulo">Onda D (D-wave epidural)</span></a>
-<a href="#A4" class="nav-item estado-completo" data-codigo="A4"><span class="nav-codigo">A4</span><span class="nav-titulo">EMG libre (free-running)</span></a>
-<a href="#A5" class="nav-item estado-completo" data-codigo="A5"><span class="nav-codigo">A5</span><span class="nav-titulo">EMG estimulado — umbral de tornillo pedicular</span></a>
-<a href="#A6" class="nav-item estado-en-progreso" data-codigo="A6"><span class="nav-codigo">A6</span><span class="nav-titulo">Corticobulbares / MEP de pares craneales (CoMEPs)</span></a>
-<a href="#A7" class="nav-item estado-completo" data-codigo="A7"><span class="nav-codigo">A7</span><span class="nav-titulo">PEATC / BAEP</span></a>
-<a href="#A8" class="nav-item estado-en-progreso" data-codigo="A8"><span class="nav-codigo">A8</span><span class="nav-titulo">EEG intraoperatorio</span></a>
-<a href="#A9" class="nav-item estado-en-progreso" data-codigo="A9"><span class="nav-codigo">A9</span><span class="nav-titulo">Reflejos en IONM</span></a>
-      </div>
-<div class="nav-bloque" style="--bloque-color:#10b981">
-        <div class="nav-bloque-titulo">Bloque B</div>
-        <a href="#B1" class="nav-item estado-en-progreso" data-codigo="B1"><span class="nav-codigo">B1</span><span class="nav-titulo">Columna — deformidad / escoliosis</span></a>
-<a href="#B2" class="nav-item estado-en-progreso" data-codigo="B2"><span class="nav-codigo">B2</span><span class="nav-titulo">Columna — degenerativa / instrumentación</span></a>
-<a href="#B3" class="nav-item estado-completo" data-codigo="B3"><span class="nav-codigo">B3</span><span class="nav-titulo">Tumores medulares intramedulares (IMSCT)</span></a>
-<a href="#B4" class="nav-item estado-completo" data-codigo="B4"><span class="nav-codigo">B4</span><span class="nav-titulo">Tumores medulares extramedulares / cono-cola de caballo</span></a>
-<a href="#B5" class="nav-item estado-en-progreso" data-codigo="B5"><span class="nav-codigo">B5</span><span class="nav-titulo">Fosa posterior / tronco encefálico</span></a>
-<a href="#B6" class="nav-item estado-en-progreso" data-codigo="B6"><span class="nav-codigo">B6</span><span class="nav-titulo">Tumores de cuarto ventrículo</span></a>
-<a href="#B7" class="nav-item estado-completo" data-codigo="B7"><span class="nav-codigo">B7</span><span class="nav-titulo">Craneotomía despierta / mapeo cortical-subcortical</span></a>
-<a href="#B8" class="nav-item estado-en-progreso" data-codigo="B8"><span class="nav-codigo">B8</span><span class="nav-titulo">Fosa posterior avanzado con criterios de troncoencefálico</span></a>
-      </div>
-<div class="nav-bloque" style="--bloque-color:#f59e0b">
-        <div class="nav-bloque-titulo">Bloque C</div>
-        <a href="#C1" class="nav-item estado-completo" data-codigo="C1"><span class="nav-codigo">C1</span><span class="nav-titulo">Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales)</span></a>
-<a href="#C2" class="nav-item estado-en-progreso" data-codigo="C2"><span class="nav-codigo">C2</span><span class="nav-titulo">Colocación de electrodos 10-20 / 10-10</span></a>
-<a href="#C3" class="nav-item estado-completo" data-codigo="C3"><span class="nav-codigo">C3</span><span class="nav-titulo">TIVA y farmacología anestésica en MIO</span></a>
-<a href="#C4" class="nav-item estado-completo" data-codigo="C4"><span class="nav-codigo">C4</span><span class="nav-titulo">Relajantes musculares en MIO</span></a>
-<a href="#C5" class="nav-item estado-completo" data-codigo="C5"><span class="nav-codigo">C5</span><span class="nav-titulo">Marco general de criterios de alarma</span></a>
-<a href="#C6" class="nav-item estado-completo" data-codigo="C6"><span class="nav-codigo">C6</span><span class="nav-titulo">Troubleshooting general</span></a>
-      </div>
-</nav>
-<main>
-  <details class="bloque-seccion" style="--bloque-color:#3b82f6" open>
-        <summary class="bloque-titulo">Bloque A</summary>
-        <div class="bloque-body">
-          <details class="tema" id="A1" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A1" onclick="event.stopPropagation()" aria-label="Marcar A1 como estudiado">
-              <span class="tema-codigo">A1</span>
-              <h3 class="tema-titulo">PESS / SSEP</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">PESS/SSEP
-├─ Vía anatómica
-│  ├─ N. mediano / n. tibial posterior → cordón posterior → núcleos gracilis/cuneatus
-│  │  (bulbo) → lemnisco medial → tálamo (VPL) → corteza somatosensorial (S1)
-│  └─ N9 (punto de Erb) — marcador de conducción periférica pura
-├─ Estimulación
-│  ├─ N. mediano (MMSS) / n. tibial posterior (MMII)
-│  ├─ ~20-40 mA, 0.2-0.3 ms, 2.7-4.7 Hz (evitar armónicos de red)
-│  └─ Confirmar twitch motor visible como control de intensidad efectiva
-├─ Registro / montaje
-│  ├─ Cortical: C3'/C4'-Fz (MMSS) · CPz/Cz'-Fz (MMII)
-│  ├─ Subcortical: Erb's point (N9) · cervical (Cv2-Fz)
-│  └─ Requiere promediado — señal pequeña, ruido de fondo alto
-├─ Morfología normal
-│  └─ N20 (mediano, cortical) / P37 (tibial, cortical)
-│     └─ Línea base tras posicionamiento final
-├─ Efecto anestesia/fisiología
-│  ├─ Muy sensible a halogenados (dosis-dependiente) → preferir TIVA
-│  ├─ N2O: efecto aditivo negativo con halogenados
-│  ├─ Hipotensión / hipotermia / hipocapnia → ↓ amplitud, ↑ latencia
-│  └─ Relajante muscular → sin efecto (vía sensitiva pura)
-├─ Criterios de alarma
-│  └─ Clásico: ↓ amplitud &gt;50% o ↑ latencia &gt;10% vs. basal
-│     └─ MacDonald: criterios adaptativos más recientes
-├─ Causas de cambio no quirúrgico
-│  ├─ Técnico: desconexión, impedancia, artefacto de bisturí eléctrico
-│  ├─ Anestésico: bolo de halogenado, cambio brusco de plano
-│  └─ Sistémico: PAM, Hb, temperatura, compresión de plexo/nervio por posición
-├─ Troubleshooting
-│  └─ Técnico → anestésico → correlacionar con MEP/onda D si hay riesgo motor
-│     → avisar a cirugía si persiste
-├─ Limitaciones
-│  └─ Columnas dorsales ≠ tracto corticoespinal
-│     └─ SEP normal NO garantiza indemnidad motora
-└─ Referencia
-   └─ Nuwer2012 (AAN/ACNS) · MacDonald2019 (ISION) · Toleikis2024 (ASNM)</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">PESS/SSEP — ampliación
-├─ Criterios adaptativos más allá del 50%/10% clásico
-│  ├─ Crítica al clásico: sobrestima la latencia, no considera el drift fisiológico de
-│  │  la basal ni la reproducibilidad real de la señal
-│  ├─ Deriva basal benigna: la amplitud cae por debajo del 50% de la basal inicial en
-│  │  ~20% de las cirugías de escoliosis SIN que sea patológico
-│  └─ Criterio adaptativo real: comparar con el valor RECIENTE pre-cambio (no la basal
-│     inicial), que exceda claramente la variabilidad trial-a-trial, sobre todo si el
-│     cambio es abrupto y focal
-├─ Reproducibilidad de la señal como base del criterio (Tabla 3.1)
-│  └─ Clasificación Alta/Media/Baja/No-reproducible según % de variación entre
-│     barridos → determina qué decremento es detectable como patológico (alta
-│     reproducibilidad detecta caídas &gt;30%; señal no-reproducible solo es fiable si
-│     desaparece del todo)
-└─ Límites reales de detección
-   ├─ Anomalía de no-decusación de la vía sensitiva invalida montajes fijos — 2.3% de
-   │  una serie de escoliosis en Oriente Medio, asociada a parálisis congénita de la
-   │  mirada horizontal
-   └─ Encuesta SRS/ESDS (51.263 cirugías de columna): 34 falsos negativos (0.063% del
-      total) — pero esos 34 representan el 18.5% de los 184 pacientes con déficit
-      postoperatorio real → cuantifica la limitación &quot;SEP normal no garantiza
-      indemnidad motora&quot;
-Referencia: Deletis, cap. 3 (MacDonald), §3.3.3.1 y 3.4.1-3.4.2, Tabla 3.1, pp.39-46 ·
-Nuwer et al., citado en Moller2011 cap. 6, p.96</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="A2" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A2" onclick="event.stopPropagation()" aria-label="Marcar A2 como estudiado">
-              <span class="tema-codigo">A2</span>
-              <h3 class="tema-titulo">PEM / MEP transcraneal (miogénico)</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">PEM/MEP transcraneal (miogénico)
-├─ Vía anatómica
-│  └─ M1 → cápsula interna → decusación piramidal bulbar → tracto corticoespinal
-│     → asta anterior → n. periférico → músculo
-├─ Estimulación
-│  ├─ TES, electrodos C1/C2 o C3/C4 (10-20), tren de pulsos (train-of-five habitual)
-│  ├─ Estimulación anodal — ánodo sobre el hemisferio a estimular
-│  └─ Umbral de estimulación — parámetro clave a vigilar (↑ umbral = alerta precoz)
-├─ Registro / montaje
-│  ├─ EMG miogénico en músculos diana según nivel en riesgo (APB/ADM · TA/AH)
-│  └─ Alternativa epidural → onda D (ver A3)
-├─ Morfología normal
-│  └─ Respuesta polifásica muscular
-│     └─ Presencia/ausencia como criterio cualitativo principal
-├─ Efecto anestesia/fisiología
-│  ├─ Muy sensible a halogenados y a relajante muscular (a diferencia de SEP y onda D)
-│  ├─ TIVA (propofol + opioide) de elección — evitar bolo antes de un test crítico
-│  └─ Si se relaja: solo relajación parcial monitorizada (TOF), nunca bloqueo completo
-├─ Criterios de alarma
-│  ├─ Cualitativo: pérdida/ausencia de respuesta
-│  ├─ Umbral: aumento significativo del umbral de estimulación
-│  └─ Cuantitativo (más discutido): caída de amplitud — (verificar rango exacto en
-│     MacDonald2013 / Legatt2016)
-├─ Causas de cambio no quirúrgico
-│  ├─ Anestésico: profundización brusca, bolo de relajante
-│  ├─ Técnico: desplazamiento de electrodo TES, mal contacto
-│  └─ Sistémico: hipotermia, hipotensión
-├─ Troubleshooting
-│  └─ Descartar anestesia/técnico → correlacionar con onda D (jerarquía onda D &gt; MEP)
-│     → comunicar a cirugía
-├─ Limitaciones
-│  └─ Alta sensibilidad a anestesia/relajación
-│     └─ Riesgo de falsos positivos si el plano no está controlado
-└─ Referencia
-   └─ MacDonald2013 (ASNM) · Legatt2016 (ACNS) · Sloan2012 (relajantes)</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">PEM/MEP transcraneal — ampliación
-├─ El umbral cuantitativo NO es universal
-│  ├─ Columna compleja: criterio primario todo-o-nada; en eventos quirúrgicos críticos
-│  │  se avisa si hay caída de amplitud del 80% en cualquier músculo
-│  └─ Tronco encefálico: el todo-o-nada (habitual en tumor medular) resulta
-│     insuficientemente sensible → se prefiere caída de amplitud &gt;50% como predictor
-│     de déficit irreversible
-├─ Series con sensibilidad/especificidad del MEP muscular
-│  ├─ Cavernoma de tronco (Shiban): sensibilidad 33%/especificidad 88% · (Sarnthein):
-│  │  sensibilidad 94%/especificidad 74%
-│  └─ Cirugía de cordón anclado: sensibilidad 75-100%, especificidad 25-100%,
-│     VPP 63-100%, VPN 75-97% — rango amplio según la serie
-└─ Parámetro técnico: ISI óptimo del tren
-   ├─ ISI ~4 ms permite recuperación completa entre pulsos (duración de pulso 500 µs);
-   │  con ISI 2 ms se necesitan 5 estímulos en vez de 3 por recuperación incompleta
-   └─ En columna/pediatría: trenes de 5-7 pulsos de 0.5 ms, ISI ~4 ms, repetición
-      1-2 Hz, intensidad habitual &lt;200 mA, montaje C1/C2
-Referencia: Deletis, cap. 2 pp.27-28 · cap. 22 (Sala/D'Amico/Bricolo) p.305 ·
-cap. 27 (Pasquali/Tramontano/Sala) pp.369-370 · cap. 28 (Guiroy/Candocia/Fontes)
-pp.388-389</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="A3" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A3" onclick="event.stopPropagation()" aria-label="Marcar A3 como estudiado">
-              <span class="tema-codigo">A3</span>
-              <h3 class="tema-titulo">Onda D (D-wave epidural)</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Onda D (D-wave epidural)
-├─ Vía anatómica
-│  └─ Activación directa de axones piramidales rápidos del CST
-│     └─ Potencial ASINÁPTICO — no depende de transmisión sináptica espinal
-├─ Estimulación
-│  └─ Igual que MEP (TES transcraneal)
-│     └─ Interesa el registro epidural, no la respuesta muscular
-├─ Registro / montaje
-│  ├─ Electrodo epidural rostral a la lesión (imprescindible)
-│  │  └─ ± caudal (compara amplitud proximal/distal)
-│  └─ Mantener colocado hasta cierre dural completo
-│     └─ El riesgo no termina con la resección: hemostasia y cierre también comprometen
-├─ Morfología normal
-│  └─ Onda única, robusta, amplitud relativamente estable durante el procedimiento
-├─ Efecto anestesia/fisiología
-│  └─ Mínimamente afectada por anestésicos y relajantes (potencial asináptico)
-│     └─ Su gran ventaja frente al MEP
-├─ Criterios de alarma
-│  ├─ Declive gradual 20-30% → alerta precoz → protocolo tipo TIP
-│  │  └─ TIP: detener disección, irrigar suero templado, ↑PAM ≥80-85 mmHg
-│  └─ Caída &gt;50% → predictor de déficit motor PERMANENTE
-│     └─ Sobre todo si coincide con pérdida de MEP
-├─ Jerarquía diagnóstica (discordancia con MEP)
-│  ├─ Onda D estable + MEP perdido → déficit transitorio probable
-│  └─ Onda D caída &gt;50% + MEP perdido → déficit permanente probable
-├─ Limitaciones
-│  ├─ Poco o nada registrable en tumores del cono medular
-│  │  └─ Menos axones CST + mayor longitud a nivel torácico bajo
-│  └─ Señal global, no lateralizada — no sustituye al MEP para detectar asimetría
-└─ Referencia
-   └─ Boaro2026 · Costa2015 · MacDonald2013</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">Onda D — ampliación
-├─ Electrodo y colocación (con datos de seguridad)
-│  ├─ Catéter JX-330/JX-3002: 3 cilindros de platino-iridio de 3 mm, separados 18 mm,
-│  │  doble lumen para lavado con salino
-│  ├─ Colocación percutánea con aguja Tuohy 14G en T1-T2, avanzando hasta cervical bajo
-│  └─ Series de seguridad: 57 y 16 pacientes sin ninguna complicación (sangrado,
-│     infección, punción medular)
-├─ Amplitud según nivel y desincronización — más allá de &quot;poco registrable en cono&quot;
-│  ├─ Amplitud cervical ≥60 µV vs. torácica ~10 µV con el mismo electrodo; por debajo
-│  │  de T10 (Boaro: ~metámero D11) suele no ser registrable con amplitud suficiente
-│  └─ Desincronización (tumor intramedular o post-radioterapia medular): fibras CST
-│     rápidas conducen a velocidades distintas entre sí → onda D de bajo voltaje/base
-│     ancha o no registrable, INCLUSO con MEP muscular presente y sin déficit motor
-│     mayor — mecanismo distinto de la ausencia por localización
-└─ Correlación pronóstica cuantificada (Tabla 2.1) y su ambigüedad
-   ├─ D-wave estable o caída 30-50% + MEP perdido → déficit transitorio · caída &gt;50%
-   │  + MEP perdido bilateral → déficit permanente — aplicado en 100 cirugías
-   │  consecutivas de tumor intramedular: 0 pacientes con paraplejia postoperatoria
-   └─ Ambigüedad del &quot;50%&quot;: la misma cifra puede corresponder a una pérdida difusa
-      bilateral tolerable O a una pérdida completa unilateral grave — mismo número,
-      pronóstico opuesto
-Referencia: Deletis, cap. 2 (Deletis), §2.4.1.1-2.4.4 y Tabla 2.1, pp.23-32 ·
-Moller2011, cap. 10, pp.215-221 · Boaro2026, sección 2.3</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="A4" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A4" onclick="event.stopPropagation()" aria-label="Marcar A4 como estudiado">
-              <span class="tema-codigo">A4</span>
-              <h3 class="tema-titulo">EMG libre (free-running)</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">EMG libre (free-running)
-├─ Qué es
-│  └─ Registro continuo y pasivo de actividad muscular espontánea con electrodos
-│     intramusculares — sin estimulación provocada, &quot;escucha&quot; el músculo en tiempo
-│     real durante toda la cirugía
-├─ Mecanismo / fisiología
-│  ├─ Detecta activación mecánica de la raíz motora (o de fibras del CST en cirugía
-│  │  intramedular) por manipulación quirúrgica directa
-│  ├─ Zona de mayor vulnerabilidad de la raíz: región de transición central-periférica
-│  │  (raicillas sin epineuro/perineuro) y zona hipovascular del tercio proximal-medio
-│  └─ En tumores intramedulares: ráfagas por irritación directa del CST, no solo de raíz
-├─ Técnica / montaje
-│  ├─ Electrodos intramusculares: aguja subdérmica EEG, EMG monopolar, o hilo de
-│  │  teflón-plata
-│  ├─ Filtro AF 10-30 kHz · filtro BF 2-30 Hz (evitar &lt;50 Hz y &gt;3 kHz)
-│  ├─ Barrido 200 ms - 5 s según resolución deseada
-│  └─ Línea de base ANTES de empezar cirugía — detecta irritación radicular preexistente
-├─ Nomenclatura de la actividad espontánea
-│  └─ Prass &amp; Lüders, retomada por Romstöck, Strauss &amp; Fahlbusch 2000 (pares craneales
-│     motores en cirugía de ángulo pontocerebeloso)
-│     └─ 5 patrones de onda: spikes, bursts, y trenes A, B y C
-├─ Spikes
-│  └─ Potencial bi/trifásico, un pico grande (≥2000 µV), inicio y fin abruptos,
-│     aspecto uniforme en un canal
-│     ├─ Pueden contarse miles en una cirugía larga (musculatura mimética)
-│     └─ Repetitivos y de baja amplitud → irritación PREEXISTENTE (ondas positivas /
-│        fibrilación-like)
-├─ Bursts
-│  └─ Complejo aislado de spikes superpuestos, forma de huso, hasta varios cientos de
-│     ms, picos hasta 5000 µV
-│     ├─ Menos frecuentes que los spikes
-│     ├─ Típicos al separar plano aracnoideo tumor-nervio o al fresar/descomprimir CAI
-│     └─ RARAMENTE indica lesión neural real
-├─ Trains (actividad periódica sostenida, dura segundos)
-│  ├─ A-train
-│  │  ├─ Sinusoidal, inicio brusco, sonido agudo característico por altavoz
-│  │  ├─ Amplitud típica 100-200 µV (nunca &gt;500 µV)
-│  │  ├─ Frecuencia 60-210 Hz · duración de ms a varios segundos
-│  │  ├─ ÚNICO patrón con correlación alta y específica con paresia facial
-│  │  │  postoperatoria (serie original: 1 FP y 3 FN sobre 30 pacientes)
-│  │  ├─ La frecuencia (&lt;150 vs ≥150 Hz) NO se correlacionó con el grado de deterioro
-│  │  ├─ Mecanismo propuesto: símil de descarga repetitiva compleja — fibra muscular
-│  │  │  desestabilizada actúa como marcapasos y reactiva efápticamente a las vecinas
-│  │  └─ Falso positivo descrito: manipulación del n. intermediario genera A-trains sin
-│  │     correlación clínica real (Prell2007)
-│  ├─ B-train
-│  │  ├─ Secuencia regular o irregular de componentes aislados, intervalo máximo 500 ms,
-│  │  │  dura minutos u horas — inicio gradual con spikes/bursts de baja amplitud
-│  │  ├─ Subtipos: BS (predominio de spikes) y BB (predominio de bursts)
-│  │  └─ Morfológicamente similar a descargas mioquímicas — mecanismo NO aclarado por
-│  │     los propios autores; sin correlación pronóstica establecida
-│  └─ C-train
-│     ├─ Actividad irregular continua, numerosos componentes solapados, amplitud
-│     │  distribuida al azar entre 20 y &gt;5000 µV
-│     ├─ Aspecto de patrón de interferencia (como contracción voluntaria máxima) pese
-│     │  a anestesia profunda estable — los propios autores cuestionan el mecanismo
-│     └─ Sin valor predictivo establecido
-├─ Patrón fásico vs. tónico (contexto de raíz espinal)
-│  ├─ Fásico/burst: potencial único o salva no repetitiva, asíncrona, polifásica →
-│  │  trauma directo puntual (tracción, irrigación libre, electrocauterio, torundas)
-│  └─ Tónico/train: descargas repetitivas sincrónicas prolongadas (hasta minutos) →
-│     tracción/compresión SOSTENIDA → patología más seria, puede ser lesión neural
-├─ Contexto de pares craneales (MVD/CPA)
-│  └─ fEMG = spikes + bursts + trains combinados
-│     └─ Tras irrigar con suero caliente al terminar una MVD es NORMAL ver disparo
-│        sostenido SIN significado clínico — no confundir con train patológico
-├─ Causas de cambio no quirúrgico
-│  └─ Plano anestésico superficial → actividad tipo unidad motora en TODOS los músculos
-│     a la vez → sospechar esto antes que patología
-├─ Qué hacer
-│  ├─ Spike/burst aislado → avisar, vigilar, raramente implica lesión
-│  ├─ Train sostenido (o A-train en facial) → avisar de inmediato al cirujano
-│  │  (tracción/compresión mantenida)
-│  └─ En IMSCT: verificar MEP y onda D antes de continuar tras ráfagas sostenidas
-├─ Limitaciones
-│  ├─ Señal &quot;a posteriori&quot; — informa de un evento ya ocurrido, no lo previene por sí sola
-│  ├─ No localiza con precisión el nivel (para eso, EMG estimulado → A5)
-│  └─ En pares craneales da falsos positivos/negativos relevantes → no sustituye a los
-│     CoMEPs (A6) como técnica continua más precisa
-└─ Referencia
-   └─ Leppänen2005 / Leppänen2006 (ASNM) · Romstöck2000 (J Neurosurg 93:586-593,
-      clasificación spikes/bursts/A-B-C trains) · Prell2007 (falsos positivos A-train)
-      · Boaro2026 (EMG libre en IMSCT)</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">EMG libre — ampliación
-├─ EMG libre en instrumentación pedicular/columna (contexto distinto a pares craneales)
-│  ├─ Ráfagas cortas (&lt;1 s) → generalmente no significativas, rara vez con secuela ·
-│  │  trenes largos sostenidos (hasta varios minutos) → más serios, asociados a
-│  │  tracción/compresión sostenida, mayor probabilidad de daño radicular
-│  └─ En cordón anclado, mal predictor aislado: sensibilidad 100% pero especificidad
-│     solo 19% — &quot;nunca debe usarse como única modalidad&quot; (cita textual del capítulo)
-├─ Contraste de series + valor predictivo temporal
-│  ├─ Otra serie de cordón anclado con mejor equilibrio: sensibilidad 87.5%,
-│  │  especificidad 83.3%, VPP 87.5%, VPN 83.3%
-│  └─ La actividad EMG sostenida suele PRECEDER el cambio en los potenciales evocados
-│     — actúa como señal de alarma temprana, se anticipa al MEP en vez de solo
-│     acompañarlo
-└─ Base anatómica del falso positivo de Prell2007 (ya citado, aquí el mecanismo)
-   └─ El n. intermedio lleva fibras motoras que inervan la musculatura perioral facial
-      → explica por qué su manipulación genera A-trains sin correlación clínica real
-Referencia: Deletis, cap. 10 (Fernández-Conejero) p.138 · cap. 13 (Toleikis)
-pp.179-181 · cap. 27 (Pasquali/Tramontano/Sala) pp.369-371</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="A5" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A5" onclick="event.stopPropagation()" aria-label="Marcar A5 como estudiado">
-              <span class="tema-codigo">A5</span>
-              <h3 class="tema-titulo">EMG estimulado — umbral de tornillo pedicular</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">EMG estimulado — umbral de tornillo pedicular
-├─ Vía anatómica
-│  ├─ Raíz nerviosa lumbosacra en riesgo por brecha pedicular (bajo T12-L1/cono medular)
-│  └─ A nivel torácico/cervical alto el riesgo pasa a ser MEDULAR, no radicular —
-│     pedículos más pequeños y ángulos más variables
-├─ Estimulación
-│  ├─ Cátodo: sonda sobre el tornillo · ánodo: aguja intramuscular subcutánea
-│  ├─ Corriente CONSTANTE preferible a voltaje constante — la impedancia ósea varía
-│  │  por individuo y por osteoporosis
-│  └─ Rampa creciente desde 0 mA hasta respuesta o tope 40-50 mA · 1-5 Hz, 200 µs
-│     (protocolo original de Calancie: 3.1 Hz, 200 µs)
-├─ Registro / montaje
-│  ├─ Electrodos intramusculares (preferibles a superficie) según correspondencia
-│  │  miotoma-nivel (cervical a sacro)
-│  └─ Filtro 30 Hz-3 kHz · modo &quot;free-run&quot; · ≥6 canales simultáneos
-├─ Morfología normal
-│  └─ Umbral medio de excitación de raíz sana: 2-4.33 mA según serie (rango descrito
-│     0.2-5.7 mA)
-├─ Efecto anestesia/fisiología
-│  ├─ El factor MÁS crítico: grado de relajación muscular — bloqueo excesivo eleva el
-│  │  umbral artificialmente (falso negativo)
-│  ├─ Relajación aceptable para testear: TOF con 4º twitch presente, ratio T4/T1
-│  │  ≥0.1-0.2
-│  └─ Caso ilustrativo: mismo tornillo, 50 mA con 1 twitch → 12 mA con 4 twitches
-├─ Criterios de alarma
-│  ├─ Umbral clásico (Calancie): &lt;10 mA sugiere brecha cortical del pedículo — un
-│  │  tornillo bien alojado en hueso intacto no evoca respuesta a 10 mA
-│  └─ Estratificación de riesgo real (Toleikis): &gt;7 mA sin amenaza · 5-7 mA intermedio
-│     · ≤5 mA alto riesgo — el &quot;warning threshold&quot; publicado varía 6-11 mA según autor
-├─ Causas de cambio no quirúrgico
-│  ├─ Shunting de corriente por sangre/LCR en contacto con el tornillo → eleva umbral
-│  │  12-20 mA (falso NEGATIVO)
-│  ├─ Tornillo de titanio o cabeza poliaxial mal conductores → falso negativo
-│  └─ Radiculopatía crónica/diabetes/osteoporosis → umbral basal ya elevado (&gt;20 mA en
-│     raíces crónicamente comprimidas)
-├─ Troubleshooting
-│  ├─ Confirmar TOF adecuado ANTES de testear
-│  └─ Si hay sospecha de radiculopatía crónica, estimular la raíz directamente (2-5 mA)
-│     para confirmar respuesta normal antes de interpretar el umbral del tornillo
-├─ Limitaciones
-│  ├─ Definición de &quot;brecha real&quot; varía entre estudios (ej. exigir &gt;25% de exposición
-│  │  del diámetro del tornillo) → sensibilidad/especificidad muy dispersas entre series
-│  └─ EMG espontánea aislada es poco sensible — nunca debe usarse como única modalidad
-└─ Referencia
-   └─ Deletis, cap. 13 (Toleikis), pp.177-190 · Moller2011, cap. 10 &quot;Placement of
-      Pedicle Screws for Spinal Fixation&quot;, pp.222-224</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="A6" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A6" onclick="event.stopPropagation()" aria-label="Marcar A6 como estudiado">
-              <span class="tema-codigo">A6</span>
-              <h3 class="tema-titulo">Corticobulbares / MEP de pares craneales (CoMEPs)</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Corticobulbares / MEP de pares craneales (CoMEPs)
-├─ Qué es / vía anatómica
-│  └─ MEP registrado en músculos inervados por pares craneales motores (facial,
-│     trigémino motor, hipogloso) tras TES
-│     └─ Vía corticobulbar en paralelo a la corticoespinal, pero termina en núcleos
-│        de tronco, no en asta anterior medular
-├─ Estimulación
-│  ├─ TES igual que MEP de miembro
-│  │  └─ Montaje C3(+)/Cz(-) para hemisferio izquierdo, C4(+)/Cz(-) para derecho
-│  │     (Verst propone C5/C6 por mejor correspondencia con M1 corticobulbar)
-│  ├─ Tren corto de 3-5 estímulos, 0.5 ms, ISI 2 ms, 2 Hz, 50-150 mA
-│  └─ Estímulo único 90 ms después del tren, como control
-│     └─ Solo el TREN activa la vía central; si responde al estímulo ÚNICO, la
-│        respuesta es periférica por difusión de corriente
-├─ Registro / montaje
-│  ├─ Músculos diana: orbicularis oculi/oris y mentalis (facial) · masetero (trigémino
-│  │  motor) · lengua (hipogloso)
-│  └─ Electrodos de aguja o hook-wire intramusculares
-├─ Pitfall característico
-│  ├─ El CoMEP de orbicularis oculi puede ser en realidad un Blink Reflex R1
-│  │  contaminante — misma latencia, mismo comportamiento
-│  │  └─ Origen: la corriente del TES se propaga por cuero cabelludo anterior y activa
-│  │     ramas del n. supraorbitario (aferentes trigeminales)
-│  ├─ Estrategia: correr Blink Reflex EN PARALELO al CoMEP para diferenciar origen
-│  │  cortical real de reflejo trigémino-facial (ver A9)
-│  └─ Núcleo facial superior con inervación bicortical → lesión unilateral
-│     cortical/subcortical no siempre da parálisis facial superior clínica, aunque
-│     el CoMEP cambie
-├─ Efecto anestesia/fisiología
-│  └─ Igual que MEP miogénico — sensible a halogenados y relajante; TIVA de elección
-├─ Criterios de alarma
-│  ├─ Misma lógica que MEP de miembro (presencia/ausencia, cambio de amplitud)
-│  ├─ Sin umbral numérico consolidado en las fuentes disponibles (verificar)
-│  └─ Serie de 100 cirugías de base de cráneo (facial):
-│     ├─ Sin cambios → sin déficit
-│     ├─ Caída &gt;80% vs. basal → déficit transitorio o ausente
-│     └─ Pérdida → parálisis completa permanente (HB IV-VI)
-├─ Causas de cambio no quirúrgico
-│  └─ Comportamiento errático del CoMEP facial → sospechar activación periférica por
-│     corriente dispersa a intensidad sub/cercana al umbral
-├─ Troubleshooting
-│  └─ Comprobar respuesta a estímulo único vs. tren → correlacionar con Blink Reflex
-│     → pausa de manipulación + irrigación templada (puede revertir el bloqueo temporal
-│     de conducción del facial)
-├─ Limitaciones
-│  ├─ Difícil de interpretar en infratentorial si no se corre Blink Reflex en paralelo
-│  └─ Sensible a corriente dispersa por cuero cabelludo, no solo a la vía corticobulbar
-└─ Referencia
-   └─ Deletis&amp;FernándezConejero (Neurophysiology in Neurosurgery 2ª ed., caps. 10 y 17)
-      · Téllez2016 (activación periférica confundente)</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">Corticobulbares / CoMEPs — ampliación
-├─ VCoMEPs (CoMEP vagal/laríngeo) — subtipo no cubierto arriba
-│  ├─ Vocalis (n. laríngeo recurrente): hook-wire vía laringoscopio suspensorio
-│  │  (requiere ORL) · Cricotiroideo/CTHY (rama externa del laríngeo superior):
-│  │  electrodo colocado con el paciente DESPIERTO antes de intubar, guiado por EMG
-│  │  durante fonación de sonido agudo
-│  └─ TES hemisférico UNILATERAL → VCoMEP BILATERAL — evidencia de inervación
-│     corticobulbar bilateral de los músculos vocales
-├─ Discrepancia de criterios de alarma entre autores (por eso no hay umbral único)
-│  ├─ Dong/Fukuda: decremento 50% · Acioly: 80% · Sarnthein: ↑umbral de estimulación
-│  │  &gt;20 mA vs. basal como predictor de déficit facial
-│  └─ Filtro pasa-alto óptimo para CoMEP: 50 Hz (no 5 Hz, el estándar de MEP de miembro)
-├─ Limitación adicional
-│  └─ No detecta daño en raíces aferentes intramedulares ni conexiones internucleares
-│     → puede haber disfagia o reflejo nauseoso ausente con CoMEP mantenido toda la
-│     cirugía
-└─ Referencia: Deletis&amp;FernándezConejero, cap. 10, pp.142-147</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="A7" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A7" onclick="event.stopPropagation()" aria-label="Marcar A7 como estudiado">
-              <span class="tema-codigo">A7</span>
-              <h3 class="tema-titulo">PEATC / BAEP</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">PEATC / BAEP
-├─ Vía anatómica (generadores)
-│  ├─ Onda I: porción distal del n. auditivo (cóclea) · onda III: núcleo coclear
-│  │  (protuberancia)
-│  └─ Onda V: terminación del lemnisco lateral en el colículo inferior CONTRALATERAL
-│     — ondas I-III generadas ipsilateralmente, IV en adelante mixtas/contralaterales
-├─ Estimulación
-│  ├─ Click monoaural con enmascaramiento del oído contralateral, ~105 dB PeSPL
-│  │  (≈65-70 dB HL)
-│  ├─ Tasa práctica hasta 50-70 pps (límite absoluto 100 pps) — a mayor tasa, las
-│  │  ondas I-III caen más que la V
-│  └─ Polaridad rarefacción o condensación, NO alternante — distorsiona la forma de
-│     onda en hipoacusia, aunque cancele el artefacto de estímulo
-├─ Registro / montaje
-│  ├─ Dos canales: vértex-nuca (realza onda V) · lóbulo-lóbulo (realza ondas I-III)
-│  └─ Electrodos cortos y trenzados — minimizar interferencia de transformadores y del
-│     microscopio quirúrgico
-├─ Morfología normal
-│  └─ Secuencia de picos I-VII, atención clínica centrada en I/III/V
-│     └─ Intervalo interpico I-II ≈1.04-1.08 ms (coherente con la longitud/velocidad
-│        de conducción del VIII par)
-├─ Efecto anestesia/fisiología
-│  ├─ Notablemente INSENSIBLE a la anestesia — el tipo de anestésico puede elegirse
-│  │  sin ninguna consideración sobre el BAEP (a diferencia de SEP/EEG)
-│  └─ Sí sensible a temperatura: por debajo de 35.0 °C aumenta notablemente las
-│     latencias
-├─ Criterios de alarma
-│  └─ Dependen del contexto quirúrgico — en cirugía de tronco/ángulo pontocerebeloso:
-│     ↓50% amplitud onda V + ↑latencia &gt;0.5 ms (ver B8)
-├─ Causas de cambio no quirúrgico
-│  └─ Interferencia eléctrica/magnética del quirófano (transformadores, luz del
-│     microscopio) · impedancia de electrodo · ruido EEG de fondo (reduce SNR, obliga
-│     a promediar más)
-├─ Troubleshooting
-│  └─ Inspeccionar la forma de onda CRUDA (no solo el promedio) para identificar la
-│     fuente de interferencia antes de asumir patología
-├─ Limitaciones
-│  ├─ Requiere promediado (≥1000 respuestas en condiciones óptimas) → demora
-│  │  inherente; la hipoacusia previa exige aún más barridos, retrasando la detección
-│  └─ No capta actividad más allá del colículo inferior — no informa de tálamo ni
-│     corteza
-└─ Referencia
-   └─ Deletis, cap. 5 (Møller), §5.1-5.9, pp.65-82 · Moller2011, cap. 7 &quot;Monitoring of
-      Auditory Evoked Potentials&quot;, p.158</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="A8" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A8" onclick="event.stopPropagation()" aria-label="Marcar A8 como estudiado">
-              <span class="tema-codigo">A8</span>
-              <h3 class="tema-titulo">EEG intraoperatorio</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">EEG intraoperatorio
-├─ Vía anatómica
-│  └─ No aplica en sentido clásico — registro de actividad cortical ESPONTÁNEA, no
-│     evocada; refleja actividad cortical, no subcortical
-├─ Estimulación
-│  └─ No aplica — registro pasivo continuo (excepción: la electrocorticografía puede
-│     combinarse con estimulación cortical para mapeo, ver B7)
-├─ Registro / montaje
-│  ├─ Sistema 10-20 multicanal, comparación bihemisférica obligatoria (ver C2)
-│  └─ ECoG (variante intracraneal, cirugía de epilepsia): amplitud 100-1000 µV vs.
-│     10-50 µV del EEG de superficie, mucho menos artefacto muscular
-├─ Morfología normal
-│  └─ Actividad bilateral simétrica · predominio regional fisiológico (más beta
-│     frontal, más theta/delta temporal)
-├─ Efecto anestesia/fisiología
-│  └─ MUY sensible, dosis-dependiente (a diferencia del BAEP) — enlentecimiento
-│     progresivo hasta burst-suppression
-│     └─ Efecto varía por fármaco: enflurano/metohexital/etomidato/fentanilo tienden
-│        a aumentar la actividad epileptiforme · isoflurano/sevoflurano/propofol
-│        relativamente neutros
-├─ Criterios de alarma (contexto endarterectomía carotídea — isquemia)
-│  ├─ Caída de amplitud &gt;50-80% o pérdida completa · ↑actividad delta ≥2x · pérdida
-│  │  de ritmos rápidos alfa/beta
-│  └─ Asimetría interhemisférica: 15-20% moderada, &gt;20% severa (brain symmetry index)
-├─ Causas de cambio no quirúrgico
-│  ├─ Cambio de plano anestésico — principal factor de confusión, MIMETIZA el
-│  │  enlentecimiento isquémico → exige plano estable en momentos críticos
-│  └─ Hipotermia · línea de base ya anormal (ictus previo) hasta en el 40% de los
-│     pacientes
-├─ Troubleshooting
-│  └─ Comparar HEMISFERIOS entre sí, no valores absolutos · el EEG cuantitativo
-│     (CSA/DSA/frecuencia de borde espectral) es solo adyuvante, con menor evidencia
-│     que el EEG crudo multicanal
-├─ Limitaciones
-│  ├─ Gran volumen de datos crudos, requiere intérprete experto · no detecta isquemia
-│  │  subcortical ni infartos de zona limítrofe (watershed)
-│  └─ En ECoG: la correlación entre espigas residuales y resultado quirúrgico es
-│     inconsistente entre series — es herramienta de localización, no de &quot;alarma de
-│     seguridad&quot; como el EEG isquémico
-└─ Referencia
-   └─ Deletis, cap. 25 (Malcharek/Schneider/Dinkel), §25.2.1, pp.339-340 (isquemia en
-      endarterectomía carotídea) · cap. 32, §32.4-32.6, pp.446-451 (ECoG en cirugía de
-      epilepsia)</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="A9" style="--bloque-color:#3b82f6" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="A9" onclick="event.stopPropagation()" aria-label="Marcar A9 como estudiado">
-              <span class="tema-codigo">A9</span>
-              <h3 class="tema-titulo">Reflejos en IONM</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla A</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Reflejos en IONM
-├─ Reflejo H (espinal)
-│  ├─ Arco: monosináptico Ia (huso muscular) → motoneurona alfa
-│  │  └─ Análogo electrofisiológico del reflejo miotático
-│  ├─ Técnica: estimulación submáxima del n. tibial en hueco poplíteo, registro en sóleo
-│  └─ Utilidad: integridad del arco lumbosacro / raíz S1
-│     └─ Muy sensible a profundidad anestésica y a relajación muscular
-│        (verificar umbral de alarma si se usa como monitorización continua)
-├─ Blink Reflex (BR)
-│  ├─ Arco: aferente V1 (n. supraorbitario) → núcleo espinal del trigémino →
-│  │  interneuronas de tronco → núcleo facial (VII) → orbicularis oculi
-│  ├─ Componentes: R1 (oligosináptico, ipsilateral, pontino) y R2 (polisináptico,
-│  │  bilateral, más tardío, ~30 ms)
-│  ├─ Técnica: tren corto de estímulos sobre n. supraorbitario
-│  │  └─ Bajo anestesia general se necesita TREN, no estímulo único
-│  ├─ Utilidad: monitoriza el arco V-tronco-VII en cirugía de base de cráneo / ángulo
-│  │  pontocerebeloso
-│  │  └─ Distingue lesión de V1 de lesión del propio nervio facial, en paralelo al
-│  │     CoMEP facial (A6)
-│  └─ Pitfall: se pierde con planos anestésicos profundos sin que haya lesión
-│     └─ Es más sensible al propofol que las otras técnicas → correlacionar con CoMEP
-│        antes de dar la alarma
-├─ Reflejo bulbocavernoso (RBC)
-│  ├─ Arco: aferente pudendo (glande/clítoris, S2-S4) → eferente pudendo (esfínter anal
-│  │  externo / bulbocavernoso)
-│  ├─ Técnica: estimulación del dorso del pene/clítoris o sonda vesical, registro EMG
-│  │  del esfínter anal externo
-│  └─ Utilidad: cirugía de cono medular / cola de caballo
-│     └─ Integridad del arco sacro, función esfinteriana y sexual
-├─ Reflejo maseterino (jaw jerk / H del masetero)
-│  ├─ Arco: monosináptico puro V-V
-│  │  └─ Aferente propioceptivo del huso del masetero (cuerpo celular en el núcleo
-│  │     MESENCEFÁLICO del trigémino, único núcleo sensitivo primario dentro del SNC)
-│  │     → motoneurona V3 eferente
-│  ├─ Técnica: estimulación percutánea del n. maseterino bajo el arco cigomático,
-│  │  0.5 cm anterior a la ATM; registro en masetero y temporal (control)
-│  │  └─ Criterios de reflejo: umbral por debajo de la respuesta M directa, y la
-│  │     amplitud H disminuye al aumentar la M con estímulos más fuertes
-│  ├─ Utilidad: sonda la integridad mesencéfalo-protuberancial de forma pura V-V
-│  │  └─ A diferencia del Blink Reflex (V→VII), permite localizar el nivel de lesión
-│  │     con más precisión si se corren ambos reflejos juntos
-│  └─ Estado: método relativamente nuevo — falta validación quirúrgica y criterios de
-│     alarma precisos
-├─ Reflejo trigémino-cervical (TCR)
-│  ├─ Arco: aferente trigeminal (n. supraorbitario / infraorbitario) → tracto y núcleo
-│  │  espinal del trigémino → convergencia con motoneuronas cervicales en asta gris
-│  │  C1-C2 → eferente hacia esternocleidomastoideo
-│  ├─ Técnica: estimulación de n. supraorbitario o infraorbitario, registro en ECM
-│  │  ipsilateral
-│  │  └─ Estímulo LARGO (0.5-1.0 ms) favorece su aparición bajo anestesia general
-│  ├─ Componentes: latencia corta (~15-19 ms, el más constante bajo anestesia) y
-│  │  latencia larga (~65-70 ms, menos constante)
-│  └─ Estado: estudio de viabilidad — se obtiene bajo anestesia general en la mayoría,
-│     pero su papel práctico en MIO está por establecer
-├─ Reflejo trigémino-vocal (TVcR)
-│  ├─ Arco propuesto: rama mentoniana del trigémino (V3) → tracto y núcleo espinal del
-│  │  trigémino → núcleo ambiguo (vía neuronas reticulares próximas, con o sin paso
-│  │  previo por el núcleo del tracto solitario) → n. laríngeo recurrente → músculos
-│  │  laríngeos
-│  ├─ Técnica: estimulación del n. mentoniano en el foramen mandibular (pulso único o
-│  │  tren de 2-4 según profundidad anestésica), registro con electrodo-tubo adhesivo
-│  │  sobre cuerda vocal — mismo montaje que el LAR
-│  ├─ Componentes: R1 ~30 ms (rango 17-39 ms), bilateral en la mayoría · R2 ~65 ms
-│  │  (rango 56-76 ms), presente solo en la mitad, más polifásico
-│  ├─ Relación con el LAR: latencia de R1 del TVcR similar a la del R1 del LAR
-│  │  └─ Sugiere fibras aferentes de calibre comparable; se propone también un posible
-│  │     reflejo trigémino-hipogloso emparentado
-│  └─ Estado: descrito en 2025 — demuestra conectividad funcional trigémino-vagal bajo
-│     anestesia, pero utilidad clínica intraoperatoria y criterios de alarma AÚN NO
-│     establecidos. Hallazgo de investigación, todavía no estándar de MIO
-├─ Reflejo laríngeo aductor (LAR) — relacionado, arco vago-vagal
-│  ├─ Arco: mucosa supraglótica → rama interna del n. laríngeo superior → n. vago →
-│  │  núcleo del tracto solitario → núcleo ambiguo ipsi y contralateral → n. laríngeo
-│  │  recurrente → músculos aductores
-│  ├─ Técnica: tubo endotraqueal con electrodos de superficie sobre las cuerdas vocales
-│  │  └─ Amplitud media en función laríngea normal: 313.5 ± 167.4 µV
-│  ├─ Criterio de alarma: caída de amplitud &gt;60% sin recuperación al liberar el tejido
-│  │  → alta probabilidad de disfunción de cuerda vocal postoperatoria
-│  └─ La LATENCIA (22.4 ± 2.5 ms) es muy variable y NO sirve como parámetro de alarma
-└─ Referencia
-   └─ Deletis&amp;FernándezConejero (Neurophysiology in Neurosurgery 2ª ed., caps. 15-17:
-      Téllez/Ulkatan/Sinclair — LAR; Fernández-Conejero/Deletis — Blink Reflex;
-      Ulkatan2017 — masetero) · LimaMedeiros2024 (TCR) · Urriza2025 (TVcR)</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">Reflejos en IONM — ampliación
-├─ LAR — fisiología reformulada (no clásica)
-│  ├─ R1 es BILATERAL (iR1 ipsilateral + cR1 contralateral), no unilateral como se
-│  │  pensaba — elicitable en el 100% de los pacientes bajo TIVA a cualquier
-│  │  profundidad anestésica
-│  └─ R2 menos fiable: solo en un subgrupo bajo TIVA y tiende a desvanecerse durante
-│     la cirugía · cR1 sin habituación incluso con estimulación repetida a 0.7-1 Hz
-│     durante &gt;90 s
-├─ LAR — datos detrás del criterio &quot;&gt;60%&quot;
-│  ├─ Serie de 134 nervios en riesgo (cirugía tiroides/paratiroides): decremento
-│  │  mediano 16.5% (máx. 56.4%) con función laríngea normal · en los 6 con lesión
-│  │  inesperada del n. laríngeo recurrente, el decremento fue SIEMPRE &gt;60%
-│  └─ Amplitud basal mínima fiable: 150-200 µV — por debajo, la contaminación por
-│     actividad de campo lejano (músculo contralateral) aporta 50-100 µV
-└─ Reflejo maseterino — serie de viabilidad (10 pacientes)
-   ├─ H-reflejo fiable en masetero 7/10 (70%) y en temporal 3/4 (75%)
-   ├─ Facilitación pasiva con mordedor blando (sustituye al apriete voluntario del
-   │  paciente despierto, activa tónicamente aferentes Ia del huso)
-   └─ Latencias: H maseterino 5.4±1.3 ms vs. M 2.6±0.6 ms (amplitud H ≈21% de M
-      máxima) · H temporal 5.3±0.8 ms
-Referencia: Téllez/Ulkatan/Sinclair, cap. 15 pp.211-212 y 216 · Téllez/Ulkatan,
-cap. 16 pp.224 y 226</pre></div>
-              </div>
-            </div>
-          </details>
-        </div>
-      </details>
-<details class="bloque-seccion" style="--bloque-color:#10b981" open>
-        <summary class="bloque-titulo">Bloque B</summary>
-        <div class="bloque-body">
-          <details class="tema" id="B1" style="--bloque-color:#10b981" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="B1" onclick="event.stopPropagation()" aria-label="Marcar B1 como estudiado">
-              <span class="tema-codigo">B1</span>
-              <h3 class="tema-titulo">Columna — deformidad / escoliosis</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla B</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Columna — deformidad / escoliosis
-├─ Modalidades combinadas
-│  ├─ SEP + MEP transcraneal (TES) + EMG libre según nivel — sustituyó al wake-up test
-│  │  como estándar
-│  ├─ MEP aporta lo que SEP no cubre: disrupción de tractos ANTERIORES en segundos-
-│  │  minutos (SEP solo cubre columnas dorsolaterales — ej. clásico: infarto de arteria
-│  │  espinal anterior pasa inadvertido con SEP solo)
-│  ├─ Bite blocks obligatorios con TES/MEP (riesgo de laceración lingual/labial,
-│  │  disfunción de ATM si el bloque es rígido y prolongado) — recomendados blandos
-│  └─ Considerar anomalía anatómica: en algunos escolióticos el tracto corticoespinal y
-│     el lemnisco medial dorsal NO decusan en el bulbo
-├─ Fases del procedimiento
-│  ├─ Secuencia general: exposición → colocación de tornillos → descompresión/
-│  │  osteotomías → colocación de cage (si aplica) → realineamiento/corrección
-│  ├─ Ejemplo VCR (resección de columna vertebral): osteotomía amplia → barra temporal
-│  │  → cierre de la osteotomía por compresión en la convexidad
-│  └─ Ejemplo mínimamente invasivo: osteotomías de Ponte por tubo + tornillos
-│     pediculares bilaterales bajo navegación
-├─ Riesgo neurológico específico
-│  ├─ Lesión medular iatrogénica en CUALQUIER maniobra de corrección — mecanismo dual:
-│  │  isquemia + lesión mecánica, mayor en curvas grandes
-│  ├─ La maniobra MÁS peligrosa: distracción — riesgo de isquemia mayor que con
-│  │  compresión (demostrado en modelo animal porcino)
-│  ├─ Derotación/reducción: figuran en el protocolo de reversión junto a distracción,
-│  │  pero sin diferenciación cuantitativa de riesgo frente a distracción/compresión
-│  │  (verificar)
-│  └─ La causa de una caída de señal puede NO ser la maniobra en sí — descrito un caso
-│     de hematoma epidural como causa real, no la corrección
-├─ Posicionamiento
-│  ├─ Prono estándar (ejemplo descrito: marco Jackson abierto + tracción craneal)
-│  ├─ &quot;Prepositioning ION&quot;: basal en camilla (supino) tras inducción, antes de prono y
-│     manipulación — usado en inestabilidad/trauma/unión craneocervical; limita la
-│     técnica anestésica porque el paciente no puede quedar totalmente paralizado
-│     (necesario para MEP)
-│  └─ Protección ocular/plexo braquial en prono (verificar — no encontrado en estas
-│     fuentes de ION, es manejo anestésico/quirúrgico estándar de posicionamiento)
-├─ Jerarquía de alarma
-│  ├─ Wake-up test (Vauzelle 1973, popularizado por Stagnara) — primer método histórico;
-│  │  hoy reservado a resultados equívocos o ION no disponible
-│  ├─ SEP: caída de amplitud &gt;50% + incremento de latencia &gt;10%
-│  ├─ MEP: todo-o-nada como regla general, PERO en eventos quirúrgicos críticos (durante
-│  │  la maniobra de corrección) se avisa con caída del 80% en cualquier músculo
-│  ├─ Deformity Angular Ratio (DAR): predictor cuantitativo de riesgo de pérdida de
-│  │  señal a partir de la geometría de la curva (coronal + cifosis)
-│  └─ El SEP puede retrasarse 20-30 min en su caída y su recuperación respecto al evento
-│     real → seguir monitorizando el mayor tiempo posible
-├─ Protocolo de reacción
-│  ├─ Protocolo de pérdida de señal en 3 niveles:
-│  │  · Awareness: pausa quirúrgica, avisar a todo el equipo, parar descansos/cambios de
-│  │    personal, llamar a anestesia adjunta, pedir imagen y hemoderivados
-│  │  · Nivel 1 — Cirujano: REVERTIR la maniobra previa a la pérdida (barras,
-│  │    distracción, derrotación, reducción), retirar implante si se colocó
-│  │    inmediatamente antes · Neurofisiología: revisar electrodos/técnica ·
-│  │    Anestesia: PAM &gt;80 mmHg, optimizar hematocrito/pH/pO2, normotermia, minimizar
-│  │    halogenados (&lt;1/3 CAM)
-│  │  · Nivel 2 — Cirujano: imagen 3D, inspeccionar/reducir tracción · Neurofisiología:
-│  │    revisar patrón/timing del cambio, considerar MEP epidural · Anestesia: preparar
-│  │    wake-up test, considerar bolo de esteroide
-│  │  · Nivel 3: considerar wake-up test, abortar vs. continuar, reevaluar en 15 min,
-│  │    solicitar cama de UCI
-│  └─ Aplicación real de un caso: parada + reducción de agente inhalado → cierre rápido
-│     de la osteotomía → pausa total de manipulación → chequeo MEP cada 5 min →
-│     recuperación a los 15 min
-├─ Técnica de mapeo específica
-│  ├─ EMG estimulado/umbral de tornillo pedicular — parámetros completos en A5; aquí
-│  │  solo la correlación: umbral tEMG bajo ↔ mayor probabilidad de mala colocación del
-│  │  tornillo, analizado sobre miles de tornillos
-│  ├─ EMG libre + estimulado obligatorios en fusión intersomática lateral transpsoas
-│  │  (XLIF/DLIF) al dilatar a través del psoas y anclar el retractor — estándar de
-│  │  cuidado; déficit sensitivomotor transitorio 20-25%, mayoría resuelto al año
-│  └─ D-wave collision technique (mapeo del tracto corticoespinal): útil específicamente
-│     en escoliosis con anomalías anatómicas de los tractos motores/sensitivos —
-│     estimulación transcraneal simultánea + estimulación de médula expuesta, colisión
-│     de la onda D descendente con actividad ascendente
-└─ Referencia
-   └─ Deletis, cap. 28 (Guiroy/Candocia/Fontes), pp.381-393 · Moller2011, cap. 10
-      &quot;Placement of Pedicle Screws for Spinal Fixation&quot; / &quot;Scoliosis Operations&quot;,
-      pp.219-224 · cap. 14, pp.281-282 (D-wave collision)</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">Columna deformidad/escoliosis — ampliación
-├─ Caso 1 (VCR por cifoescoliosis congénita): SEP estable en TODO el procedimiento, MEP
-│  en pierna derecha se pierde en la aplicación de barra temporal, se recupera a los
-│  15 min tras protocolo — ilustra disociación SEP/MEP y la reversibilidad si se actúa a
-│  tiempo
-├─ Caso 2 (escoliosis idiopática del adolescente): MEP basal ya pobre por profundidad
-│  anestésica → SEP como única señal fiable, caída bilateral tras tornillos torácicos,
-│  causa real = hematoma epidural, no la corrección — ilustra por qué &quot;seguir
-│  monitorizando el máximo tiempo posible&quot; y no descartar causas no mecánicas
-└─ Indicación de ION según evidencia: estándar de cuidado en cirugía de deformidad,
-   tumor intramedular y fusión intersomática lateral; en cirugía puramente descompresiva
-   sin maniobra reversible se desaconseja su uso rutinario — un cambio ahí &quot;solo
-   indicaría una lesión sobre la que el cirujano no puede hacer nada&quot;
-Referencia: Deletis, cap. 28 (Guiroy/Candocia/Fontes), pp.381-393</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="B2" style="--bloque-color:#10b981" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="B2" onclick="event.stopPropagation()" aria-label="Marcar B2 como estudiado">
-              <span class="tema-codigo">B2</span>
-              <h3 class="tema-titulo">Columna — degenerativa / instrumentación</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla B</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Columna — degenerativa / instrumentación
-├─ Modalidades combinadas
-│  ├─ SEP + MEP transcraneal + EMG (libre + estimulado) — mismo estándar multimodal que
-│  │  en deformidad (B1)
-│  ├─ Trigger EMG (tEMG) de tornillo pedicular: la modalidad con más evidencia acumulada
-│  │  específicamente en columna degenerativa/instrumentación (parámetros en A5)
-│  └─ Debate de indicación por escenario: descompresión lumbar simple → &quot;innecesario&quot; ·
-│     mielopatía cervical espondilótica → &quot;opcional&quot;, con series publicadas de cirugía
-│     SIN ION · deformidad/intramedular/XLIF → estándar de cuidado
-├─ Fases del procedimiento
-│  ├─ Exposición → colocación de tornillos pediculares → descompresión (laminectomía/
-│  │  foraminotomía) ± osteotomía → artrodesis/fusión intersomática (cage) — mismo
-│  │  esquema general que B1 pero SIN fase mayor de realineamiento
-│  └─ Fusión intersomática lateral transpsoas (XLIF/DLIF): gana altura foraminal y
-│     descomprime indirectamente evitando abordaje posterior grande, pero expone el
-│     plexo lumbosacro y el nervio femoral en su trayecto a través del psoas
-├─ Riesgo neurológico específico
-│  ├─ Mala colocación de tornillo pedicular sin monitorización: incidencia de lesión
-│  │  neurológica reportada 1-11%, hasta 40% si se suman otros factores agravantes
-│  ├─ Abordaje transpsoas: déficit sensitivomotor transitorio 20-25% por exposición del
-│  │  plexo lumbosacro/nervio femoral, mayoría resuelto al año
-│  ├─ Radiculopatía por retracción de raíz durante descompresión (verificar — sin dato
-│  │  cuantitativo propio en estas fuentes)
-│  ├─ Nivel cervical: el riesgo pasa de radicular a MEDULAR (mismo principio anatómico
-│  │  que A5, aquí aplicado a descompresión cervical degenerativa)
-│  └─ EMG libre aislado: pobre sensibilidad para lesión de raíz, tasa relevante de
-│     falsos negativos — no debe sustituir al tEMG
-├─ Posicionamiento
-│  ├─ Prono estándar (igual que B1)
-│  ├─ &quot;Prepositioning ION&quot; aplicable cuando hay inestabilidad asociada (ej. degenerativa
-│  │  con listesis/estenosis severa que requiere reducción antes de fijar) — mismo
-│  │  concepto que en B1
-│  └─ Protección ocular/plexo braquial en prono (verificar — sin dato propio en estas
-│     fuentes de ION, manejo anestésico estándar de posicionamiento)
-├─ Jerarquía de alarma
-│  ├─ Mismo criterio SEP (&gt;50% amplitud + &gt;10% latencia) y MEP (todo-o-nada, 80% en
-│  │  eventos críticos) que B1 — con el matiz de que en descompresión pura sin maniobra
-│  │  reversible el valor accionable de un cambio es menor
-│  ├─ Umbral tEMG del tornillo ya insertado: &lt;10 mA sugiere brecha (protocolo Calancie,
-│  │  detalle completo en A5); &gt;11 mA se asocia a mayor probabilidad de colocación
-│  │  correcta, con matices por osteoporosis y nivel torácico
-│  └─ Umbral de &quot;exploración&quot; del awl ANTES de insertar el tornillo (fase de apertura
-│     pedicular): corriente constante 7 mA (protocolo Calancie original) — dato distinto
-│     del umbral post-inserción
-├─ Protocolo de reacción
-│  ├─ Mismo protocolo de pérdida de señal en 3 niveles que B1 (ver B1 para el detalle
-│  │  completo, no se duplica aquí)
-│  ├─ Matiz específico de instrumentación: &quot;si el implante se colocó inmediatamente
-│  │  antes de la pérdida, retirarlo&quot; es la acción de primer nivel más relevante en este
-│  │  contexto (frente a &quot;revertir maniobra de corrección&quot; en B1)
-│  └─ Fluoroscopia intraoperatoria: uso común pero con falsos positivos/negativos
-│     relevantes — NO sustituye la monitorización electrofisiológica
-├─ Técnica de mapeo específica
-│  ├─ EMG estimulado/umbral de tornillo pedicular — técnica de mapeo PRINCIPAL en
-│  │  instrumentación degenerativa; parámetros técnicos completos ya en A5
-│  ├─ EMG libre durante dilatación transpsoas y anclaje del retractor en XLIF/DLIF —
-│  │  estándar de cuidado, no sustituible
-│  ├─ Estimulación de la lámina antes de insertar el tornillo (umbral óseo basal):
-│  │  electrodo de mano, umbral ~25 mA con variación individual considerable
-│  └─ Corriente constante vs. voltaje constante: el shunting por humedad del campo
-│     quirúrgico hace variar el umbral con corriente constante; voltaje constante es
-│     teóricamente más robusto frente al shunting pero la práctica mayoritaria usa
-│     corriente constante
-└─ Referencia
-   └─ Deletis, cap. 28 (Guiroy/Candocia/Fontes), pp.381-385 · Moller2011, cap. 10
-      &quot;Placement of Pedicle Screws for Spinal Fixation&quot;, pp.221-224</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">Columna degenerativa/instrumentación — ampliación
-├─ Umbral de screw testing y edad/sexo: pacientes jóvenes tienen umbrales más altos que
-│  los mayores; mujeres mayores con osteoporosis pueden tener umbrales en decenas de mA
-│  — complementa el umbral estándar ya fijado en A5
-├─ Cirugía mínimamente invasiva percutánea: la dificultad de testear el tornillo aumenta
-│  porque no hay visualización directa del pedículo/estructuras vecinas y el tejido
-│  circundante genera más shunting de corriente — mayor incertidumbre que en cirugía
-│  abierta convencional
-└─ Descompresión sin corrección de deformidad ni maniobra reversible: la evidencia no
-   respalda el uso rutinario de ION y puede incluso perjudicar el curso quirúrgico por
-   falsos positivos
-Referencia: Deletis, cap. 28 (Guiroy/Candocia/Fontes) p.384 · Moller2011, cap. 10
-pp.221-224</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="B3" style="--bloque-color:#10b981" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="B3" onclick="event.stopPropagation()" aria-label="Marcar B3 como estudiado">
-              <span class="tema-codigo">B3</span>
-              <h3 class="tema-titulo">Tumores medulares intramedulares (IMSCT)</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla B</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Tumores medulares intramedulares (IMSCT)
-├─ Modalidades combinadas
-│  ├─ Marco conceptual: MONITORIZACIÓN (SEP, MEP, D-wave, EMG libre — vigilancia
-│  │  continua) vs. MAPEO (localización funcional para guiar el abordaje) —
-│  │  complementarias, no intercambiables
-│  ├─ Estándar: SEP + MEP muscular + D-wave epidural + EMG libre continuo (parámetros
-│  │  de cada una en A1/A3/A4)
-│  ├─ Jerarquía de interpretación: si la D-wave es monitorizable, el MEP se interpreta
-│  │  solo como presencia/ausencia; si NO lo es, entonces también cuentan las caídas de
-│  │  amplitud del MEP como alarma
-│  └─ 100 cirugías consecutivas: 92/100 con estado motor normal/leve preoperatorio
-│     tenían MEP basal registrable; los 8 con déficit severo previo NO tenían MEP
-│     registrable en ninguna extremidad
-├─ Fases del procedimiento
-│  ├─ Laminotomía/laminectomía → apertura de dura/aracnoides → electrodo epidural de
-│  │  D-wave CAUDAL a la lesión (única técnica cuya basal se toma a mitad de cirugía,
-│  │  no al inicio)
-│  ├─ Mielotomía en línea media guiada por mapeo de columnas dorsales (DCM) →
-│  │  resección &quot;inside-out&quot; a trozos (piecemeal): debulking + disección del plano
-│  │  tumor-médula sana
-│  ├─ Fase más desafiante: los BORDES del tumor, donde D-wave y MEP son críticos
-│  └─ D-wave monitorizada hasta cierre dural COMPLETO — el riesgo no termina con la
-│     resección
-├─ Riesgo neurológico específico
-│  ├─ Mielotomía mal localizada: lesiona columnas dorsales sanas si el tumor ha
-│  │  distorsionado/rotado el rafe medio posterior real
-│  ├─ Disección del plano tumor-médula: mayor riesgo en los POLOS craneal/caudal y en
-│  │  la interfase tumor-médula; caídas SÚBITAS y simultáneas de D-wave y MEP sugieren
-│  │  compromiso VASCULAR más que manipulación mecánica directa
-│  ├─ Coagulación bipolar: evitarla cerca del rafe anterior/interfase con médula sana;
-│  │  el aspirador ultrasónico solo es seguro sobre tejido ya desprendido
-│  └─ D-wave raramente registrable en tumores del CONO medular (menos axones CST +
-│     mayor longitud) — no achacarlo a fallo técnico (ver A3-Ampliación)
-├─ Posicionamiento
-│  ├─ Prono, abordaje posterior estándar
-│  ├─ Cervical/torácico alto: cabezal de Mayfield — anticipar su colocación al poner
-│  │  los electrodos de cuero cabelludo, avisar a anestesia antes de aplicarlo
-│  ├─ Torácico medio-bajo: donut acolchado, brazos en posición &quot;superman&quot;
-│  └─ Basales antes Y después del posicionamiento definitivo — permite diferenciar si
-│     un cambio de señal se debe al propio posicionamiento
-├─ Jerarquía de alarma
-│  ├─ Pérdida transitoria de MEP + D-wave &gt;50% basal → déficit transitorio probable →
-│  │  continuar aplicando TIP · pérdida de MEP + D-wave &gt;50% → déficit permanente
-│  │  probable → cese inmediato (Tabla 2.1 completa en A3)
-│  ├─ Declive gradual D-wave 20-30% o ↑umbral de MEP → alerta precoz/insulto reversible
-│  │  → protocolo TIP · caída súbita D-wave + pérdida bilateral MEP → sospecha vascular
-│  ├─ Deterioro de SEP durante el mapeo de columnas dorsales → riesgo de déficit
-│  │  propioceptivo → pausar/desplazar la mielotomía
-│  ├─ Fenómeno &quot;build-up&quot;: con estimulación rápida repetida (1-2 Hz) la amplitud del
-│  │  MEP aumenta en respuestas sucesivas — un único estímulo sin respuesta puede ser
-│  │  falso negativo, monitorizar siempre en secuencia rápida
-│  └─ Serie con IONM (SEP+MEP+D-wave): discapacidad postoperatoria grave 3%, frente al
-│     11.7% de una serie de ependimomas sin monitorizar
-├─ Protocolo de reacción
-│  ├─ TIP (Time, Irrigation, Pressure): detener disección, irrigar suero templado, PAM
-│  │  ≥80-85 mmHg — estrategia &quot;stop-and-go&quot;, suele revertir en minutos
-│  ├─ Si el MEP no se recupera: en 9/10 casos queda asegurado un déficit motor
-│  │  transitorio; con D-wave inalterada se puede decidir continuar sabiendo que el
-│  │  déficit esperado será reversible
-│  ├─ Pérdida UNILATERAL de MEP → déficit unilateral, que SIEMPRE se recupera
-│  └─ &quot;Punto vulnerable&quot; focal: redirigir la disección al extremo opuesto donde la
-│     vulnerabilidad funcional puede ser menor
-└─ Técnica de mapeo específica
-   ├─ DCM (mapeo de columnas dorsales): estimulación ortodrómica + inversión de fase
-   │  del SEP registrado sobre la médula expuesta — la línea isoeléctrica entre ambos
-   │  potenciales invertidos marca el surco medio funcional cuando el tumor lo ha
-   │  distorsionado
-   └─ Mapeo del CST: estimulación directa con sonda manual (trenes 3-5 pulsos, 0.5 ms,
-      ISI 2-4 ms) · doble tren con intervalo INTERTREN de 60 ms discrimina CST de
-      columna dorsal — las interneuronas donde termina el CST tienen recuperación
-      sináptica &lt;60 ms (responden también al 2º tren), las de columna dorsal no
-└─ Referencia
-   └─ Deletis, cap. 26 (Frank/Kothbauer), pp.351-364 · Boaro2026, secciones 1-9</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">IMSCT — ampliación
-├─ Controversia: ¿la IONM previene la lesión o solo la predice?
-│  └─ Evidencia sólida clase I-II para capacidad DIAGNÓSTICA; evidencia de que la
-│     monitorización EVITA directamente lesión permanente se limita mayoritariamente a
-│     clase II-III — barrera ética/metodológica casi insalvable para un ensayo
-│     aleatorizado en este contexto
-├─ Evolución de la práctica en 20 años: de aceptar la pérdida de MEP como transitoria
-│  (con solo preservar la D-wave) a una estrategia conservadora que busca preservar
-│  AMBAS señales durante todo el procedimiento
-├─ Caso ilustrativo 1: astrocitoma T7-T8, pérdida bilateral progresiva de MEP casi
-│  hasta desaparecer, D-wave estable → TIP → recuperación casi completa → resección
-│  continuada por estabilidad de D-wave → McCormick I a los 3 meses — jerarquía
-│  D-wave &gt; MEP como predictor de pronóstico motor
-└─ Caso ilustrativo 2: glioma bajo grado con siringomielia, DCM no permitió identificar
-   la línea media → caída de SEP ~90%/abolición contralateral sin recuperación completa
-   → D-wave y MEP estables todo el procedimiento → sin empeoramiento motor relevante,
-   déficit predominantemente sensitivo — disociación SEP (columna dorsal) vs. D-wave/
-   MEP (CST) como vías que no se sustituyen entre sí
-Referencia: Boaro2026, §6-7 · Deletis, cap. 26, §26.9, p.363</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="B4" style="--bloque-color:#10b981" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="B4" onclick="event.stopPropagation()" aria-label="Marcar B4 como estudiado">
-              <span class="tema-codigo">B4</span>
-              <h3 class="tema-titulo">Tumores medulares extramedulares / cono-cola de caballo</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla B</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Tumores medulares extramedulares / cono-cola de caballo
-├─ Modalidades combinadas
-│  ├─ SEP + MEP muscular + EMG libre de raíces lumbosacras + reflejo bulbocavernoso
-│  │  (RBC) — arco y técnica completos en A9, aquí solo su rol dentro del paquete
-│  ├─ Aquí el MAPEO predomina sobre la monitorización pasiva: identificar estructuras
-│  │  neurales funcionales que deben preservarse de raicillas vestigiales/bandas
-│  │  fibrosas seccionables — a diferencia de B3, donde domina la vigilancia continua
-│  │  de vías
-│  └─ D-wave: raramente registrable en tumores de cono (igual mecanismo que B3); en
-│     tumores estrictamente extramedulares no aplica al no haber CST expuesto
-├─ Fases del procedimiento
-│  ├─ Laminectomía/hemilaminectomía → apertura dural → identificación del plano
-│  │  tumor-raíces/tumor-cono → disección con mapeo continuo de raíces en riesgo →
-│  │  resección → cierre — SIN mielotomía, el tumor está fuera del parénquima
-│  ├─ A diferencia de IMSCT, aquí se han visto cambios de MEP ya durante la propia
-│  │  laminectomía — compresión añadida a una médula ya comprimida, sobre todo en
-│  │  tumores firmes/calcificados
-│  ├─ Retracción medular extensa para tumores anterolaterales: el cambio de MEP sirve
-│  │  de &quot;gauge&quot; para limitar cuánto retraer
-│  └─ Filum/lipomas terminales: puede bastar con seccionar el filum tras confirmar por
-│     mapeo que no hay respuesta muscular al estimularlo
-├─ Riesgo neurológico específico
-│  ├─ Diferencia conceptual con B3: el riesgo no es de tractos largos difusos, sino de
-│  │  RAÍCES INDIVIDUALES identificables — la pregunta pasa de &quot;¿qué tracto daño?&quot; a
-│  │  &quot;¿qué raíz puedo sacrificar sin consecuencia funcional?&quot;
-│  ├─ Sacrificar una raíz funcional creyéndola vestigial: en cauda equina/cono, el
-│  │  sacrificio de UNA SOLA raíz puede tener consecuencias funcionales graves
-│  ├─ Distribución asimétrica e IMPREDECIBLE de aferentes pudendos entre S1-S3: en el
-│  │  7.6% de una serie pediátrica, TODA la actividad aferente pudenda dependía de una
-│  │  única raíz S2
-│  └─ Falso positivo por dispersión de corriente en LCR/campo húmedo: puede simular
-│     respuesta muscular en una estructura no funcional — exige campo seco al estimular
-├─ Posicionamiento
-│  ├─ Prono, similar a B1/B3 — sin matiz propio distinto en las fuentes (verificar)
-│  └─ Nota anestésica: en cirugía pediátrica de cono/cauda, en &lt;6 años a veces se
-│     reduce/elimina propofol añadiendo ketamina para mejorar la monitorabilidad del
-│     MEP transcraneal (78%→96% en &gt;6 años, hasta 86% en &lt;6 años)
-├─ Jerarquía de alarma
-│  ├─ Mapeo por estimulación directa (triggered EMG): &lt;10 mA (habitualmente 1-5 mA) =
-│  │  respuesta por raíz funcional; CMAP solo con &gt;25 mA = estructura lejos de ser
-│  │  funcional
-│  ├─ Regla de oro: NUNCA sacrificar una raíz &quot;no funcional&quot; sin haber demostrado que
-│  │  la misma función está cubierta por otra raíz
-│  ├─ RBC: sensibilidad/especificidad 100%/70.6% para disfunción urinaria/intestinal
-│  │  postoperatoria en desanclaje pediátrico · monitorabilidad reportada 59-94% según
-│  │  la serie — sin criterio de alarma numérico consolidado, la alteración de
-│  │  duración/amplitud puede ANTICIPAR la desaparición
-│  ├─ Monitorabilidad de otras señales en esta región (factibilidad, no alarma): SEP
-│  │  pudendo 84% · MEP de esfínter anal externo 74%
-│  └─ SEP: mismo criterio clásico (&gt;50% amplitud, &gt;10% latencia) — limitación propia
-│     de la región: el solapamiento de raíces adyacentes puede enmascarar la lesión de
-│     una raíz aislada
-├─ Protocolo de reacción
-│  ├─ Regla de oro del filum/estructura ambigua: primero fijar el umbral fisiológico
-│  │  estimulando una raíz motora NORMAL conocida (típicamente 0.05-0.5 mA), y solo
-│  │  después interpretar la estructura dudosa con ese umbral como referencia
-│  ├─ Si aparece respuesta al estimular una estructura que se iba a sacrificar →
-│  │  investigación microquirúrgica adicional para identificar y preservar la
-│  │  raicilla, NUNCA cortar directamente
-│  ├─ Campo quirúrgico seco durante la estimulación — evita falsos positivos
-│  └─ Ante cambio de MEP durante laminectomía/retracción (a diferencia de B3, donde el
-│     riesgo mayor es en la disección del plano): reducir la retracción y reevaluar
-└─ Técnica de mapeo específica
-   ├─ Triggered EMG raíz-por-raíz de cauda equina: sonda bipolar manual, 0.01-3 mA,
-   │  1 Hz, 200 µs, registro de CMAP en músculos diana segmentarios L1-S4
-   ├─ Mapeo del filum terminale: estimular primero raíz normal conocida para fijar
-   │  umbral → estimular estructura dudosa hasta 3 mA sin respuesta → si negativo,
-   │  seccionar con seguridad; si hay respuesta, inspeccionar la cara VENTRAL en busca
-   │  de raicillas adheridas no visibles desde el abordaje posterior
-   └─ DRAP (potenciales de acción de raíz dorsal): electrodo de gancho bipolar sobre
-      la raíz levantada fuera del canal, tras estimular el nervio pudendo — mapea la
-      contribución aferente de cada raíz sacra individual
-└─ Referencia
-   └─ Deletis, cap. 26 (Frank/Kothbauer), pp.356-361 · cap. 27 (Pasquali/Tramontano/
-      Sala), pp.365-378, esp. §27.6-27.7 · cap. 6 (Vodusek/Deletis), pp.87-99 ·
-      Moller2011, cap. 6, pp.112-114</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">Extramedulares / cono-cola de caballo — ampliación
-├─ Serie de mapeo DRAP en rizotomía dorsal selectiva (114 niños): S1 aportó el 4% de
-│  la actividad aferente pudenda global, S2 el 60.5%, S3 el 35.5% — distribución
-│  asimétrica entre lados en el 56% de los pacientes, confinada a un solo NIVEL en el
-│  18% y a una sola RAÍZ en el 7.6% · 0 complicaciones vesicales/intestinales a largo
-│  plazo en los 105 pacientes mapeados con éxito
-├─ Histopatología del filum que responde a estimulación: 6 subtipos descritos — el
-│  subtipo con fascículos de nervio periférico (37% de los casos) no mostró deterioro
-│  neurológico en ningún paciente, sugiriendo fibras probablemente no funcionales pese
-│  a estar anatómicamente presentes; aun así, la regla de oro se mantiene — nunca
-│  sacrificar sin verificación funcional intraoperatoria
-└─ El mapeo raíz-por-raíz de cauda equina se usa desde inicios de los años 80 — más
-   antiguo que la monitorización continua con MEP/RBC (añadida a finales de los 90):
-   el mapeo, no la monitorización, fue la técnica fundacional en esta región
-Referencia: Deletis, cap. 6, pp.93-98 · cap. 27, pp.368, 373-375</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="B5" style="--bloque-color:#10b981" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="B5" onclick="event.stopPropagation()" aria-label="Marcar B5 como estudiado">
-              <span class="tema-codigo">B5</span>
-              <h3 class="tema-titulo">Fosa posterior / tronco encefálico</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla B</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Fosa posterior / tronco encefálico
-├─ Modalidades combinadas
-│  ├─ Batería estándar: SEP + BAEP + MEP corticoespinal/corticobulbar (parámetros de
-│  │  cada uno en A1/A3/A6/A7)
-│  └─ SEP + BAEP juntos solo evalúan la integridad funcional de MENOS del 20% del
-│     territorio del tronco — de ahí la necesidad de añadir mapeo y reflejos (ver B8)
-├─ Fases del procedimiento
-│  ├─ El tronco mide ~6 cm de alto × 3.5 cm de ancho a nivel protuberancial, sin
-│  │  demarcación anatómica clara con diencéfalo o médula
-│  ├─ Clasificación por patrón de crecimiento en RM determina el objetivo quirúrgico:
-│  │  focal (74% benignos) · cervicomedular · exofítico dorsal · difuso (88% malignos)
-│  ├─ Tumor exofítico crea su propio punto de entrada; tumor puramente intrínseco
-│  │  exige mapa mental de la anatomía funcional para elegir la zona más segura
-│  └─ Abordajes según nivel (cirujano que los popularizó): mesencéfalo —
-│     infratentorial-supracerebeloso (Stein), transtentorial occipital, pterional
-│     transilviano (Yasargil) · protuberancia — retrosigmoideo, petroso combinado
-│     (Al-Mefty/Spetzler), suboccipital transventricular · bulbo/UCM — suboccipital
-│     baja ± laminotomía cervical, dorsolateral (Heros/Spetzler-Grahm)
-├─ Riesgo neurológico específico
-│  ├─ El tronco es un &quot;campo minado&quot;: densidad de núcleos de pares craneales,
-│  │  fascículos ascendentes/descendentes y formación reticular en muy poco volumen
-│  ├─ Zonas de entrada dorsal peligrosas: colículo superior (visual/oculomotor) ·
-│  │  colículo inferior (auditivo) · fascículo longitudinal medial (oftalmoplejía
-│  │  internuclear) · colículo facial · calamus scriptorius/núcleos IX-X-XII (disfagia
-│  │  + alteración cardiorrespiratoria) · tubérculos grácil/cuneiforme (ataxia)
-│  └─ La complicación más peligrosa de toda la cirugía de tronco: parálisis de pares
-│     bajos (IX-XII) → disnea + disfagia severa → riesgo de neumonía aspirativa
-├─ Posicionamiento
-│  ├─ Semisentada: abordaje transtentorial occipital y suboccipital transventricular
-│  │  dorsal (cabeza flectada)
-│  └─ Retrosigmoideo lateral con cabeza rotada hacia el lado del tumor: tumores
-│     ventrolaterales protuberanciales
-├─ Jerarquía de alarma
-│  └─ Nivel conceptual — para los criterios cuantitativos completos ver B8. Dato de
-│     encuadre: el mapeo directo del tronco cambió la vía de entrada quirúrgica
-│     planificada en ~10% de una serie propia
-├─ Protocolo de reacción
-│  └─ Ver B8 para el protocolo específico (pausa ante Blink Reflex + CoMEP, LAR &gt;60%,
-│     etc.) — sin contenido adicional distinto en esta fuente para el nivel base
-├─ Técnica de mapeo específica
-│  └─ Ver B8/A6/A9 para los parámetros completos de mapeo del suelo del IV ventrículo
-│     y reflejos de tronco. El papel del DTI aquí es &quot;más controvertido y con
-│     experiencia más limitada&quot; que en supratentorial — su utilidad para guiar el
-│     mapeo aún no está establecida
-└─ Referencia
-   └─ Deletis, cap. 22 (Sala/D'Amico/Bricolo), §22.1-22.5, pp.295-305 — para el nivel
-      avanzado (mapeo detallado, criterios BAEP/reflejos, jerarquía por núcleo) ver B8</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="B6" style="--bloque-color:#10b981" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="B6" onclick="event.stopPropagation()" aria-label="Marcar B6 como estudiado">
-              <span class="tema-codigo">B6</span>
-              <h3 class="tema-titulo">Tumores de cuarto ventrículo</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla B</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Tumores de cuarto ventrículo
-├─ Modalidades combinadas
-│  └─ Misma batería que B5/B8 (SEP+BAEP+MEP+mapeo suelo IV ventrículo+EMG pares
-│     bajos); sin ECoG — no aplica, no es cirugía supratentorial
-├─ Fases del procedimiento
-│  ├─ Vía de acceso al suelo del IV ventrículo desde dorsal: apertura de la fisura
-│  │  cerebelomedular → elevación/separación de las amígdalas cerebelosas +
-│  │  desplazamiento de las PICA → exposición de la tela coroidea del techo → sección
-│  │  de la tenia a ambos lados → plegado hacia arriba → exposición completa del
-│  │  suelo del obex al acueducto (corresponde funcionalmente al abordaje telovelar,
-│  │  aunque la fuente no usa ese término — verificar nomenclatura moderna)
-│  ├─ Contraste explícito con dividir el vermis: puede producir ataxia troncal, marcha
-│  │  inestable, alteraciones oculomotoras y mutismo cerebeloso — por eso se prefiere
-│  │  preservarlo
-│  ├─ Esta misma vía (preservando vermis) se usa para tumores de cuarto ventrículo —
-│  │  ependimoma y meduloblastoma se mencionan explícitamente
-│  └─ Caso descrito: ependimoma de la unión cervicomedular, suboccipital bajo +
-│     laminectomía C1, resección con aspirador ultrasónico bajo monitorización
-│     continua de pares bajos
-├─ Riesgo neurológico específico
-│  ├─ Síndrome de mutismo cerebeloso posoperatorio pediátrico: mencionado solo como
-│  │  consecuencia de seccionar el vermis, sin más detalle (verificar — incidencia,
-│  │  vía dentado-tálamo-cortical, factores de riesgo por edad/estirpe/invasión del
-│  │  pedúnculo cerebeloso medio no están en las fuentes del proyecto)
-│  └─ Diferencia de plano de infiltración del suelo según estirpe (ependimoma tiende a
-│     originarse del propio suelo vs. meduloblastoma del techo/vermis) — (verificar,
-│     no detallado en esta fuente)
-├─ Posicionamiento
-│  └─ Semisentada con cabeza flectada — exposición amplia de la fosa romboidea vía
-│     fisura cerebelomedular sin dividir el vermis
-├─ Jerarquía de alarma
-│  └─ Ver B8 — criterios BAEP, Blink Reflex+CoMEP, LAR ya cubiertos con cifras
-├─ Protocolo de reacción
-│  └─ Ver B8
-├─ Técnica de mapeo específica
-│  └─ Ver B8 — parámetros de sonda de mano y sonda de aspiración, triángulos
-│     suprafacial/infrafacial, timing del mapeo según localización del tumor
-└─ Referencia
-   └─ Deletis, cap. 22 (Sala/D'Amico/Bricolo), §22.3.2, pp.300-301, Fig.22.6-22.9 —
-      para mapeo del suelo del IV ventrículo y criterios de alarma, ver B8</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="B7" style="--bloque-color:#10b981" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="B7" onclick="event.stopPropagation()" aria-label="Marcar B7 como estudiado">
-              <span class="tema-codigo">B7</span>
-              <h3 class="tema-titulo">Craneotomía despierta / mapeo cortical-subcortical</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla B</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Craneotomía despierta / mapeo cortical-subcortical
-├─ Modalidades combinadas
-│  ├─ DES cortical y subcortical, dos paradigmas de estimulación:
-│  │  · Penfield/baja frecuencia (LF): 50-60 Hz, 1 ms de pulso, 1-4 s según tejido
-│  │    (motor ~1 s, lenguaje/cognición 3-4 s), sonda bipolar
-│  │  · Tren corto/alta frecuencia (HF): 4-9 pulsos de 0.2-0.5 ms, ISI 2-4 ms
-│  │    (=250-500 Hz), sonda monopolar catódica — preferido para mapeo motor, genera
-│  │    un MEP time-locked fácil de cuantificar
-│  ├─ ECoG (3-4 canales) para detectar afterdischarges — obligatoria en el protocolo
-│  │  americano (busca el umbral de afterdischarge), no obligatoria en el europeo
-│  ├─ MEP/SEP continuos evalúan integridad VASCULAR y NO sustituyen al mapeo — una
-│  │  lesión por coagulación de perforantes remota al punto estimulado solo la
-│  │  detecta la monitorización continua, nunca el mapeo puntual
-│  └─ EMG libre de cara simultáneo — para no perder movimientos pequeños o a
-│     distancia durante la vigilia
-├─ Fases del procedimiento
-│  ├─ Preoperatorio: evaluación neuropsicológica extensa + psicooncológica +
-│  │  neuroimagen avanzada (fMRI, tractografía — aviso explícito: la tractografía NO
-│  │  debe usarse para predecir la extensión de resección a nivel individual)
-│  ├─ Protocolo anestésico sin estándar único: sedación consciente con solo bloqueo de
-│  │  scalp (20% de centros) vs. asleep-awake-asleep/AAA con mascarilla laríngea (80%)
-│  ├─ Fase cortical (5-15 min): identifica límites funcionales del borde tumoral,
-│  │  puntos de entrada y diseño de la corticotomía
-│  └─ Fase subcortical (la más crítica, 20 min a varias horas): determina la extensión
-│     de resección y el resultado funcional — estimulación continua o alterna
-│     acoplada al aspirador
-├─ Riesgo neurológico específico
-│  ├─ Déficit motor/lenguaje nuevo o empeorado en el postoperatorio inmediato:
-│  │  65-92.8% según series — mayoría transitorio, resuelto en &lt;1 mes
-│  ├─ Con estimulación subcortical sistemática: solo 2.3% de déficit de lenguaje a
-│  │  largo plazo en tumores de área de lenguaje · 0.5% de déficit motor a largo plazo
-│  │  cerca de vías motoras · 95.8% vuelven al trabajo a los 3 meses
-│  ├─ Síndrome del área motora suplementaria: aparición progresiva intraoperatoria por
-│  │  desconexión de la SMA del sistema motor
-│  └─ Lesión vascular por coagulación de perforantes: causa hasta el 40% de los
-│     cambios de MEP, que pueden ser abruptos e irreversibles
-├─ Posicionamiento
-│  ├─ Debe permitir contacto visual/verbal continuo con el neuropsicólogo durante la
-│  │  fase despierta; mascarilla laríngea en las fases dormidas del protocolo AAA
-│  └─ Detalles específicos de protección de vía aérea/ángulo de cabeza/sujeción más
-│     allá del principio general (verificar — no detallado en estas fuentes)
-├─ Jerarquía de alarma
-│  ├─ Afterdischarges en ECoG como aviso de crisis inminente — protocolo americano
-│  │  (Berger): límite = umbral de afterdischarge · protocolo europeo (Duffau): límite
-│  │  = umbral motor de M1, sin buscar afterdischarge
-│  ├─ Tasas de crisis intraoperatoria: Penfield/LF 5-20% vs. tren corto/HF 1-4%; con
-│  │  LF en mapeo de lenguaje, 2-25% según protocolo de umbral usado
-│  └─ Encuesta europea: crisis casi el doble en cirugía despierta vs. dormida
-│     (15% vs. 8.8%) — series individuales entre 0% y 12.6%
-├─ Protocolo de reacción
-│  ├─ Ante crisis: irrigar con suero Ringer/NaCl isotónico FRÍO sobre la corteza
-│  │  expuesta — no reestimular inmediatamente
-│  ├─ Si la irrigación fría no aborta la crisis: bolo de propofol (0.5-1 mL)
-│  ├─ En pacientes con historia de crisis y mapeo con tren corto: bajar la tasa de
-│  │  repetición a 0.4 Hz
-│  └─ Sitios negativos al inicio deben reevaluarse tras la descompresión (falso
-│     negativo por edema/compresión)
-├─ Técnica de mapeo específica
-│  ├─ Corriente de trabajo sobre área premotora ventral: protocolo americano = la más
-│  │  alta SIN afterdischarge (3.5-15 mA) · protocolo europeo = la más baja que
-│  │  produce anartria durante conteo/nombrado (2-5.5 mA, notablemente menor)
-│  ├─ Tareas de mapeo subcortical de lenguaje por lóbulo: frontal (conteo, nombrado,
-│  │  lectura/escritura) · temporal (conteo, nombrado, asociación semántica) ·
-│  │  parietal/insular (+ reconocimiento de números, tarea visual)
-│  ├─ Sitio elocuente = error en ≥3 estimulaciones no consecutivas de 3 — tipos de
-│  │  error: anartria, disartria, parafasia fonémica/semántica/verbal, anomia,
-│  │  latencia, neologismo, circunlocución
-│  ├─ Correlación distancia-al-CST con intensidad de estimulación subcortical: regla
-│  │  práctica generalizada &quot;1 mA ≈ 1 mm&quot;
-│  ├─ Mapeo subcortical dinámico continuo (aspirador con alarma acústica): serie
-│  │  propia con 3% de déficit motor permanente, TODOS por lesión vascular remota,
-│  │  NINGUNO por lesión mecánica directa del CST
-│  └─ Corteza: mejor con corriente anódica · subcorteza: mejor con corriente catódica
-└─ Referencia
-   └─ Deletis, cap. 7 (Bello et al.), pp.101-112 · cap. 9 (Seidel/Raabe), pp.121-134 ·
-      cap. 19 (Bello et al.), pp.257-268 · Moller2011, cap. 14, pp.289-291</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">Craneotomía despierta — ampliación
-├─ Sonda bipolar vs. monopolar: bipolar (5 mm entre puntas, campo homogéneo) más
-│  focal/específica · monopolar (spreading radial) más sensible, aviso más precoz
-│  pero menos localizador
-├─ Series individuales de tasa de crisis: Nossek 12.6% (549 cirugías) · Deras 0%
-│  (140 cirugías) · Boetto 3.4% (374 cirugías) — variabilidad amplia entre centros
-│  pese a protocolos similares
-└─ Corticobulbar MEP desde músculo cricotiroideo/vocal bajo estimulación cortical
-   directa: respuesta corta (~SLR) = M1 primaria · respuesta larga (~LLR) = premotora
-   — permite diferenciar el origen cortical exacto del control laríngeo
-Referencia: Deletis, cap. 9, §9.6-9.7, pp.126-127 · Moller2011, cap. 14, pp.289-291</pre></div>
-              </div>
-            </div>
-          </details>
-<details class="tema" id="B8" style="--bloque-color:#10b981" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="B8" onclick="event.stopPropagation()" aria-label="Marcar B8 como estudiado">
-              <span class="tema-codigo">B8</span>
-              <h3 class="tema-titulo">Fosa posterior avanzado con criterios de troncoencefálico</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla B</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Fosa posterior avanzado — criterios troncoencefálicos
-├─ Modalidades combinadas
-│  ├─ Basal SEP + BAEP + MEP corticoespinal/corticobulbar antes del abordaje
-│  ├─ Mapeo del suelo del IV ventrículo antes de la incisión (colículo facial, trígono
-│  │  del hipogloso)
-│  └─ EMG libre continuo de pares craneales + reflejos de tronco (Blink Reflex, LAR,
-│     maseterino) según el nivel afectado
-│     └─ &quot;Monitorizar solo BAEP, solo SEP o solo MEP puede ser engañoso — la integración
-│        de todas las modalidades da la mejor imagen de lo que ocurre en el tronco&quot;
-├─ Fases del procedimiento
-│  ├─ Mesencéfalo: vía infratentorial-supracerebelosa (tectal), transtentorial occipital,
-│  │  o pterional transilviana
-│  ├─ Protuberancia: retrosigmoidea (ventrolateral) o suboccipital transventricular
-│  │  (dorsal), semisentada
-│  ├─ Bulbo/unión cervicomedular: suboccipital baja ± laminotomía cervical, mielotomía
-│  │  medial o dorsolateral
-│  └─ Postoperatorio: extubación guiada por CoMEP intraoperatorio, UCI ≥24h, TC a 3-4h
-├─ Riesgo neurológico específico
-│  ├─ Núcleos motores de pares craneales — mesencéfalo (III/IV), protuberancia (V/VI/VII),
-│  │  bulbo (IX-XII) — y las vías largas que los atraviesan
-│  ├─ Momento de mayor riesgo de dañar núcleos: cerca del final de la resección, cuando ya
-│  │  están desplazados ventralmente por el tumor
-│  └─ Riesgo autonómico por manipulación/estimulación del suelo del IV ventrículo
-│     └─ Descrito: PVC transitoria y ↑TA reversibles durante mapeo de IX/X (caso humano);
-│        en animal, &gt;2 mA → bradicardia/hipotensión transitoria, 3 mA → apnea (verificar
-│        extrapolación directa a la práctica clínica humana)
-├─ Posicionamiento
-│  ├─ Semisentada: estándar para tumores dorsales de protuberancia/mesencéfalo ventral
-│  │  por vía transcerebelomedular (cabeza flectada, expone fosa romboidea sin dividir
-│  │  el vermis)
-│  ├─ Electrodos SEP (CP5/6, T3/4) menos afectados por aire intracraneal tras apertura
-│  │  dural en sedestación que otras derivaciones
-│  └─ Monitorización de embolismo aéreo venoso (Doppler precordial, ETCO2) (verificar —
-│     no encontrado en las fuentes del proyecto, es manejo anestésico estándar de la
-│     sedestación pero falta cita propia)
-├─ Jerarquía de alarma
-│  ├─ El criterio &quot;todo o nada&quot; de médula espinal es insuficiente a nivel de tronco →
-│  │  usar variación de amplitud (umbral práctico 50-80%)
-│  ├─ BAEP: ↓50% amplitud onda V + ↑latencia &gt;0.5 ms = alarma · abolición de onda V →
-│  │  ~30% de esos pacientes con hipoacusia postoperatoria
-│  ├─ BAEP diferencial: peak III estable + peak V cambia → sugiere afectación de tronco o
-│  │  isquemia, no lesión periférica del nervio auditivo
-│  ├─ MEP/SEP con sensibilidad-especificidad variable entre series (Shiban: MEP 33%/88% ·
-│  │  Sarnthein: MEP 94%/74%) — no hay criterio único validado a nivel de tronco
-│  └─ Se añade monitorización según el nivel: unión cervicomedular → pares bajos (IX-XII)
-│     · pontino → SEP+BAEP+mapeo suelo IV ventrículo · mesencefálico → + pedúnculo cerebral
-├─ Protocolo de reacción
-│  ├─ Pérdida de Blink Reflex + decremento simultáneo de CoMEP → pausar manipulación
-│  │  (serie: 8/21 pacientes con esa combinación, 5 recuperaron tras pausar, 3 no y
-│  │  tuvieron déficit)
-│  ├─ LAR: caída &gt;50% → avisar y liberar tejido · caída &gt;60% sin recuperación → alta
-│  │  probabilidad de disfunción vagal/laríngea permanente
-│  └─ BAEP: mantener registro hasta el cierre de PIEL, no solo hasta cierre dural (caso
-│     descrito de pérdida auditiva no detectada por suspender el registro antes de tiempo)
-├─ Técnica de mapeo específica
-│  ├─ Suelo del IV ventrículo: sonda monopolar de mano (punta 0.75-1 mm), onda cuadrada
-│  │  monofásica 0.2 ms, 1 Hz (hasta 4 Hz), intensidad de búsqueda 2.0 mA → reducir hasta
-│  │  umbral real (0.2-2.0 mA según distancia núcleo-lesión)
-│  ├─ Márgenes de seguridad: intensidad máxima 2 mA, duración máxima 400 µs, frecuencia
-│  │  máxima 10 Hz
-│  ├─ Localización: triángulo suprafacial ≈20 mm del obex y 2-4 mm de línea media ·
-│  │  triángulo infrafacial 7-16 mm del obex, 2-4 mm de línea media
-│  ├─ Técnica de barrido: la sonda no permanece &gt;5 s en un punto, se desplaza cada 1 mm
-│  ├─ Registro: orbicularis oculi/oris (VII) · borde lateral de la lengua (XII) · pared
-│  │  faríngea posterior/cricotiroideo (IX/X, no rutinario)
-│  └─ Momento del mapeo según localización: tumores pontinos → mapeo de CN VII posible y
-│     necesario ANTES de resecar · tumores bulbares/cervicomedulares → mapeo de núcleos
-│     bajos (IX/X/XII) casi siempre solo AL FINAL, en el fondo de la cavidad tumoral
-└─ Referencia
-   └─ Deletis (Neurophysiology in Neurosurgery 2ª ed. — cap. 11 Morota/Deletis/Epstein:
-      mapeo suelo IV ventrículo · cap. 21 Szelényi/Neuloh: BAEP · cap. 22 Sala/D'Amico/
-      Bricolo: fases y jerarquía de alarma · cap. 23 Seidel/Zubak/Raabe: mapeo dinámico ·
-      caps. 15-17: LAR, maseterino, Blink Reflex) · Moller2011 (caps. 7 y 14: BAEP y
-      mapeo) · Romstock2000 (trenes A/B/C) · LimaMedeiros2024 (TCR) · Urriza2025 (TVcR,
-      mención de reflejos autonómicos troncoencefálicos)</pre></div>
-              <div class="ampliacion-inline">
-                <div class="ampliacion-label">Ampliación — profundizar</div>
-                <div class="tree-wrap"><pre class="tree">Fosa posterior avanzado — ampliación
-├─ Técnica de mapeo alternativa: sonda de aspiración monopolar continua
-│  ├─ Dispositivo de succión eléctricamente aislado salvo la punta (2 mm), usado como
-│  │  sonda de estimulación mientras se aspira/diseca — mapeo dinámico continuo, no
-│  │  puntual como la sonda de mano
-│  ├─ Parámetros: 0.3 ms, 2 Hz, 0.05-2 mA
-│  └─ &quot;Radio de alerta&quot; acústico: ~0.5-1 cm a 2 mA · ~0.3-0.6 cm a 1 mA — identifica el
-│     nervio facial por sonido ANTES de verlo
-├─ Outcome ligado al hallazgo intraoperatorio (schwannoma vestibular grande)
-│  ├─ MEP facial fiable desde el inicio en 75% de los pacientes → solo 6% empeora
-│  │  House-Brackmann a 3 meses · sin MEP fiable basal (25%) → 40% empeora
-│  └─ Estrategia &quot;no-touch CN VII&quot; con mapeo continuo: 90% resección de volumen con
-│     déficit casi nulo, frente a resección maximizada incompleta (93% volumen) con
-│     23% de déficit facial
-└─ Series adicionales — límites de sensibilidad del ION en tronco
-   ├─ Kodama: alteración de SEP y/o MEP en 47.5% de cirugías de lesión troncoencefálica
-   │  (la tasa más alta de toda la fosa posterior) — pero &gt;50% de esos pacientes con
-   │  esa alteración terminaron con hemiparesia al alta PESE al ION
-   └─ Neuloh: deterioro irreversible o pérdida predijo déficit motor transitorio solo
-      en 37% de los casos — confirma que el criterio &quot;todo o nada&quot; (válido en médula)
-      es insuficientemente sensible a nivel de tronco
-Referencia: Seidel/Zubak/Raabe, cap. 23 pp.310-314 · Sala/D'Amico/Bricolo, cap. 22
-pp.304-305</pre></div>
-              </div>
-            </div>
-          </details>
-        </div>
-      </details>
-<details class="bloque-seccion" style="--bloque-color:#f59e0b" open>
-        <summary class="bloque-titulo">Bloque C</summary>
-        <div class="bloque-body">
-          <details class="tema" id="C1" style="--bloque-color:#f59e0b" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="C1" onclick="event.stopPropagation()" aria-label="Marcar C1 como estudiado">
-              <span class="tema-codigo">C1</span>
-              <h3 class="tema-titulo">Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales)</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla C</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Anatomía funcional de las vías largas
-├─ Concepto central
-│  ├─ Dos sistemas de fibras largas que comparten el mismo cordón medular pero son
-│  │  anatómica y fisiológicamente INDEPENDIENTES
-│  ├─ CST: motor, eferente, decusa en la PIRÁMIDE BULBAR (~90% de fibras), viaja
-│  │  lateral/anterolateral
-│  └─ Columnas dorsales: sensitivo (propiocepción/vibración), aferente, decusa en el
-│     BULBO (núcleos gracilis/cuneatus, NO a nivel espinal), viaja posterior en línea
-│     media — indemnidad de una vía NO implica indemnidad de la otra, son sistemas
-│     ortogonales, no redundantes
-├─ A qué modalidades afecta
-│  ├─ Columnas dorsales → SEP (A1)
-│  └─ CST → MEP transcraneal (A2), onda D (A3), CoMEPs vía corticobulbar paralela
-│     (A6) — ambas vías son la base de las dos técnicas de mapeo intramedular: DCM
-│     (columna dorsal) y mapeo CST (B3)
-├─ Parámetros clave
-│  └─ La localización dentro del cordón (CST lateral/anterolateral vs. columna dorsal
-│     posterior en línea media) define dónde colocar el electrodo de mapeo/registro
-│     en IMSCT — ambas son fibras mielinizadas gruesas y rápidas, pero con generadores
-│     y sinapsis en niveles distintos del neuroeje
-├─ Aplicación práctica
-│  └─ En mielotomía de tumor intramedular: el DCM localiza el rafe medio real cuando
-│     el tumor lo ha rotado/distorsionado, y el mapeo CST (doble tren, intervalo
-│     intertren 60 ms) diferencia CST de columna dorsal por la recuperación sináptica
-│     de las interneuronas (ver B3)
-├─ Errores frecuentes
-│  ├─ Asumir que un SEP normal garantiza indemnidad motora — encuesta SRS/ESDS: 18.5%
-│  │  de los déficits reales tuvieron SEP falso negativo (A1)
-│  └─ Asumir lo contrario, que una caída de SEP predice déficit motor — caso B3
-│     (SEP caído ~90%, D-wave/MEP estables, sin empeoramiento motor) es la disociación
-│     inversa documentada
-├─ Conexión con otros nodos
-│  └─ A1, A2, A3, A5 (vía anatómica de cada modalidad) · B3 (aplicación quirúrgica de
-│     la distinción)
-└─ Referencia
-   └─ Síntesis de A1/A2/A3/B3 del proyecto — anatomía general, sin cita ION específica
-      nueva</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="C2" style="--bloque-color:#f59e0b" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="C2" onclick="event.stopPropagation()" aria-label="Marcar C2 como estudiado">
-              <span class="tema-codigo">C2</span>
-              <h3 class="tema-titulo">Colocación de electrodos 10-20 / 10-10</h3>
-              <span class="badge estado-en-progreso">En progreso</span>
-              <span class="badge plantilla-badge">Plantilla C</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Colocación de electrodos 10-20 / 10-10
-├─ Concepto central
-│  └─ Sistema estandarizado (IFCN) de localización de electrodos de cuero cabelludo
-│     mediante porcentajes de distancias craneales fijas (nasion-inion,
-│     preauriculares) — da reproducibilidad entre pacientes de distinto tamaño de
-│     cráneo. El 10-10 es una malla más densa derivada del 10-20 clásico
-├─ A qué modalidades afecta
-│  └─ SEP cortical (C3'/C4'-Fz, CPz/Cz'-Fz — A1) · MEP TES (C1/C2 o C3/C4 — A2) ·
-│     CoMEP (C3/C4 o C5/C6 — A6) · EEG multicanal bihemisférico (A8) · BAEP
-│     (vértex-nuca, referencia a Cz — A7)
-├─ Parámetros clave
-│  └─ C3'/C4' = 2 cm POSTERIOR a C3/C4 del sistema 10-20 — definición explícita de la
-│     derivación cortical de SEP de miembro superior
-├─ Aplicación práctica
-│  └─ En SEP de MMSS, activo en parietal contralateral (C3'/C4') con referencia
-│     frontal o no-cefálica (hombro/esternón) para mejorar componentes subcorticales
-│     tempranos · comparación bihemisférica obligatoria en EEG (A8)
-├─ Errores frecuentes
-│  ├─ El montaje de TES elegido determina el riesgo de lesión por mordedura: TODAS las
-│  │  lesiones bucales/linguales reportadas ocurrieron con montaje C3/C4 — no hay
-│  │  casos descritos con C1/C2 ni C3-Cz/C4-Cz, probablemente por la proximidad de
-│  │  C3/C4 al nervio trigémino y al temporal → reservar C3/C4 para cuando su mayor
-│  │  potencia sea realmente necesaria, y usar bite block blando siempre
-│  └─ Electrodo auricular de BAEP colocado en ambos oídos + estimulación aplicada por
-│     error al lado NO operado — la forma de onda es indistinguible entre lados, el
-│     error pasa inadvertido y produce un falso negativo TOTAL (ver C6)
-├─ Conexión con otros nodos
-│  └─ A1, A2, A6, A7, A8 (cada uno usa una derivación concreta de este sistema) · C6
-│     (electrodo mal colocado/mal conectado como causa técnica de falsa alarma)
-└─ Referencia
-   └─ Moller2011, cap. 6, Fig. 6.1, p.97 · Deletis, cap. 41 (MacDonald/Seidel/Shils),
-      §41.3.6.1, pp.590-591</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="C3" style="--bloque-color:#f59e0b" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="C3" onclick="event.stopPropagation()" aria-label="Marcar C3 como estudiado">
-              <span class="tema-codigo">C3</span>
-              <h3 class="tema-titulo">TIVA y farmacología anestésica en MIO</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla C</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">TIVA y farmacología anestésica en MIO
-├─ Concepto central
-│  └─ La anestesia general persigue 4 metas conductuales — amnesia, inconsciencia,
-│     antinocicepción, inmobilidad — logradas combinando fármacos con mecanismos
-│     distintos y efectos aditivos/sinérgicos. El reto específico de MIO es lograr las
-│     4 metas manteniendo señales monitorizables, sobre todo con mMEP
-├─ A qué modalidades afecta
-│  └─ Clasificación en 4 grupos según sensibilidad a halogenados (HAA) y a bloqueo
-│     neuromuscular (NMB):
-│     · Grupo 1 (insensible a ambos): BAEP, onda D, SEP subcortical (A3, A7)
-│     · Grupo 2 (sensible a HAA, no a NMB): SEP cortical, EEG (A1, A8)
-│     · Grupo 3 (sensible a NMB, no a HAA): EMG libre y estimulado (A4, A5 — ver C4)
-│     · Grupo 4 (sensible a ambos, el más exigente): mMEP (A2, A6)
-├─ Parámetros clave
-│  ├─ Halogenados (isoflurano/sevoflurano/desflurano): SEP cortical cae 0.5-1 MAC;
-│  │  mMEP se pierde por encima de 0.5 MAC, con curva dosis-efecto muy pronunciada
-│  │  (&quot;todo o nada&quot; cerca del umbral)
-│  ├─ Propofol: pérdida de mMEP por encima de 60-70% de dosis; efecto aditivo/
-│  │  sinérgico con halogenados; curva dosis-respuesta más plana (más fácil encontrar
-│  │  dosis que preserve señal)
-│  ├─ Etomidato: efecto PARADÓJICO — aumenta amplitud de SEP cortical y mMEP a dosis
-│  │  bajas-moderadas (desinhibición cortical), deprime a dosis altas (bifásico); uso
-│  │  reducido por riesgo de supresión adrenal
-│  ├─ Ketamina: aumenta amplitud de SEP, mMEP y reflejo H (antagonista NMDA,
-│  │  excitatoria); a dosis altas bloquea conducción axonal espinal — combinación
-│  │  ketamina+opioide es adyuvante valioso de TIVA cuando hay que preservar mMEP
-│  ├─ N2O: efecto aditivo/sinérgico NEGATIVO con halogenados en SEP
-│  ├─ Opioides: mínimo efecto en infusión continua sobre todas las modalidades; bolo
-│  │  produce depresión transitoria — de elección para antinocicepción por esto
-│  └─ Dexmedetomidina: mínimo efecto en SEP; puede inhibir mMEP con infusión
-│     prolongada/dosis altas; NO es amnésico fiable por sí sola (necesita midazolam
-│     adyuvante) · midazolam: amnésico excelente, depresión leve de SEP a dosis de
-│     inducción
-├─ Aplicación práctica
-│  └─ TIVA estándar para mMEP: propofol + opioide en infusión continua, evitando
-│     bolos antes de un test crítico (A2) · si se usa halogenado, limitar a ≤0.5 MAC ·
-│     cualquier cambio de plano anestésico debe hacerse TEMPRANO, antes de la ventana
-│     de riesgo neural, y mantenerse estable durante ella
-├─ Errores frecuentes
-│  ├─ Bolo de cualquier agente justo antes de un test crítico — mimetiza caída
-│  │  patológica de amplitud
-│  ├─ Usar halogenado &gt;1 MAC cuando se necesita SEP cortical
-│  └─ Confiar en dexmedetomidina sola para mMEP en infusión prolongada, o asumir
-│     amnesia garantizada sin adyuvante amnésico
-├─ Conexión con otros nodos
-│  └─ A1 (efecto anestesia SEP), A2-Ampliación (&quot;TIVA de elección&quot;, aquí la base
-│     farmacológica completa), A4/A5 (Grupo 3, sensibles a NMB → ver C4), A8 (EEG,
-│     Grupo 2), C4 (la otra cara farmacológica: relajación)
-└─ Referencia
-   └─ Deletis, cap. 40 (Sloan &amp; Koht), &quot;Principles of anesthesia&quot;, §40.1-40.5,
-      Tabla 40.1, Figs. 40.1-40.5, pp.567-576 · Moller2011, cap. 16, &quot;Anesthesia and
-      Its Constraints in Monitoring Motor and Sensory Systems&quot;, pp.321-327</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="C4" style="--bloque-color:#f59e0b" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="C4" onclick="event.stopPropagation()" aria-label="Marcar C4 como estudiado">
-              <span class="tema-codigo">C4</span>
-              <h3 class="tema-titulo">Relajantes musculares en MIO</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla C</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Relajantes musculares en MIO
-├─ Concepto central
-│  └─ Fármacos que bloquean la transmisión en la unión neuromuscular para lograr
-│     inmovilidad quirúrgica — incompatibles con cualquier modalidad basada en
-│     respuesta muscular. Contrapartida de C3: mientras C3 gestiona amnesia/
-│     inconsciencia/antinocicepción, este nodo gestiona el 4º pilar (inmovilidad) y
-│     su coste para el EMG/mMEP
-├─ A qué modalidades afecta
-│  └─ Bloquea/reduce EMG libre (A4), EMG estimulado-umbral de tornillo (A5), mMEP
-│     (A2), CoMEP (A6) — Grupos 3 y 4 de C3. NO afecta SEP (A1), onda D (A3, potencial
-│     asináptico), BAEP (A7), EEG (A8, actividad cortical no neuromuscular)
-├─ Parámetros clave
-│  ├─ Dos familias: despolarizantes (succinilcolina — acción ultra-corta, solo para
-│  │  intubación) vs. no despolarizantes (rocuronio, vecuronio, atracurio — 30 min a
-│  │  varias horas de duración)
-│  ├─ TOF (train-of-four): estimulación del n. peroneo en cabeza de fíbula, 2 Hz,
-│  │  0.2-0.3 ms, registro CMAP en tibial anterior — T4 desaparece con 75% de
-│  │  bloqueo, T3 con 80%, T2 con 90%, T1 con 100%
-│  ├─ Ratio T4/T1 ≥0.1-0.2 = mínimo aceptable para testear tornillo pedicular (A5)
-│  └─ Reversión: neostigmina (inhibidor de acetilcolinesterasa, requiere recuperación
-│     parcial previa, efecto no instantáneo) o sugammadex (secuestrante específico de
-│     rocuronio/vecuronio, reversión más completa y predecible)
-├─ Aplicación práctica
-│  ├─ Relajante de acción corta SOLO para intubación si se van a monitorizar
-│  │  potenciales musculares, sin redosificar — permite recuperación funcional en
-│  │  30-45 min
-│  ├─ El TOF que valida el test de tornillo pedicular debe hacerlo el propio equipo
-│  │  de neurofisiología, en musculatura de PIERNA con electrodos propios — no fiarse
-│  │  del TOF del anestesiólogo (dispositivo portátil, evaluación subjetiva, hecho
-│  │  típicamente en mano/cara, sensibilidad distinta a la de la pierna)
-│  └─ Bloqueo parcial monitorizado (3-4/4 en TOF) puede aceptarse para EMG estimulado,
-│     más controvertido para mMEP: puede elevar el umbral de TES necesario,
-│     desplazando el origen de la respuesta hacia cápsula interna/tronco en vez de
-│     corteza motora, enmascarando así una isquemia cortical por clip temporal
-├─ Errores frecuentes
-│  ├─ Confiar en el TOF hecho por anestesia en mano/cara cuando el test relevante es
-│  │  en pierna (tornillo pedicular)
-│  ├─ Relajación excesiva no advertida → elevación artefactual del umbral de tornillo
-│  │  → falso negativo (caso ilustrativo en A5: 50 mA con 1 twitch → 12 mA con 4)
-│  ├─ Bloqueo parcial NO monitorizado durante EMG libre → puede mimetizar lesión de
-│  │  nervio periférico/craneal por simple reducción de amplitud, sin lesión real
-│  ├─ La respuesta de lateral spread (cirugía de espasmo hemifacial) es
-│  │  particularmente sensible incluso a dosis pequeñas de NMB
-│  └─ Asumir que revertir con neostigmina normaliza la función muscular de inmediato
-│     — el efecto es gradual
-├─ Conexión con otros nodos
-│  └─ A2 (mMEP, relajación completa prohibida), A4/A5 (EMG, sensibilidad crítica al
-│     bloqueo), A6 (CoMEP), C3 (la otra cara farmacológica), C5/C6 (relajación no
-│     monitorizada como causa no quirúrgica de cambio de señal/falso negativo)
-└─ Referencia
-   └─ Deletis, cap. 40 (Sloan &amp; Koht), §40.4.1, Fig. 40.2 · Deletis, cap. 13
-      (Toleikis), §13.2.4.1, pp.185-186 · Moller2011, cap. 16, sección &quot;Muscle
-      Relaxants&quot;, pp.324-326</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="C5" style="--bloque-color:#f59e0b" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="C5" onclick="event.stopPropagation()" aria-label="Marcar C5 como estudiado">
-              <span class="tema-codigo">C5</span>
-              <h3 class="tema-titulo">Marco general de criterios de alarma</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla C</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Marco general de criterios de alarma
-├─ Concepto central
-│  └─ Debate no resuelto entre dos filosofías: avisar solo al alcanzar un UMBRAL DE
-│     ALARMA predefinido (alto riesgo de déficit permanente) vs. comunicar CUALQUIER
-│     CAMBIO por encima de la variabilidad normal y dejar que el cirujano decida — el
-│     enfoque dominante hoy (TIP, alerta precoz-gradual en B3/B8) se decanta por
-│     avisar pronto y de forma graduada, porque solo así el cirujano puede identificar
-│     qué maniobra causó el cambio y revertirla a tiempo
-├─ A qué modalidades afecta
-│  └─ Todas — cada modalidad tiene su criterio cuantitativo propio (compilados en
-│     A1/A2/A3/A5/A7/A8/A9), pero el marco conceptual (falsos positivos/negativos,
-│     jerarquía entre modalidades, cuándo avisar) es transversal a todas ellas
-├─ Parámetros clave
-│  ├─ Los conceptos de falso positivo/negativo de un test diagnóstico clásico NO se
-│  │  trasladan igual a MIO: la mayoría de &quot;falsos positivos&quot; (avisos que no terminan
-│  │  en déficit) son en realidad el resultado esperado de una intervención quirúrgica
-│  │  EXITOSA tras el aviso, no un fallo del sistema
-│  └─ Jerarquía entre modalidades ante discordancia: onda D &gt; MEP como predictor de
-│     pronóstico motor medular (A3/B3, Tabla 2.1); el criterio &quot;todo o nada&quot; es válido
-│     en médula pero insuficiente en tronco, donde se usa variación de amplitud
-│     50-80% (B8)
-├─ Aplicación práctica
-│  ├─ Regla de secuencia: ante cambio brusco, AVISAR PRIMERO al cirujano y comprobar
-│  │  el equipo DESPUÉS, nunca al revés — el coste de una falsa alarma técnica es
-│  │  unos minutos; el coste de retrasar el aviso mientras se descarta lo técnico,
-│  │  ante una lesión real, es tiempo de reacción irrecuperable
-│  ├─ Protocolo tipo TIP (Time-Irrigation-Pressure) como respuesta estandarizada a la
-│  │  alerta precoz/reversible en cirugía medular (B3)
-│  └─ Basales antes Y después del posicionamiento definitivo para poder atribuir
-│     correctamente un cambio (B3)
-├─ Errores frecuentes
-│  ├─ Tratar el criterio &quot;todo o nada&quot; como universal — falla en tronco (B8)
-│  ├─ Aplicar el mismo umbral cuantitativo (p. ej. 50%) en todos los contextos sin
-│  │  ajustar por la reproducibilidad basal de la señal (A1-Ampliación, Tabla 3.1)
-│  └─ Retrasar el aviso al cirujano mientras se descarta causa técnica
-├─ Conexión con otros nodos
-│  └─ A1 (criterios adaptativos), A3 (Tabla 2.1, jerarquía onda D/MEP), B3/B8
-│     (jerarquía de alarma aplicada por contexto), C6 (troubleshooting — causas no
-│     quirúrgicas de cambio, la contraparte técnica de este marco)
-└─ Referencia
-   └─ Moller2011, cap. 2, &quot;Basis of Intraoperative Neurophysiological Monitoring&quot;,
-      secciones &quot;When to Inform the Surgeon&quot;, &quot;False Alarms&quot;, &quot;Nonsurgical Causes of
-      Changes in Recorded Potentials&quot;, pp.14-18</pre></div>
-              
-            </div>
-          </details>
-<details class="tema" id="C6" style="--bloque-color:#f59e0b" name="tema">
-            <summary class="tema-header">
-              <input type="checkbox" class="estudiado-check" data-codigo="C6" onclick="event.stopPropagation()" aria-label="Marcar C6 como estudiado">
-              <span class="tema-codigo">C6</span>
-              <h3 class="tema-titulo">Troubleshooting general</h3>
-              <span class="badge estado-completo">Completo</span>
-              <span class="badge plantilla-badge">Plantilla C</span>
-            </summary>
-            <div class="tema-body">
-              <div class="tree-wrap"><pre class="tree">Troubleshooting general
-├─ Concepto central
-│  └─ Ante cualquier cambio de señal, la secuencia lógica de descarte es técnico →
-│     anestésico/fisiológico → quirúrgico (real) — pero el aviso al cirujano se da en
-│     PARALELO a ese descarte, no después de completarlo (ver C5)
-├─ A qué modalidades afecta
-│  └─ Todas — el marco es transversal, aunque cada modalidad tenga sus causas
-│     técnicas específicas ya documentadas en A1-A9 (ej. artefacto de bisturí en
-│     SEP/A1, plano superficial en EMG libre/A4)
-├─ Parámetros clave
-│  ├─ 5 vías de entrada de interferencia eléctrica: (1) acoplamiento capacitivo por
-│  │  el aire a cables sin apantallar · (2) inyección por vía común/bucles de tierra
-│  │  (acoplamiento galvánico) · (3) conducción galvánica por otros electrodos o
-│  │  líneas de infusión en contacto con el paciente · (4) acoplamiento capacitivo
-│  │  directo al paciente (mantas térmicas, mesas motorizadas) · (5) fuga directa por
-│  │  la línea de alimentación a los amplificadores
-│  ├─ Identificación de la fuente: frecuencia de red (50/60 Hz) = interferencia de
-│  │  línea · forma de onda rica en armónicos = acoplamiento magnético típico de
-│  │  transformadores · apagar equipos sospechosos uno a uno · usar un cable como
-│  │  &quot;antena&quot; en un canal libre para localizar el origen por proximidad
-│  └─ Calentadores de sangre y bombas de infusión: causa clásica de interferencia que
-│     &quot;aparece de la nada&quot; a mitad de cirugía, porque se encienden o se cambian
-│     bolsas después del inicio
-├─ Aplicación práctica
-│  ├─ Principio KISS (Keep It Simple): minimizar canales/complejidad del montaje
-│  │  reduce el riesgo de error sin perder información útil real
-│  ├─ Checklist de montaje al estilo aviación — hoy el error humano es más frecuente
-│  │  que el fallo de equipo
-│  ├─ Conectar cada electrodo al box UNO A UNO justo tras colocarlo, no colocar todos
-│  │  y conectar al final — reduce errores de asignación de canal
-│  ├─ Mantener electrodos de repuesto ya colocados en zonas de manipulación
-│  │  quirúrgica prevista
-│  └─ Adquirir la señal basal lo antes posible, no esperar al momento de riesgo —
-│     deja margen para optimizar electrodo/montaje si la basal es de mala calidad
-├─ Errores frecuentes
-│  ├─ Estimular el lado equivocado por electrodo mal conectado — ejemplo clásico:
-│  │  electrodo auricular de BAEP en ambos oídos, estimulación aplicada por error al
-│  │  lado NO operado; la forma de onda es indistinguible entre lados, el error pasa
-│  │  inadvertido y produce un falso negativo TOTAL e indetectable (ver C2)
-│  ├─ Relajación neuromuscular no monitorizada confundida con lesión neural real
-│  │  (ver C4)
-│  ├─ Plano anestésico superficial confundido con patología en EMG libre (A4)
-│  ├─ Retrasar el aviso al cirujano mientras se descarta causa técnica, perdiendo
-│  │  tiempo de reacción real (ver C5)
-│  └─ Mordedura/lesión lingual por bite block inadecuado en TES con montaje C3/C4
-│     (ver C2)
-├─ Conexión con otros nodos
-│  └─ C2 (electrodo mal colocado/mal conectado como causa técnica clásica), C5 (marco
-│     de alarma, cuándo avisar vs. cuándo descartar lo técnico), A1/A4/A7/A8 (causas
-│     de cambio no quirúrgico específicas de cada modalidad), C3/C4 (causas
-│     farmacológicas de cambio de señal)
-└─ Referencia
-   └─ Moller2011, cap. 17, &quot;General Considerations About Intraoperative
-      Neurophysiology and Monitoring&quot;, secciones &quot;Mistakes and Errors&quot;, &quot;How to
-      Reduce the Risk of Mistakes&quot;, &quot;Electrical and Magnetic Interference in the
-      Operating Room&quot;, pp.329-339 · Moller2011, cap. 2, p.17 · Deletis, cap. 41
-      (MacDonald/Seidel/Shils), &quot;Safety&quot;, §41.3.6.1, pp.590-591</pre></div>
-              
-            </div>
-          </details>
-        </div>
-      </details>
-</main>
-<script>
-(function () {
-  var KEY = 'mio-mindmaps-estudiado';
-
-  function load() {
-    try {
-      return JSON.parse(localStorage.getItem(KEY)) || {};
-    } catch (e) {
-      return {};
-    }
-  }
-
-  function save(state) {
-    try {
-      localStorage.setItem(KEY, JSON.stringify(state));
-    } catch (e) {
-      /* localStorage no disponible (modo privado, etc.) — se ignora */
-    }
-  }
-
-  var state = load();
-  var checks = document.querySelectorAll('.estudiado-check');
-
-  function aplicar(codigo, estudiado) {
-    var tema = document.getElementById(codigo);
-    var nav = document.querySelector('.nav-item[data-codigo="' + codigo + '"]');
-    if (tema) tema.classList.toggle('estudiado', estudiado);
-    if (nav) nav.classList.toggle('estudiado', estudiado);
-  }
-
-  function actualizarContador() {
-    var hechos = 0;
-    checks.forEach(function (c) {
-      if (state[c.getAttribute('data-codigo')]) hechos++;
-    });
-    var el = document.getElementById('estudiado-contador');
-    if (el) el.textContent = hechos + '/' + checks.length + ' estudiados a mano';
-  }
-
-  checks.forEach(function (check) {
-    var codigo = check.getAttribute('data-codigo');
-    var estudiado = !!state[codigo];
-    check.checked = estudiado;
-    aplicar(codigo, estudiado);
-    check.addEventListener('change', function () {
-      state[codigo] = check.checked;
-      save(state);
-      aplicar(codigo, check.checked);
-      actualizarContador();
-    });
-  });
-
-  actualizarContador();
-})();
-</script>
+  <p class="lead">Guiones de mindmap para dibujar a mano. Elige un área.</p>
+  <a class="area-card" href="ionm.html" style="--bloque-color:#3b82f6">
+        <div class="area-nombre">IONM</div>
+        <div class="area-meta">23 temas · 13 completos (57%) · 10 en progreso · 0 esqueletos</div>
+        <div class="area-bloques">A — Modalidades de señal <span style="color:var(--text-muted)">(9)</span> · B — Contextos quirúrgicos <span style="color:var(--text-muted)">(8)</span> · C — Transversales <span style="color:var(--text-muted)">(6)</span></div>
+      </a>
+<a class="area-card" href="ppee.html" style="--bloque-color:#10b981">
+        <div class="area-nombre">PPEE</div>
+        <div class="area-meta">19 temas · 0 completos (0%) · 0 en progreso · 19 esqueletos</div>
+        <div class="area-bloques">A — Bases fisiológicas y anatómicas <span style="color:var(--text-muted)">(4)</span> · B — Bases técnicas de registro <span style="color:var(--text-muted)">(6)</span> · V — Potenciales evocados visuales <span style="color:var(--text-muted)">(9)</span></div>
+      </a>
+</div>
 </body>
 </html>

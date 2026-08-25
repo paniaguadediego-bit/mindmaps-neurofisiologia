@@ -4,11 +4,15 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-22T10:54:50.366Z
+Generado: 2026-08-25T16:36:30.113Z
 
-Progreso: 13 completos · 10 en progreso · 0 esqueletos · 23 temas totales.
+Progreso global: 13 completos · 10 en progreso · 19 esqueletos · 42 temas en 2 área(s).
 
-## Bloque A
+# Área IONM
+
+Visor: `ionm.html` · 13 completos · 10 en progreso · 0 esqueletos · 23 temas.
+
+## Bloque A — Modalidades de señal
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
@@ -22,7 +26,7 @@ Progreso: 13 completos · 10 en progreso · 0 esqueletos · 23 temas totales.
 | A8 | EEG intraoperatorio | A | En progreso | `mindmaps/A8-eeg-intraoperatorio.md` |
 | A9 | Reflejos en IONM | A | En progreso | `mindmaps/A9-reflejos-ionm.md` |
 
-## Bloque B
+## Bloque B — Contextos quirúrgicos
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
@@ -35,7 +39,7 @@ Progreso: 13 completos · 10 en progreso · 0 esqueletos · 23 temas totales.
 | B7 | Craneotomía despierta / mapeo cortical-subcortical | B | Completo | `mindmaps/B7-craneotomia-despierta-mapeo-cortical-subcortical.md` |
 | B8 | Fosa posterior avanzado con criterios de troncoencefálico | B | En progreso | `mindmaps/B8-fosa-posterior-avanzado-con-criterios-de-troncoencefalico.md` |
 
-## Bloque C
+## Bloque C — Transversales
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
@@ -46,11 +50,46 @@ Progreso: 13 completos · 10 en progreso · 0 esqueletos · 23 temas totales.
 | C5 | Marco general de criterios de alarma | C | Completo | `mindmaps/C5-criterios-alarma-marco-general.md` |
 | C6 | Troubleshooting general | C | Completo | `mindmaps/C6-troubleshooting-general.md` |
 
-## Orden de trabajo sugerido
-
-Básico → avanzado. Se mantiene a mano; si aparecen temas nuevos no listados aquí,
-añádelos donde tengan sentido.
+### Orden de trabajo sugerido
 
 C1 → C2 → A1 → A2 → A3 → C5 → A4 → A5 → C3 → C4 → C6 → B2 → B1 → B3 → B4 → A6 → A9 → A7 → B5 → B6 → B7 → A8
 
-Temas nuevos aún sin ubicar en el orden de trabajo: B8
+Temas aún sin ubicar en el orden: B8
+
+# Área PPEE
+
+Visor: `ppee.html` · 0 completos · 0 en progreso · 19 esqueletos · 19 temas.
+
+## Bloque A — Bases fisiológicas y anatómicas
+
+| Código | Título | Plantilla | Estado | Archivo |
+|---|---|---|---|---|
+| PE-A1 | Génesis del potencial evocado | D | Esqueleto | `mindmaps/PE-A1-genesis-del-potencial-evocado.md` |
+| PE-A2 | Campo cercano vs. campo lejano | D | Esqueleto | `mindmaps/PE-A2-campo-cercano-vs-campo-lejano.md` |
+| PE-A3 | Generadores: cómo se atribuye un pico a una estructura | D | Esqueleto | `mindmaps/PE-A3-generadores-como-se-atribuye-un-pico-a-una-estructura.md` |
+| PE-A4 | Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial) | D | Esqueleto | `mindmaps/PE-A4-anatomia-funcional-comparada-de-las-tres-vias-visual-auditiva-somatosensorial.md` |
+
+## Bloque B — Bases técnicas de registro
+
+| Código | Título | Plantilla | Estado | Archivo |
+|---|---|---|---|---|
+| PE-B1 | Promediado y relación señal/ruido | D | Esqueleto | `mindmaps/PE-B1-promediado-y-relacion-senal-ruido.md` |
+| PE-B2 | Cadena de registro: amplificación, filtros y conversión A/D | D | Esqueleto | `mindmaps/PE-B2-cadena-de-registro-amplificacion-filtros-y-conversion-a-d.md` |
+| PE-B3 | Elección de parámetros de estimulación y registro | D | Esqueleto | `mindmaps/PE-B3-eleccion-de-parametros-de-estimulacion-y-registro.md` |
+| PE-B4 | Nomenclatura y mediciones de los componentes | D | Esqueleto | `mindmaps/PE-B4-nomenclatura-y-mediciones-de-los-componentes.md` |
+| PE-B5 | Criterios de anormalidad y factores del sujeto | D | Esqueleto | `mindmaps/PE-B5-criterios-de-anormalidad-y-factores-del-sujeto.md` |
+| PE-B6 | Artefactos y problemas frecuentes del registro | D | Esqueleto | `mindmaps/PE-B6-artefactos-y-problemas-frecuentes-del-registro.md` |
+
+## Bloque V — Potenciales evocados visuales
+
+| Código | Título | Plantilla | Estado | Archivo |
+|---|---|---|---|---|
+| PE-V1 | Anatomía y fisiología de la vía visual | D | Esqueleto | `mindmaps/PE-V1-anatomia-y-fisiologia-de-la-via-visual.md` |
+| PE-V2 | PEV por damero: técnica y parámetros de registro | E | Esqueleto | `mindmaps/PE-V2-pev-por-damero-tecnica-y-parametros-de-registro.md` |
+| PE-V3 | PEV normal: componentes N75-P100-N145 y medición | E | Esqueleto | `mindmaps/PE-V3-pev-normal-componentes-n75-p100-n145-y-medicion.md` |
+| PE-V4 | Generadores del PEV por damero | D | Esqueleto | `mindmaps/PE-V4-generadores-del-pev-por-damero.md` |
+| PE-V5 | Criterios de anormalidad e interpretación del PEV | E | Esqueleto | `mindmaps/PE-V5-criterios-de-anormalidad-e-interpretacion-del-pev.md` |
+| PE-V6 | Factores que modifican el PEV | D | Esqueleto | `mindmaps/PE-V6-factores-que-modifican-el-pev.md` |
+| PE-V7 | Estimulación por hemicampos y distribución paradójica | E | Esqueleto | `mindmaps/PE-V7-estimulacion-por-hemicampos-y-distribucion-paradojica.md` |
+| PE-V8 | Flash VEP: indicaciones y limitaciones | E | Esqueleto | `mindmaps/PE-V8-flash-vep-indicaciones-y-limitaciones.md` |
+| PE-V9 | Aplicaciones clínicas del PEV | F | Esqueleto | `mindmaps/PE-V9-aplicaciones-clinicas-del-pev.md` |

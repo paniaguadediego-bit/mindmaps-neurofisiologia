@@ -1,7 +1,8 @@
 ---
 codigo: B8
 titulo: Fosa posterior avanzado con criterios de troncoencefálico
-bloque: B
+area: IONM
+bloque: B — Contextos quirúrgicos
 plantilla: B
 estado: en-progreso
 ---

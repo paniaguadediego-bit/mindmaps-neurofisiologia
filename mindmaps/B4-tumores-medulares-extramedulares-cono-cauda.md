@@ -1,7 +1,8 @@
 ---
 codigo: B4
 titulo: Tumores medulares extramedulares / cono-cola de caballo
-bloque: B
+area: IONM
+bloque: B — Contextos quirúrgicos
 plantilla: B
 estado: completo
 ---

@@ -1,7 +1,8 @@
 ---
 codigo: B7
 titulo: Craneotomía despierta / mapeo cortical-subcortical
-bloque: B
+area: IONM
+bloque: B — Contextos quirúrgicos
 plantilla: B
 estado: completo
 ---

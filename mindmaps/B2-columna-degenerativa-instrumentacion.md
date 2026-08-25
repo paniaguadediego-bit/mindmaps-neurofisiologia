@@ -1,7 +1,8 @@
 ---
 codigo: B2
 titulo: Columna — degenerativa / instrumentación
-bloque: B
+area: IONM
+bloque: B — Contextos quirúrgicos
 plantilla: B
 estado: en-progreso
 ---

@@ -1,7 +1,8 @@
 ---
 codigo: B3
 titulo: Tumores medulares intramedulares (IMSCT)
-bloque: B
+area: IONM
+bloque: B — Contextos quirúrgicos
 plantilla: B
 estado: completo
 ---

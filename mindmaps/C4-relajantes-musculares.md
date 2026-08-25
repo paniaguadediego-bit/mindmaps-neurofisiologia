@@ -1,7 +1,8 @@
 ---
 codigo: C4
 titulo: Relajantes musculares en MIO
-bloque: C
+area: IONM
+bloque: C — Transversales
 plantilla: C
 estado: completo
 ---

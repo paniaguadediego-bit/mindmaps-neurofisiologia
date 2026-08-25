@@ -1,7 +1,8 @@
 ---
 codigo: A5
 titulo: EMG estimulado — umbral de tornillo pedicular
-bloque: A
+area: IONM
+bloque: A — Modalidades de señal
 plantilla: A
 estado: completo
 ---
