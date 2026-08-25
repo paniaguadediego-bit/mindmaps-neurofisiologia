@@ -46,11 +46,14 @@ El proyecto cubre varias áreas de neurofisiología, cada una con **su propia p�
 visor. `index.html` es el portal que las lista; cada área se descubre sola en cuanto un
 `.md` la declara en su front-matter.
 
-| Área | Estado | Página |
-|---|---|---|
-| `IONM` | 23 temas, bloques A/B/C | `ionm.html` |
-| `PPEE` | 19 temas, bloques A/B/V | `ppee.html` |
-| EMG, EEG, EEG infantil, EEG UCI | previstas, aún no creadas | — |
+| Área | Bloques | Estado | Página |
+|---|---|---|---|
+| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 23 temas, todos con contenido | `ionm.html` |
+| `PPEE` | A bases fisiológicas/anatómicas · B bases técnicas · V visuales | 19 temas, 13 con contenido | `ppee.html` |
+| EMG, EEG, EEG infantil, EEG UCI | — | previstas, aún no creadas | — |
+
+El recuento exacto y actualizado está siempre en `MAPA_MAESTRO.md` (generado): no lo
+dupliques aquí más allá de esta orientación gruesa.
 
 **Códigos por área.** IONM usa códigos sin prefijo por motivos históricos (`A1`, `B7`,
 `C3`). **Toda área nueva lleva prefijo** para que el código sea autoexplicativo en la
@@ -60,6 +63,24 @@ pasa con `--prefijo "XX-"`.
 
 **Nunca recodificar un tema ya publicado** sin motivo de peso: Pani puede tener ya esa
 página dibujada a mano con ese código escrito.
+
+## Trabajo pendiente (orden acordado)
+
+1. **Bloque B de PPEE** — los 6 temas de bases técnicas de registro (`PE-B1` a `PE-B6`),
+   los únicos esqueletos vacíos que quedan. Fuente: **Markand cap.1 "Basic Techniques of
+   EP Recording", pp.1-23**. Ojo: parte de ese material YA está escrito dentro de
+   `PE-A1` (promediado, relación señal/ruido, conversión A/D, nomenclatura, mediciones,
+   límites del promediado). Por la regla de autocontención eso **no es un problema**: se
+   repite el dato en el tema del bloque B que le corresponda, con su cita, y además se
+   profundiza donde `PE-A1` solo lo resumía.
+2. **Retrofit de autocontención en IONM** — los 23 temas se escribieron antes de la regla
+   5 y están llenos de referencias cruzadas. Los peores: `B5` y `B6` (casi solo "ver
+   B8") y todo el bloque `C`. Acordado hacerlo después de terminar PPEE.
+3. **Repaso de contenido** de los temas ya escritos, por tandas, buscando lo que las
+   fuentes den de sí y aún no esté recogido.
+
+Áreas futuras (EMG, EEG, EEG infantil, EEG UCI): sin fuentes aún en `fuentes/`; no
+empezar hasta que Pani las aporte.
 
 ## Reglas fundamentales
 
@@ -101,6 +122,31 @@ página dibujada a mano con ese código escrito.
    (Node.js está disponible en esta máquina; Python no lo está — no uses `python`,
    `python3` ni `py`.)
 
+## Cómo leer los PDFs de `fuentes/` (práctico)
+
+Lecciones ya pagadas. Respétalas y ahorrarás tiempo y dinero:
+
+- **La herramienta Read NO puede renderizar PDFs aquí** (falta `pdftoppm`/poppler). En
+  cambio **`pdftotext` SÍ está disponible** (`/mingw64/bin/pdftotext`). Es la vía buena:
+
+  ```
+  pdftotext -layout -f <pag_inicio> -l <pag_fin> "ruta.pdf" "<scratchpad>/salida.txt"
+  ```
+
+- **La salida va SIEMPRE al scratchpad del sistema, nunca al repo**, y se borra al
+  terminar (ver la regla de copyright en "Qué NO hacer").
+- **Extrae tú directamente en vez de lanzar un subagente** para esto. Un subagente
+  arranca sin contexto y gasta mucho más; en una ocasión consumió ~50 000 tokens en dos
+  llamadas antes de empezar. Solo delega si el volumen es realmente grande.
+- **El número de página del PDF NO coincide con el impreso.** En Markand el desfase varía
+  por capítulo (+14 en cap.1, +13 en cap.3, +12 en cap.4). Verifícalo leyendo los
+  encabezados de página y **cita siempre la página IMPRESA**.
+- **`pdftotext` se come los símbolos de grado y de minuto de arco.** Aparecen cosas como
+  "campo de 150" (era 15°) o "cuadros de 40-60" (eran 40-60′). Reconstruye por contexto y
+  comprueba la coherencia interna antes de escribir la cifra.
+- **Las tablas salen descolocadas**: las columnas se desalinean y las filas se mezclan.
+  No copies una tabla sin cruzarla con el texto del cuerpo que la explica.
+
 ## Front-matter obligatorio de cada mindmap
 
 ```yaml
@@ -113,6 +159,11 @@ plantilla: E
 estado: esqueleto        # esqueleto | en-progreso | completo
 ---
 ```
+
+**Aviso: el parser de `build.js` NO es YAML de verdad.** Toma literalmente todo lo que va
+tras el primer `: ` de cada línea. Consecuencias prácticas: un título puede contener dos
+puntos sin problema (como el del ejemplo), pero **no lo entrecomilles** — las comillas
+saldrían impresas tal cual en el visor.
 
 - `codigo`: prefijo de área (si lo hay) + letra de bloque + número. Los números crecen sin
   límite (A10, A11...).

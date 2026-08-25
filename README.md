@@ -10,9 +10,13 @@ Está organizado en **áreas**, cada una con su propia página en el visor:
 | Área | Temas | Contenido |
 |---|---|---|
 | **IONM** | 23 | Monitorización neurofisiológica intraoperatoria |
-| **PPEE** | 19 | Potenciales evocados (bases generales y visuales) |
+| **PPEE** | 19 | Potenciales evocados: bases generales y visuales |
 
 Previstas: EMG, EEG, EEG infantil y EEG UCI.
+
+Estado: **42 temas, 36 con contenido escrito y citado** (los 23 de IONM y 13 de los 19
+de PPEE). El recuento al día está en [`MAPA_MAESTRO.md`](MAPA_MAESTRO.md), que se genera
+solo.
 
 **Visor en vivo:** [paniaguadediego-bit.github.io/mindmaps-neurofisiologia](https://paniaguadediego-bit.github.io/mindmaps-neurofisiologia/)
 — accesible desde el navegador del PC o instalable como app desde Chrome en Android
