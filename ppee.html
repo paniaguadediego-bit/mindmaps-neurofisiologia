@@ -361,17 +361,17 @@ body { display: flex; }
   <a class="volver" href="index.html">← Todas las áreas</a>
   <h1>PPEE</h1>
   <div class="progreso">
-    0/19 completos (0%) · 0 en progreso · 19 esqueletos
-    <div class="progreso-bar"><div class="progreso-fill" style="width:0%"></div></div>
+    3/19 completos (16%) · 1 en progreso · 15 esqueletos
+    <div class="progreso-bar"><div class="progreso-fill" style="width:16%"></div></div>
   </div>
   <div class="progreso" id="estudiado-contador">0/19 estudiados a mano</div>
   <div class="progreso"><a class="volver" href="ionm.html">IONM →</a></div>
   <div class="nav-bloque" style="--bloque-color:#3b82f6">
         <div class="nav-bloque-titulo">A — Bases fisiológicas y anatómicas</div>
-        <a href="#PE-A1" class="nav-item estado-esqueleto" data-codigo="PE-A1"><span class="nav-codigo">PE-A1</span><span class="nav-titulo">Génesis del potencial evocado</span></a>
-<a href="#PE-A2" class="nav-item estado-esqueleto" data-codigo="PE-A2"><span class="nav-codigo">PE-A2</span><span class="nav-titulo">Campo cercano vs. campo lejano</span></a>
-<a href="#PE-A3" class="nav-item estado-esqueleto" data-codigo="PE-A3"><span class="nav-codigo">PE-A3</span><span class="nav-titulo">Generadores: cómo se atribuye un pico a una estructura</span></a>
-<a href="#PE-A4" class="nav-item estado-esqueleto" data-codigo="PE-A4"><span class="nav-codigo">PE-A4</span><span class="nav-titulo">Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial)</span></a>
+        <a href="#PE-A1" class="nav-item estado-completo" data-codigo="PE-A1"><span class="nav-codigo">PE-A1</span><span class="nav-titulo">Génesis del potencial evocado</span></a>
+<a href="#PE-A2" class="nav-item estado-completo" data-codigo="PE-A2"><span class="nav-codigo">PE-A2</span><span class="nav-titulo">Campo cercano vs. campo lejano</span></a>
+<a href="#PE-A3" class="nav-item estado-completo" data-codigo="PE-A3"><span class="nav-codigo">PE-A3</span><span class="nav-titulo">Generadores: cómo se atribuye un pico a una estructura</span></a>
+<a href="#PE-A4" class="nav-item estado-en-progreso" data-codigo="PE-A4"><span class="nav-codigo">PE-A4</span><span class="nav-titulo">Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial)</span></a>
       </div>
 <div class="nav-bloque" style="--bloque-color:#10b981">
         <div class="nav-bloque-titulo">B — Bases técnicas de registro</div>
@@ -404,19 +404,118 @@ body { display: flex; }
               <input type="checkbox" class="estudiado-check" data-codigo="PE-A1" onclick="event.stopPropagation()" aria-label="Marcar PE-A1 como estudiado">
               <span class="tema-codigo">PE-A1</span>
               <h3 class="tema-titulo">Génesis del potencial evocado</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-completo">Completo</span>
               <span class="badge plantilla-badge">Plantilla D</span>
             </summary>
             <div class="tema-body">
               <div class="mm"><div class="mm-root">Génesis del potencial evocado</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
-<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
+<div class="mm-node n1" style="--d:1">PE = actividad eléctrica TIME-LOCKED: sigue al estímulo con un intervalo temporal fijo — frente a la actividad espontánea del EEG, que no lo está</div>
+<div class="mm-node n1" style="--d:1">Relacionados con el ESTÍMULO: latencia corta, estímulo estereotipado de modalidad específica (PEATC, PEV, PESS, PEM)</div>
+<div class="mm-node n1" style="--d:1">Relacionados con el EVENTO (P300): dependen del contenido informativo y de la &quot;relevancia de la tarea&quot;, no de la modalidad del estímulo</div>
+<div class="mm-node n1" style="--d:1">&quot;Latencia corta&quot; en PESS tiene definición numérica: &lt;25 ms para mediano en muñeca y &lt;45 ms para tibial posterior en tobillo</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico — las DOS fuentes físicas del registro</div>
+<div class="mm-node n1" style="--d:1">1. Potenciales de acción propagados (potenciales de fibra o de tracto)</div>
+<div class="mm-node n2" style="--d:2">La zona excitada se comporta como un TRIPOLO (+ − +): despolarización central precedida y seguida de hiperpolarización</div>
+<div class="mm-node n2" style="--d:2">Da un potencial TRIFÁSICO: positividad de aproximación → negatividad grande bajo el electrodo → positividad de salida</div>
+<div class="mm-node n2" style="--d:2">La morfología depende de dónde esté el electrodo: en medio de la fibra → trifásico (+ − +) · en el punto de excitación inicial → bifásico (− +) · cerca del final de la vía → bifásico (+ −), porque la hiperpolarización rezagada nunca llega a cruzar el electrodo (por eso el N9 de Erb suele ser bifásico)</div>
+<div class="mm-node n2" style="--d:2">Caída de amplitud con la distancia ≈ proporcional a distancia⁻³ — muy rápida</div>
+<div class="mm-node n1" style="--d:1">2. Potenciales postsinápticos (EPSP/IPSP) por activación de núcleos y corteza</div>
+<div class="mm-node n2" style="--d:2">Solo se registran si la estructura tiene CAMPO ABIERTO (open field)</div>
+<div class="mm-node n2" style="--d:2">Campo abierto: neuronas piramidales corticales, dispuestas en paralelo y en columnas → la activación sincronizada genera un dipolo funcional perpendicular al cuero cabelludo</div>
+<div class="mm-node n2" style="--d:2">Regla de polaridad cortical: actividad sináptica EXCITATORIA en dendritas apicales → NEGATIVIDAD en el electrodo suprayacente; la inhibitoria en dendritas apicales hace lo contrario</div>
+<div class="mm-node n2" style="--d:2">Campo CERRADO: en muchos núcleos del tronco y hemisféricos los dipolos individuales apuntan en direcciones distintas, se cancelan entre sí y NO generan potencial registrable fuera del núcleo</div>
+<div class="mm-node n1" style="--d:1">¿Cuál domina? No está establecido de forma concluyente para el PEATC: se cree que es una COMBINACIÓN de ambas</div>
+<div class="mm-node n2" style="--d:2">Argumento a favor del peso de los tractos: los PEATC son notablemente resistentes a hipotensión, anestesia y anoxia — factores que afectan mucho más a la función sináptica que a la conducción axonal</div>
+<div class="mm-node n1" style="--d:1">Papel de la SINCRONÍA</div>
+<div class="mm-node n2" style="--d:2">La amplitud de los picos depende del grado de coherencia temporal de la actividad neural; la dispersión temporal ensancha los picos y baja amplitud</div>
+<div class="mm-node n2" style="--d:2">Si todas las fibras descargan a la vez, la amplitud del pico negativo del PAC es una medida del NÚMERO de fibras activadas</div>
+<div class="mm-node n2" style="--d:2">Vías largas entregan actividad menos coherente → los picos precoces del PESS de MMII son menos definidos que los de MMSS</div>
+<div class="mm-node n2" style="--d:2">Envejecimiento del PEATC: la amplitud baja porque el diámetro axonal del VIII par se hace más variable (media 2.5 µm en niños con distribución estrecha, frente a 0.5-7 µm a los 40-50 años) → más dispersión temporal</div>
+<div class="mm-node n2" style="--d:2">Prematuros &lt;30 semanas de edad concepcional: la ausencia de PEATC bien resueltos se atribuye a FALTA DE SINCRONIZACIÓN de las vías auditivas del tronco, no a hipoacusia (los potenciales corticales tardíos sí se obtienen)</div>
+<div class="mm-node n0" style="--d:0">Dipolo y conducción de volumen</div>
+<div class="mm-node n1" style="--d:1">Los potenciales generados en cualquier punto del neuroeje se propagan a las áreas circundantes por conducción de volumen</div>
+<div class="mm-node n2" style="--d:2">Consecuencia radical: NO EXISTE una localización completamente inactiva en el cuerpo. Cualquier derivación de dos electrodos está influida por el potencial; lo que cambia es la magnitud en cada electrodo según su distancia al generador</div>
+<div class="mm-node n1" style="--d:1">Muchas células piramidales activadas casi sincrónicamente suman sus dipolos en un dipolo &quot;equivalente&quot; grande; el electrodo del scalp registra negatividad por estar más cerca del extremo negativo</div>
+<div class="mm-node n1" style="--d:1">Nervios, tractos y núcleos pueden tratarse como fuentes equivalentes a un dipolo</div>
+<div class="mm-node n2" style="--d:2">El dipolo de un NERVIO no es estacionario: se mueve con la propagación. Los de los NÚCLEOS son mayoritariamente estacionarios, aunque pueden cambiar porque distintas partes del núcleo se activan secuencialmente</div>
+<div class="mm-node n1" style="--d:1">La amplitud registrada depende de: fuerza del dipolo + ORIENTACIÓN tridimensional respecto a los electrodos + distancia + propiedades eléctricas del medio interpuesto (la resistencia del hueso craneal atenúa el campo lejano)</div>
 <div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
-<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
+<div class="mm-node n1" style="--d:1">Campo abierto → corteza cerebral (árboles dendríticos grandes y paralelos) → contribuye mucho al campo lejano</div>
+<div class="mm-node n1" style="--d:1">Campo cerrado → núcleo con dendritas en todas direcciones → campo lejano pequeño o inmedible</div>
+<div class="mm-node n1" style="--d:1">Paradoja importante: un núcleo con GRAN potencial de campo cercano puede no contribuir de forma medible al campo lejano por su organización interna, mientras otro con dendritas alineadas contribuye mucho al campo lejano aunque su potencial de campo cercano sea menor</div>
+<div class="mm-node n2" style="--d:2">En la práctica casi no hay núcleos puros de un tipo: la mayoría están entre los dos extremos</div>
+<div class="mm-node n1" style="--d:1">Ejemplos de campo cerrado: núcleos de las columnas dorsales (contribuyen poco al campo lejano) y colículo inferior (respuesta de campo lejano muy pequeña pese a registrarse un potencial grande desde su superficie)</div>
+<div class="mm-node n1" style="--d:1">Excepción registrable: los núcleos de la sustancia gris central cervical y lumbar SÍ son fuente registrable → dan el N13 y el N22</div>
+<div class="mm-node n1" style="--d:1">Respuesta típica de un núcleo (registro monopolar de superficie): complejo rápido positivo-negativo inicial (0.5-2 ms, generado por la TERMINACIÓN del nervio en el núcleo) seguido de un potencial LENTO generado por las dendritas, sobre el que pueden cabalgar espigas de los somas (somaspikes), más tardías por el retardo sináptico</div>
+<div class="mm-node n2" style="--d:2">El potencial lento tiene propiedad de dipolo: negativo desde un lado del núcleo, positivo desde el opuesto y NULO en el punto equidistante (demostrado atravesando el núcleo cuneiforme del gato con un electrodo: la polaridad se invierte en un punto)</div>
+<div class="mm-node n0" style="--d:0">Parámetros y magnitudes clave</div>
+<div class="mm-node n1" style="--d:1">Amplitud del PE: 0.1 µV - 10 µV</div>
+<div class="mm-node n1" style="--d:1">Amplificación necesaria: 10³-10⁶ (el conversor A/D necesita hasta 1 V de entrada) · para PEATC en concreto, 500.000 a 1.000.000×</div>
+<div class="mm-node n1" style="--d:1">Ruido = TODO lo que no es el PE: EEG, EMG, EOG, ECG, ruido de electrodo y ruido electrónico</div>
+<div class="mm-node n1" style="--d:1">Relación señal/ruido: de 1/5 a 1/100 según la modalidad</div>
+<div class="mm-node n1" style="--d:1">Promediado: el ruido decrece proporcionalmente a 1/√N</div>
+<div class="mm-node n2" style="--d:2">Mejora ×5 con 25 promedios; para mejorar ×10 hacen falta 75 más (100 en total) — la mayor ganancia está al principio de la serie</div>
+<div class="mm-node n2" style="--d:2">Clave conceptual: el promediado mejora la S/N REDUCIENDO la amplitud del ruido, no aumentando la señal en absoluto</div>
+<div class="mm-node n1" style="--d:1">Dimensionado del conversor A/D: nº de niveles ≈ amplitud de fondo / amplitud del componente más pequeño. Con un PE de 0.1 µV sobre señal global de 100 µV hacen falta ≥1000 niveles → conversor de 10 bits (2¹⁰=1024); los equipos usan 11-12 bits</div>
+<div class="mm-node n0" style="--d:0">Componente &quot;obligado&quot; (obligate component)</div>
+<div class="mm-node n1" style="--d:1">Son los presentes de forma constante en todos los sujetos normales y los clínicamente relevantes; sobre ellos se miden latencias absolutas, IPL y amplitud</div>
+<div class="mm-node n1" style="--d:1">PEATC: obligadas = ondas I, III y V. Las ondas II, IV, VI y VII son inconstantes incluso en normales y no se usan para interpretación clínica</div>
+<div class="mm-node n2" style="--d:2">Consistencia: I, II, III, IV y V se encuentran en todos los adultos normales; VI en el 84% y VII en el 43% de los oídos estimulados</div>
+<div class="mm-node n2" style="--d:2">La onda I es la más frágil de las tres obligadas y la más frecuentemente ausente o mal delineada — y es esencial, porque la conducción central se mide desde su pico</div>
+<div class="mm-node n1" style="--d:1">PESS mediano: obligados = N9, N13/P13, P14, N18, N20</div>
+<div class="mm-node n1" style="--d:1">PESS tibial: obligados = N7, N22, P31, N34, P37</div>
+<div class="mm-node n1" style="--d:1">PEV: los tres picos son N75, P100 y N145; el clínicamente relevante es el P100 (mayor amplitud, menor variabilidad interindividual, mínima asimetría interocular)</div>
+<div class="mm-node n1" style="--d:1">Por qué importa la distinción: define qué se mide y qué puede llamarse anormal — si falta un componente NO obligado, no es una anormalidad. Ejemplo: en un tercio de los normales las ondas IV y V no se reconocen separadas y se designan &quot;complejo IV/V&quot;, con latencia intermedia</div>
 <div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
-<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n1" style="--d:1">La POLARIDAD de un componente depende de la derivación, no es una propiedad absoluta: el mismo componente es N13 en un electrodo sobre la apófisis espinosa de C5 y P13 en un electrodo sobre el cuello anterior</div>
+<div class="mm-node n2" style="--d:2">Corolario: sin conocer la derivación, la polaridad no significa nada</div>
+<div class="mm-node n1" style="--d:1">Tres sistemas de nomenclatura</div>
+<div class="mm-node n2" style="--d:2">Ordinal: números romanos (ondas I-VII del PEATC)</div>
+<div class="mm-node n2" style="--d:2">Polaridad-ordinal: N1, P1, N2, P2</div>
+<div class="mm-node n2" style="--d:2">Polaridad-latencia: N9, P37, P100 — es el convenio PREFERIDO, porque aporta polaridad y latencia media a la vez</div>
+<div class="mm-node n2" style="--d:2">Problema de los dos primeros: si los componentes iniciales faltan por patología o por problema técnico, la identificación se DESPLAZA (si falta P1, P2 puede tomarse por un P1 retrasado); además los ordinales no informan de latencia</div>
+<div class="mm-node n2" style="--d:2">Problema residual del tercero: la latencia del P37 depende de edad, talla y sitio de estimulación (tobillo vs. rodilla)</div>
+<div class="mm-node n2" style="--d:2">Muchos componentes se nombran además por su fuente: &quot;potencial de Erb&quot; o &quot;potencial del plexo braquial&quot; para N9, &quot;potencial poplíteo&quot; para N7</div>
+<div class="mm-node n1" style="--d:1">Mediciones</div>
+<div class="mm-node n2" style="--d:2">Latencia absoluta: del estímulo al pico del componente</div>
+<div class="mm-node n2" style="--d:2">Latencia interpico (IPL): intervalo entre dos picos — es la RECOMENDADA para valorar anormalidad clínicamente relevante, porque la latencia absoluta está influida por muchos factores y la IPL lo está mucho menos</div>
+<div class="mm-node n2" style="--d:2">Amplitud: mal estandarizada (¿respecto a una línea de base indefinible, al pico previo, al posterior, o área bajo la curva?). Convenio práctico: en PEATC y PESS se mide al pico SIGUIENTE; en PEV se mide al pico ANTERIOR (N75)</div>
+<div class="mm-node n2" style="--d:2">La amplitud es en general menos útil que la latencia por su variabilidad intersujeto mucho mayor; una diferencia interlado significativa es como mucho una anormalidad &quot;blanda&quot;</div>
+<div class="mm-node n1" style="--d:1">Obligatorio ≥2 RÉPLICAS superpuestas: solo los componentes consistentes entre réplicas pueden considerarse inequívocamente relacionados con el estímulo. Los picos no reproducibles son probablemente ruido, y con una sola réplica se confundirían con componentes reales del PE</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica — datos normativos</div>
+<div class="mm-node n1" style="--d:1">Es preferible obtener los normativos en el propio laboratorio; si se &quot;toman prestados&quot;, hay que replicar instrumentación y técnica lo más fielmente posible</div>
+<div class="mm-node n2" style="--d:2">Para el PEV los valores normales deben obtenerse SIEMPRE en el propio laboratorio, por la gran variabilidad entre laboratorios</div>
+<div class="mm-node n1" style="--d:1">Muestra habitual ≥30 sujetos normales; límite superior en media + 2.5 SD o + 3.0 SD; estadística de UNA COLA (solo las latencias largas son clínicamente relevantes). Con muestra muy grande, 2/2.5/3 SD cubren ~97.7%/99.4%/99.9%</div>
+<div class="mm-node n1" style="--d:1">Límites de tolerancia (recomendación ACNS 2006): intervalo que incluye una proporción de la población con un nivel de confianza dado. Habitual: límite de tolerancia del 99% con confianza ≥95%, de un solo lado</div>
+<div class="mm-node n2" style="--d:2">Con n=30 el factor K ≈ 3.064, es decir media + 3 SD ≈ límite de tolerancia del 99% al 95% de confianza</div>
+<div class="mm-node n1" style="--d:1">Las AMPLITUDES no siguen distribución normal, así que media+3SD no sirve para ellas: se considera anormal una asimetría interlado &gt;50%; en PEATC se usa la razón V/I</div>
+<div class="mm-node n1" style="--d:1">Calcular media y SD por lado POR SEPARADO (o promediar los dos lados de cada sujeto antes de promediar entre sujetos): las latencias de los dos lados de un mismo individuo están correlacionadas, y agruparlas infraestima la SD</div>
+<div class="mm-node n0" style="--d:0">Utilidad clínica de los PE</div>
+<div class="mm-node n1" style="--d:1">Detectar disfunción clínicamente inaparente · confirmar y localizar el defecto de conducción responsable de síntomas sensitivos · apoyar un origen psicógeno cuando el PE es normal · confirmar muerte encefálica y/o pronosticar tras insulto cerebral grave (anoxia, TCE grave) · monitorización intraoperatoria de la vía sensitiva en riesgo</div>
 <div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
-<div class="mm-node n0" style="--d:0">Limitaciones</div>
-<div class="mm-node n0" style="--d:0">Referencia</div></div>
+<div class="mm-node n1" style="--d:1">PE no registrable: estimulación inadecuada, electrodos de alta impedancia, artefactos de gran amplitud, electrodos de registro incorrectos o mal colocados</div>
+<div class="mm-node n2" style="--d:2">En PESS: verificar que los electrodos de estimulación están sobre el nervio y que la intensidad produce una CONTRACCIÓN MUSCULAR VISIBLE</div>
+<div class="mm-node n2" style="--d:2">En PEATC: auricular mal sujeto o deslizado sobre la mandíbula</div>
+<div class="mm-node n1" style="--d:1">Calidad subóptima por artefacto: con paciente tenso o en movimiento, NI aumentar el número de promedios NI el rechazo automático de artefacto lo arreglan</div>
+<div class="mm-node n1" style="--d:1">&quot;Los PE se ven raros&quot; → causa frecuente: electrodos de uno o más canales INVERTIDOS (registrar Cz-A2 en vez de A2-Cz). Truco: mirar la copia en papel a contraluz por el reverso, que equivale a invertir la derivación</div>
+<div class="mm-node n1" style="--d:1">Confundir ruido con componentes del PE por hacer una sola réplica</div>
+<div class="mm-node n1" style="--d:1">Confundir la polaridad por desconocer la derivación (N13 vs P13)</div>
+<div class="mm-node n1" style="--d:1">Deriva del sistema ordinal: tomar P2 por un P1 retrasado cuando P1 falta</div>
+<div class="mm-node n0" style="--d:0">Limitaciones — los cinco límites del promediado</div>
+<div class="mm-node n1" style="--d:1">A. El ruido puede NO ser aleatorio, y entonces no se elimina según la raíz de N</div>
+<div class="mm-node n1" style="--d:1">B. Si la frecuencia de estimulación es armónico o subarmónico de un artefacto (p. ej. 60 Hz), el artefacto se REALZA en vez de cancelarse</div>
+<div class="mm-node n1" style="--d:1">C. Señales irrelevantes pueden ocurrir time-locked al estímulo (p. ej. EMG disparado por el propio estímulo) y contaminar el PE</div>
+<div class="mm-node n1" style="--d:1">D. Artefactos excesivos (movimientos oculares, parpadeo, EMG) pueden no eliminarse aunque se aumente el número de promedios</div>
+<div class="mm-node n1" style="--d:1">E. Si el PE VARÍA entre estímulos, el promediado DEGRADA la señal: por jitter de latencia, por variación de amplitud, o por ambas</div>
+<div class="mm-node n1" style="--d:1">Límite específico de quirófano: el promediado asume que todas las respuestas sumadas tienen la misma forma y la misma relación temporal con el estímulo — deja de ser cierto cuando el sistema está siendo afectado por manipulación quirúrgica, calor o anoxia, y si las respuestas cambian durante la adquisición la respuesta promediada queda distorsionada</div>
+<div class="mm-node n0" style="--d:0">Estrategias para mejorar el registro</div>
+<div class="mm-node n1" style="--d:1">Reducir el ruido de entrada: aplicación correcta de electrodos, comodidad del paciente, sedación si hace falta para PEATC/PESS</div>
+<div class="mm-node n1" style="--d:1">Usar frecuencias de estimulación NO relacionadas con 60 Hz: PEV 2.1/s, PEATC 11/s, PESS 4.7/s</div>
+<div class="mm-node n1" style="--d:1">Rechazo automático de artefacto por ventana discriminadora, filtrado adecuado y ≥2 réplicas</div>
+<div class="mm-node n1" style="--d:1">En PEATC, el artefacto de estímulo a alta intensidad se elimina eficazmente con clics de polaridad ALTERNANTE</div>
+<div class="mm-node n1" style="--d:1">Aun así, en el 2-5% de los casos no hay forma de obtener un registro óptimo y hay que reprogramar al paciente</div>
+<div class="mm-node n0" style="--d:0">Referencia</div>
+<div class="mm-node n1" style="--d:1">Markand2020 cap.1 pp.1-14 y p.23 · cap.2 pp.28, 32, 34, 38 · cap.3 pp.90-91 · cap.4 pp.139, 148-157 · Moller2011 cap.3 pp.23-24, 29, 35-39 · cap.5 pp.72-73, 84-85</div></div>
               
             </div>
           </details>
@@ -425,19 +524,139 @@ body { display: flex; }
               <input type="checkbox" class="estudiado-check" data-codigo="PE-A2" onclick="event.stopPropagation()" aria-label="Marcar PE-A2 como estudiado">
               <span class="tema-codigo">PE-A2</span>
               <h3 class="tema-titulo">Campo cercano vs. campo lejano</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-completo">Completo</span>
               <span class="badge plantilla-badge">Plantilla D</span>
             </summary>
             <div class="tema-body">
               <div class="mm"><div class="mm-root">Campo cercano vs. campo lejano</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
-<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
-<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
-<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
-<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
-<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+<div class="mm-node n1" style="--d:1">Campo cercano (NFP): potencial registrado con el electrodo DIRECTAMENTE SOBRE o muy cerca de la estructura generadora (nervio, tracto, núcleo, región cortical). Refleja la actividad de muchas fibras o células de UNA SOLA estructura</div>
+<div class="mm-node n1" style="--d:1">Campo lejano (FFP): potencial registrado desde electrodos situados a distancia (larga) de las estructuras que lo generan, dentro de un medio conductor</div>
+<div class="mm-node n1" style="--d:1">Origen histórico del término: &quot;campo lejano&quot; lo usaron por primera vez Jewett y Williston (1971) para describir los PEATC — generados en estructuras auditivas del tronco y registrados desde el vértex</div>
+<div class="mm-node n1" style="--d:1">AVISO CONCEPTUAL: &quot;campo lejano&quot; designa DOS MECANISMOS DISTINTOS bajo el mismo nombre</div>
+<div class="mm-node n2" style="--d:2">(a) Potenciales estacionarios generados por actividad PROPAGADA en nervios o tractos al encontrar discontinuidades del conductor de volumen</div>
+<div class="mm-node n2" style="--d:2">(b) Potenciales generados por activación SINÁPTICA de núcleos del tronco o de tractos subcorticales, registrados a distancia</div>
+<div class="mm-node n0" style="--d:0">El criterio operativo — gradiente y cambio de latencia al mover el electrodo</div>
+<div class="mm-node n1" style="--d:1">NFP propagado (viajero): la LATENCIA AUMENTA conforme se desplaza el electrodo a lo largo de la vía nerviosa; la amplitud cae muy rápido al alejarse de la fuente (≈ distancia⁻³)</div>
+<div class="mm-node n1" style="--d:1">FFP: baja amplitud, LATENCIA FIJA (estacionaria), ampliamente distribuido en el volumen conductor</div>
+<div class="mm-node n1" style="--d:1">NFP ESTACIONARIO — la categoría intermedia que rompe la equivalencia simplista &quot;estacionario = campo lejano&quot;</div>
+<div class="mm-node n2" style="--d:2">N13 y N22 son campo CERCANO y a la vez ESTACIONARIOS: no son propagados</div>
+<div class="mm-node n2" style="--d:2">N22 está ampliamente distribuido sobre columna dorsolumbar, es máximo en T12/L1, decrece en amplitud por encima y por debajo, pero SU LATENCIA NO CAMBIA</div>
+<div class="mm-node n2" style="--d:2">N13 igual: máximo en cervical medio-bajo, registrable arriba y abajo con menor amplitud pero con latencia fija</div>
+<div class="mm-node n0" style="--d:0">Fundamento físico — cómo un potencial propagado genera un pico estacionario a distancia</div>
+<div class="mm-node n1" style="--d:1">Punto de partida: la actividad propagada en un nervio NO genera picos estacionarios en un registro de campo lejano salvo que se cumplan condiciones</div>
+<div class="mm-node n1" style="--d:1">Las cuatro condiciones (Kimura et al. 1984, 1986; Dumitru y King 1993) — se registra FFP cuando el nervio:</div>
+<div class="mm-node n2" style="--d:2">1. Cruza un límite entre volúmenes de distinta impedancia o conductividad</div>
+<div class="mm-node n2" style="--d:2">2. Encuentra un cambio en la FORMA del volumen circundante (p. ej. pasar de un cilindro pequeño a otro mayor)</div>
+<div class="mm-node n2" style="--d:2">3. Se dobla o hace un giro</div>
+<div class="mm-node n2" style="--d:2">4. TERMINA (la propagación se detiene, como al terminar el nervio en un núcleo)</div>
+<div class="mm-node n1" style="--d:1">Mecanismo del CUADRIPOLO DESEQUILIBRADO (Dumitru y King 1993; Stegeman et al. 1997) — la explicación del &quot;potencial de unión&quot;</div>
+<div class="mm-node n2" style="--d:2">La base eléctrica del potencial de acción es un tripolo fuente-sumidero-fuente (+ − +)</div>
+<div class="mm-node n2" style="--d:2">Equivale a un cuadripolo lineal (+ − − +), es decir DOS DIPOLOS espalda con espalda: un dipolo &quot;LÍDER&quot; (− +) y un dipolo &quot;REZAGADO&quot; (+ −)</div>
+<div class="mm-node n2" style="--d:2">En un volumen HOMOGÉNEO los dos dipolos son iguales y opuestos, están equilibrados → NO se genera FFP en un electrodo distante</div>
+<div class="mm-node n2" style="--d:2">Al encontrar una discontinuidad los dos dipolos se DESEQUILIBRAN: predomina el líder o el rezagado, la fuente cuadripolar pasa a comportarse como fuente dipolar equivalente, y entonces el electrodo distante SÍ registra un FFP</div>
+<div class="mm-node n1" style="--d:1">Polaridad del FFP — corrección de un error histórico</div>
+<div class="mm-node n2" style="--d:2">La idea antigua de que los campos lejanos son siempre POSITIVOS es INCORRECTA</div>
+<div class="mm-node n2" style="--d:2">Pueden ser positivos o negativos, y la polaridad la determinan (a) la fuerza relativa de los dipolos líder y rezagado y (b) la ORIENTACIÓN del electrodo respecto a ellos: si el electrodo distante &quot;ve&quot; el extremo positivo del líder registra positividad; si &quot;ve&quot; el negativo del rezagado, negatividad</div>
+<div class="mm-node n1" style="--d:1">Casos concretos del modelo</div>
+<div class="mm-node n2" style="--d:2">Volumen de conductividad uniforme → no hay potencial por cancelación de los dipolos equilibrados; solo el trifásico de campo cercano al pasar por debajo</div>
+<div class="mm-node n2" style="--d:2">Transición a un medio de MENOR resistencia (mayor conductividad) → FFP NEGATIVO</div>
+<div class="mm-node n2" style="--d:2">Paso de volumen estrecho a volumen grande → predomina el dipolo líder → FFP POSITIVO</div>
+<div class="mm-node n2" style="--d:2">Nervio que hace un giro de 180° → el electrodo distante ve el extremo negativo de ambos dipolos → FFP negativo grande</div>
+<div class="mm-node n2" style="--d:2">Giro menos brusco (120°) → dos electrodos distantes registran POLARIDADES OPUESTAS para el mismo evento: la polaridad depende también de dónde está el electrodo, no solo de qué dipolo predomina</div>
+<div class="mm-node n2" style="--d:2">Registro más allá de la TERMINACIÓN de una vía → FFP negativo, porque al disiparse el dipolo líder el electrodo ve el extremo negativo del rezagado</div>
+<div class="mm-node n1" style="--d:1">Ejemplos anatómicos de &quot;paso de un compartimento a otro&quot;: un nervio o tracto que atraviesa un canal óseo pasando de un espacio lleno de líquido a otro — la médula al atravesar el foramen magnum, o el nervio auditivo al emerger del meato acústico interno (porus acusticus)</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico — qué componente es de qué tipo</div>
+<div class="mm-node n1" style="--d:1">PESS de nervio mediano</div>
+<div class="mm-node n2" style="--d:2">N9 (Erb) → NFP PROPAGADO · generador: plexo braquial en el punto de Erb</div>
+<div class="mm-node n2" style="--d:2">P9 → FFP de nervio periférico · se genera ligeramente distal al plexo braquial, al pasar el volley del volumen cambiante del brazo a la axila/hombro</div>
+<div class="mm-node n2" style="--d:2">N13/P13 → NFP ESTACIONARIO · sustancia gris dorsal del cordón cervical en la zona de entrada radicular</div>
+<div class="mm-node n2" style="--d:2">P14 → FFP · lemnisco medial caudal</div>
+<div class="mm-node n2" style="--d:2">N18 → FFP · múltiples fuentes en tronco, contribución bulbar principal</div>
+<div class="mm-node n2" style="--d:2">N20 → NFP · neuronas de la corteza sensitiva primaria (área del brazo)</div>
+<div class="mm-node n1" style="--d:1">PESS de tibial posterior</div>
+<div class="mm-node n2" style="--d:2">N7 (poplíteo) → NFP propagado · n. tibial en hueco poplíteo</div>
+<div class="mm-node n2" style="--d:2">N22 → NFP ESTACIONARIO · sustancia gris dorsal del cordón lumbar en zona de entrada radicular</div>
+<div class="mm-node n2" style="--d:2">P31 y N34 → FFP · P31 = lemnisco medial; N34 = postsináptico de múltiples generadores del tronco</div>
+<div class="mm-node n2" style="--d:2">P37 → NFP · neuronas de la corteza sensitiva primaria (área del pie)</div>
+<div class="mm-node n1" style="--d:1">PEATC — es la modalidad de campo lejano por excelencia</div>
+<div class="mm-node n2" style="--d:2">Los PEATC en su conjunto son potenciales de CAMPO LEJANO, por generarse a distancia (tronco) de los electrodos de registro</div>
+<div class="mm-node n2" style="--d:2">Contraste explícito: los componentes de latencia MEDIA y TARDÍA de la respuesta auditiva, y el EEG convencional, son potenciales de CAMPO CERCANO, generados localmente en la corteza muy cerca de los electrodos</div>
+<div class="mm-node n2" style="--d:2">Onda I: es en realidad un potencial negativo de superficie registrado desde una región PEQUEÑA del scalp próxima al oído estimulado (corresponde al N1 del electrococleograma); con referencia no cefálica muestra negatividad muy localizada periauricular y una positividad de distribución más amplia</div>
+<div class="mm-node n2" style="--d:2">Todos los componentes POSTERIORES a la onda I son positivos de superficie y de distribución amplia sobre el scalp — el sello del campo lejano</div>
+<div class="mm-node n1" style="--d:1">PEV — la excepción: son potenciales CORTICALES, no de campo lejano</div>
+<div class="mm-node n2" style="--d:2">No hay evidencia de que ningún componente del PEV por damero se deba a actividad excitatoria del nervio óptico, quiasma, cintilla óptica ni cuerpos geniculados laterales: N75 y P100 se generan en la corteza visual</div>
+<div class="mm-node n2" style="--d:2">POR QUÉ el nervio óptico no da campo lejano: el medio que rodea al nervio y a la cintilla óptica es relativamente HOMOGÉNEO en conductividad eléctrica, y el cambio abrupto de conductividad —prerrequisito para generar picos estacionarios de campo lejano— no parece existir para el nervio óptico</div>
+<div class="mm-node n0" style="--d:0">Las cuatro propiedades que separan NFP de FFP</div>
+<div class="mm-node n1" style="--d:1">Amplitud: alta en NFP · baja en FFP</div>
+<div class="mm-node n1" style="--d:1">Distribución: localizada en NFP · amplia en FFP</div>
+<div class="mm-node n1" style="--d:1">Gradiente: EMPINADO en NFP · SUPERFICIAL (poco cambio con la distancia) en FFP</div>
+<div class="mm-node n1" style="--d:1">Latencia al mover el electrodo: aumenta si el NFP es propagado, fija si es estacionario · siempre FIJA en FFP</div>
+<div class="mm-node n1" style="--d:1">Derivación que lo registra: bipolar scalp-scalp para NFP · referencial con REFERENCIA NO CEFÁLICA para FFP</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro — los cuatro principios de montaje</div>
+<div class="mm-node n1" style="--d:1">1. Colocar el electrodo activo (grid I) lo más cerca posible del generador y la referencia (grid II) lo más lejos posible</div>
+<div class="mm-node n2" style="--d:2">Límite: si la distancia interelectrodo es demasiado grande, la derivación se contamina de ECG y artefacto muscular y queda ruidosa</div>
+<div class="mm-node n1" style="--d:1">2. Decidir primero si el potencial buscado es NFP o FFP</div>
+<div class="mm-node n2" style="--d:2">NFP: electrodo sobre el generador; si la actividad de campo cercano está en el scalp (potencial cortical), la segunda entrada se pone TAMBIÉN en el scalp, en un punto donde el potencial haya caído sustancialmente. Al ser los NFP de gran amplitud y gradiente empinado, esta derivación bipolar los registra de forma óptima y con mínimo ruido, sin efecto de cancelación</div>
+<div class="mm-node n2" style="--d:2">FFP: por su baja amplitud, distribución amplia y gradiente superficial, y por el efecto de cancelación inherente al amplificador diferencial, la derivación bipolar scalp-scalp NO CONSIGUE registrarlos. La derivación referencial con referencia NO CEFÁLICA es la única técnica que los registra, aunque salga ruidosa</div>
+<div class="mm-node n1" style="--d:1">3. Evitar derivaciones donde los dos electrodos tienen potenciales de latencia parecida pero de generadores distintos; idealmente cada derivación debe registrar la actividad de un solo generador</div>
+<div class="mm-node n2" style="--d:2">Excepción admisible: si los dos potenciales están suficientemente separados en el tiempo y no se confunden entre sí</div>
+<div class="mm-node n1" style="--d:1">4. Usar eficientemente los pocos electrodos disponibles — p. ej. registrar los FFP subcorticales con CPi-EPc en vez de gastar otro electrodo del scalp y otra referencia, porque CPi y EPc permanecen relativamente &quot;silentes&quot; para la actividad de campo cercano del nervio periférico estimulado</div>
+<div class="mm-node n0" style="--d:0">El montaje determina qué se ve — casos concretos</div>
+<div class="mm-node n1" style="--d:1">PESS de mediano, montaje ACNS de 4 canales</div>
+<div class="mm-node n2" style="--d:2">EPi-EPc → N9, potencial de acción viajero por el plexo braquial (NFP propagado)</div>
+<div class="mm-node n2" style="--d:2">C5S-EPc → N13, potencial cervical estacionario</div>
+<div class="mm-node n2" style="--d:2">CPi-EPc → referencia NO CEFÁLICA: registra preferentemente los FFP subcorticales P14 y N18</div>
+<div class="mm-node n2" style="--d:2">CPc-CPi → N20 cortical</div>
+<div class="mm-node n1" style="--d:1">Por qué CPc-CPi da un N20 &quot;puro&quot;: muestra el potencial somatosensorial localizado SIN contaminación de P14 ni N18, porque estos son equipotenciales en CPc y CPi y prácticamente se cancelan</div>
+<div class="mm-node n1" style="--d:1">Variante con canal 1 = EPi-CPi: registra N9 (desde EPi) y también P14 (desde CPi, por su distribución amplia). Viola deliberadamente el principio 3, pero se justifica porque N9 y P14 están muy separados en el tiempo</div>
+<div class="mm-node n2" style="--d:2">Ventaja: registrar P14 en dos canales da REDUNDANCIA para identificar este potencial de baja amplitud si uno de los canales se pone ruidoso</div>
+<div class="mm-node n2" style="--d:2">Ojo: en ese canal el P14 aparece INVERTIDO, porque el electrodo activo CPi está en el terminal de entrada opuesto</div>
+<div class="mm-node n1" style="--d:1">PESS de tibial</div>
+<div class="mm-node n2" style="--d:2">T12S-ICc (referencia en cresta ilíaca contralateral) → N22. Se prefiere referencial a bipolar porque registrar N22 con electrodos muy próximos sobre la columna lo ATENÚA mucho por cancelación en fase</div>
+<div class="mm-node n2" style="--d:2">FPz-C5S → FFP subcorticales P31 y N34: aquí FPz es el activo y C5S el inactivo</div>
+<div class="mm-node n2" style="--d:2">CPz-FPz → P37 cortical: bipolar scalp-scalp, ideal porque la respuesta cortical localizada se registra pura, mientras el potencial subcortical difuso se cancela por ser esencialmente equipotencial en los dos electrodos</div>
+<div class="mm-node n1" style="--d:1">PEATC — por qué Ai-Cz y Ac-Cz enseñan cosas distintas</div>
+<div class="mm-node n2" style="--d:2">Los componentes posteriores a la onda I están ampliamente distribuidos, pero su distribución de campo es LIGERAMENTE distinta, y eso explica las diferencias</div>
+<div class="mm-node n2" style="--d:2">Onda I: negatividad muy localizada periauricular ipsilateral + positividad más amplia → Ai-Cz es la mejor derivación, por suma en oposición de fase. En Ac-Cz la onda I está AUSENTE</div>
+<div class="mm-node n2" style="--d:2">Onda II: positividad amplia, máxima en vértex y mínima en región auricular contralateral → se registra mejor con Ac-Cz; en Ai-Cz es menor por cancelación parcial en fase</div>
+<div class="mm-node n2" style="--d:2">Onda III: positividad amplia con ligero énfasis contralateral → mejor en Ai-Cz</div>
+<div class="mm-node n2" style="--d:2">Onda V: positiva de superficie, mayor en vértex, con distribución favorable al scalp ipsilateral → en Ai-Cz queda variablemente atenuada</div>
+<div class="mm-node n2" style="--d:2">En Ac-Cz las ondas IV y V se separan mejor en picos distintos; en Ai-Cz suelen aparecer fusionadas</div>
+<div class="mm-node n2" style="--d:2">Consecuencia práctica: COMPARAR las dos derivaciones ayuda a identificar correctamente los componentes, sobre todo cuando el PEATC es anormal</div>
+<div class="mm-node n0" style="--d:0">El papel de la referencia no cefálica</div>
+<div class="mm-node n1" style="--d:1">En el registro ideal de campo lejano un electrodo debe estar lo más cerca posible de la fuente (aunque esa distancia sea considerable) y el otro lo más lejos posible, para que registre lo menos posible del sistema estudiado</div>
+<div class="mm-node n1" style="--d:1">Para registrar del encéfalo, la mejor forma de lograrlo es poner la referencia FUERA de la cabeza. Esto facilita la interpretación, da mejor correspondencia entre potenciales de campo lejano y de campo cercano, y facilita identificar los generadores</div>
+<div class="mm-node n1" style="--d:1">Cuando no es posible, ambos electrodos registran potenciales considerables del sistema estudiado y el registro muestra solo la DIFERENCIA entre las dos localizaciones — de ahí buena parte de la dificultad de interpretar los PE de campo lejano</div>
+<div class="mm-node n1" style="--d:1">Históricamente, la introducción de la referencia no cefálica para el PESS de MMSS (Desmedt y Chéron; Cracco y Cracco 1976) fue un avance decisivo en el estudio de los generadores: hizo posible identificar los componentes precoces y estudiar su origen en detalle</div>
+<div class="mm-node n0" style="--d:0">Orientación del dipolo y plano de registro (PEATC)</div>
+<div class="mm-node n1" style="--d:1">Los generadores del PEATC se sintetizan con seis dipolos aproximadamente en el plano coronal (Scherg y von Cramon 1985)</div>
+<div class="mm-node n1" style="--d:1">Los dipolos de los picos I y III están orientados aproximadamente en HORIZONTAL, y el del pico V casi en VERTICAL</div>
+<div class="mm-node n1" style="--d:1">Consecuencia: electrodos en el plano horizontal registran óptimamente I y III; el pico V se registra mejor con electrodos en el plano vertical</div>
+<div class="mm-node n2" style="--d:2">Aplicación de dos canales: el par lóbulo-lóbulo registra I-III con más amplitud y el par vértex-nuca (referencia no cefálica) registra el pico V con más amplitud; cada par registra todos los componentes, pero no igual de bien</div>
+<div class="mm-node n1" style="--d:1">Trayectoria de Lissajous de tres canales (3CLT): tres pares de electrodos ortogonales y tres amplificadores independientes, representando los potenciales uno en función de otro con el tiempo como parámetro. Da una descripción completa del PEATC porque tiene en cuenta la ORIENTACIÓN de los distintos dipolos, aunque su interpretación sigue teniendo incertidumbre</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica — la regla que resume el tema</div>
+<div class="mm-node n1" style="--d:1">Si quieres ver un CAMPO LEJANO, necesitas referencia no cefálica. Si quieres ver un CAMPO CERCANO limpio, usa bipolar scalp-scalp y deja que el campo lejano se cancele</div>
+<div class="mm-node n1" style="--d:1">P14 y N18 solo existen en el registro clínico gracias al canal CPi-EPc; el N20 solo se ve puro gracias a CPc-CPi. Mismo paciente, mismo estímulo: montajes distintos enseñan cosas distintas</div>
+<div class="mm-node n1" style="--d:1">En monitorización intraoperatoria el principio es el mismo: o se registra campo cercano con electrodo sobre una estructura expuesta, o —lo habitual— campo lejano desde electrodos en el scalp</div>
 <div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n1" style="--d:1">Creer que los campos lejanos son siempre POSITIVOS: error histórico explícitamente corregido, pueden ser positivos o negativos</div>
+<div class="mm-node n1" style="--d:1">Creer que la polaridad de un FFP identifica el generador: depende de qué dipolo predomina Y de la posición del electrodo; dos electrodos distantes pueden registrar polaridades opuestas para el mismo evento</div>
+<div class="mm-node n1" style="--d:1">Intentar registrar P14/N18 (o P31/N34) con derivación bipolar scalp-scalp: se cancelan y &quot;desaparecen&quot; — no es una anormalidad, es un error de montaje</div>
+<div class="mm-node n1" style="--d:1">Registrar N22 con electrodos próximos sobre la columna: lo atenúa mucho por cancelación en fase</div>
+<div class="mm-node n1" style="--d:1">Confundir &quot;estacionario&quot; con &quot;campo lejano&quot;: N13 y N22 son estacionarios pero de campo CERCANO</div>
+<div class="mm-node n1" style="--d:1">Confundir el campo lejano de NERVIO con el campo lejano de NÚCLEO: son dos mecanismos distintos bajo el mismo nombre</div>
+<div class="mm-node n1" style="--d:1">Suponer que un potencial ausente en el scalp implica que la estructura no está activa: es la paradoja del campo cerrado — un núcleo con gran potencial de campo cercano puede no contribuir de forma medible al campo lejano</div>
+<div class="mm-node n1" style="--d:1">En PEV, interpretar el N100 frontal como un P100 invertido: no son un único generador orientado horizontalmente, se comportan de forma independiente. Si el P100 falta y el N100 se conserva, la derivación MO-MF muestra un pico hacia abajo que puede confundirse con el P100 — hay que registrar MF-A1 y comparar</div>
 <div class="mm-node n0" style="--d:0">Limitaciones</div>
-<div class="mm-node n0" style="--d:0">Referencia</div></div>
+<div class="mm-node n1" style="--d:1">La generación del campo lejano es compleja y no se comprende del todo</div>
+<div class="mm-node n1" style="--d:1">Los FFP casi siempre son MEZCLAS de potenciales generados por varias estructuras anatómicas distintas, con contribuciones ponderadas por la distancia y por la velocidad a la que cada fuente cae con la distancia</div>
+<div class="mm-node n1" style="--d:1">Los componentes de distintas fuentes pueden SOLAPARSE en el tiempo si aparecen con la misma latencia; entonces las contribuciones individuales no son discernibles</div>
+<div class="mm-node n1" style="--d:1">Por su pequeña amplitud, los FFP no son directamente discernibles del ruido de fondo y obligan siempre a promediar</div>
+<div class="mm-node n1" style="--d:1">La resistencia del hueso craneal atenúa los potenciales de campo lejano del scalp</div>
+<div class="mm-node n1" style="--d:1">No existe una localización completamente inactiva en el cuerpo por la conducción de volumen: toda derivación está influida por el potencial</div>
+<div class="mm-node n1" style="--d:1">Límite práctico de la referencia no cefálica: cuanto mayor la distancia interelectrodo, más contaminación por ECG y artefacto muscular — el registro de FFP es intrínsecamente ruidoso. En quirófano, los canales subcorticales con referencia no cefálica tienen S/N media de −22 dB, exigen promediar 500-1000 barridos y aun así pueden carecer de reproducibilidad</div>
+<div class="mm-node n0" style="--d:0">Referencia</div>
+<div class="mm-node n1" style="--d:1">Markand2020 cap.4 pp.143-162 (Tabla 4.4 p.149, Tabla 4.5 p.157, Figs. 4.4-4.8 pp.150-155) · cap.2 pp.25, 28, 30-32 · cap.3 pp.91 y 97 · Moller2011 cap.3 pp.23-24 y 35-39 · cap.5 pp.66-67, 71, 84, 89 · cap.7 pp.128-129 · Deletis cap.5 §5.3 pp.68-71 · cap.3 p.46 · cap.4 p.57</div></div>
               
             </div>
           </details>
@@ -446,19 +665,119 @@ body { display: flex; }
               <input type="checkbox" class="estudiado-check" data-codigo="PE-A3" onclick="event.stopPropagation()" aria-label="Marcar PE-A3 como estudiado">
               <span class="tema-codigo">PE-A3</span>
               <h3 class="tema-titulo">Generadores: cómo se atribuye un pico a una estructura</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-completo">Completo</span>
               <span class="badge plantilla-badge">Plantilla D</span>
             </summary>
             <div class="tema-body">
               <div class="mm"><div class="mm-root">Generadores: cómo se atribuye un pico a una estructura</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
-<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
-<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
-<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
-<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
-<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
-<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n1" style="--d:1">El problema: hay que saber DÓNDE se generan los componentes del PE registrado para poder identificar la localización anatómica de una lesión a partir de los cambios en esos componentes</div>
+<div class="mm-node n1" style="--d:1">Concepto rector: &quot;un componente = un generador&quot; es una SIMPLIFICACIÓN EXCESIVA</div>
+<div class="mm-node n1" style="--d:1">Este tema es el MÉTODO de atribución, no el catálogo de generadores: qué evidencia se usa, qué fiabilidad tiene y qué pasa clínicamente cuando la atribución falla</div>
+<div class="mm-node n0" style="--d:0">Por qué la atribución es intrínsecamente difícil</div>
+<div class="mm-node n1" style="--d:1">Las vías centrales tienen fibras cruzadas Y no cruzadas, hacen contactos sinápticos y además pasan de largo por varios núcleos de relevo</div>
+<div class="mm-node n1" style="--d:1">Compresión anatómica: las vías auditivas centrales están comprimidas en una dimensión vertical de solo 2-4 cm</div>
+<div class="mm-node n2" style="--d:2">Por eso los registros intraoperatorios en tronco humano muestran no rara vez un potencial registrable en MÚLTIPLES NIVELES, sincrónico con un mismo componente del scalp, y es difícil correlacionar con precisión uno y otro</div>
+<div class="mm-node n1" style="--d:1">Procesamiento paralelo: estructuras distintas pueden activarse simultáneamente, de modo que un componente reciba contribuciones de estructuras fundamentalmente diferentes de la vía ascendente</div>
+<div class="mm-node n1" style="--d:1">Solapamiento temporal: la actividad de distintos núcleos y tractos evocada por un mismo estímulo transitorio puede solaparse en el tiempo</div>
+<div class="mm-node n1" style="--d:1">Por todo ello, el esquema clásico de generadores es &quot;una descripción simplificada&quot; que &quot;solo puede servir como primera aproximación&quot;</div>
+<div class="mm-node n0" style="--d:0">El sesgo de la nomenclatura como fuente de error</div>
+<div class="mm-node n1" style="--d:1">Los primeros investigadores del campo lejano auditivo prestaron atención SOLO a los picos positivos en vértex y los etiquetaron con números romanos (convenio de Jewett)</div>
+<div class="mm-node n1" style="--d:1">Esa elección no se basó en ninguna evidencia experimental de que los picos positivos sean más importantes en diagnóstico que los valles negativos, ni tuvo relación con los generadores</div>
+<div class="mm-node n1" style="--d:1">Las comparaciones entre latencias intracraneales y picos del PEATC muestran que TAMBIÉN los valles negativos tienen generadores anatómicamente diferenciados, y pueden ser tan buenos indicadores de patología como los positivos</div>
+<div class="mm-node n0" style="--d:0">Los tipos de evidencia — cómo se atribuye realmente</div>
+<div class="mm-node n1" style="--d:1">Las dos grandes técnicas clásicas</div>
+<div class="mm-node n2" style="--d:2">1. Registrar la actividad de la vía y correlacionar su cronología con los componentes del PE del scalp</div>
+<div class="mm-node n2" style="--d:2">2. Estudiar el efecto de LESIONES de una porción restringida de la vía sobre los componentes del PE</div>
+<div class="mm-node n1" style="--d:1">Registros intracraneales/directos en humanos durante cirugía — registro del VIII par en cirugía de fosa posterior mostró actividad en su porción intracraneal a latencia similar a la onda II</div>
+<div class="mm-node n1" style="--d:1">Correlación clínico-patológica y clínico-radiológica — p. ej. correlacionar anormalidades del PEATC con lesiones troncoencefálicas unilaterales discretas demostradas por RM</div>
+<div class="mm-node n1" style="--d:1">Bloqueo anestésico dirigido — la onda III se abole con bloqueo anestésico del cuerpo trapezoide y con lesiones del complejo olivar superior</div>
+<div class="mm-node n1" style="--d:1">Estudios de campo, topografía y modelado dipolar — mapear la distribución de campo de cada onda con referencia no cefálica; modelos de dipolo espacio-temporal; trayectoria de Lissajous de tres canales</div>
+<div class="mm-node n1" style="--d:1">Argumentos de latencia y de distancia entre registro intracraneal y de scalp</div>
+<div class="mm-node n1" style="--d:1">Estimulación antidrómica en el animal — estimular los núcleos de las columnas dorsales y registrar la actividad antidrómica en el n. mediano da determinaciones precisas del tiempo de conducción</div>
+<div class="mm-node n1" style="--d:1">Poblaciones patológicas como &quot;lesión natural&quot; — presencia de onda II en muerte encefálica, en neuropatía hereditaria motora y sensitiva tipo 1 y en leucodistrofias, todo ello apoyando que la porción intracraneal del VIII par próxima al tronco es responsable en gran parte de la onda II</div>
+<div class="mm-node n1" style="--d:1">Eliminación selectiva de un componente — la desaparición del N13 en lesiones centromedulares (siringomielia) apoya su generador en la sustancia gris del asta dorsal cervical</div>
+<div class="mm-node n1" style="--d:1">Propiedades FISIOLÓGICAS del componente como argumento (elegante y poco usado) — el N13 tiene periodo refractario largo y prolonga su latencia a frecuencias de estimulación altas, luego se genera con actividad dependiente de SINAPSIS: refleja EPSP en la sustancia gris del asta dorsal, no actividad axonal propagada</div>
+<div class="mm-node n1" style="--d:1">Reversión de fase y registro en cavidades — el N13 se atenúa lateralmente y se hace registrable como positividad sobre el cuello anterior; electrodos dentro del esófago registran una positividad estacionaria simultánea a la negatividad cervical posterior → el potencial cervical tiene orientación dipolar ANTEROPOSTERIOR, negativa detrás y positiva delante</div>
+<div class="mm-node n1" style="--d:1">Sensibilidad diferencial a anestésicos y anoxia — los insultos que afectan a la transmisión sináptica cambian los potenciales lentos pero dejan intacta la deflexión rápida inicial; los picos tardíos del PESS (P22, N30, P45) son más variables y más sensibles a la anestesia que los precoces, señal de que hay más sinapsis implicadas</div>
+<div class="mm-node n0" style="--d:0">Limitaciones de cada método</div>
+<div class="mm-node n1" style="--d:1">Los estudios de LESIÓN no aíslan el generador: una lesión no solo afecta al generador situado en su sitio, también puede afectar al INPUT de generadores más rostrales, y añade efectos inespecíficos como el edema</div>
+<div class="mm-node n1" style="--d:1">Los estudios ANIMALES no siempre son extrapolables: la morfología del PEATC en animales y humanos es parecida, pero hay diferencias</div>
+<div class="mm-node n2" style="--d:2">Ejemplo cuantificado: en humanos los picos I y II los genera el nervio auditivo (porción distal y proximal intracraneal), y son los únicos componentes del PEATC generados por una sola estructura; en los animales de laboratorio el nervio auditivo solo genera el pico I y el pico II lo genera el núcleo coclear. La razón es puramente anatómica: el nervio auditivo mide ~26 mm en el humano frente a 8 mm en el gato</div>
+<div class="mm-node n1" style="--d:1">La compresión de la vía auditiva en 2-4 cm impone un límite físico a la resolución del método de correlación intracraneal</div>
+<div class="mm-node n0" style="--d:0">Catálogo de controversias documentadas</div>
+<div class="mm-node n1" style="--d:1">PEATC onda II</div>
+<div class="mm-node n2" style="--d:2">Tradicionalmente atribuida al núcleo coclear ipsilateral</div>
+<div class="mm-node n2" style="--d:2">Evidencia actual: la activación de la porción intracraneal del VIII par próxima al tronco es la responsable en gran parte, con posible contribución en proporción indeterminada de fibras cocleares intrapontinas y núcleos cocleares</div>
+<div class="mm-node n2" style="--d:2">Discrepancia entre fuentes: Møller es más categórico y sostiene que el nervio auditivo humano genera AMBOS picos, I y II, sin contribución de ninguna otra estructura</div>
+<div class="mm-node n1" style="--d:1">PEATC onda III</div>
+<div class="mm-node n2" style="--d:2">Generada en protuberancia caudal: se abole con lesiones y con bloqueo anestésico del cuerpo trapezoide y con lesiones del complejo olivar superior</div>
+<div class="mm-node n2" style="--d:2">Generador declaradamente MÚLTIPLE y de localización &quot;general&quot;: núcleo olivar superior, cuerpo trapezoide y lemnisco lateral caudal</div>
+<div class="mm-node n2" style="--d:2">Discrepancia: Møller sostiene que el núcleo coclear es el principal generador del pico III, con posible contribución del núcleo coclear CONTRALATERAL a través de las conexiones entre ambos</div>
+<div class="mm-node n1" style="--d:1">PEATC onda IV — la peor conocida</div>
+<div class="mm-node n2" style="--d:2">En un tercio de los normales IV y V no se separan (complejo IV/V)</div>
+<div class="mm-node n2" style="--d:2">Se sabe menos de su origen que del de I-III y V</div>
+<div class="mm-node n2" style="--d:2">Es probablemente el PRIMER pico positivo que recibe contribuciones de estructuras contralaterales; hay evidencia de que su fuente está profunda en el tronco, cerca de la línea media, quizá en el complejo olivar superior, con probable contribución del núcleo coclear y de las porciones distales del lemnisco lateral</div>
+<div class="mm-node n1" style="--d:1">PEATC onda V — la controversia canónica</div>
+<div class="mm-node n2" style="--d:2">Tiene &quot;el conjunto de generadores más complejo de todos los componentes&quot;</div>
+<div class="mm-node n2" style="--d:2">Fuentes mayores consideradas: lemnisco lateral y/o colículo inferior, de AMBOS lados</div>
+<div class="mm-node n2" style="--d:2">Rango de posiciones publicadas: desde tan caudal como la protuberancia hasta tan rostral como el cuerpo geniculado medial e incluso las radiaciones auditivas</div>
+<div class="mm-node n2" style="--d:2">Matiz fino: hay evidencia de que la punta AGUDA del pico V la genera el lemnisco lateral donde termina en el colículo inferior; y evidencia animal de que el propio colículo inferior genera solo una respuesta de campo lejano muy pequeña pese a registrarse desde su superficie un potencial grande — probablemente por tener campo cerrado</div>
+<div class="mm-node n2" style="--d:2">El potencial negativo lento a ~10 ms (SN10) representa muy probablemente potenciales postsinápticos de las dendritas del colículo inferior; su amplitud varía mucho y los filtros habituales de PEATC lo atenúan</div>
+<div class="mm-node n1" style="--d:1">PEATC ondas VI y VII</div>
+<div class="mm-node n2" style="--d:2">Ausentes en animales e inconstantes en humanos; su origen es &quot;en el mejor de los casos especulativo&quot;. Se propone VI en cuerpo geniculado medial y VII en radiaciones auditivas</div>
+<div class="mm-node n2" style="--d:2">Discrepancia: Møller propone que pueden generarse por descarga de células del colículo inferior (somaspikes)</div>
+<div class="mm-node n1" style="--d:1">PESS P14</div>
+<div class="mm-node n2" style="--d:2">&quot;Las fuentes generadoras precisas no están firmemente establecidas&quot;</div>
+<div class="mm-node n2" style="--d:2">Evidencia por lesión: las lesiones de la unión bulbomedular o del bulbo caudal ABOLEN P14 preservando el N13 cervical, y P14 se conserva con lesiones del lemnisco medial rostrales al bulbo → refleja muy probablemente actividad en el lemnisco medial caudal</div>
+<div class="mm-node n2" style="--d:2">Discrepancia documentada: otros hallaron que el P13 se genera más periféricamente, donde la columna dorsal atraviesa el foramen magnum, y que el P11 se genera en la raíz dorsal a nivel C2</div>
+<div class="mm-node n2" style="--d:2">Confusión de etiquetado real: se ha sugerido que lo que un grupo identificó como P13 era el mismo pico que otro etiquetó P14 — la confusión pudo deberse a colocaciones de electrodo ligeramente distintas y a diferencias pequeñas de filtrado. La nomenclatura polaridad-latencia también genera controversia</div>
+<div class="mm-node n2" style="--d:2">Evidencia por correlación campo cercano/campo lejano: comparar la respuesta de la superficie expuesta de los núcleos de las columnas dorsales con el PESS de scalp simultáneo indica que el P14 lo genera probablemente el TRACTO DE FIBRAS QUE TERMINA en el núcleo cuneiforme, no el núcleo mismo</div>
+<div class="mm-node n1" style="--d:1">PESS N18 — la señalada como más controvertida de todas</div>
+<div class="mm-node n2" style="--d:2">Historia completa de la atribución</div>
+<div class="mm-node n3" style="--d:3">1. Inicialmente se consideró generada en el tálamo o en las fibras talamocorticales</div>
+<div class="mm-node n3" style="--d:3">2. Se hizo improbable al demostrarse que el N18 permanece INALTERADO tras lesiones talámicas y tras hemisferectomía</div>
+<div class="mm-node n3" style="--d:3">3. Eso llevó al tronco como sitio más probable</div>
+<div class="mm-node n3" style="--d:3">4. Por su perfil largo (10-20 ms) y carácter posiblemente polifásico, es probable que la genere actividad postsináptica de MÚLTIPLES generadores del tronco</div>
+<div class="mm-node n3" style="--d:3">5. Informes con N18 preservado en lesiones de protuberancia o unión bulboprotuberancial, y pérdida tras lesiones cervicales altas, situaron su generador mayor en el BULBO</div>
+<div class="mm-node n3" style="--d:3">6. Estado actual: refleja probablemente actividad postsináptica excitatoria en el núcleo sensitivo bulbar (cuneiforme) o en la oliva inferior accesoria (o ambos), evocada por aferentes de columna dorsal; además puede contribuir la activación PRESINÁPTICA de las fibras aferentes al terminar en el cuneiforme</div>
+<div class="mm-node n2" style="--d:2">Discrepancia: Møller propone que se genera por estructuras BILATERALES del tronco, como EPSP en varios núcleos que reciben aferencia del lemnisco medial, p. ej. el colículo superior — con el argumento anatómico de que las fibras de tractos como el lemnisco medial tienen muchas colaterales</div>
+<div class="mm-node n1" style="--d:1">PESS de MMII — atribución sistemáticamente más incierta</div>
+<div class="mm-node n2" style="--d:2">P31 y N34 son &quot;probablemente análogos&quot; a P14 y N18 del mediano</div>
+<div class="mm-node n2" style="--d:2">Los generadores de MMII se han estudiado mucho menos y se conocen de forma incompleta: P31 probablemente donde la médula atraviesa el foramen magnum; P34 se asume en estructuras del tronco pero podría ser el análogo del N18; la negatividad siguiente puede generarse en tronco o en tálamo</div>
+<div class="mm-node n2" style="--d:2">Dos razones de la mayor incertidumbre: las estructuras de la vía ascendente desde el hemicuerpo inferior son más complejas y diversas, y los picos precoces son menos nítidos por mayor dispersión temporal al ser la vía más larga</div>
+<div class="mm-node n2" style="--d:2">Discrepancia de nomenclatura entre autores para el mismo componente cortical del tibial: P37 (latencia media 37-38 ms) frente a P40 con un N45 subsiguiente, señalando que la latencia exacta depende de la talla del sujeto</div>
+<div class="mm-node n1" style="--d:1">PEV P100</div>
+<div class="mm-node n2" style="--d:2">&quot;El generador exacto no ha sido firmemente establecido&quot;</div>
+<div class="mm-node n2" style="--d:2">Lo que sí se afirma: NO hay evidencia de que ningún componente se deba a actividad excitatoria del nervio óptico, quiasma, cintilla óptica ni cuerpos geniculados laterales</div>
+<div class="mm-node n2" style="--d:2">Atribución propuesta: el N75 representa probablemente activación de la corteza visual primaria y el P100 activación de la corteza periestriada o de asociación parietooccipital</div>
+<div class="mm-node n2" style="--d:2">Es además un componente COMPUESTO POR CONSTRUCCIÓN: el PEV de campo completo es la suma de las respuestas de ocho divisiones mayores del campo (hemicampo izquierdo/derecho × mitad superior/inferior × campo central/periférico)</div>
+<div class="mm-node n2" style="--d:2">Y las divisiones no contribuyen por igual: el N100 lo genera en gran medida la mitad SUPERIOR del campo visual, mientras que el P100 lo aporta sobre todo la mitad INFERIOR</div>
+<div class="mm-node n0" style="--d:0">Qué significa &quot;generador múltiple o compuesto&quot;</div>
+<div class="mm-node n1" style="--d:1">Superposición de fuentes: la mayoría de los componentes del PEATC se consideran hoy superposición de potenciales de la activación de VARIAS localizaciones</div>
+<div class="mm-node n1" style="--d:1">Mezcla de TIPOS de fuente en un mismo componente: no está establecido si la fuente son los potenciales postsinápticos de los núcleos o los potenciales de acción compuestos de los tractos; se cree que es una combinación</div>
+<div class="mm-node n1" style="--d:1">Mezcla ipsi/contralateral: por los tractos cruzados y no cruzados, todo componente del PEATC posterior a la onda II debe representar activación de estructuras de ambos lados, aunque las contribuciones relativas no estén bien establecidas</div>
+<div class="mm-node n1" style="--d:1">Contribución PRE y POSTsináptica en el mismo pico (caso del N18)</div>
+<div class="mm-node n1" style="--d:1">Localización declarada &quot;general&quot;: escribir el generador como &quot;sobre todo protuberancia caudal&quot; o &quot;sobre todo protuberancia rostral y mesencéfalo&quot;, en lugar de núcleos concretos, es la forma honesta de describir un generador compuesto</div>
+<div class="mm-node n0" style="--d:0">Cuando la atribución falla, la localización lesional falla</div>
+<div class="mm-node n1" style="--d:1">Lateralidad del PEATC: pese a que el sistema auditivo por encima del colículo inferior es funcionalmente contralateral, la correlación clínico-patológica humana indica que las ondas se generan predominantemente por estructuras troncoencefálicas IPSILATERALES al oído estimulado</div>
+<div class="mm-node n2" style="--d:2">En dos series de lesiones unilaterales, las anormalidades más prominentes aparecieron siempre con la estimulación del oído ipsilateral a la lesión, y en NINGÚN caso una lesión unilateral produjo una anormalidad aislada limitada a la estimulación contralateral</div>
+<div class="mm-node n2" style="--d:2">Matiz: las lesiones unilaterales, sobre todo mesencefálicas, producen con frecuencia anormalidades en AMBAS estimulaciones monoaurales</div>
+<div class="mm-node n2" style="--d:2">Regla de asimetría: si el complejo IV/V es asimétrico, la lesión mesencefálica es ipsilateral al oído que produce mayor atenuación</div>
+<div class="mm-node n1" style="--d:1">Localización rostrocaudal del PEATC por IPL: la prolongación del IPL I-III tiende a ocurrir con lesiones PONTINAS y la del III-V con lesiones MESENCEFÁLICAS</div>
+<div class="mm-node n1" style="--d:1">Trampa de la onda V &quot;falsa&quot;: si el lemnisco lateral se interrumpe en su trayecto más rostral, el propio lemnisco lateral o incluso la estría acústica dorsal pueden generar un pico INDISTINGUIBLE del pico V normal salvo por latencia ligeramente más corta → se lee &quot;onda V conservada&quot; con la vía interrumpida</div>
+<div class="mm-node n1" style="--d:1">Trampa del P11 en el PESS: hay evidencia de que se genera en el asta dorsal por estructuras que NO forman parte de la vía somatosensorial ascendente → el P11 puede conservarse pese al compromiso de los tractos ascendentes a nivel del foramen magnum</div>
+<div class="mm-node n1" style="--d:1">Trampa del registro proximal a la lesión: si el sitio de la lesión está más allá del electrodo de registro, puede verse poco cambio. Registrando de la porción periférica del nervio auditivo mientras se manipula quirúrgicamente su porción intracraneal, es probable NO detectar ningún cambio incluso tras lesión grave o sección de la porción proximal</div>
+<div class="mm-node n1" style="--d:1">NO DECUSACIÓN sensitiva — el fallo de atribución anatómica más práctico</div>
+<div class="mm-node n2" style="--d:2">Los métodos tradicionales de PESS asumen la decusación, y por eso fallan en detectar la no decusación infrecuente</div>
+<div class="mm-node n2" style="--d:2">Cómo se detecta: PESS tibial coronal con campos P37 anormalmente CONTRALATERALES y potenciales N37 ipsilaterales; PESS de mediano con potenciales N20 anormalmente IPSILATERALES, mientras CPc-Fpz muestra un P22 frontal invertido que imita un N20 pequeño</div>
+<div class="mm-node n2" style="--d:2">Condición asociada más relevante: parálisis de la mirada horizontal con escoliosis progresiva (autosómica recesiva), el 2.3% de los pacientes en una serie de cirugía de escoliosis de Oriente Medio; suele NO estar diagnosticada antes de la cirugía</div>
+<div class="mm-node n2" style="--d:2">Recomendación explícita: es buena práctica EVALUAR en lugar de asumir la decusación, al menos en pacientes con escoliosis</div>
 <div class="mm-node n0" style="--d:0">Limitaciones</div>
-<div class="mm-node n0" style="--d:0">Referencia</div></div>
+<div class="mm-node n1" style="--d:1">La atribución de generadores es provisional y en varios puntos abiertamente discrepante entre autores: onda II, onda III, ondas VI-VII y N18 son puntos donde las dos fuentes de referencia de este proyecto se contradicen explícitamente — ninguna puede tomarse como verdad cerrada</div>
+<div class="mm-node n1" style="--d:1">En el PEV, la relación entre los componentes del scalp y los potenciales registrables directamente de la vía se comprende mal, y el nervio óptico no genera campo lejano utilizable</div>
+<div class="mm-node n1" style="--d:1">Variabilidad topográfica que imita patología: en torno al 30% de los pacientes cambia gradualmente durante la cirugía la topografía del PESS cortical tibial —el sitio de P37 máximo se desplaza a uno adyacente— lo que puede reducir asimétricamente la amplitud en una derivación inicialmente óptima; rara vez (&lt;1%) es lo bastante marcado para causar un posible falso positivo si no se reconoce</div>
+<div class="mm-node n0" style="--d:0">Referencia</div>
+<div class="mm-node n1" style="--d:1">Markand2020 cap.2 pp.31-34 (Tabla 2.3 p.34) · cap.3 pp.91 y 97 · cap.4 pp.156-162 (Tabla 4.5 p.157) · Moller2011 cap.3 pp.39-40 · cap.5 pp.71-73 y 82-89 · Deletis cap.3 pp.46 y 50-51 · cap.5 §5.2-§5.3 pp.67-71</div></div>
               
             </div>
           </details>
@@ -467,20 +786,159 @@ body { display: flex; }
               <input type="checkbox" class="estudiado-check" data-codigo="PE-A4" onclick="event.stopPropagation()" aria-label="Marcar PE-A4 como estudiado">
               <span class="tema-codigo">PE-A4</span>
               <h3 class="tema-titulo">Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial)</h3>
-              <span class="badge estado-esqueleto">Esqueleto</span>
+              <span class="badge estado-en-progreso">En progreso</span>
               <span class="badge plantilla-badge">Plantilla D</span>
             </summary>
             <div class="tema-body">
-              <div class="mm"><div class="mm-root">Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial)</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
-<div class="mm-node n0" style="--d:0">Fundamento fisiológico o físico</div>
-<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
-<div class="mm-node n0" style="--d:0">Parámetros o componentes clave</div>
-<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro</div>
-<div class="mm-node n0" style="--d:0">Aplicación práctica</div>
+              <div class="mm"><div class="mm-root">Anatomía funcional comparada de las tres vías</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n1" style="--d:1">Las tres vías sensitivas cuyos PE de latencia corta se usan en clínica y en quirófano: visual (PEV), auditiva (PEATC) y somatosensorial de columna dorsal-lemnisco (PESS). El objetivo del tema es poder COMPARARLAS: qué tienen en común y, sobre todo, en qué se diferencian de forma que cambie la interpretación</div>
+<div class="mm-node n0" style="--d:0">VÍA VISUAL</div>
+<div class="mm-node n1" style="--d:1">Retina — tres niveles neuronales</div>
+<div class="mm-node n2" style="--d:2">Neuronas primarias: fotorreceptores de la capa nuclear externa (conos y bastones, pero para el PEV principalmente CONOS)</div>
+<div class="mm-node n2" style="--d:2">Neuronas secundarias: células bipolares y horizontales</div>
+<div class="mm-node n2" style="--d:2">Neuronas terciarias: células ganglionares y amacrinas</div>
+<div class="mm-node n2" style="--d:2">El NERVIO ÓPTICO está constituido por los axones de las células ganglionares</div>
+<div class="mm-node n2" style="--d:2">Tres tipos de fotopigmento en los conos (azul, verde, rojo) → visión en color y fotópica; los bastones son más sensibles y dan la visión escotópica</div>
+<div class="mm-node n2" style="--d:2">Gran parte del procesamiento visual ocurre YA en la red neural de la retina: hay fibras con campos excitatorios pequeños rodeados de áreas inhibitorias, y otras con centro inhibitorio rodeado de área excitatoria</div>
+<div class="mm-node n2" style="--d:2">La ADAPTACIÓN de los fotorreceptores es la forma principal de control automático de ganancia del ojo; la pupila aporta algo más</div>
+<div class="mm-node n2" style="--d:2">(verificar) capas retinianas clásicas y división magnocelular/parvocelular: no están en las fuentes del proyecto</div>
+<div class="mm-node n1" style="--d:1">Del ojo a la corteza — los cuatro hechos anatómicos</div>
+<div class="mm-node n2" style="--d:2">Punto de partida: por el cruce de la luz en el cristalino, el hemicampo visual DERECHO estimula la retina TEMPORAL y el hemicampo IZQUIERDO la retina NASAL</div>
+<div class="mm-node n2" style="--d:2">Hecho 1: toda la entrada visual de un ojo, tanto por hemicampo derecho como izquierdo, discurre por el NERVIO ÓPTICO IPSILATERAL</div>
+<div class="mm-node n2" style="--d:2">Hecho 2: la entrada visual de un ojo se DIVIDE EN EL QUIASMA y viaja BILATERALMENTE por detrás de él</div>
+<div class="mm-node n3" style="--d:3">Las fibras de retina NASAL cruzan; las de retina TEMPORAL siguen ipsilaterales</div>
+<div class="mm-node n2" style="--d:2">Hecho 3: la entrada por excitación del hemicampo DERECHO de cada ojo llega a la corteza estriada IZQUIERDA, y la del hemicampo izquierdo a la derecha</div>
+<div class="mm-node n2" style="--d:2">Hecho 4: la representación MACULAR ocupa un área cortical grande — todo el polo occipital representa la visión macular o central</div>
+<div class="mm-node n2" style="--d:2">Relevo: los axones hacen sinapsis en el núcleo geniculado lateral, cuyos axones forman las radiaciones ópticas que terminan en la corteza estriada</div>
+<div class="mm-node n3" style="--d:3">(verificar) asa de Meyer: no aparece en las fuentes del proyecto</div>
+<div class="mm-node n2" style="--d:2">La mayoría de las neuronas del CGL reciben información de UN SOLO OJO; la síntesis de la información de ambos ojos ocurre primariamente en la CORTEZA</div>
+<div class="mm-node n2" style="--d:2">Atajos anatómicos: las áreas 18 y 19 reciben entrada directa del CGL saltándose la radiación óptica, y entrada del colículo superior y del pulvinar saltándose el CGL</div>
+<div class="mm-node n2" style="--d:2">Gran parte de la corteza visual primaria humana está embebida en la SUPERFICIE MEDIAL del lóbulo occipital — dato del que se derivan casi todas las rarezas topográficas del PEV</div>
+<div class="mm-node n1" style="--d:1">Organización retinotópica</div>
+<div class="mm-node n2" style="--d:2">El campo visual CENTRAL activa la mácula y su proyección excita el POLO occipital, con un área de representación mucho mayor que la del campo periférico</div>
+<div class="mm-node n2" style="--d:2">El campo PERIFÉRICO se proyecta a la corteza occipital mesial y profunda a lo largo de la cisura calcarina</div>
+<div class="mm-node n2" style="--d:2">El campo visual SUPERIOR se proyecta por DEBAJO de la cisura calcarina y el campo INFERIOR a la porción SUPERIOR de la calcarina</div>
+<div class="mm-node n2" style="--d:2">Consecuencia electrofisiológica cuantificada: con campo visual grande (&gt;15°) la respuesta del campo central domina, de forma que el P100 registrado en medio- occipital está contribuido casi enteramente por la estimulación del campo central — al ocluir progresivamente la visión central el P100 DESAPARECE cuando se bloquean 5° de visión central</div>
+<div class="mm-node n1" style="--d:1">Cómo se traduce en el registro</div>
+<div class="mm-node n2" style="--d:2">PEV normal por damero: tres picos, N75, P100 y N145, el más prominente en el electrodo medio-occipital. N75 ≈ 75 ms · P100 = onda positiva grande de latencia media ≈100 ms · N145 = pico negativo redondeado, más variable que los otros dos</div>
+<div class="mm-node n2" style="--d:2">Convenio de registro igual que en EEG: si el primer electrodo se hace más negativo que el segundo, la deflexión va hacia ARRIBA — por eso N75 y N145 van hacia arriba y el P100 hacia abajo</div>
+<div class="mm-node n2" style="--d:2">LATERALIZACIÓN PARADÓJICA: la estimulación del hemicampo derecho activa la corteza estriada izquierda y viceversa, PERO el vector neto de la excitación cortical se dirige contralateralmente, con lo que la respuesta de mayor amplitud se registra IPSILATERALMENTE</div>
+<div class="mm-node n3" style="--d:3">Estimular hemicampo izquierdo → activa occipital medial derecha → respuesta máxima en medio-occipital y en occipital IZQUIERDO</div>
+<div class="mm-node n3" style="--d:3">Estimular hemicampo derecho → activa occipital medial izquierda → máxima en medio-occipital y en occipital DERECHO</div>
+<div class="mm-node n3" style="--d:3">La estimulación de campo completo es la suma matemática de las dos → máxima en medio-occipital, con respuestas simétricas menores en ambos laterales</div>
+<div class="mm-node n0" style="--d:0">VÍA AUDITIVA</div>
+<div class="mm-node n1" style="--d:1">Cadena anatómica</div>
+<div class="mm-node n2" style="--d:2">El nervio coclear está compuesto por los procesos CENTRALES de las neuronas bipolares del ganglio espiral, cuyos procesos periféricos se originan en el órgano de Corti</div>
+<div class="mm-node n2" style="--d:2">Cuatro núcleos de relevo mayores: núcleos cocleares (ventral y dorsal), complejo olivar superior, colículo inferior y cuerpo geniculado medial</div>
+<div class="mm-node n2" style="--d:2">Las fibras del nervio coclear entran en el tronco y terminan en los núcleos cocleares ventral y dorsal, en la protuberancia dorsolateral baja</div>
+<div class="mm-node n2" style="--d:2">Las fibras de SEGUNDO orden se originan en los núcleos cocleares y hacen sinapsis en las neuronas de tercer orden del complejo olivar superior y del núcleo del cuerpo trapezoide</div>
+<div class="mm-node n2" style="--d:2">Las proyecciones de esos núcleos CRUZAN al otro lado y ascienden por el lemnisco lateral contralateral; ALGUNAS fibras ascienden por el lemnisco lateral ipsilateral. El lemnisco lateral contralateral recibe además fibras de los núcleos cocleares dorsales</div>
+<div class="mm-node n2" style="--d:2">Las fibras auditivas cruzadas en la protuberancia ventral constituyen el CUERPO TRAPEZOIDE; algunas fibras del núcleo coclear terminan incluso en el complejo olivar CONTRALATERAL</div>
+<div class="mm-node n2" style="--d:2">La mayoría de las fibras del lemnisco lateral hacen sinapsis en el núcleo del lemnisco lateral o ascienden directamente al colículo inferior</div>
+<div class="mm-node n2" style="--d:2">El COLÍCULO INFERIOR es el núcleo de relevo clave: solo una pequeña proporción de fibras del núcleo coclear o del lemnisco lateral lo atraviesa para terminar directamente en el cuerpo geniculado medial</div>
+<div class="mm-node n2" style="--d:2">El colículo inferior proyecta al núcleo geniculado medial del tálamo, que proyecta por las radiaciones talámicas al giro de Heschl del lóbulo temporal (área 41 de Brodmann, profunda en la cisura lateral)</div>
+<div class="mm-node n1" style="--d:1">Detalle del núcleo coclear</div>
+<div class="mm-node n2" style="--d:2">Es el primer núcleo de relevo y TODAS las fibras del nervio auditivo se interrumpen en él</div>
+<div class="mm-node n2" style="--d:2">Tiene tres divisiones: dorsal (DCN), ventral posterior (PVCN) y ventral anterior (AVCN)</div>
+<div class="mm-node n2" style="--d:2">Cada fibra del nervio coclear se BIFURCA para terminar en PVCN y AVCN, y las que llegan al PVCN mandan colaterales al DCN → todas las fibras alcanzan células en las tres divisiones</div>
+<div class="mm-node n1" style="--d:1">Datos cuantitativos con consecuencia electrofisiológica</div>
+<div class="mm-node n2" style="--d:2">Longitud del nervio auditivo humano ≈ 26 mm, frente a 8 mm en el gato — los tractos de la vía ascendente son más largos en humanos, lo que alarga el tiempo de tránsito y las latencias de los componentes del PEATC</div>
+<div class="mm-node n2" style="--d:2">Velocidad de conducción del nervio auditivo ≈ 20 m/s (2 cm/ms), inusualmente BAJA frente a los 40-60 m/s típicos de nervios sensitivos y motores periféricos</div>
+<div class="mm-node n2" style="--d:2">El tiempo de tránsito de los 2.6 cm del oído al tronco es por tanto poco más de 1 ms</div>
+<div class="mm-node n1" style="--d:1">Organización tonotópica: las fibras del nervio auditivo y las células de los núcleos de la vía ascendente clásica están dispuestas anatómicamente según la frecuencia a la que su umbral es más bajo — todas las estructuras neurales de la vía clásica pueden mapearse a la frecuencia a la que responden mejor</div>
+<div class="mm-node n1" style="--d:1">Vías no clásicas (extralemniscales): proyectan a cortezas secundarias y de asociación SALTÁNDOSE la corteza auditiva primaria, usando el tálamo DORSAL mientras las clásicas usan los núcleos talámicos ventrales. Muchas de sus neuronas responden a otras modalidades sensoriales. La monitorización intraoperatoria no las involucra hasta donde se sabe</div>
+<div class="mm-node n1" style="--d:1">Vías descendentes: son MÁS ABUNDANTES que las ascendentes pero se conocen mucho peor. Las fibras eferentes del haz olivococlear se originan en el complejo olivar superior y terminan sobre todo en las células ciliadas externas; viajan en la porción VESTIBULAR del VIII par desde el tronco hasta la anastomosis de Oort, en la profundidad del meato acústico interno, donde pasan a la porción coclear</div>
+<div class="mm-node n1" style="--d:1">Dónde se hace bilateral — el punto discutido</div>
+<div class="mm-node n2" style="--d:2">Formulación clásica: la onda I es del nervio auditivo periférico ipsilateral y la onda II se genera en estructuras IPSILATERALES al oído estimulado</div>
+<div class="mm-node n2" style="--d:2">Según Markand la transición está en la ONDA III: contribuyen tanto las vías pontinas ipsilaterales como las contralaterales, y todo componente posterior a la onda II debe representar activación de estructuras de ambos lados</div>
+<div class="mm-node n3" style="--d:3">Ojo, tensión interna en esa misma fuente: la tabla de generadores agrupa I, II y III como ipsilaterales, mientras el texto atribuye contribución bilateral a la III</div>
+<div class="mm-node n2" style="--d:2">Según Møller la transición está en la ONDA IV: los picos I, II y III reciben aferencia SOLO del lado ipsilateral, el pico IV es probablemente el primer pico positivo con contribuciones contralaterales, y el pico V recibe sus contribuciones MAYORES de estructuras contralaterales</div>
+<div class="mm-node n2" style="--d:2">Lo que sí es común a ambas: el sistema auditivo en el colículo inferior y por encima es funcionalmente CONTRALATERAL, pero la correlación clínico-patológica humana muestra que las ondas del PEATC se generan predominantemente por estructuras IPSILATERALES al oído estimulado</div>
+<div class="mm-node n0" style="--d:0">VÍA SOMATOSENSORIAL (columna dorsal-lemnisco medial)</div>
+<div class="mm-node n1" style="--d:1">Es una vía de TRES NEURONAS</div>
+<div class="mm-node n2" style="--d:2">Primer orden: cuerpos celulares en los GANGLIOS DE LA RAÍZ DORSAL, neuronas unipolares cuyas ramas periféricas son los axones de gran diámetro que inervan los receptores de músculos, articulaciones y piel</div>
+<div class="mm-node n3" style="--d:3">Las ramas centrales entran en la médula en la región lumbosacra (MMII) y cervicodorsal (MMSS)</div>
+<div class="mm-node n3" style="--d:3">Tras entrar dan COLATERALES a la sustancia gris del asta dorsal y hacen un giro ascendente para subir por el fascículo GRÁCIL (fibras de MMII, medial) y el fascículo CUNEIFORME (fibras de MMSS, lateral)</div>
+<div class="mm-node n2" style="--d:2">Segundo orden: proyecciones de los núcleos grácil y cuneiforme, situados en la porción superior del bulbo raquídeo. CRUZAN en la DECUSACIÓN SENSITIVA DEL BULBO SUPERIOR y ascienden por el lemnisco medial CONTRALATERAL hasta el núcleo posterolateral del tálamo (VPL)</div>
+<div class="mm-node n2" style="--d:2">Tercer orden: los axones talámicos atraviesan la porción posterior de la CÁPSULA INTERNA y la corona radiada, y terminan en la corteza somatosensorial primaria, en el labio posterior de la cisura central</div>
+<div class="mm-node n1" style="--d:1">Qué fibras se estimulan realmente</div>
+<div class="mm-node n2" style="--d:2">La intensidad de estímulo usada activa predominantemente fibras sensitivas de GRAN DIÁMETRO y conducción rápida: aferentes musculares del grupo IA y aferentes cutáneas del grupo II</div>
+<div class="mm-node n2" style="--d:2">Hay controversia sobre la proporción relativa de aferentes musculares vs. cutáneas que contribuyen al PESS con estimulación de nervio mixto</div>
+<div class="mm-node n2" style="--d:2">Los estudios animales con ablación selectiva de la columna dorsal producen atenuación marcada o desaparición del PESS</div>
+<div class="mm-node n2" style="--d:2">El ESPINOTALÁMICO NO se explora con el PESS rutinario: las fibras de pequeño diámetro (térmica y dolorosa) tienen su segunda neurona en el asta dorsal, cruzan en la médula a nivel próximo a la entrada y ascienden por los espinotalámicos contralaterales en la porción ventral → NO hay alteración del PESS asociada a lesiones del sistema espinotalámico</div>
+<div class="mm-node n1" style="--d:1">Detalle de la columna dorsal</div>
+<div class="mm-node n2" style="--d:2">Es una estructura puramente ANATÓMICA con muchos tipos de fibra, NO un tracto funcional único</div>
+<div class="mm-node n2" style="--d:2">La mayoría son aferentes primarias y colaterales de aferentes primarias, pero contiene además la &quot;vía de la columna dorsal de segundo orden&quot;, originada en cuerpos celulares del asta dorsal (lámina IV en la intumescencia cervical, láminas V y VI en la médula lumbosacra), activada en gran parte por receptores articulares y musculares</div>
+<div class="mm-node n2" style="--d:2">Las aferentes primarias median tacto fino (receptores cutáneos) y propiocepción inconsciente (husos y órganos tendinosos)</div>
+<div class="mm-node n2" style="--d:2">Núcleo Z: ligeramente rostral y medial a los núcleos de las columnas dorsales, recibe fibras propioceptivas del hemicuerpo inferior; sus fibras cruzan la línea media y se unen al lemnisco medial</div>
+<div class="mm-node n1" style="--d:1">Ramificación de las raíces dorsales y su consecuencia clínica</div>
+<div class="mm-node n2" style="--d:2">Las raíces dorsales se ramifican varias veces y hacen sinapsis en distintas partes del asta dorsal del segmento de entrada Y de varios segmentos adyacentes</div>
+<div class="mm-node n2" style="--d:2">La eficacia de esas sinapsis decrece con la distancia al segmento de entrada; las de segmentos distantes normalmente no logran activar células</div>
+<div class="mm-node n2" style="--d:2">Esas sinapsis &quot;dormidas&quot; pueden DESENMASCARARSE al activarse la plasticidad neural (p. ej. tras sección de la raíz o reducción del input) → una lesión de un nervio sensitivo puede tener un efecto amplio sobre la excitabilidad de las neuronas del asta dorsal y causar difusión anormal de la actividad sensitiva a más segmentos de lo normal</div>
+<div class="mm-node n1" style="--d:1">Corteza somatosensorial</div>
+<div class="mm-node n2" style="--d:2">S1 recibe del VPL; los axones viajan por el brazo posterior de la cápsula interna y se distribuyen sobre el giro postcentral de forma SOMATOTÓPICA, con las PIERNAS representadas más cerca de la línea media, seguidas lateralmente por tronco, antebrazo y mano</div>
+<div class="mm-node n2" style="--d:2">S1 recibe también aferencia propioceptiva inconsciente, en zonas distintas de las que reciben el input consciente</div>
+<div class="mm-node n2" style="--d:2">S2 recibe de S1 y aferencia BILATERAL del tálamo, con homúnculo similar</div>
+<div class="mm-node n1" style="--d:1">Dónde decusa exactamente</div>
+<div class="mm-node n2" style="--d:2">En la decusación sensitiva del BULBO SUPERIOR, a la salida de los núcleos grácil y cuneiforme — es decir, DESPUÉS del primer relevo</div>
+<div class="mm-node n2" style="--d:2">Antes de la decusación toda la vía es IPSILATERAL (raíz dorsal → columna dorsal ipsilateral → núcleos grácil/cuneiforme ipsilaterales)</div>
+<div class="mm-node n2" style="--d:2">Después es enteramente CONTRALATERAL (lemnisco medial → VPL → S1)</div>
+<div class="mm-node n2" style="--d:2">Contraste: el espinotalámico cruza EN LA MÉDULA, cerca del nivel de entrada</div>
+<div class="mm-node n1" style="--d:1">Cómo se traduce en el registro — el detalle topográfico que más engaña</div>
+<div class="mm-node n2" style="--d:2">Por qué el tibial da positividad inicial y el mediano negatividad inicial: la activación cortical del PIE ocurre a lo largo de la cara MEDIAL de la corteza somatosensorial, dentro de la cisura interhemisférica. La negatividad profunda (un sumidero activo) resulta en una positividad superficial (una fuente pasiva), y por eso el electrodo medial del scalp registra un potencial electropositivo</div>
+<div class="mm-node n2" style="--d:2">LATERALIZACIÓN PARADÓJICA del P37: si el área pie/pierna está en el borde superficial de la cisura interhemisférica, el dipolo es VERTICAL y la positividad es máxima en línea media; si el área está MÁS PROFUNDA, el dipolo es HORIZONTAL y la positividad inicial se registra IPSILATERAL al lado estimulado, porque el vector neto se dirige al lado opuesto</div>
+<div class="mm-node n2" style="--d:2">Por contraste, el N20 del mediano es SIEMPRE máximo en el centroparietal contralateral, porque la activación cortical es superficial y queda justo bajo ese electrodo</div>
+<div class="mm-node n0" style="--d:0">COMPARACIÓN — número de relevos sinápticos</div>
+<div class="mm-node n1" style="--d:1">Somatosensorial: vía de TRES neuronas, con razón sináptica casi 1:1, lo que proporciona una localización y discriminación mucho más precisas</div>
+<div class="mm-node n1" style="--d:1">Auditiva: CUATRO núcleos de relevo mayores, pero con atajos — hay fibras cruzadas del núcleo coclear que alcanzan el colículo inferior SIN interrupción sináptica, y solo una pequeña proporción atraviesa el colículo para ir directa al geniculado medial → el número efectivo de sinapsis VARÍA ENTRE FIBRAS</div>
+<div class="mm-node n1" style="--d:1">Visual: tres niveles neuronales dentro de la retina + un relevo talámico (CGL) + corteza estriada, también con atajos (áreas 18-19 reciben del CGL saltándose la radiación óptica, y del colículo superior/pulvinar saltándose el CGL)</div>
+<div class="mm-node n0" style="--d:0">COMPARACIÓN — nivel de decusación</div>
+<div class="mm-node n1" style="--d:1">Somatosensorial: punto ÚNICO y bien definido, la decusación sensitiva del bulbo superior. Ipsilateral por debajo, contralateral por encima</div>
+<div class="mm-node n1" style="--d:1">Auditiva: NO hay un punto único — la vía es cruzada Y no cruzada a la vez desde el primer relevo. Cruzan la estría acústica dorsal, la estría acústica ventral y el cuerpo trapezoide, y además hay conexiones del núcleo coclear al colículo inferior que NO cruzan. Tanto fibras cruzadas como no cruzadas constituyen las vías auditivas centrales, pero funcionalmente dominan las contralaterales</div>
+<div class="mm-node n1" style="--d:1">Visual: decusación PARCIAL en un punto único, el quiasma — cruzan solo las fibras nasales. El resultado no es &quot;ipsi vs. contra&quot; sino HEMICAMPO vs. HEMICAMPO: por detrás del quiasma la organización es por hemicampo, no por ojo</div>
+<div class="mm-node n0" style="--d:0">COMPARACIÓN — representación uni o bilateral</div>
+<div class="mm-node n1" style="--d:1">Somatosensorial: estrictamente UNILATERAL (contralateral) por encima del bulbo — el N20 solo se registra desde un área pequeña del scalp parietal contralateral</div>
+<div class="mm-node n2" style="--d:2">Excepciones: el N18 lo generan estructuras BILATERALES del tronco y se registra sobre amplias regiones del scalp; y S2 recibe aferencia bilateral del tálamo</div>
+<div class="mm-node n1" style="--d:1">Auditiva: BILATERAL desde el tronco — cada oído proyecta a estructuras de ambos lados, con el punto de transición discutido entre la onda III y la onda IV</div>
+<div class="mm-node n1" style="--d:1">Visual: bilateral desde el quiasma, pero organizada POR HEMICAMPO, no por ojo. La síntesis de la información de ambos ojos ocurre primariamente en la corteza</div>
+<div class="mm-node n0" style="--d:0">COMPARACIÓN — qué lateraliza y qué no (la consecuencia práctica)</div>
+<div class="mm-node n1" style="--d:1">PESS: LATERALIZA LIMPIAMENTE. Un PESS cortical anormal tras estimular un lado indica lesión contralateral por encima del bulbo e ipsilateral por debajo. Es la única de las tres con esa limpieza — salvo en la no decusación</div>
+<div class="mm-node n1" style="--d:1">PEATC: NO lateraliza de forma simple. Al ser bilateral desde el tronco, una lesión unilateral puede dar anormalidades en ambas estimulaciones monoaurales, sobre todo a nivel mesencefálico</div>
+<div class="mm-node n2" style="--d:2">La regla empírica que sí funciona: las anormalidades son IPSILATERALES al oído estimulado, y en ningún caso descrito una lesión unilateral produjo anormalidad aislada contralateral</div>
+<div class="mm-node n2" style="--d:2">Localiza mejor en el eje ROSTROCAUDAL que en el transversal: I-III prolongado → lesión pontina · III-V prolongado → lesión mesencefálica</div>
+<div class="mm-node n2" style="--d:2">Complejo IV/V asimétrico → lesión mesencefálica ipsilateral al oído que produce mayor atenuación</div>
+<div class="mm-node n1" style="--d:1">PEV: NO lateraliza con campo completo, y encima lo que se ve está INVERTIDO</div>
+<div class="mm-node n2" style="--d:2">Un PEV monocular anormal con campo completo indica defecto prequiasmático de ese ojo, pero no dice nada de lateralidad hemisférica</div>
+<div class="mm-node n2" style="--d:2">La lateralización paradójica hace que el registro de mayor amplitud aparezca ipsilateral al hemicampo estimulado</div>
+<div class="mm-node n2" style="--d:2">Una asimetría interhemisférica similar con ambos ojos sugiere defecto postquiasmático contralateral al lado de menor amplitud, pero solo se establece firmemente con estimulación de HEMICAMPOS</div>
+<div class="mm-node n2" style="--d:2">El P100 de campo completo es la suma de ocho divisiones del campo con contribuciones desiguales, de modo que un P100 anormal no localiza por sí solo qué división está afectada</div>
+<div class="mm-node n0" style="--d:0">El hilo común: la lateralización paradójica</div>
+<div class="mm-node n1" style="--d:1">PEV y PESS de MMII la comparten, y por la MISMA razón física: corteza activada en profundidad (interhemisférica o medial) → vector neto dirigido al lado opuesto → mayor amplitud registrada IPSILATERAL. El PESS de MMSS no la tiene porque su activación cortical es superficial</div>
 <div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
-<div class="mm-node n0" style="--d:0">Limitaciones</div>
-<div class="mm-node n0" style="--d:0">Referencia</div></div>
-              
+<div class="mm-node n1" style="--d:1">ASUMIR la decusación en PESS: la no decusación existe (parálisis de la mirada horizontal con escoliosis progresiva; 2.3% en una serie de escoliosis de Oriente Medio) y se pierde con las derivaciones tradicionales</div>
+<div class="mm-node n1" style="--d:1">Leer la lateralización del PEV al revés por desconocer la lateralización paradójica</div>
+<div class="mm-node n1" style="--d:1">Leer la lateralización del P37 al revés por desconocer que el área del pie está en la cara medial</div>
+<div class="mm-node n1" style="--d:1">Esperar del PEATC una lateralización tipo PESS: la bilateralidad temprana de la vía auditiva lo impide</div>
+<div class="mm-node n0" style="--d:0">Referencia</div>
+<div class="mm-node n1" style="--d:1">Markand2020 cap.2 pp.28, 30-34 · cap.3 pp.84-85, 90-93, 97-99 · cap.4 pp.139-141, 155-169 · Moller2011 cap.5 pp.59-65, 71-72, 79-89 · Deletis cap.3 pp.48-52 · cap.4 §4.3 pp.54-55</div></div>
+              <div class="ampliacion-inline">
+                <div class="ampliacion-label">Ampliación — profundizar</div>
+                <div class="mm"><div class="mm-root">Anatomía comparada de las tres vías — ampliación</div><div class="mm-node n0" style="--d:0">Sistema trigeminal (la &quot;cuarta vía&quot; somatosensorial)</div>
+<div class="mm-node n1" style="--d:1">Cuerpos celulares en el ganglio trigeminal (de Gasser o semilunar); las ramas centrales entran en el núcleo sensitivo trigeminal, que se extiende desde el mesencéfalo hasta la parte alta de la médula espinal</div>
+<div class="mm-node n1" style="--d:1">Las fibras ascendentes de ese núcleo se unen al lemnisco medial CONTRALATERAL y llegan al VPM, que proyecta al giro postcentral lateral a la proyección de la mano</div>
+<div class="mm-node n1" style="--d:1">La porción ROSTRAL del núcleo se ocupa de tacto, calor y frío; la porción más CAUDAL (núcleo espinal del trigémino) se ocupa principalmente de dolor y de sensaciones de frío y calor, y está implicada en la neuralgia del trigémino</div>
+<div class="mm-node n0" style="--d:0">Tipos de fibra sensitiva y su velocidad</div>
+<div class="mm-node n1" style="--d:1">Receptores cutáneos de bajo umbral inervados por fibras Aβ (6-12 µm, 30-70 m/s) · fibras propioceptivas de husos, órganos tendinosos y receptores articulares son Aα (grandes) · las fibras del dolor son las mielínicas más pequeñas (Aδ) · las amielínicas (C) también median dolor</div>
+<div class="mm-node n0" style="--d:0">Comparación de precisión entre sistemas somatosensoriales</div>
+<div class="mm-node n1" style="--d:1">El sistema de columna dorsal comunica tacto fino con razón sináptica casi 1:1, lo que da localización y discriminación muy precisas; el sistema anterolateral se ocupa de sensación táctil menos localizada y más general</div>
+<div class="mm-node n0" style="--d:0">Criterios de anormalidad del PEV que se derivan de esta anatomía</div>
+<div class="mm-node n1" style="--d:1">Latencia del P100 prolongada: es el parámetro menos variable y más sensible, la medida más útil. Según laboratorio, media+3SD para P100 = 115-120 ms con damero grande (~1°)</div>
+<div class="mm-node n1" style="--d:1">Diferencia interocular de P100 anormal habitualmente &gt;10 ms (el anormal es el ojo con el P100 más largo)</div>
+<div class="mm-node n1" style="--d:1">Amplitud del P100 muy variable en normales (2-20 µV): la amplitud absoluta tiene poca significación clínica por sí sola; se usa la razón interocular ≥2</div>
+<div class="mm-node n1" style="--d:1">Asimetría interhemisférica: preocupa si la razón es &gt;3, pero es el criterio de amplitud MÁS DÉBIL por la gran variabilidad del P100 en los electrodos occipitales laterales</div>
+<div class="mm-node n1" style="--d:1">P100 en &quot;W&quot; (bifid): 14% de los casos. Causas: variante normal (a menudo se resuelve cambiando el tamaño de damero) · P100 y N100 asincrónicos · dos picos por defecto de conducción en la vía de un hemicampo, el primero por la vía normal y el segundo por la lenta</div>
+<div class="mm-node n0" style="--d:0">Referencia: Markand2020 cap.3 pp.91, 97-99 · Moller2011 cap.5 pp.60-65</div></div>
+              </div>
             </div>
           </details>
         </div>

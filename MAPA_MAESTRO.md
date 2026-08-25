@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-25T16:36:30.113Z
+Generado: 2026-08-25T17:06:53.465Z
 
-Progreso global: 13 completos · 10 en progreso · 19 esqueletos · 42 temas en 2 área(s).
+Progreso global: 16 completos · 11 en progreso · 15 esqueletos · 42 temas en 2 área(s).
 
 # Área IONM
 
@@ -58,16 +58,16 @@ Temas aún sin ubicar en el orden: B8
 
 # Área PPEE
 
-Visor: `ppee.html` · 0 completos · 0 en progreso · 19 esqueletos · 19 temas.
+Visor: `ppee.html` · 3 completos · 1 en progreso · 15 esqueletos · 19 temas.
 
 ## Bloque A — Bases fisiológicas y anatómicas
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
-| PE-A1 | Génesis del potencial evocado | D | Esqueleto | `mindmaps/PE-A1-genesis-del-potencial-evocado.md` |
-| PE-A2 | Campo cercano vs. campo lejano | D | Esqueleto | `mindmaps/PE-A2-campo-cercano-vs-campo-lejano.md` |
-| PE-A3 | Generadores: cómo se atribuye un pico a una estructura | D | Esqueleto | `mindmaps/PE-A3-generadores-como-se-atribuye-un-pico-a-una-estructura.md` |
-| PE-A4 | Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial) | D | Esqueleto | `mindmaps/PE-A4-anatomia-funcional-comparada-de-las-tres-vias-visual-auditiva-somatosensorial.md` |
+| PE-A1 | Génesis del potencial evocado | D | Completo | `mindmaps/PE-A1-genesis-del-potencial-evocado.md` |
+| PE-A2 | Campo cercano vs. campo lejano | D | Completo | `mindmaps/PE-A2-campo-cercano-vs-campo-lejano.md` |
+| PE-A3 | Generadores: cómo se atribuye un pico a una estructura | D | Completo | `mindmaps/PE-A3-generadores-como-se-atribuye-un-pico-a-una-estructura.md` |
+| PE-A4 | Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial) | D | En progreso | `mindmaps/PE-A4-anatomia-funcional-comparada-de-las-tres-vias-visual-auditiva-somatosensorial.md` |
 
 ## Bloque B — Bases técnicas de registro
 
