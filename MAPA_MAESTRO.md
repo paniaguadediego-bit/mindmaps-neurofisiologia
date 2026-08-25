@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-25T17:06:53.465Z
+Generado: 2026-08-25T21:29:05.722Z
 
-Progreso global: 16 completos · 11 en progreso · 15 esqueletos · 42 temas en 2 área(s).
+Progreso global: 25 completos · 11 en progreso · 6 esqueletos · 42 temas en 2 área(s).
 
 # Área IONM
 
@@ -58,7 +58,7 @@ Temas aún sin ubicar en el orden: B8
 
 # Área PPEE
 
-Visor: `ppee.html` · 3 completos · 1 en progreso · 15 esqueletos · 19 temas.
+Visor: `ppee.html` · 12 completos · 1 en progreso · 6 esqueletos · 19 temas.
 
 ## Bloque A — Bases fisiológicas y anatómicas
 
@@ -84,12 +84,12 @@ Visor: `ppee.html` · 3 completos · 1 en progreso · 15 esqueletos · 19 temas.
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
-| PE-V1 | Anatomía y fisiología de la vía visual | D | Esqueleto | `mindmaps/PE-V1-anatomia-y-fisiologia-de-la-via-visual.md` |
-| PE-V2 | PEV por damero: técnica y parámetros de registro | E | Esqueleto | `mindmaps/PE-V2-pev-por-damero-tecnica-y-parametros-de-registro.md` |
-| PE-V3 | PEV normal: componentes N75-P100-N145 y medición | E | Esqueleto | `mindmaps/PE-V3-pev-normal-componentes-n75-p100-n145-y-medicion.md` |
-| PE-V4 | Generadores del PEV por damero | D | Esqueleto | `mindmaps/PE-V4-generadores-del-pev-por-damero.md` |
-| PE-V5 | Criterios de anormalidad e interpretación del PEV | E | Esqueleto | `mindmaps/PE-V5-criterios-de-anormalidad-e-interpretacion-del-pev.md` |
-| PE-V6 | Factores que modifican el PEV | D | Esqueleto | `mindmaps/PE-V6-factores-que-modifican-el-pev.md` |
-| PE-V7 | Estimulación por hemicampos y distribución paradójica | E | Esqueleto | `mindmaps/PE-V7-estimulacion-por-hemicampos-y-distribucion-paradojica.md` |
-| PE-V8 | Flash VEP: indicaciones y limitaciones | E | Esqueleto | `mindmaps/PE-V8-flash-vep-indicaciones-y-limitaciones.md` |
-| PE-V9 | Aplicaciones clínicas del PEV | F | Esqueleto | `mindmaps/PE-V9-aplicaciones-clinicas-del-pev.md` |
+| PE-V1 | Anatomía y fisiología de la vía visual | D | Completo | `mindmaps/PE-V1-anatomia-y-fisiologia-de-la-via-visual.md` |
+| PE-V2 | PEV por damero: técnica y parámetros de registro | E | Completo | `mindmaps/PE-V2-pev-por-damero-tecnica-y-parametros-de-registro.md` |
+| PE-V3 | PEV normal: componentes N75-P100-N145 y medición | E | Completo | `mindmaps/PE-V3-pev-normal-componentes-n75-p100-n145-y-medicion.md` |
+| PE-V4 | Generadores del PEV por damero | D | Completo | `mindmaps/PE-V4-generadores-del-pev-por-damero.md` |
+| PE-V5 | Criterios de anormalidad e interpretación del PEV | E | Completo | `mindmaps/PE-V5-criterios-de-anormalidad-e-interpretacion-del-pev.md` |
+| PE-V6 | Factores que modifican el PEV | D | Completo | `mindmaps/PE-V6-factores-que-modifican-el-pev.md` |
+| PE-V7 | Estimulación por hemicampos y distribución paradójica | E | Completo | `mindmaps/PE-V7-estimulacion-por-hemicampos-y-distribucion-paradojica.md` |
+| PE-V8 | Flash VEP: indicaciones y limitaciones | E | Completo | `mindmaps/PE-V8-flash-vep-indicaciones-y-limitaciones.md` |
+| PE-V9 | Aplicaciones clínicas del PEV | F | Completo | `mindmaps/PE-V9-aplicaciones-clinicas-del-pev.md` |
