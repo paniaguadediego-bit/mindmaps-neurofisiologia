@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-25T21:35:47.747Z
+Generado: 2026-08-26T04:45:08.403Z
 
-Progreso global: 25 completos · 11 en progreso · 6 esqueletos · 42 temas en 2 área(s).
+Progreso global: 34 completos · 11 en progreso · 0 esqueletos · 45 temas en 2 área(s).
 
 # Área IONM
 
@@ -58,7 +58,7 @@ Temas aún sin ubicar en el orden: B8
 
 # Área PPEE
 
-Visor: `ppee.html` · 12 completos · 1 en progreso · 6 esqueletos · 19 temas.
+Visor: `ppee.html` · 21 completos · 1 en progreso · 0 esqueletos · 22 temas.
 
 ## Bloque A — Bases fisiológicas y anatómicas
 
@@ -73,12 +73,20 @@ Visor: `ppee.html` · 12 completos · 1 en progreso · 6 esqueletos · 19 temas.
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
-| PE-B1 | Promediado y relación señal/ruido | D | Esqueleto | `mindmaps/PE-B1-promediado-y-relacion-senal-ruido.md` |
-| PE-B2 | Cadena de registro: amplificación, filtros y conversión A/D | D | Esqueleto | `mindmaps/PE-B2-cadena-de-registro-amplificacion-filtros-y-conversion-a-d.md` |
-| PE-B3 | Elección de parámetros de estimulación y registro | D | Esqueleto | `mindmaps/PE-B3-eleccion-de-parametros-de-estimulacion-y-registro.md` |
-| PE-B4 | Nomenclatura y mediciones de los componentes | D | Esqueleto | `mindmaps/PE-B4-nomenclatura-y-mediciones-de-los-componentes.md` |
-| PE-B5 | Criterios de anormalidad y factores del sujeto | D | Esqueleto | `mindmaps/PE-B5-criterios-de-anormalidad-y-factores-del-sujeto.md` |
-| PE-B6 | Artefactos y problemas frecuentes del registro | D | Esqueleto | `mindmaps/PE-B6-artefactos-y-problemas-frecuentes-del-registro.md` |
+| PE-B1 | Promediado y relación señal/ruido | D | Completo | `mindmaps/PE-B1-promediado-y-relacion-senal-ruido.md` |
+| PE-B2 | Cadena de registro: amplificación, filtros y conversión A/D | D | Completo | `mindmaps/PE-B2-cadena-de-registro-amplificacion-filtros-y-conversion-a-d.md` |
+| PE-B3 | Elección de parámetros de estimulación y registro | D | Completo | `mindmaps/PE-B3-eleccion-de-parametros-de-estimulacion-y-registro.md` |
+| PE-B4 | Nomenclatura y mediciones de los componentes | D | Completo | `mindmaps/PE-B4-nomenclatura-y-mediciones-de-los-componentes.md` |
+| PE-B5 | Criterios de anormalidad y factores del sujeto | D | Completo | `mindmaps/PE-B5-criterios-de-anormalidad-y-factores-del-sujeto.md` |
+| PE-B6 | Artefactos y problemas frecuentes del registro | D | Completo | `mindmaps/PE-B6-artefactos-y-problemas-frecuentes-del-registro.md` |
+
+## Bloque C — PEV en quirófano
+
+| Código | Título | Plantilla | Estado | Archivo |
+|---|---|---|---|---|
+| PE-C1 | PEV intraoperatorio por flash: indicaciones, anestesia y montaje | A | Completo | `mindmaps/PE-C1-pev-intraoperatorio-por-flash-tecnica-y-montaje.md` |
+| PE-C2 | PEV intraoperatorio: interpretación, criterios de alarma y rendimiento | F | Completo | `mindmaps/PE-C2-pev-intraoperatorio-interpretacion-y-criterios-de-alarma.md` |
+| PE-C3 | Mapeo de la vía óptica y monitorización de la vía visual posterior | A | Completo | `mindmaps/PE-C3-mapeo-de-la-via-optica-y-via-visual-posterior.md` |
 
 ## Bloque V — Potenciales evocados visuales
 
