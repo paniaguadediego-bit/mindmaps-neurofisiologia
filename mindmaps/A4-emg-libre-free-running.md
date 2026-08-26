@@ -12,108 +12,197 @@ estado: completo
 ```
 EMG libre (free-running)
 ├─ Qué es
-│  └─ Registro continuo y pasivo de actividad muscular espontánea con electrodos
-│     intramusculares — sin estimulación provocada, "escucha" el músculo en tiempo
-│     real durante toda la cirugía
-├─ Mecanismo / fisiología
-│  ├─ Detecta activación mecánica de la raíz motora (o de fibras del CST en cirugía
-│  │  intramedular) por manipulación quirúrgica directa
-│  ├─ Zona de mayor vulnerabilidad de la raíz: región de transición central-periférica
-│  │  (raicillas sin epineuro/perineuro) y zona hipovascular del tercio proximal-medio
-│  └─ En tumores intramedulares: ráfagas por irritación directa del CST, no solo de raíz
-├─ Técnica / montaje
-│  ├─ Electrodos intramusculares: aguja subdérmica EEG, EMG monopolar, o hilo de
-│  │  teflón-plata
-│  ├─ Filtro AF 10-30 kHz · filtro BF 2-30 Hz (evitar <50 Hz y >3 kHz)
-│  ├─ Barrido 200 ms - 5 s según resolución deseada
-│  └─ Línea de base ANTES de empezar cirugía — detecta irritación radicular preexistente
-├─ Nomenclatura de la actividad espontánea
-│  └─ Prass & Lüders, retomada por Romstöck, Strauss & Fahlbusch 2000 (pares craneales
-│     motores en cirugía de ángulo pontocerebeloso)
-│     └─ 5 patrones de onda: spikes, bursts, y trenes A, B y C
-├─ Spikes
-│  └─ Potencial bi/trifásico, un pico grande (≥2000 µV), inicio y fin abruptos,
-│     aspecto uniforme en un canal
-│     ├─ Pueden contarse miles en una cirugía larga (musculatura mimética)
-│     └─ Repetitivos y de baja amplitud → irritación PREEXISTENTE (ondas positivas /
-│        fibrilación-like)
-├─ Bursts
-│  └─ Complejo aislado de spikes superpuestos, forma de huso, hasta varios cientos de
-│     ms, picos hasta 5000 µV
-│     ├─ Menos frecuentes que los spikes
-│     ├─ Típicos al separar plano aracnoideo tumor-nervio o al fresar/descomprimir CAI
-│     └─ RARAMENTE indica lesión neural real
-├─ Trains (actividad periódica sostenida, dura segundos)
-│  ├─ A-train
-│  │  ├─ Sinusoidal, inicio brusco, sonido agudo característico por altavoz
-│  │  ├─ Amplitud típica 100-200 µV (nunca >500 µV)
-│  │  ├─ Frecuencia 60-210 Hz · duración de ms a varios segundos
-│  │  ├─ ÚNICO patrón con correlación alta y específica con paresia facial
-│  │  │  postoperatoria (serie original: 1 FP y 3 FN sobre 30 pacientes)
-│  │  ├─ La frecuencia (<150 vs ≥150 Hz) NO se correlacionó con el grado de deterioro
-│  │  ├─ Mecanismo propuesto: símil de descarga repetitiva compleja — fibra muscular
-│  │  │  desestabilizada actúa como marcapasos y reactiva efápticamente a las vecinas
-│  │  └─ Falso positivo descrito: manipulación del n. intermediario genera A-trains sin
-│  │     correlación clínica real (Prell2007)
-│  ├─ B-train
-│  │  ├─ Secuencia regular o irregular de componentes aislados, intervalo máximo 500 ms,
-│  │  │  dura minutos u horas — inicio gradual con spikes/bursts de baja amplitud
-│  │  ├─ Subtipos: BS (predominio de spikes) y BB (predominio de bursts)
-│  │  └─ Morfológicamente similar a descargas mioquímicas — mecanismo NO aclarado por
-│  │     los propios autores; sin correlación pronóstica establecida
-│  └─ C-train
-│     ├─ Actividad irregular continua, numerosos componentes solapados, amplitud
-│     │  distribuida al azar entre 20 y >5000 µV
-│     ├─ Aspecto de patrón de interferencia (como contracción voluntaria máxima) pese
-│     │  a anestesia profunda estable — los propios autores cuestionan el mecanismo
-│     └─ Sin valor predictivo establecido
-├─ Patrón fásico vs. tónico (contexto de raíz espinal)
-│  ├─ Fásico/burst: potencial único o salva no repetitiva, asíncrona, polifásica →
-│  │  trauma directo puntual (tracción, irrigación libre, electrocauterio, torundas)
-│  └─ Tónico/train: descargas repetitivas sincrónicas prolongadas (hasta minutos) →
-│     tracción/compresión SOSTENIDA → patología más seria, puede ser lesión neural
-├─ Contexto de pares craneales (MVD/CPA)
-│  └─ fEMG = spikes + bursts + trains combinados
-│     └─ Tras irrigar con suero caliente al terminar una MVD es NORMAL ver disparo
-│        sostenido SIN significado clínico — no confundir con train patológico
-├─ Causas de cambio no quirúrgico
-│  └─ Plano anestésico superficial → actividad tipo unidad motora en TODOS los músculos
-│     a la vez → sospechar esto antes que patología
-├─ Qué hacer
-│  ├─ Spike/burst aislado → avisar, vigilar, raramente implica lesión
-│  ├─ Train sostenido (o A-train en facial) → avisar de inmediato al cirujano
-│  │  (tracción/compresión mantenida)
-│  └─ En IMSCT: verificar MEP y onda D antes de continuar tras ráfagas sostenidas
-├─ Limitaciones
-│  ├─ Señal "a posteriori" — informa de un evento ya ocurrido, no lo previene por sí sola
-│  ├─ No localiza con precisión el nivel (para eso, EMG estimulado → A5)
-│  └─ En pares craneales da falsos positivos/negativos relevantes → no sustituye a los
-│     CoMEPs (A6) como técnica continua más precisa
+│  ├─ Registro continuo y PASIVO de la actividad muscular espontánea con electrodos
+│  │  intramusculares — sin estimulación provocada, "escucha" el músculo en tiempo real
+│  │  durante toda la cirugía
+│  └─ Conclusión que justifica usarlo: la monitorización EMG continua es SUPERIOR a la
+│     estimulación eléctrica del nervio o a la monitorización acústica por altavoz por
+│     separado, y el análisis detallado de la forma de onda permite criterios de alarma más
+│     precisos que el simple sonido
+├─ Mecanismo y fisiología
+│  ├─ Detecta la activación mecánica de la raíz motora —o de fibras del CST en cirugía
+│  │  intramedular— por la manipulación quirúrgica directa
+│  ├─ Zona de mayor vulnerabilidad de la raíz: la región de transición central-periférica
+│  │  (raicillas sin epineuro ni perineuro) y la zona hipovascular del tercio proximal-medio
+│  └─ En tumores intramedulares aparecen ráfagas por irritación directa del CST, no solo de
+│     la raíz
+├─ Técnica y montaje
+│  ├─ Electrodos intramusculares: aguja subdérmica de EEG, aguja de EMG monopolar, o hilo
+│  │  de teflón-plata
+│  ├─ Filtros: paso alto 2-30 Hz y paso bajo 10-30 kHz (evitar por debajo de 50 Hz y por
+│  │  encima de 3 kHz)
+│  ├─ Barrido de 200 ms a 5 s según la resolución que se quiera
+│  └─ BASAL antes de empezar la cirugía: detecta la irritación radicular PREEXISTENTE, que
+│     de otro modo se confundiría después con actividad quirúrgica
+├─ NOMENCLATURA — los cinco patrones
+│  ├─ Prass y Lüders introdujeron los términos "spike", "burst" y "train" para la actividad
+│  │  facial espontánea; sobre esa nomenclatura se clasificaron CINCO patrones típicos:
+│  │  spikes, bursts, y trenes A, B y C
+│  └─ La serie de referencia son 30 pacientes de cirugía de ángulo pontocerebeloso
+├─ SPIKES
+│  ├─ Potenciales bi o trifásicos claramente definidos, con UN pico grande (amplitud
+│  │  ≥2000 µV)
+│  ├─ Surgen y decaen ABRUPTAMENTE desde la línea de base, con aspecto casi uniforme dentro
+│  │  de un mismo canal
+│  ├─ En algunos pacientes pueden contarse MILES a lo largo de una cirugía larga,
+│  │  procedentes sobre todo de la musculatura mimética
+│  └─ Repetitivos y de baja amplitud → irritación PREEXISTENTE (ondas positivas o aspecto
+│     de fibrilación)
+├─ BURSTS
+│  ├─ Complejo AISLADO de spikes superpuestos, con forma de HUSO
+│  ├─ Duración mucho mayor que la del spike: desde un inicio más gradual hasta el declive,
+│  │  hasta varios cientos de milisegundos
+│  ├─ Habitualmente muestran varios picos prominentes que llegan hasta 5000 µV, y en
+│  │  conjunto son MENOS frecuentes que los spikes
+│  └─ Cuándo aparecen — actividad de contacto atribuible con precisión
+│     ├─ Bursts GRANDES (>500 µV) típicamente en musculatura faríngea y mimética al separar
+│     │  los planos aracnoideos entre el tumor y el nervio correspondiente
+│     ├─ Otro evento que los evoca mecánicamente: FRESAR y descomprimir el conducto auditivo
+│     │  interno durante la extirpación de un neurinoma del acústico
+│     ├─ Esos bursts dan al cirujano información de retroalimentación útil mientras diseca
+│     │  a lo largo de las fibras nerviosas
+│     └─ Spikes y bursts PEQUEÑOS (<500 µV) se registran durante toda la cirugía, incluso
+│        cuando los nervios aún NO están expuestos —retracción cerebelosa, extirpación
+│        intracapsular del tumor—, y también durante la craneotomía y el cierre de la
+│        herida, e incluso en el lado CONTRALATERAL en dos pacientes de la serie
+├─ TREN A — el único con valor predictivo
+│  ├─ Forma de onda SINUSOIDAL, simétrica, de alta frecuencia y baja amplitud, que produce
+│  │  un sonido AGUDO característico por el altavoz
+│  ├─ Siempre empieza de forma SÚBITA; amplitudes máximas típicas de 100 a 200 µV, sin
+│  │  superar nunca los 500 µV
+│  ├─ Frecuencia entre 60 y 210 Hz; duración desde milisegundos hasta varios segundos
+│  ├─ CUÁNDO APARECE — el dato quirúrgico más útil
+│  │  ├─ NO se observó en NINGÚN paciente antes de que la disección del tumor se hiciera en
+│  │  │  la proximidad inmediata del nervio facial
+│  │  ├─ La primera aparición siempre pudo correlacionarse con actividades quirúrgicas
+│  │  │  concretas: sobre todo disección de tumores grandes cerca de la superficie del
+│  │  │  tronco, y descompresión intrameatal
+│  │  ├─ Tras el primer tren A suele seguir una serie de trenes A que surgen
+│  │  │  ESPONTÁNEAMENTE, aunque la cirugía se detenga un rato o continúe en un sitio alejado
+│  │  └─ En algunos pacientes esa actividad repetida se registró hasta el cierre de la
+│  │     duramadre, pero no más allá
+│  ├─ DÓNDE APARECE: exclusivamente en musculatura mimética, salvo en dos pacientes. En uno
+│  │  de ellos ocurrió en el masetero sin consecuencias clínicas, y solo en un paciente se
+│  │  obtuvieron trenes A en músculos diana de pares craneales bajos
+│  ├─ RENDIMIENTO (serie de 30 pacientes)
+│  │  ├─ Tren A observado en 19 pacientes; en 18 de ellos hubo deterioro de la función
+│  │  │  facial preoperatoria de uno o más grados de House-Brackmann
+│  │  ├─ 1 falso positivo (meningioma de APC de 2.5 cm con tren A claro durante disección
+│  │  │  aguda de la cápsula y función facial postoperatoria sin cambios, grado I)
+│  │  ├─ 3 falsos negativos (neurinomas del acústico con deterioro facial postoperatorio sin
+│  │  │  que se observara ningún tren A)
+│  │  └─ Sobre esos números: SENSIBILIDAD 86% y ESPECIFICIDAD 89%, con chi-cuadrado
+│  │     altamente significativo (p<0.001)
+│  ├─ LO QUE NO PREDICE — tres parámetros sin valor pronóstico demostrado
+│  │  ├─ FRECUENCIA: repartiendo los pacientes en menores de 150 Hz (5 pacientes) y de
+│  │  │  150 Hz o más (14 pacientes), no se encontró ninguna correlación con el grado de
+│  │  │  deterioro clínico
+│  │  ├─ NÚMERO de trenes A: varió entre 3 y 1069 según la duración de la cirugía. Se
+│  │  │  registraron más de 100 en ocho pacientes, siete de los cuales tenían debilidad
+│  │  │  preoperatoria y seis empeoraron al menos hasta House-Brackmann IV. Hubo TENDENCIA a
+│  │  │  que menos de 100 trenes se asociara a deterioro menos grave, pero SIN significación
+│  │  │  estadística
+│  │  ├─ AMPLITUD: mayor de 250 µV en tres pacientes y menor en 16, tampoco con significación
+│  │  └─ DURACIÓN de cada tren: extremadamente variable, repartida por igual entre pacientes
+│  │     por encima y por debajo de 500 ms
+│  ├─ Mecanismo propuesto: símil de la descarga repetitiva compleja — una fibra muscular
+│  │  desestabilizada actúa como marcapasos y reactiva efápticamente a las vecinas
+│  └─ FALSO POSITIVO con base anatómica conocida: la manipulación del nervio INTERMEDIO
+│     genera trenes A sin correlación clínica real, porque el intermedio lleva fibras
+│     motoras que inervan la musculatura perioral facial
+├─ TREN B
+│  ├─ Secuencia regular o irregular de componentes aislados con intervalos máximos de
+│  │  500 ms, que dura hasta varios minutos o incluso horas
+│  ├─ Inicio GRADUAL, habitualmente introducido por spikes y bursts aislados de baja amplitud
+│  ├─ Dos subtipos según el componente predominante: BS (con spikes) y BB (con bursts)
+│  ├─ Ubicuo: se registró en 28 de los 30 pacientes, en cualquier momento del procedimiento
+│  │  y en todo tipo de músculos
+│  ├─ Morfológicamente similar a las descargas mioquímicas; el mecanismo NO queda aclarado
+│  │  por los propios autores
+│  └─ SIN correlación con la paresia pre ni postoperatoria
+├─ TREN C
+│  ├─ Actividad EMG continua e IRREGULAR, compuesta por numerosos componentes solapados
+│  ├─ Amplitudes distribuidas al azar en torno a la línea de base, entre 20 y más de 5000 µV
+│  ├─ Aspecto de patrón de interferencia, como una contracción voluntaria máxima, pese a
+│  │  anestesia profunda estable — los propios autores cuestionan el mecanismo
+│  ├─ Poco frecuente: solo en 3 de los 30 pacientes, y EXCLUSIVAMENTE en musculatura de la
+│  │  pared faríngea (diana del glosofaríngeo y el vago)
+│  └─ SIN valor predictivo establecido
+├─ CÓMO EVOLUCIONAN ENTRE SÍ
+│  └─ Hay tendencia a que spikes y bursts esporádicos se conviertan gradualmente en tren B o
+│     tren C durante pasos quirúrgicos POSIBLEMENTE DOLOROSOS, como cortar el periostio o
+│     suturar la piel — es decir, esa transición puede estar hablando del plano anestésico y
+│     no del nervio
+├─ PATRÓN FÁSICO FRENTE A TÓNICO (contexto de raíz espinal)
+│  ├─ FÁSICO o burst: potencial único o salva no repetitiva, asíncrona y polifásica → trauma
+│  │  directo puntual (tracción, irrigación libre, electrocauterio, torundas)
+│  └─ TÓNICO o train: descargas repetitivas sincrónicas prolongadas, hasta minutos →
+│     tracción o compresión SOSTENIDA → patología más seria, puede haber lesión neural
+├─ CONTEXTO DE PARES CRANEALES (descompresión microvascular y ángulo pontocerebeloso)
+│  ├─ El EMG libre de pares craneales combina spikes, bursts y trenes
+│  ├─ Se complementa con estimulación eléctrica directa del nervio a intensidad mínima
+│  │  (0.05 mA), repetida no solo para asegurar que el nervio sigue íntegro, sino para
+│  │  averiguar hasta qué punto el fascículo nervioso está aplanado o incluso dividido
+│  └─ Tras irrigar con suero caliente al terminar una descompresión microvascular es NORMAL
+│     ver disparo sostenido sin significado clínico — no confundirlo con un tren patológico
+├─ CAUSAS DE CAMBIO NO QUIRÚRGICO
+│  ├─ Plano anestésico superficial → actividad tipo unidad motora en TODOS los músculos a la
+│  │  vez → sospechar esto antes que patología
+│  ├─ Bloqueo neuromuscular parcial no advertido → reduce la amplitud y puede MIMETIZAR una
+│  │  lesión de nervio periférico o craneal
+│  │  └─ Recordar que la actividad CONTINUA (mecánicamente evocada o espontánea) se atenúa
+│  │     MÁS con bloqueo parcial que las respuestas únicas: el EMG libre es lo más vulnerable
+│  └─ Pasos quirúrgicos dolorosos que reclutan trenes B o C sin lesión
+├─ QUÉ HACER
+│  ├─ Spike o burst aislado → avisar, vigilar; raramente implica lesión real
+│  ├─ Tren sostenido, o tren A en el facial → avisar de INMEDIATO al cirujano (tracción o
+│  │  compresión mantenida)
+│  ├─ Tras el primer tren A, esperar que sigan apareciendo espontáneamente aunque se pare o
+│  │  se cambie de sitio: eso NO significa que la agresión continúe
+│  └─ En tumor intramedular: verificar MEP y onda D antes de continuar tras ráfagas sostenidas
+├─ LIMITACIONES
+│  ├─ Señal "a posteriori": informa de un evento que YA ha ocurrido, no lo previene por sí
+│  │  sola
+│  ├─ No localiza con precisión el nivel — para eso hace falta EMG estimulado con umbral
+│  ├─ La sección del nervio puede ser SILENTE: un nervio cortado limpiamente puede no
+│  │  descargar, de modo que la ausencia de actividad no equivale a integridad
+│  ├─ Spikes, bursts y trenes B y C no mostraron NINGUNA correlación con la paresia pre ni
+│  │  postoperatoria: de los cinco patrones, solo el tren A predice
+│  └─ En pares craneales da falsos positivos y negativos relevantes → no sustituye a los
+│     CoMEP como técnica continua más precisa
 └─ Referencia
-   └─ Leppänen2005 / Leppänen2006 (ASNM) · Romstöck2000 (J Neurosurg 93:586-593,
-      clasificación spikes/bursts/A-B-C trains) · Prell2007 (falsos positivos A-train)
-      · Boaro2026 (EMG libre en IMSCT)
+   └─ Romstock2000 (J Neurosurg 93:586-593) — serie de 30 pacientes de cirugía de ángulo
+      pontocerebeloso, nomenclatura de Prass y Lüders, definición de spikes y bursts (Fig. 1)
+      y de trenes A, B y C (Fig. 2), rendimiento del tren A con sensibilidad 86% y
+      especificidad 89%, ausencia de correlación de frecuencia, número y amplitud ·
+      Deletis cap.10 (Fernández-Conejero) p.138 — base anatómica del falso positivo del
+      nervio intermedio · cap.13 (Toleikis) pp.179-181 — patrón fásico frente a tónico en
+      raíz espinal · cap.27 (Pasquali/Tramontano/Sala) pp.369-371 · cap.40 (Sloan & Koht)
+      p.569 — el EMG libre como la modalidad más vulnerable al bloqueo parcial ·
+      Boaro2026 — EMG libre en tumor intramedular
 ```
 
 ## Ampliación — profundizar
 
 ```
 EMG libre — ampliación
-├─ EMG libre en instrumentación pedicular/columna (contexto distinto a pares craneales)
-│  ├─ Ráfagas cortas (<1 s) → generalmente no significativas, rara vez con secuela ·
-│  │  trenes largos sostenidos (hasta varios minutos) → más serios, asociados a
-│  │  tracción/compresión sostenida, mayor probabilidad de daño radicular
-│  └─ En cordón anclado, mal predictor aislado: sensibilidad 100% pero especificidad
-│     solo 19% — "nunca debe usarse como única modalidad" (cita textual del capítulo)
-├─ Contraste de series + valor predictivo temporal
-│  ├─ Otra serie de cordón anclado con mejor equilibrio: sensibilidad 87.5%,
-│  │  especificidad 83.3%, VPP 87.5%, VPN 83.3%
-│  └─ La actividad EMG sostenida suele PRECEDER el cambio en los potenciales evocados
-│     — actúa como señal de alarma temprana, se anticipa al MEP en vez de solo
-│     acompañarlo
-└─ Base anatómica del falso positivo de Prell2007 (ya citado, aquí el mecanismo)
-   └─ El n. intermedio lleva fibras motoras que inervan la musculatura perioral facial
-      → explica por qué su manipulación genera A-trains sin correlación clínica real
-Referencia: Deletis, cap. 10 (Fernández-Conejero) p.138 · cap. 13 (Toleikis)
-pp.179-181 · cap. 27 (Pasquali/Tramontano/Sala) pp.369-371
+├─ EMG libre en instrumentación pedicular y columna (contexto distinto al de pares craneales)
+│  ├─ Ráfagas cortas (<1 s) → generalmente no significativas, rara vez dejan secuela ·
+│  │  trenes largos sostenidos, hasta varios minutos → más serios, asociados a tracción o
+│  │  compresión sostenida, con mayor probabilidad de daño radicular
+│  └─ En cirugía de cordón anclado es mal predictor aislado: sensibilidad 100% pero
+│     especificidad de solo 19% — "nunca debe usarse como única modalidad"
+├─ Contraste entre series y valor de alarma temprana
+│  ├─ Otra serie de cordón anclado con mejor equilibrio: sensibilidad 87.5%, especificidad
+│  │  83.3%, VPP 87.5% y VPN 83.3%
+│  └─ La actividad EMG sostenida suele PRECEDER al cambio en los potenciales evocados: actúa
+│     como señal de alarma temprana, anticipándose al MEP en lugar de solo acompañarlo
+└─ Umbral de relajación compatible con EMG libre
+   ├─ Puede obtenerse actividad espontánea con UNA sola sacudida presente en el tren de
+   │  cuatro, es decir con hasta un 90% de bloqueo neuromuscular — aunque es deseable tener
+   │  más de una
+   └─ Pero el CMAP se reduce de amplitud con el relajante, y los CMAP pequeños pueden no
+      llegar a detectarse si el paciente está demasiado relajado
+Referencia: Deletis cap.13 (Toleikis) pp.179-181 y §13.2.4.1 · cap.27
+(Pasquali/Tramontano/Sala) pp.369-371 · cap.40 (Sloan & Koht) p.569
 ```

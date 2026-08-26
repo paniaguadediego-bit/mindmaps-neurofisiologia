@@ -66,10 +66,44 @@ página dibujada a mano con ese código escrito.
 
 ## Trabajo pendiente (orden acordado)
 
-1. **Retrofit de autocontención en IONM** — los 23 temas se escribieron antes de la regla
-   5 y están llenos de referencias cruzadas. Los peores: `B5` y `B6` (casi solo "ver
-   B8") y todo el bloque `C`. Acordado hacerlo después de terminar PPEE, que ya está
-   terminado — así que es lo siguiente.
+1. **Retrofit de IONM** (en curso). Los 23 temas se escribieron antes de la regla 5 y
+   arrastran **dos** deudas, no una:
+   - **Referencial**: ~25 referencias cruzadas que SUSTITUYEN información. Las peores en
+     `B5` y `B6` (ramas enteras cuyo contenido es "Ver B8"), `C6` y `C3`.
+   - **De densidad**: los temas de IONM tienen 49-127 líneas frente a las 150-350 de los
+     de PPEE. Rellenarlos no es sustituir los "ver B8": es reescribirlos casi enteros
+     contra las fuentes.
+
+   **Orden de tandas acordado:** ~~bloque `C` completo (C1-C6)~~ **HECHO** → ~~nudo
+   `B5`/`B6`/`B8`~~ **HECHO** → bloque `A` → resto del bloque `B` (B1-B4, B7).
+
+   Bloque `C` terminado: de 354 a 1350 líneas en total, cero referencias cruzadas que
+   sustituyan información. Fuentes que estaban sin explotar y ahora sí lo están: Moller
+   cap.5 y cap.9 (anatomía sensitiva y motora — resolvió que `C1` no tuviera ninguna
+   cita), cap.4 (colocación de electrodos y campo lejano), cap.17 completo
+   (troubleshooting e interferencia), Deletis cap.40 íntegro (farmacología).
+
+   **Decisión acordada sobre el nudo `B5`/`B6`/`B8`** (los tres beben de Deletis cap.22 y
+   hoy se solapan): se **re-reparten por TIPO de tema**, conservando los tres códigos
+   para no dejar huérfana ninguna página ya dibujada a mano.
+   - `B5` = tumores intrínsecos del **tronco encefálico** — contexto quirúrgico completo.
+   - `B6` = tumores del **IV ventrículo** — contexto quirúrgico completo.
+   - `B8` = **técnica** de mapeo del suelo del IV ventrículo y reflejos de tronco.
+
+   Nudo terminado: de 243 a 826 líneas. `B8` cambió de título y de nombre de archivo (era
+   "Fosa posterior avanzado con criterios de troncoencefálico") y de plantilla B a A,
+   porque ha pasado de ser un contexto quirúrgico a ser una técnica; **el código B8 se
+   conserva**. `B5` también cambió de nombre de archivo para que el slug coincida con el
+   título nuevo. Fuente que estaba sin explotar y ahora sí lo está: Deletis cap.11
+   (Morota/Deletis/Epstein) íntegro — parámetros de la Tabla 11.1, zonas de entrada segura
+   con las medidas de Strauss y Bogucki, las siete ramas del corticobulbar de Krieg, los
+   patrones de desplazamiento de núcleos por localización del tumor, y las cinco
+   limitaciones clínicas del mapeo.
+
+   Razón: un reparto "básico / avanzado" del mismo contexto es incompatible con la regla
+   5 — si el básico tiene que sostenerse solo acaba conteniendo al avanzado, y entonces
+   es el avanzado. Separar por contexto-vs-técnica sí produce temas que se sostienen
+   solos sin ser el mismo tema dos veces.
 2. **Repaso de contenido** de los temas ya escritos, por tandas, buscando lo que las
    fuentes den de sí y aún no esté recogido.
 

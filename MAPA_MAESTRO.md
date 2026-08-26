@@ -4,24 +4,24 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-26T04:45:08.403Z
+Generado: 2026-08-26T21:28:34.415Z
 
-Progreso global: 34 completos · 11 en progreso · 0 esqueletos · 45 temas en 2 área(s).
+Progreso global: 40 completos · 5 en progreso · 0 esqueletos · 45 temas en 2 área(s).
 
 # Área IONM
 
-Visor: `ionm.html` · 13 completos · 10 en progreso · 0 esqueletos · 23 temas.
+Visor: `ionm.html` · 19 completos · 4 en progreso · 0 esqueletos · 23 temas.
 
 ## Bloque A — Modalidades de señal
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
 | A1 | PESS / SSEP | A | Completo | `mindmaps/A1-pess-ssep.md` |
-| A2 | PEM / MEP transcraneal (miogénico) | A | En progreso | `mindmaps/A2-pem-mep-transcraneal.md` |
+| A2 | PEM / MEP transcraneal (miogénico) | A | Completo | `mindmaps/A2-pem-mep-transcraneal.md` |
 | A3 | Onda D (D-wave epidural) | A | Completo | `mindmaps/A3-onda-d-epidural.md` |
 | A4 | EMG libre (free-running) | A | Completo | `mindmaps/A4-emg-libre-free-running.md` |
 | A5 | EMG estimulado — umbral de tornillo pedicular | A | Completo | `mindmaps/A5-emg-estimulado-umbral-tornillo-pedicular.md` |
-| A6 | Corticobulbares / MEP de pares craneales (CoMEPs) | A | En progreso | `mindmaps/A6-comeps-mep-pares-craneales.md` |
+| A6 | Corticobulbares / MEP de pares craneales (CoMEPs) | A | Completo | `mindmaps/A6-comeps-mep-pares-craneales.md` |
 | A7 | PEATC / BAEP | A | Completo | `mindmaps/A7-peatc-baep.md` |
 | A8 | EEG intraoperatorio | A | En progreso | `mindmaps/A8-eeg-intraoperatorio.md` |
 | A9 | Reflejos en IONM | A | En progreso | `mindmaps/A9-reflejos-ionm.md` |
@@ -34,17 +34,17 @@ Visor: `ionm.html` · 13 completos · 10 en progreso · 0 esqueletos · 23 temas
 | B2 | Columna — degenerativa / instrumentación | B | En progreso | `mindmaps/B2-columna-degenerativa-instrumentacion.md` |
 | B3 | Tumores medulares intramedulares (IMSCT) | B | Completo | `mindmaps/B3-tumores-medulares-intramedulares-imsct.md` |
 | B4 | Tumores medulares extramedulares / cono-cola de caballo | B | Completo | `mindmaps/B4-tumores-medulares-extramedulares-cono-cauda.md` |
-| B5 | Fosa posterior / tronco encefálico | B | En progreso | `mindmaps/B5-fosa-posterior-tronco-encefalico.md` |
-| B6 | Tumores de cuarto ventrículo | B | En progreso | `mindmaps/B6-tumores-cuarto-ventriculo.md` |
+| B5 | Tumores intrínsecos del tronco encefálico | B | Completo | `mindmaps/B5-tumores-intrinsecos-tronco-encefalico.md` |
+| B6 | Tumores de cuarto ventrículo | B | Completo | `mindmaps/B6-tumores-cuarto-ventriculo.md` |
 | B7 | Craneotomía despierta / mapeo cortical-subcortical | B | Completo | `mindmaps/B7-craneotomia-despierta-mapeo-cortical-subcortical.md` |
-| B8 | Fosa posterior avanzado con criterios de troncoencefálico | B | En progreso | `mindmaps/B8-fosa-posterior-avanzado-con-criterios-de-troncoencefalico.md` |
+| B8 | Mapeo del suelo del IV ventrículo y reflejos de tronco: técnica | A | Completo | `mindmaps/B8-mapeo-suelo-iv-ventriculo-y-reflejos-de-tronco.md` |
 
 ## Bloque C — Transversales
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
 | C1 | Anatomía funcional de las vías largas (corticoespinal vs. columnas dorsales) | C | Completo | `mindmaps/C1-anatomia-vias-largas.md` |
-| C2 | Colocación de electrodos 10-20 / 10-10 | C | En progreso | `mindmaps/C2-colocacion-electrodos-10-20-10-10.md` |
+| C2 | Colocación de electrodos 10-20 / 10-10 | C | Completo | `mindmaps/C2-colocacion-electrodos-10-20-10-10.md` |
 | C3 | TIVA y farmacología anestésica en MIO | C | Completo | `mindmaps/C3-tiva-farmacologia-anestesica.md` |
 | C4 | Relajantes musculares en MIO | C | Completo | `mindmaps/C4-relajantes-musculares.md` |
 | C5 | Marco general de criterios de alarma | C | Completo | `mindmaps/C5-criterios-alarma-marco-general.md` |

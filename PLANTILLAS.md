@@ -48,8 +48,15 @@ o contextos.
 3. Parámetros clave
 4. Aplicación práctica
 5. Errores frecuentes
-6. Conexión con otros nodos
+6. Limitaciones
 7. Referencia
+
+> **Cambiado (retrofit del bloque C de IONM).** Esta plantilla tenía una rama
+> "Conexión con otros nodos" que se ha retirado: era la fábrica del anti-patrón que
+> prohíbe la regla 5 de `CLAUDE.md`, porque invitaba a resolver el tema con una lista
+> de "ver C4", "ver C6" en lugar de repetir el dato con su cita. No volver a añadirla.
+> Un enlace del tipo "esto se amplía en X" solo vale como **añadido** dentro de otra
+> rama, nunca como rama propia ni como sustituto de la información.
 
 ---
 

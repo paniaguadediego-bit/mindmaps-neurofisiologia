@@ -470,6 +470,8 @@ main { flex: 1; padding: 2rem 2.5rem; max-width: 940px; }
   border-left: 4px solid var(--bloque-color);
   border-radius: 8px;
   margin-bottom: 1rem;
+  /* Aire por encima al abrir un tema o al saltar desde el índice lateral. */
+  scroll-margin-top: 0.75rem;
 }
 
 .tema-header {
@@ -663,6 +665,39 @@ const HEAD_COMUN = `<meta charset="utf-8">
 <meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">`;
 
+/**
+ * Al abrir un tema, lo lleva al principio del viewport.
+ *
+ * Sin esto, el acordeón nativo (`name="tema"`) hace que al abrir un tema se cierre el
+ * que estuviera abierto; si el que se cierra estaba MÁS ARRIBA, la página se encoge por
+ * encima y el tema recién abierto se va hacia arriba fuera de la pantalla, obligando a
+ * hacer scroll hacia atrás para leer el título. Se espera a que el layout se asiente
+ * (dos rAF) antes de medir y desplazar.
+ */
+function scriptAbrirTema() {
+  return `<script>
+(function () {
+  var temas = document.querySelectorAll('details.tema');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  temas.forEach(function (tema) {
+    tema.addEventListener('toggle', function () {
+      if (!tema.open) return;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          try {
+            tema.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
+          } catch (e) {
+            tema.scrollIntoView(true);
+          }
+        });
+      });
+    });
+  });
+})();
+</script>`;
+}
+
 /** Script de progreso "estudiado a mano", persistido por área en localStorage. */
 function scriptEstudiado(area) {
   return `<script>
@@ -816,6 +851,7 @@ body { display: flex; }
 <main>
   ${seccionesHtml}
 </main>
+${scriptAbrirTema()}
 ${scriptEstudiado(area)}
 </body>
 </html>
