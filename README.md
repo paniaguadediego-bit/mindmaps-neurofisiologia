@@ -10,13 +10,12 @@ Está organizado en **áreas**, cada una con su propia página en el visor:
 | Área | Temas | Contenido |
 |---|---|---|
 | **IONM** | 23 | Monitorización neurofisiológica intraoperatoria |
-| **PPEE** | 19 | Potenciales evocados: bases generales y visuales |
+| **PPEE** | 22 | Potenciales evocados: bases generales, visuales y en quirófano |
 
 Previstas: EMG, EEG, EEG infantil y EEG UCI.
 
-Estado: **42 temas, 36 con contenido escrito y citado** (los 23 de IONM y 13 de los 19
-de PPEE). El recuento al día está en [`MAPA_MAESTRO.md`](MAPA_MAESTRO.md), que se genera
-solo.
+Estado: **45 temas, todos con contenido escrito y citado**. El recuento al día está en
+[`MAPA_MAESTRO.md`](MAPA_MAESTRO.md), que se genera solo.
 
 **Visor en vivo:** [paniaguadediego-bit.github.io/mindmaps-neurofisiologia](https://paniaguadediego-bit.github.io/mindmaps-neurofisiologia/)
 — accesible desde el navegador del PC o instalable como app desde Chrome en Android
@@ -27,15 +26,17 @@ solo.
 Cada mindmap es UN tema = UN archivo `.md` en [`mindmaps/`](mindmaps/) = UNA página de
 libreta. Dentro de cada área los temas se agrupan en bloques:
 
-- **IONM** — *A* Modalidades de señal (PESS, MEP, onda D, EMG, CoMEPs, BAEP, EEG,
-  reflejos) · *B* Contextos quirúrgicos (columna, tumores medulares, fosa posterior,
-  craneotomía despierta) · *C* Transversales (anatomía, electrodos, anestesia, criterios
-  de alarma, troubleshooting).
-- **PPEE** — *A* Bases fisiológicas y anatómicas · *B* Bases técnicas de registro · *V*
-  Potenciales evocados visuales.
+- **IONM** — *A* Modalidades de señal (PESS, MEP, onda D, EMG libre y estimulado, CoMEPs,
+  PEATC, EEG, reflejos) · *B* Contextos quirúrgicos (columna, tumores medulares, tronco
+  encefálico, IV ventrículo, mapeo del suelo del IV ventrículo, craneotomía despierta) ·
+  *C* Transversales (anatomía de vías largas, electrodos, TIVA, relajantes, criterios de
+  alarma, troubleshooting).
+- **PPEE** — *A* Bases fisiológicas y anatómicas · *B* Bases técnicas de registro · *C*
+  PEV en quirófano · *V* Potenciales evocados visuales.
 
 Cada tema se escribe **autocontenido**: no remite a otro para completar un dato, porque
-no se estudian en orden.
+no se estudian en orden. Si un dato hace falta en dos temas, se repite en ambos con su
+cita — antes perder brevedad que perder información.
 
 El catálogo es **vivo**: crece, se reorganiza y se divide sin tocar código — el visor y
 el índice ([`MAPA_MAESTRO.md`](MAPA_MAESTRO.md)) se generan solos a partir de los
@@ -70,4 +71,9 @@ Instrucciones completas de trabajo, convenciones y reglas del proyecto: [`CLAUDE
 Los PDFs/docx de libros y artículos que respaldan el contenido clínico **no están en
 este repositorio** — son material con copyright y se quedan solo en el equipo local. El
 índice de qué cubre cada fuente sí está publicado: [`fuentes/INDICE_FUENTES.md`](fuentes/INDICE_FUENTES.md).
-Cada rama `Referencia` de cada mindmap cita la clave correspondiente.
+
+Cada rama `Referencia` cita la clave de una fuente que **está en ese índice**, con
+capítulo y páginas. Ninguna cifra —umbral, latencia, criterio de alarma— se escribe sin
+respaldo: lo que no puede confirmarse contra una fuente disponible va marcado
+`(verificar)` de forma explícita, y las discrepancias internas de las propias fuentes se
+dejan anotadas en lugar de resolverse en silencio.

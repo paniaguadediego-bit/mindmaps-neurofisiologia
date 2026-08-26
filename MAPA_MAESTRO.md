@@ -4,13 +4,13 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-26T21:28:34.415Z
+Generado: 2026-08-26T21:41:38.040Z
 
-Progreso global: 40 completos · 5 en progreso · 0 esqueletos · 45 temas en 2 área(s).
+Progreso global: 42 completos · 3 en progreso · 0 esqueletos · 45 temas en 2 área(s).
 
 # Área IONM
 
-Visor: `ionm.html` · 19 completos · 4 en progreso · 0 esqueletos · 23 temas.
+Visor: `ionm.html` · 21 completos · 2 en progreso · 0 esqueletos · 23 temas.
 
 ## Bloque A — Modalidades de señal
 
@@ -23,8 +23,8 @@ Visor: `ionm.html` · 19 completos · 4 en progreso · 0 esqueletos · 23 temas.
 | A5 | EMG estimulado — umbral de tornillo pedicular | A | Completo | `mindmaps/A5-emg-estimulado-umbral-tornillo-pedicular.md` |
 | A6 | Corticobulbares / MEP de pares craneales (CoMEPs) | A | Completo | `mindmaps/A6-comeps-mep-pares-craneales.md` |
 | A7 | PEATC / BAEP | A | Completo | `mindmaps/A7-peatc-baep.md` |
-| A8 | EEG intraoperatorio | A | En progreso | `mindmaps/A8-eeg-intraoperatorio.md` |
-| A9 | Reflejos en IONM | A | En progreso | `mindmaps/A9-reflejos-ionm.md` |
+| A8 | EEG intraoperatorio | A | Completo | `mindmaps/A8-eeg-intraoperatorio.md` |
+| A9 | Reflejos en IONM | A | Completo | `mindmaps/A9-reflejos-ionm.md` |
 
 ## Bloque B — Contextos quirúrgicos
 

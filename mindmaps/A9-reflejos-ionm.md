@@ -4,14 +4,19 @@ titulo: Reflejos en IONM
 area: IONM
 bloque: A — Modalidades de señal
 plantilla: A
-estado: en-progreso
+estado: completo
 ---
 
 # A9 — Reflejos en IONM
 
-> Pendiente: criterios de alarma del reflejo H como monitorización continua. TCR y TVcR
-> son técnicas de descripción reciente (2024/2025) en fase de viabilidad: sin criterios
-> de alarma validados ni papel establecido en la práctica rutinaria.
+> Estado de madurez, muy desigual entre los reflejos de este tema. El LAR es el único con
+> criterio de alarma cuantitativo respaldado por serie propia. El Blink Reflex y el
+> bulbocavernoso están establecidos como técnica pero se usan de forma cualitativa. El
+> maseterino es método reciente, aún sin validación quirúrgica ni criterios precisos. El
+> reflejo H tiene significado fisiológico claro pero ningún umbral de alarma en las fuentes
+> del proyecto. TCR (2024) y TVcR (2025) son estudios de VIABILIDAD: demuestran que la
+> respuesta se obtiene bajo anestesia general, pero no tienen criterios de alarma validados
+> ni papel establecido en la práctica rutinaria.
 
 ```
 Reflejos en IONM
@@ -19,9 +24,24 @@ Reflejos en IONM
 │  ├─ Arco: monosináptico Ia (huso muscular) → motoneurona alfa
 │  │  └─ Análogo electrofisiológico del reflejo miotático
 │  ├─ Técnica: estimulación submáxima del n. tibial en hueco poplíteo, registro en sóleo
-│  └─ Utilidad: integridad del arco lumbosacro / raíz S1
-│     └─ Muy sensible a profundidad anestésica y a relajación muscular
-│        (verificar umbral de alarma si se usa como monitorización continua)
+│  ├─ LAS TRES RESPUESTAS que puede dar un nervio mixto, y qué mide cada una
+│  │  ├─ ONDA M: respuesta directa por activación ortodrómica de las fibras motoras
+│  │  ├─ REFLEJO H: al estimular la parte sensitiva del nervio mixto se activan las fibras
+│  │  │  propioceptivas, que ponen en marcha el reflejo miotático monosináptico sobre las
+│  │  │  alfa motoneuronas → informa del estado del ASTA ANTERIOR medular
+│  │  └─ RESPUESTA F: el volley ANTIDRÓMICO por las fibras motoras llega a la alfa
+│  │     motoneurona y la hace "recontestar" (backfiring) → es una medida de la
+│  │     EXCITABILIDAD de la alfa motoneurona
+│  ├─ RELACIÓN CON LA INTENSIDAD, que hay que entender para no equivocarse al ajustar
+│  │  ├─ La respuesta H alcanza su PICO ANTES de que la respuesta directa se sature
+│  │  └─ Por qué luego DECRECE: al subir el estímulo por encima de cierto valor, las fibras
+│  │     motoras se activan en el punto de estimulación, y esa activación IMPIDE que la
+│  │     fibra vuelva a activarse cuando llega el volley procedente de la alfa motoneurona
+│  ├─ Utilidad: integridad del arco lumbosacro y de la raíz S1
+│  └─ Muy sensible a la profundidad anestésica y a la relajación muscular
+│     └─ Las fuentes del proyecto describen su significado fisiológico pero NO dan ningún
+│        umbral de alarma para usarlo como monitorización continua **(verificar en una guía
+│        específica si se va a emplear con criterio de alarma)**
 ├─ Blink Reflex (BR)
 │  ├─ Arco: aferente V1 (n. supraorbitario) → núcleo espinal del trigémino →
 │  │  interneuronas de tronco → núcleo facial (VII) → orbicularis oculi
@@ -94,9 +114,17 @@ Reflejos en IONM
 │  │  → alta probabilidad de disfunción de cuerda vocal postoperatoria
 │  └─ La LATENCIA (22.4 ± 2.5 ms) es muy variable y NO sirve como parámetro de alarma
 └─ Referencia
-   └─ Deletis&FernándezConejero (Neurophysiology in Neurosurgery 2ª ed., caps. 15-17:
-      Téllez/Ulkatan/Sinclair — LAR; Fernández-Conejero/Deletis — Blink Reflex;
-      Ulkatan2017 — masetero) · LimaMedeiros2024 (TCR) · Urriza2025 (TVcR)
+   └─ Deletis cap.15 (Téllez/Ulkatan/Sinclair, "Intraoperative monitoring of the vagus and
+      laryngeal nerves with the laryngeal adductor reflex") pp.211-216 — arco, técnica,
+      amplitudes y criterio del 60% · cap.16 (Téllez/Ulkatan, "Bringing the masseter reflex
+      into the operating room") pp.224-226 — reflejo maseterino, criterios de
+      identificación y serie de viabilidad · cap.17 (Fernández-Conejero/Deletis, "Blink
+      reflex") — arco, R1 y R2, tren bajo anestesia y consideraciones anestésicas · cap.6
+      (Vodusek/Deletis) §6.4.3.5 pp.87-99 — reflejo bulbocavernoso y sistema nervioso sacro
+      (Figs. 6.1-6.2) · cap.10 (Fernández-Conejero) §10.4.3.1 — por qué el Blink contamina
+      el CoMEP del orbicular de los párpados · Moller2011 cap.10 pp.219-220 ("Monitoring F
+      and H Responses") — ondas M, H y F, relación con la intensidad y qué mide cada una ·
+      LimaMedeiros2024 (reflejo trigémino-cervical) · Urriza2025 (reflejo trigémino-vocal)
 ```
 
 ## Ampliación — profundizar

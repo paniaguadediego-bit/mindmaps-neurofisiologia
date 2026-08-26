@@ -48,7 +48,7 @@ visor. `index.html` es el portal que las lista; cada área se descubre sola en c
 
 | Área | Bloques | Estado | Página |
 |---|---|---|---|
-| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 23 temas, todos con contenido | `ionm.html` |
+| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 23 temas, todos con contenido; retrofit hecho en A y C, pendiente en B1-B4 y B7 | `ionm.html` |
 | `PPEE` | A bases fisiológicas/anatómicas · B bases técnicas · C PEV en quirófano · V visuales | 22 temas, todos con contenido | `ppee.html` |
 | EMG, EEG, EEG infantil, EEG UCI | — | previstas, aún no creadas | — |
 
@@ -75,7 +75,29 @@ página dibujada a mano con ese código escrito.
      contra las fuentes.
 
    **Orden de tandas acordado:** ~~bloque `C` completo (C1-C6)~~ **HECHO** → ~~nudo
-   `B5`/`B6`/`B8`~~ **HECHO** → bloque `A` → resto del bloque `B` (B1-B4, B7).
+   `B5`/`B6`/`B8`~~ **HECHO** → ~~bloque `A` (A1-A9)~~ **HECHO** → resto del bloque `B`
+   (B1-B4, B7), que es lo único que queda.
+
+   **Deuda de citas descubierta en el bloque `A`, ya saldada.** De las 13 claves de cita
+   que usaban esos temas, **solo una correspondía a una fuente real** de `fuentes/` — y
+   estaba mal escrita (`Romstöck2000` por `Romstock2000`). Las otras doce (`Nuwer2012`,
+   `MacDonald2019`, `MacDonald2013`, `Toleikis2024`, `Legatt2016`, `Sloan2012`,
+   `Costa2015`, `Leppänen2005/2006`, `Prell2007`, `Téllez2016`, `Ulkatan2017`) apuntaban a
+   guías que el proyecto NO tiene, presentando contenido como si viniera de ellas — justo
+   lo que prohíbe la regla 4. Todo el bloque `A` se ha reverificado contra las fuentes que
+   sí existen. **Antes de dar por bueno cualquier dato de un tema aún no retrofitado,
+   comprobar que su clave de cita está en `INDICE_FUENTES.md`.**
+
+   Bloque `A` terminado: de 739 a 2080 líneas. Fuentes que estaban sin explotar y ahora sí
+   lo están: Deletis cap.2 íntegro (los tres puntos de despolarización del CST, el ISI de
+   4 ms, Tabla 2.1, paraplejia transitoria), cap.5 íntegro (PEATC — las cuatro palancas
+   para acortar el tiempo, filtrado digital de fase cero, CAP del VIII y potencial de
+   extremo cortado, registro del núcleo coclear, y la comparación entre los dos cirujanos
+   que sostiene la hipótesis de que no hay umbral seguro de cambio de latencia), cap.10
+   íntegro (CoMEP — doble estimulación a 90 ms, Tabla 10.2 de 100 cirugías), cap.13 íntegro
+   (tornillo pedicular — la anchura de pulso duplica la densidad de corriente, y el 10 mA
+   solo indica brecha, no lesión), cap.25 (Tabla 25.1 con los seis criterios de isquemia) y
+   cap.32 (ECoG).
 
    Bloque `C` terminado: de 354 a 1350 líneas en total, cero referencias cruzadas que
    sustituyan información. Fuentes que estaban sin explotar y ahora sí lo están: Moller
