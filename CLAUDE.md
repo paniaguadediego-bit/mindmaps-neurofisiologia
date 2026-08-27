@@ -48,7 +48,7 @@ visor. `index.html` es el portal que las lista; cada área se descubre sola en c
 
 | Área | Bloques | Estado | Página |
 |---|---|---|---|
-| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 23 temas, todos con contenido; retrofit hecho en A y C, pendiente en B1-B4 y B7 | `ionm.html` |
+| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 23 temas, todos completos y retrofitados | `ionm.html` |
 | `PPEE` | A bases fisiológicas/anatómicas · B bases técnicas · C PEV en quirófano · V visuales | 22 temas, todos con contenido | `ppee.html` |
 | EMG, EEG, EEG infantil, EEG UCI | — | previstas, aún no creadas | — |
 
@@ -66,17 +66,21 @@ página dibujada a mano con ese código escrito.
 
 ## Trabajo pendiente (orden acordado)
 
-1. **Retrofit de IONM** (en curso). Los 23 temas se escribieron antes de la regla 5 y
-   arrastran **dos** deudas, no una:
-   - **Referencial**: ~25 referencias cruzadas que SUSTITUYEN información. Las peores en
-     `B5` y `B6` (ramas enteras cuyo contenido es "Ver B8"), `C6` y `C3`.
-   - **De densidad**: los temas de IONM tienen 49-127 líneas frente a las 150-350 de los
-     de PPEE. Rellenarlos no es sustituir los "ver B8": es reescribirlos casi enteros
-     contra las fuentes.
+1. ~~**Retrofit de IONM**~~ **TERMINADO.** Los 23 temas se escribieron antes de la regla 5
+   y arrastraban **dos** deudas: referencias cruzadas que SUSTITUÍAN información
+   (~25, las peores en `B5`, `B6`, `C6` y `C3`) y densidad muy por debajo del estándar
+   (49-127 líneas frente a las 150-350 de PPEE).
 
-   **Orden de tandas acordado:** ~~bloque `C` completo (C1-C6)~~ **HECHO** → ~~nudo
-   `B5`/`B6`/`B8`~~ **HECHO** → ~~bloque `A` (A1-A9)~~ **HECHO** → resto del bloque `B`
-   (B1-B4, B7), que es lo único que queda.
+   **Resultado: de 1885 a 5336 líneas, y CERO referencias cruzadas que sustituyan
+   información** en toda el área. Los 45 temas del proyecto están en estado `completo`.
+
+   Tandas ejecutadas: bloque `C` (C1-C6) → nudo `B5`/`B6`/`B8` → bloque `A` (A1-A9) →
+   resto del bloque `B` (B1-B4, B7).
+
+   **Cómo mantenerlo.** Los enlaces del tipo "esto se amplía en X" siguen valiendo como
+   añadido, pero ninguna rama puede resolverse con "ver X". Si un dato hace falta en dos
+   temas, se repite en ambos con su cita. La plantilla C ya no trae la rama "Conexión con
+   otros nodos", que era la que fabricaba el anti-patrón (ver `PLANTILLAS.md`).
 
    **Deuda de citas descubierta en el bloque `A`, ya saldada.** De las 13 claves de cita
    que usaban esos temas, **solo una correspondía a una fuente real** de `fuentes/` — y
@@ -85,8 +89,9 @@ página dibujada a mano con ese código escrito.
    `Costa2015`, `Leppänen2005/2006`, `Prell2007`, `Téllez2016`, `Ulkatan2017`) apuntaban a
    guías que el proyecto NO tiene, presentando contenido como si viniera de ellas — justo
    lo que prohíbe la regla 4. Todo el bloque `A` se ha reverificado contra las fuentes que
-   sí existen. **Antes de dar por bueno cualquier dato de un tema aún no retrofitado,
-   comprobar que su clave de cita está en `INDICE_FUENTES.md`.**
+   sí existen y ninguna clave fantasma queda en el área. **Regla permanente que sale de
+   aquí: antes de dar por bueno cualquier dato, comprobar que su clave de cita está en
+   `INDICE_FUENTES.md`.** Vale también para las áreas futuras.
 
    Bloque `A` terminado: de 739 a 2080 líneas. Fuentes que estaban sin explotar y ahora sí
    lo están: Deletis cap.2 íntegro (los tres puntos de despolarización del CST, el ISI de

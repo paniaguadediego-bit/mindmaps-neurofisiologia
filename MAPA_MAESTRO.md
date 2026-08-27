@@ -4,13 +4,13 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-26T21:41:38.040Z
+Generado: 2026-08-27T18:55:27.057Z
 
-Progreso global: 42 completos · 3 en progreso · 0 esqueletos · 45 temas en 2 área(s).
+Progreso global: 45 completos · 0 en progreso · 0 esqueletos · 45 temas en 2 área(s).
 
 # Área IONM
 
-Visor: `ionm.html` · 21 completos · 2 en progreso · 0 esqueletos · 23 temas.
+Visor: `ionm.html` · 23 completos · 0 en progreso · 0 esqueletos · 23 temas.
 
 ## Bloque A — Modalidades de señal
 
@@ -30,8 +30,8 @@ Visor: `ionm.html` · 21 completos · 2 en progreso · 0 esqueletos · 23 temas.
 
 | Código | Título | Plantilla | Estado | Archivo |
 |---|---|---|---|---|
-| B1 | Columna — deformidad / escoliosis | B | En progreso | `mindmaps/B1-columna-deformidad-escoliosis.md` |
-| B2 | Columna — degenerativa / instrumentación | B | En progreso | `mindmaps/B2-columna-degenerativa-instrumentacion.md` |
+| B1 | Columna — deformidad / escoliosis | B | Completo | `mindmaps/B1-columna-deformidad-escoliosis.md` |
+| B2 | Columna — degenerativa / instrumentación | B | Completo | `mindmaps/B2-columna-degenerativa-instrumentacion.md` |
 | B3 | Tumores medulares intramedulares (IMSCT) | B | Completo | `mindmaps/B3-tumores-medulares-intramedulares-imsct.md` |
 | B4 | Tumores medulares extramedulares / cono-cola de caballo | B | Completo | `mindmaps/B4-tumores-medulares-extramedulares-cono-cauda.md` |
 | B5 | Tumores intrínsecos del tronco encefálico | B | Completo | `mindmaps/B5-tumores-intrinsecos-tronco-encefalico.md` |
@@ -58,7 +58,7 @@ Temas aún sin ubicar en el orden: B8
 
 # Área PPEE
 
-Visor: `ppee.html` · 21 completos · 1 en progreso · 0 esqueletos · 22 temas.
+Visor: `ppee.html` · 22 completos · 0 en progreso · 0 esqueletos · 22 temas.
 
 ## Bloque A — Bases fisiológicas y anatómicas
 
@@ -67,7 +67,7 @@ Visor: `ppee.html` · 21 completos · 1 en progreso · 0 esqueletos · 22 temas.
 | PE-A1 | Génesis del potencial evocado | D | Completo | `mindmaps/PE-A1-genesis-del-potencial-evocado.md` |
 | PE-A2 | Campo cercano vs. campo lejano | D | Completo | `mindmaps/PE-A2-campo-cercano-vs-campo-lejano.md` |
 | PE-A3 | Generadores: cómo se atribuye un pico a una estructura | D | Completo | `mindmaps/PE-A3-generadores-como-se-atribuye-un-pico-a-una-estructura.md` |
-| PE-A4 | Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial) | D | En progreso | `mindmaps/PE-A4-anatomia-funcional-comparada-de-las-tres-vias-visual-auditiva-somatosensorial.md` |
+| PE-A4 | Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial) | D | Completo | `mindmaps/PE-A4-anatomia-funcional-comparada-de-las-tres-vias-visual-auditiva-somatosensorial.md` |
 
 ## Bloque B — Bases técnicas de registro
 

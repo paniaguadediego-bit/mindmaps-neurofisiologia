@@ -4,7 +4,7 @@ titulo: Anatomía funcional comparada de las tres vías (visual, auditiva, somat
 area: PPEE
 bloque: A — Bases fisiológicas y anatómicas
 plantilla: D
-estado: en-progreso
+estado: completo
 ---
 
 # PE-A4 — Anatomía funcional comparada de las tres vías (visual, auditiva, somatosensorial)

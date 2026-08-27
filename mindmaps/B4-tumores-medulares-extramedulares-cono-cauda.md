@@ -16,14 +16,25 @@ estado: completo
 ```
 Tumores medulares extramedulares / cono-cola de caballo
 ├─ Modalidades combinadas
-│  ├─ SEP + MEP muscular + EMG libre de raíces lumbosacras + reflejo bulbocavernoso
-│  │  (RBC) — arco y técnica completos en A9, aquí solo su rol dentro del paquete
+│  ├─ SEP + MEP muscular + EMG libre de raíces lumbosacras + REFLEJO BULBOCAVERNOSO
+│  │  ├─ Arco del RBC: aferente pudendo desde glande o clítoris (S2-S4) → asta sacra →
+│  │  │  eferente pudendo hasta el esfínter anal externo o el bulbocavernoso
+│  │  ├─ Técnica: estimulación del dorso del pene o del clítoris, o mediante sonda
+│  │  │  vesical, con registro de EMG del esfínter anal externo
+│  │  └─ Qué vigila: la patencia del arco reflejo sacro bajo, y con él la función
+│  │     esfinteriana y sexual — que es exactamente lo que está en juego en esta región
+│  │     y lo que ninguna otra modalidad del paquete cubre
 │  ├─ Aquí el MAPEO predomina sobre la monitorización pasiva: identificar estructuras
 │  │  neurales funcionales que deben preservarse de raicillas vestigiales/bandas
 │  │  fibrosas seccionables — a diferencia de B3, donde domina la vigilancia continua
 │  │  de vías
-│  └─ D-wave: raramente registrable en tumores de cono (igual mecanismo que B3); en
-│     tumores estrictamente extramedulares no aplica al no haber CST expuesto
+│  └─ ONDA D: rara vez registrable aquí, y conviene saber por qué para no perseguir un
+│     fallo técnico inexistente
+│     ├─ Razón anatómica: por debajo del nivel óseo T10 no quedan suficientes fibras del
+│     │  tracto corticoespinal para producir una amplitud registrable — y los tumores del
+│     │  CONO están por debajo de ese límite
+│     └─ Además, en tumores estrictamente extramedulares no aporta nada, porque no hay
+│        tracto corticoespinal expuesto que interrogar
 ├─ Fases del procedimiento
 │  ├─ Laminectomía/hemilaminectomía → apertura dural → identificación del plano
 │  │  tumor-raíces/tumor-cono → disección con mapeo continuo de raíces en riesgo →
@@ -47,7 +58,10 @@ Tumores medulares extramedulares / cono-cola de caballo
 │  └─ Falso positivo por dispersión de corriente en LCR/campo húmedo: puede simular
 │     respuesta muscular en una estructura no funcional — exige campo seco al estimular
 ├─ Posicionamiento
-│  ├─ Prono, similar a B1/B3 — sin matiz propio distinto en las fuentes (verificar)
+│  ├─ Prono con abordaje posterior, como en el resto de la cirugía medular: las fuentes no
+│  │  describen ningún matiz de posicionamiento propio de esta localización **(verificar)**
+│  │  └─ Lo que sí aplica igual: tomar basales ANTES y DESPUÉS del posicionamiento
+│  │     definitivo, para poder atribuir un cambio de señal a la postura y no a la cirugía
 │  └─ Nota anestésica: en cirugía pediátrica de cono/cauda, en <6 años a veces se
 │     reduce/elimina propofol añadiendo ketamina para mejorar la monitorabilidad del
 │     MEP transcraneal (78%→96% en >6 años, hasta 86% en <6 años)
@@ -76,7 +90,7 @@ Tumores medulares extramedulares / cono-cola de caballo
 │  ├─ Campo quirúrgico seco durante la estimulación — evita falsos positivos
 │  └─ Ante cambio de MEP durante laminectomía/retracción (a diferencia de B3, donde el
 │     riesgo mayor es en la disección del plano): reducir la retracción y reevaluar
-└─ Técnica de mapeo específica
+├─ Técnica de mapeo específica
    ├─ Triggered EMG raíz-por-raíz de cauda equina: sonda bipolar manual, 0.01-3 mA,
    │  1 Hz, 200 µs, registro de CMAP en músculos diana segmentarios L1-S4
    ├─ Mapeo del filum terminale: estimular primero raíz normal conocida para fijar
