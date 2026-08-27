@@ -16,3 +16,46 @@ de cada mindmap.
 | LimaMedeiros2024 | 2024_Trigemino-cervical_reflex_general_anesthesia_feasibility_Lima-Medeiros (1).pdf | artículo | — | Reflejo trigémino-cervical (TCR), viabilidad bajo anestesia general en cirugía de fosa posterior/UCM/médula | Clin Neurophysiol 161:173-179, texto completo — serie de 20 pacientes |
 | Urriza2025 | 2025_Trigemino-Vocal_reflex_brainstem_connectivity_anesthesia_Urriza (1).pdf | artículo | — | Reflejo trigémino-vocal (TVcR), conectividad trigémino-vagal troncoencefálica; menciona reflejo trigémino-cardíaco sin protocolo | Clin Neurophysiol 175:2110739, texto completo — serie de 47 pacientes |
 | Boaro2026 | 2026_MIO_spinal_cord_tumor_intraoperative_monitoring_Boaro (1).docx | artículo | — | MIO en tumores intramedulares — exclusivamente medular (SIN contenido de tronco/fosa posterior, confirmado por búsqueda de texto completo); modalidades combinadas, fases, jerarquía de alarma, protocolo TIP, casos clínicos, controversia diagnóstico-vs-prevención | Secciones 1-9 completas (§2.3 "D wave" · §3 mapeo · §4 fases · §5 jerarquía/TIP · §6 casos · §7 controversias, series Sweeney et al.) |
+
+---
+
+## Capítulos de `Deletis` NO explotados todavía
+
+Descubierto en el repaso de contenido: la tabla de arriba cataloga unos 24 de los 44
+capítulos del libro. Los otros 20 nunca se han consultado, y varios son **fuente primaria
+de contenido que se escribió desde capítulos secundarios**. Esta lista existe para que el
+repaso no vuelva a partir de un catálogo incompleto.
+
+Marcados con ★ los que enriquecen un tema que YA existe; con ✦ los que cubren territorio
+sin tema propio.
+
+| Cap. | Título | Relevancia |
+|---|---|---|
+| 1 | Animal and human motor system neurophysiology related to ION (Amassian) | ★ A2, C1 — base del CST |
+| 8 | Effects of subthreshold stimuli on the excitability of axonal membrane | ★ A6 — es el origen del concepto de "hiperexcitabilidad subumbral" que usa la doble estimulación |
+| 12 | Neurophysiological identification of long sensory and motor tracts within the spinal cord (Deletis/Seidel), p.163 — §12.2 mapeo de columna dorsal · §12.3 mapeo del CST | ★★ B3, C1 — **fuente PRIMARIA del mapeo DCM y CST**, que B3 escribió desde el cap.26 |
+| 14 | Clinical and neurophysiologic features of the pure motor deficit syndrome caused by selective upper motor neuron lesion | ★ C1, A2 |
+| 18 | The posterior root-muscle reflex (Minassian/Freundl/Hofstoetter) | ★ A9 |
+| 20 | Surgery of brain tumors asleep | ★ B7 — el complemento dormido de la craneotomía despierta |
+| 24 | Surgery of the face, p.319 | ★ A6, A9 |
+| 29 | Neurophysiological monitoring during endovascular procedures on the spine and the spinal cord (Sala/Niimi), p.395 — §29.1 **vascularización e isquemia medular** | ★★ B1, B3, B4 — el mecanismo isquémico que esos temas citan sin fuente propia |
+| 30 | Intraoperative neurophysiology of the peripheral nervous system (Happel/Kline), p.413 | ✦ sin tema propio |
+| 31 | ION method for testing functional integrity of the lower extremity peripheral nerves during hip surgery (Climent et al.), p.431 | ✦ sin tema propio |
+| 33 | ION during microvascular decompression of cranial nerves (Ferreira/Thirumala/Crammond/Sekula/Balzer), p.457 | ✦✦ **espasmo hemifacial y neuralgia del trigémino: contexto quirúrgico entero sin tema**, aunque A4, A7 y A9 ya citan fenómenos de MVD |
+| 34 | Neurophysiological monitoring during neurosurgery for movement disorders | ✦ sin tema propio |
+| 35 | Neurosurgical lesioning-procedures for spasticity and focal dystonia (Sindou et al.), p.499 | ✦ sin tema propio |
+| 36 | Deep brain stimulation in vegetative state and minimally conscious state, p.515 | ✦ sin tema propio |
+| 37 | Neuromonitoring for spinal cord stimulation placement under general anesthesia (Shils et al.), p.523 | ✦ sin tema propio |
+| 38 | Neurosurgical lesioning procedures in spinal cord and DREZ for pain (Sindou et al.), p.535 | ✦ sin tema propio |
+| 39 | Selective dorsal rhizotomy, p.551 | ★ B4 — ya se usa su serie de DRAP, pero solo eso |
+| 42 | Costs and benefits of ION in spinal surgeries (Ney), p.597 | ★ B1, B2 — el debate de indicación |
+| 43 | Evidence-based medicine and intraoperative neurophysiology — §43.5 "How accurate are my SEPs and MEPs?" · §43.7 glosario de términos de contingencia | ★★ C5 — marco de falsos positivos y negativos |
+| 44 | The intraoperative neurophysiological monitoring team — incl. §44.5 medical error avoidance | ★ C6 |
+
+Además, **`Deletis` cap.41 "Safety"** sí está en la tabla de arriba pero solo se ha
+explotado pp.590-591 (lesión por mordedura). Sus secciones §41.2 seguridad eléctrica,
+§41.3 seguridad específica por procedimiento, §41.4 control de infección y §41.5
+rendimiento esencial siguen sin usar. ✦ podría sostener un tema propio de seguridad.
+
+Y **`Markand2020` cap.5 "MEP" pp.209-236** (ondas D e I, p.214) no está citado en ningún
+mindmap: el área PPEE no tiene ningún tema de potenciales evocados motores. ✦

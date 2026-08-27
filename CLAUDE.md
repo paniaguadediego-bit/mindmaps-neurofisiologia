@@ -131,8 +131,41 @@ página dibujada a mano con ese código escrito.
    5 — si el básico tiene que sostenerse solo acaba conteniendo al avanzado, y entonces
    es el avanzado. Separar por contexto-vs-técnica sí produce temas que se sostienen
    solos sin ser el mismo tema dos veces.
-2. **Repaso de contenido** de los temas ya escritos, por tandas, buscando lo que las
+2. **Repaso de contenido** (EN CURSO). Revisar por tandas lo ya escrito buscando lo que las
    fuentes den de sí y aún no esté recogido.
+
+   **Hallazgo que reordenó el repaso: `INDICE_FUENTES.md` catalogaba media biblioteca.**
+   Listaba unos 24 de los **44 capítulos** del Deletis. Los otros 20 nunca se habían
+   consultado, y varios eran **fuente primaria de contenido escrito desde capítulos
+   secundarios**. Ya están todos añadidos al índice, en una tabla al final marcada con ★
+   (enriquecen un tema existente) y ✦ (territorio sin tema propio). **Empezar cualquier
+   tanda leyendo esa tabla.**
+
+   **Hecho hasta ahora**
+   - Índice de fuentes completado con los 20 capítulos que faltaban.
+   - `B3` reescrito desde **Deletis cap.12** (Deletis/Seidel), que es la fuente PRIMARIA del
+     mapeo medular y estaba sin usar: de 150 a 256 líneas. Aporta los TRES métodos de mapeo
+     de columna dorsal (B3 solo tenía uno), la rejilla de ocho hilos de 76 µm separados
+     1 mm con la línea media entre los dos máximos, el uso avanzado de la colisión de onda D
+     para separar fibras sanas/desincronizadas/bloqueadas, y la advertencia de que una
+     respuesta muscular al estimular la médula expuesta **también se obtiene estimulando
+     columna dorsal** — no prueba que se esté tocando el CST.
+
+   **PUNTO EXACTO DONDE SE QUEDÓ: falta que Pani elija dirección.** El repaso se bifurca en
+   dos trabajos distintos y no está decidido cuál va primero:
+
+   | Enriquecer temas existentes (★) | Territorio con fuente y sin tema (✦) |
+   |---|---|
+   | cap.29 §29.1 vascularización e isquemia medular → `B1`, `B3`, `B4` | **cap.33 descompresión microvascular** — espasmo hemifacial y neuralgia del trigémino |
+   | cap.43 §43.5 "how accurate are my SEPs and MEPs?" y §43.7 glosario → `C5` | **cap.41 Safety** completo (§41.2 eléctrica, §41.3 por procedimiento, §41.4 infección, §41.5 rendimiento) |
+   | cap.8 excitabilidad subumbral → `A6` | cap.30 y 31 — nervio periférico y cirugía de cadera |
+   | cap.44 §44.5 evitación de error médico → `C6` | cap.34-38 — trastornos del movimiento, DBS, dolor, espasticidad |
+   | cap.42 costes y beneficios → `B1`, `B2` | **Markand cap.5** — PPEE no tiene ningún tema de PEM |
+   | cap.1, 14, 18, 20, 24, 39 → `A2`, `A9`, `B4`, `B7`, `C1` | |
+
+   Los dos ✦ con más peso son **cap.33** (contexto quirúrgico entero del que `A4`, `A7` y
+   `A9` ya citan fenómenos sueltos sin tener dónde estudiarlos juntos) y **cap.41**
+   (seguridad, hoy explotado solo en las pp.590-591 de la mordedura).
 
 Áreas futuras (EMG, EEG, EEG infantil, EEG UCI): sin fuentes aún en `fuentes/`; no
 empezar hasta que Pani las aporte.

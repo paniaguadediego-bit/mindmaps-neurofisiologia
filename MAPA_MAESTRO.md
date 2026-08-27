@@ -4,7 +4,7 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-27T18:55:27.057Z
+Generado: 2026-08-27T19:44:04.625Z
 
 Progreso global: 45 completos · 0 en progreso · 0 esqueletos · 45 temas en 2 área(s).
 

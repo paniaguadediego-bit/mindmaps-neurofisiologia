@@ -17,6 +17,11 @@ Previstas: EMG, EEG, EEG infantil y EEG UCI.
 Estado: **45 temas, todos con contenido escrito y citado**. El recuento al día está en
 [`MAPA_MAESTRO.md`](MAPA_MAESTRO.md), que se genera solo.
 
+El trabajo en curso es el **repaso de contenido**: releer las fuentes buscando lo que aún
+no está recogido en los temas. La tabla final de
+[`fuentes/INDICE_FUENTES.md`](fuentes/INDICE_FUENTES.md) lleva la cuenta de qué capítulos
+siguen sin explotar y a qué tema alimentaría cada uno.
+
 **Visor en vivo:** [paniaguadediego-bit.github.io/mindmaps-neurofisiologia](https://paniaguadediego-bit.github.io/mindmaps-neurofisiologia/)
 — accesible desde el navegador del PC o instalable como app desde Chrome en Android
 ("Añadir a pantalla de inicio").
