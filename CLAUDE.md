@@ -48,7 +48,7 @@ visor. `index.html` es el portal que las lista; cada área se descubre sola en c
 
 | Área | Bloques | Estado | Página |
 |---|---|---|---|
-| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 23 temas, todos completos y retrofitados | `ionm.html` |
+| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 25 temas, todos completos | `ionm.html` |
 | `PPEE` | A bases fisiológicas/anatómicas · B bases técnicas · C PEV en quirófano · V visuales | 22 temas, todos con contenido | `ppee.html` |
 | EMG, EEG, EEG infantil, EEG UCI | — | previstas, aún no creadas | — |
 
@@ -221,18 +221,39 @@ página dibujada a mano con ese código escrito.
    territorio ✦ — capítulos con fuente y sin tema donde estudiarlos, que exigen CREAR temas
    nuevos, no enriquecer:
 
-   | ✦ Territorio con fuente y sin tema |
+   - **Primer ✦ resuelto: `B9` Descompresión microvascular de pares craneales**, tema NUEVO
+     desde el cap.33 íntegro. Es el primer tema del proyecto en el que la MIO tiene **dos
+     objetivos separados**: demostrar el ÉXITO quirúrgico en tiempo real (AMR / lateral
+     spread) y evitar complicaciones (PEATC). Incluye las cuatro patologías con su
+     epidemiología y diagnóstico diferencial, las dos hipótesis fisiopatológicas y las dos
+     pruebas neurofisiológicas que apoyan la nuclear, montaje y parámetros del AMR con sus
+     latencias discriminantes (2-4 ms la directa, >8 ms el AMR), la regla de reestablecer el
+     basal de PEATC **en la apertura dural**, las tres firmas de cambio del PEATC, y la
+     secuencia práctica completa de pre a postoperatorio.
+     - **Partido en dos por decisión de Pani**, con el mismo criterio contexto-frente-a-técnica
+       que se acordó para el nudo `B5`/`B6`/`B8`, porque en un solo archivo salían 618 líneas
+       y no cabían en una página de libreta.
+       - `B9` = **contexto quirúrgico** (559 líneas): patologías, fisiopatología, radiología,
+         fases, vasos ofensores, riesgo, posicionamiento, PEATC completo, AN-CAP, EMG libre y
+         estimulado, jerarquía, protocolo de reacción y la secuencia práctica completa. Lleva
+         el AMR en versión OPERATIVA —montaje, parámetros, latencias discriminantes, lectura
+         intraoperatoria y rendimiento— para sostenerse solo.
+       - `A10` = **técnica del AMR / lateral spread** (259 líneas), tema nuevo de bloque A: es
+         la única modalidad del proyecto cuyo objetivo no es evitar una lesión sino DEMOSTRAR
+         el éxito terapéutico. Lleva la discrepancia de polaridad, la facilitación tetánica y
+         por qué sus proponentes la abandonaron, las tres respuestas alternativas (blink R1,
+         onda F y respuesta Z-L) y las series de AMR residual y de toxina botulínica.
+
+   | ✦ Territorio con fuente y sin tema, pendiente |
    |---|
-   | **cap.33 descompresión microvascular** — espasmo hemifacial y neuralgia del trigémino |
    | **cap.41 Safety** completo (§41.2 eléctrica, §41.3 por procedimiento, §41.4 infección, §41.5 rendimiento) |
    | cap.30 y 31 — nervio periférico y cirugía de cadera (el §18.6.2 del cap.18 también apunta aquí y quedó sin usar) |
    | cap.34-38 — trastornos del movimiento, DBS, dolor, espasticidad |
    | **Markand cap.5** — PPEE no tiene ningún tema de PEM |
    | **cap.24 cirugía de la cara**, material sobrante — mapeo transcutáneo preoperatorio, escleroterapia y anatomía de las malformaciones vasculares faciales no caben en `A4` ni en `A6` |
 
-   Los dos ✦ con más peso siguen siendo **cap.33** (contexto quirúrgico entero del que `A4`,
-   `A7` y `A9` ya citan fenómenos sueltos sin tener dónde estudiarlos juntos) y **cap.41**
-   (seguridad, hoy explotado solo en las pp.590-591 de la mordedura).
+   El ✦ con más peso que queda es **cap.41** (seguridad, hoy explotado solo en las
+   pp.590-591 de la mordedura). El cap.33 ya está resuelto en `B9`.
 
 Áreas futuras (EMG, EEG, EEG infantil, EEG UCI): sin fuentes aún en `fuentes/`; no
 empezar hasta que Pani las aporte.

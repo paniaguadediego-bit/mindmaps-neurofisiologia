@@ -4,13 +4,13 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-30T15:01:24.108Z
+Generado: 2026-08-30T15:17:06.739Z
 
-Progreso global: 45 completos · 0 en progreso · 0 esqueletos · 45 temas en 2 área(s).
+Progreso global: 47 completos · 0 en progreso · 0 esqueletos · 47 temas en 2 área(s).
 
 # Área IONM
 
-Visor: `ionm.html` · 23 completos · 0 en progreso · 0 esqueletos · 23 temas.
+Visor: `ionm.html` · 25 completos · 0 en progreso · 0 esqueletos · 25 temas.
 
 ## Bloque A — Modalidades de señal
 
@@ -25,6 +25,7 @@ Visor: `ionm.html` · 23 completos · 0 en progreso · 0 esqueletos · 23 temas.
 | A7 | PEATC / BAEP | A | Completo | `mindmaps/A7-peatc-baep.md` |
 | A8 | EEG intraoperatorio | A | Completo | `mindmaps/A8-eeg-intraoperatorio.md` |
 | A9 | Reflejos en IONM | A | Completo | `mindmaps/A9-reflejos-ionm.md` |
+| A10 | Respuesta muscular anormal (AMR / lateral spread) | A | Completo | `mindmaps/A10-respuesta-muscular-anormal-amr-lateral-spread.md` |
 
 ## Bloque B — Contextos quirúrgicos
 
@@ -38,6 +39,7 @@ Visor: `ionm.html` · 23 completos · 0 en progreso · 0 esqueletos · 23 temas.
 | B6 | Tumores de cuarto ventrículo | B | Completo | `mindmaps/B6-tumores-cuarto-ventriculo.md` |
 | B7 | Craneotomía despierta / mapeo cortical-subcortical | B | Completo | `mindmaps/B7-craneotomia-despierta-mapeo-cortical-subcortical.md` |
 | B8 | Mapeo del suelo del IV ventrículo y reflejos de tronco: técnica | A | Completo | `mindmaps/B8-mapeo-suelo-iv-ventriculo-y-reflejos-de-tronco.md` |
+| B9 | Descompresión microvascular de pares craneales | B | Completo | `mindmaps/B9-descompresion-microvascular-de-pares-craneales.md` |
 
 ## Bloque C — Transversales
 
@@ -54,7 +56,7 @@ Visor: `ionm.html` · 23 completos · 0 en progreso · 0 esqueletos · 23 temas.
 
 C1 → C2 → A1 → A2 → A3 → C5 → A4 → A5 → C3 → C4 → C6 → B2 → B1 → B3 → B4 → A6 → A9 → A7 → B5 → B6 → B7 → A8
 
-Temas aún sin ubicar en el orden: B8
+Temas aún sin ubicar en el orden: A10, B8, B9
 
 # Área PPEE
 

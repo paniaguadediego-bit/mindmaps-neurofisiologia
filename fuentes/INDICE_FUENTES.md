@@ -41,7 +41,7 @@ sin tema propio.
 | 29 | Neurophysiological monitoring during endovascular procedures on the spine and the spinal cord (Sala/Niimi), p.395 — §29.1 **vascularización e isquemia medular** | ✔ HECHO — §29.1 y §29.2 volcados en B1, B3 y B4. ★★ B1, B3, B4 — el mecanismo isquémico que esos temas citan sin fuente propia |
 | 30 | Intraoperative neurophysiology of the peripheral nervous system (Happel/Kline), p.413 | ✦ sin tema propio |
 | 31 | ION method for testing functional integrity of the lower extremity peripheral nerves during hip surgery (Climent et al.), p.431 | ✦ sin tema propio |
-| 33 | ION during microvascular decompression of cranial nerves (Ferreira/Thirumala/Crammond/Sekula/Balzer), p.457 | ✦✦ **espasmo hemifacial y neuralgia del trigémino: contexto quirúrgico entero sin tema**, aunque A4, A7 y A9 ya citan fenómenos de MVD |
+| 33 | ION during microvascular decompression of cranial nerves (Ferreira/Thirumala/Crammond/Sekula/Balzer), p.457 | ✔ HECHO — capítulo íntegro en DOS temas nuevos: B9 (contexto quirúrgico) y A10 (técnica del AMR / lateral spread). ✦✦ **espasmo hemifacial y neuralgia del trigémino: contexto quirúrgico entero sin tema**, aunque A4, A7 y A9 ya citan fenómenos de MVD |
 | 34 | Neurophysiological monitoring during neurosurgery for movement disorders | ✦ sin tema propio |
 | 35 | Neurosurgical lesioning-procedures for spasticity and focal dystonia (Sindou et al.), p.499 | ✦ sin tema propio |
 | 36 | Deep brain stimulation in vegetative state and minimally conscious state, p.515 | ✦ sin tema propio |
