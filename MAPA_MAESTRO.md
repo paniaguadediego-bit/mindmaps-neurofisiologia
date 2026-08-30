@@ -4,7 +4,7 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-30T15:27:58.647Z
+Generado: 2026-08-30T15:33:14.071Z
 
 Progreso global: 49 completos · 0 en progreso · 0 esqueletos · 49 temas en 2 área(s).
 
@@ -56,9 +56,7 @@ Visor: `ionm.html` · 27 completos · 0 en progreso · 0 esqueletos · 27 temas.
 
 ### Orden de trabajo sugerido
 
-C1 → C2 → A1 → A2 → A3 → C5 → A4 → A5 → C3 → C4 → C6 → B2 → B1 → B3 → B4 → A6 → A9 → A7 → B5 → B6 → B7 → A8
-
-Temas aún sin ubicar en el orden: A10, B8, B9, C7, C8
+C1 → C2 → A1 → A2 → A3 → C5 → A4 → A5 → C3 → C4 → C6 → C7 → B2 → B1 → B3 → B4 → A6 → A9 → A10 → A7 → B8 → B5 → B6 → B7 → B9 → A8 → C8
 
 # Área PPEE
 

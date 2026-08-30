@@ -26,8 +26,8 @@ const AREA_DEFAULT = 'IONM';
 // aparezcan aquí se listan aparte, sin romper nada.
 const ORDEN_TRABAJO = {
   IONM: [
-    'C1', 'C2', 'A1', 'A2', 'A3', 'C5', 'A4', 'A5', 'C3', 'C4', 'C6', 'B2', 'B1', 'B3',
-    'B4', 'A6', 'A9', 'A7', 'B5', 'B6', 'B7', 'A8',
+    'C1', 'C2', 'A1', 'A2', 'A3', 'C5', 'A4', 'A5', 'C3', 'C4', 'C6', 'C7', 'B2', 'B1',
+    'B3', 'B4', 'A6', 'A9', 'A10', 'A7', 'B8', 'B5', 'B6', 'B7', 'B9', 'A8', 'C8',
   ],
 };
 

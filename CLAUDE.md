@@ -272,11 +272,19 @@ página dibujada a mano con ese código escrito.
    Los dos ✦ de más peso (cap.33 y cap.41) ya están resueltos, en `B9`/`A10` y `C7`/`C8`
    respectivamente. Lo que queda es de menor calado.
 
-   **Pendiente menor que conviene no olvidar:** el `ORDEN_TRABAJO` de `build.js` es un orden
-   de estudio sugerido y NO incluye los temas nuevos, así que `MAPA_MAESTRO.md` los lista
-   aparte como "temas aún sin ubicar en el orden" (hoy `A10`, `B8`, `B9`, `C7`, `C8`). No
-   rompe nada —está diseñado para degradar limpiamente—, pero decidir dónde encaja cada uno
-   en la secuencia de estudio es una decisión de Pani, no técnica.
+   **Orden de estudio actualizado.** El `ORDEN_TRABAJO` de `build.js` ya incluye los cinco
+   temas que estaban sin ubicar (`A10`, `B8`, `B9`, `C7`, `C8`); `MAPA_MAESTRO.md` ya no
+   lista ninguno aparte. Criterio de las inserciones, por si hay que revisarlo:
+   - `C7` tras `C6`, cerrando el bloque de transversales del equipo y del quirófano
+     (anestesia → relajantes → troubleshooting → seguridad eléctrica), y ya después de `A2`
+     y `A5`, de modo que la curva intensidad-duración cae sobre terreno preparado.
+   - `A10` tras `A9`, con el que comparte el blink R1, y justo después de `A6`, del que
+     hereda el problema de la activación periférica del facial.
+   - `B8` antes de `B5` y `B6`: es la técnica que esos dos contextos aplican.
+   - `B9` tras `B7`, cerrando los contextos craneales, y ya después de `A10` (su técnica) y
+     de `A7` (el PEATC, que es la otra mitad del tema).
+   - `C8` al final del todo: recorre la seguridad técnica por técnica, así que solo rinde
+     cuando ya se conocen todas.
 
 Áreas futuras (EMG, EEG, EEG infantil, EEG UCI): sin fuentes aún en `fuentes/`; no
 empezar hasta que Pani las aporte.
