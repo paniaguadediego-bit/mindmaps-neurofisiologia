@@ -9,18 +9,21 @@ Está organizado en **áreas**, cada una con su propia página en el visor:
 
 | Área | Temas | Contenido |
 |---|---|---|
-| **IONM** | 23 | Monitorización neurofisiológica intraoperatoria |
-| **PPEE** | 22 | Potenciales evocados: bases generales, visuales y en quirófano |
+| **IONM** | 27 | Monitorización neurofisiológica intraoperatoria |
+| **PPEE** | 26 | Potenciales evocados: bases generales, visuales, motores y en quirófano |
 
 Previstas: EMG, EEG, EEG infantil y EEG UCI.
 
-Estado: **45 temas, todos con contenido escrito y citado**. El recuento al día está en
-[`MAPA_MAESTRO.md`](MAPA_MAESTRO.md), que se genera solo.
+Estado: **53 temas, todos con contenido escrito y citado**, y ambas áreas con orden de
+estudio sugerido. El recuento al día está en [`MAPA_MAESTRO.md`](MAPA_MAESTRO.md), que se
+genera solo.
 
-El trabajo en curso es el **repaso de contenido**: releer las fuentes buscando lo que aún
-no está recogido en los temas. La tabla final de
-[`fuentes/INDICE_FUENTES.md`](fuentes/INDICE_FUENTES.md) lleva la cuenta de qué capítulos
-siguen sin explotar y a qué tema alimentaría cada uno.
+El **repaso de contenido** —releer las fuentes buscando lo que aún no estaba recogido— ya
+está cerrado: salió de descubrir que el índice de fuentes catalogaba solo la mitad del
+libro de referencia, y terminó con 11 capítulos volcados en temas existentes y otros 5
+convirtiéndose en temas nuevos. Lo que queda pendiente es territorio menor, anotado en la
+tabla final de [`fuentes/INDICE_FUENTES.md`](fuentes/INDICE_FUENTES.md), que lleva la
+cuenta de qué capítulos siguen sin explotar y a qué tema alimentaría cada uno.
 
 **Visor en vivo:** [paniaguadediego-bit.github.io/mindmaps-neurofisiologia](https://paniaguadediego-bit.github.io/mindmaps-neurofisiologia/)
 — accesible desde el navegador del PC o instalable como app desde Chrome en Android
@@ -32,12 +35,13 @@ Cada mindmap es UN tema = UN archivo `.md` en [`mindmaps/`](mindmaps/) = UNA pá
 libreta. Dentro de cada área los temas se agrupan en bloques:
 
 - **IONM** — *A* Modalidades de señal (PESS, MEP, onda D, EMG libre y estimulado, CoMEPs,
-  PEATC, EEG, reflejos) · *B* Contextos quirúrgicos (columna, tumores medulares, tronco
-  encefálico, IV ventrículo, mapeo del suelo del IV ventrículo, craneotomía despierta) ·
-  *C* Transversales (anatomía de vías largas, electrodos, TIVA, relajantes, criterios de
-  alarma, troubleshooting).
+  PEATC, EEG, reflejos, respuesta muscular anormal) · *B* Contextos quirúrgicos (columna,
+  tumores medulares, tronco encefálico, IV ventrículo, mapeo del suelo del IV ventrículo,
+  craneotomía despierta, descompresión microvascular) · *C* Transversales (anatomía de
+  vías largas, electrodos, TIVA, relajantes, criterios de alarma, troubleshooting,
+  seguridad eléctrica y por procedimiento).
 - **PPEE** — *A* Bases fisiológicas y anatómicas · *B* Bases técnicas de registro · *C*
-  PEV en quirófano · *V* Potenciales evocados visuales.
+  PEV en quirófano · *M* Potenciales evocados motores · *V* Potenciales evocados visuales.
 
 Cada tema se escribe **autocontenido**: no remite a otro para completar un dato, porque
 no se estudian en orden. Si un dato hace falta en dos temas, se repite en ambos con su

@@ -19,15 +19,21 @@ de cada mindmap.
 
 ---
 
-## Capítulos de `Deletis` NO explotados todavía
+## Capítulos de `Deletis` que faltaban en el catálogo
+
+**Empieza por aquí cualquier tanda de trabajo sobre fuentes.**
 
 Descubierto en el repaso de contenido: la tabla de arriba cataloga unos 24 de los 44
-capítulos del libro. Los otros 20 nunca se han consultado, y varios son **fuente primaria
-de contenido que se escribió desde capítulos secundarios**. Esta lista existe para que el
-repaso no vuelva a partir de un catálogo incompleto.
+capítulos del libro. Los otros 20 nunca se habían consultado, y varios eran **fuente
+primaria de contenido que se había escrito desde capítulos secundarios**. Esta lista existe
+para que el trabajo no vuelva a partir de un catálogo incompleto.
 
-Marcados con ★ los que enriquecen un tema que YA existe; con ✦ los que cubren territorio
-sin tema propio.
+Marcas: **★** enriquece un tema que YA existe · **✦** cubre territorio sin tema propio ·
+**✔ HECHO** ya explotado, con el destino anotado en la propia fila.
+
+Estado: **la columna ★ está vacía** (los 11 capítulos ya están volcados). De la ✦ se han
+resuelto los tres de más peso —cap.33, cap.41 y Markand cap.5, ver notas al final— y quedan
+las siete filas sin marca ✔.
 
 | Cap. | Título | Relevancia |
 |---|---|---|

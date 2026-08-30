@@ -64,263 +64,62 @@ pasa con `--prefijo "XX-"`.
 **Nunca recodificar un tema ya publicado** sin motivo de peso: Pani puede tener ya esa
 página dibujada a mano con ese código escrito.
 
-## Trabajo pendiente (orden acordado)
+## Estado y trabajo pendiente
 
-1. ~~**Retrofit de IONM**~~ **TERMINADO.** Los 23 temas se escribieron antes de la regla 5
-   y arrastraban **dos** deudas: referencias cruzadas que SUSTITUÍAN información
-   (~25, las peores en `B5`, `B6`, `C6` y `C3`) y densidad muy por debajo del estándar
-   (49-127 líneas frente a las 150-350 de PPEE).
+**Dónde está el proyecto.** Las dos áreas activas están completas y con orden de estudio:
+IONM 27 temas, PPEE 26. El recuento exacto vive en `MAPA_MAESTRO.md` (generado).
 
-   **Resultado: de 1885 a 5336 líneas, y CERO referencias cruzadas que sustituyan
-   información** en toda el área. Los 45 temas del proyecto están en estado `completo`.
+Las dos grandes fases ya cerradas, por si aparece una referencia a ellas:
 
-   Tandas ejecutadas: bloque `C` (C1-C6) → nudo `B5`/`B6`/`B8` → bloque `A` (A1-A9) →
-   resto del bloque `B` (B1-B4, B7).
+1. ~~**Retrofit de IONM**~~ **TERMINADO.** Los 23 temas originales se escribieron antes de la
+   regla 5 y arrastraban referencias cruzadas que SUSTITUÍAN información, más una densidad muy
+   por debajo del estándar. De 1.885 a 5.336 líneas y cero referencias sustitutivas.
+2. ~~**Repaso de contenido**~~ **TERMINADO.** Salió de descubrir que `INDICE_FUENTES.md`
+   catalogaba solo unos 24 de los 44 capítulos del Deletis: los otros 20 nunca se habían
+   consultado y varios eran fuente PRIMARIA de contenido escrito desde capítulos secundarios.
+   Se marcaron ★ (enriquecen un tema existente) y ✦ (territorio sin tema propio).
+   - La columna ★ está **vacía**: los 11 capítulos se volcaron en 13 temas existentes.
+   - De la columna ✦ se han resuelto los tres de más peso, creando temas nuevos: cap.33 →
+     `B9` + `A10`, cap.41 → `C7` + `C8`, y Markand cap.5 → el bloque `M` de PPEE completo
+     (`PE-M1` a `PE-M4`), que fue el primer bloque nuevo de esa área desde el inicio.
 
-   **Cómo mantenerlo.** Los enlaces del tipo "esto se amplía en X" siguen valiendo como
-   añadido, pero ninguna rama puede resolverse con "ver X". Si un dato hace falta en dos
-   temas, se repite en ambos con su cita. La plantilla C ya no trae la rama "Conexión con
-   otros nodos", que era la que fabricaba el anti-patrón (ver `PLANTILLAS.md`).
+**Lo siguiente: el resto de la columna ✦.** Son capítulos con fuente y sin tema donde
+estudiarlos, así que exigen CREAR temas nuevos, no enriquecer. Todos de menor calado que los
+ya resueltos:
 
-   **Deuda de citas descubierta en el bloque `A`, ya saldada.** De las 13 claves de cita
-   que usaban esos temas, **solo una correspondía a una fuente real** de `fuentes/` — y
-   estaba mal escrita (`Romstöck2000` por `Romstock2000`). Las otras doce (`Nuwer2012`,
-   `MacDonald2019`, `MacDonald2013`, `Toleikis2024`, `Legatt2016`, `Sloan2012`,
-   `Costa2015`, `Leppänen2005/2006`, `Prell2007`, `Téllez2016`, `Ulkatan2017`) apuntaban a
-   guías que el proyecto NO tiene, presentando contenido como si viniera de ellas — justo
-   lo que prohíbe la regla 4. Todo el bloque `A` se ha reverificado contra las fuentes que
-   sí existen y ninguna clave fantasma queda en el área. **Regla permanente que sale de
-   aquí: antes de dar por bueno cualquier dato, comprobar que su clave de cita está en
-   `INDICE_FUENTES.md`.** Vale también para las áreas futuras.
+| ✦ Territorio con fuente y sin tema |
+|---|
+| cap.30 y 31 — nervio periférico y cirugía de cadera (el §18.6.2 del cap.18 también apunta aquí y quedó sin usar) |
+| cap.34-38 — trastornos del movimiento, DBS, dolor, espasticidad |
+| **cap.24 cirugía de la cara**, material sobrante — mapeo transcutáneo preoperatorio, escleroterapia y anatomía de las malformaciones vasculares faciales no caben en `A4` ni en `A6` |
 
-   Bloque `A` terminado: de 739 a 2080 líneas. Fuentes que estaban sin explotar y ahora sí
-   lo están: Deletis cap.2 íntegro (los tres puntos de despolarización del CST, el ISI de
-   4 ms, Tabla 2.1, paraplejia transitoria), cap.5 íntegro (PEATC — las cuatro palancas
-   para acortar el tiempo, filtrado digital de fase cero, CAP del VIII y potencial de
-   extremo cortado, registro del núcleo coclear, y la comparación entre los dos cirujanos
-   que sostiene la hipótesis de que no hay umbral seguro de cambio de latencia), cap.10
-   íntegro (CoMEP — doble estimulación a 90 ms, Tabla 10.2 de 100 cirugías), cap.13 íntegro
-   (tornillo pedicular — la anchura de pulso duplica la densidad de corriente, y el 10 mA
-   solo indica brecha, no lesión), cap.25 (Tabla 25.1 con los seis criterios de isquemia) y
-   cap.32 (ECoG).
+**Antes de empezar cualquier tanda, lee la tabla de capítulos del final de
+`INDICE_FUENTES.md`.** Está marcada con ★, ✦ y ✔ HECHO, y es la que evita volver a partir de
+un catálogo incompleto.
 
-   Bloque `C` terminado: de 354 a 1350 líneas en total, cero referencias cruzadas que
-   sustituyan información. Fuentes que estaban sin explotar y ahora sí lo están: Moller
-   cap.5 y cap.9 (anatomía sensitiva y motora — resolvió que `C1` no tuviera ninguna
-   cita), cap.4 (colocación de electrodos y campo lejano), cap.17 completo
-   (troubleshooting e interferencia), Deletis cap.40 íntegro (farmacología).
+Áreas futuras (EMG, EEG, EEG infantil, EEG UCI): sin fuentes aún en `fuentes/`; no empezar
+hasta que Pani las aporte.
 
-   **Decisión acordada sobre el nudo `B5`/`B6`/`B8`** (los tres beben de Deletis cap.22 y
-   hoy se solapan): se **re-reparten por TIPO de tema**, conservando los tres códigos
-   para no dejar huérfana ninguna página ya dibujada a mano.
-   - `B5` = tumores intrínsecos del **tronco encefálico** — contexto quirúrgico completo.
-   - `B6` = tumores del **IV ventrículo** — contexto quirúrgico completo.
-   - `B8` = **técnica** de mapeo del suelo del IV ventrículo y reflejos de tronco.
+### Orden de estudio
 
-   Nudo terminado: de 243 a 826 líneas. `B8` cambió de título y de nombre de archivo (era
-   "Fosa posterior avanzado con criterios de troncoencefálico") y de plantilla B a A,
-   porque ha pasado de ser un contexto quirúrgico a ser una técnica; **el código B8 se
-   conserva**. `B5` también cambió de nombre de archivo para que el slug coincida con el
-   título nuevo. Fuente que estaba sin explotar y ahora sí lo está: Deletis cap.11
-   (Morota/Deletis/Epstein) íntegro — parámetros de la Tabla 11.1, zonas de entrada segura
-   con las medidas de Strauss y Bogucki, las siete ramas del corticobulbar de Krieg, los
-   patrones de desplazamiento de núcleos por localización del tumor, y las cinco
-   limitaciones clínicas del mapeo.
+Lo genera `MAPA_MAESTRO.md` a partir de `ORDEN_TRABAJO` en `build.js`, que es una lista de
+códigos por área. Un tema que no aparezca en ella se lista aparte como "sin ubicar" — no rompe
+nada, pero conviene colocarlo. Hoy ambas áreas están completas.
 
-   Razón: un reparto "básico / avanzado" del mismo contexto es incompatible con la regla
-   5 — si el básico tiene que sostenerse solo acaba conteniendo al avanzado, y entonces
-   es el avanzado. Separar por contexto-vs-técnica sí produce temas que se sostienen
-   solos sin ser el mismo tema dos veces.
-2. **Repaso de contenido** (EN CURSO). Revisar por tandas lo ya escrito buscando lo que las
-   fuentes den de sí y aún no esté recogido.
+- **IONM** mezcla los bloques a propósito: transversales de base → modalidades medulares →
+  transversales de equipo y quirófano → contextos de columna → modalidades craneales →
+  contextos craneales → cierre.
+- **PPEE** va de lo conceptual a lo técnico, después la modalidad desarrollada por completo con
+  su aplicación en quirófano, y cierra con los motores: bloque `A` entero → bloque `B` entero →
+  `V1`-`V9` (el PEV completo, modalidad de referencia del área) → `C1`-`C3` (PEV en quirófano,
+  que depende del bloque `V`) → `M1`-`M4`.
 
-   **Hallazgo que reordenó el repaso: `INDICE_FUENTES.md` catalogaba media biblioteca.**
-   Listaba unos 24 de los **44 capítulos** del Deletis. Los otros 20 nunca se habían
-   consultado, y varios eran **fuente primaria de contenido escrito desde capítulos
-   secundarios**. Ya están todos añadidos al índice, en una tabla al final marcada con ★
-   (enriquecen un tema existente) y ✦ (territorio sin tema propio). **Empezar cualquier
-   tanda leyendo esa tabla.**
-
-   **Hecho hasta ahora**
-   - Índice de fuentes completado con los 20 capítulos que faltaban.
-   - `B3` reescrito desde **Deletis cap.12** (Deletis/Seidel), que es la fuente PRIMARIA del
-     mapeo medular y estaba sin usar: de 150 a 256 líneas. Aporta los TRES métodos de mapeo
-     de columna dorsal (B3 solo tenía uno), la rejilla de ocho hilos de 76 µm separados
-     1 mm con la línea media entre los dos máximos, el uso avanzado de la colisión de onda D
-     para separar fibras sanas/desincronizadas/bloqueadas, y la advertencia de que una
-     respuesta muscular al estimular la médula expuesta **también se obtiene estimulando
-     columna dorsal** — no prueba que se esté tocando el CST.
-
-   - **Primera tanda de enriquecimiento (★) terminada:** los cuatro capítulos de más peso
-     de la columna ★, volcados en seis temas. De 1.244 a 2.107 líneas entre los seis.
-     - **cap.29 §29.1 y §29.2** (Sala/Niimi) → `B1`, `B3`, `B4`. Es la anatomía vascular
-       medular que los tres citaban sin fuente propia: ejes ASA/PSA, Adamkiewicz y la cesta
-       anastomótica del cono, 4-8 radiculares anteriores frente a 10-20 posteriores,
-       vascularización segmentaria y punto frágil torácico medio, correspondencia
-       territorio-modalidad (ASA→MEP, PSA→SEP), vasa corona y watershed axial, drenaje
-       venoso, y sobre todo el **gradiente de vulnerabilidad gris/blanca** que explica por
-       qué el MEP muscular detecta la isquemia antes que la onda D. `B4` se lleva además el
-       **protocolo completo del reflejo bulbocavernoso con parámetros** (cátodo proximal,
-       tren de cinco de 0,2-0,5 ms con ISI 4 ms a 2,3 Hz, ≤40 mA, registro por
-       hemiesfínteres), que era un hueco real de ese tema.
-     - **cap.42 completo** (Ney/van der Goes) → `B2` en versión larga y `B1` en versión
-       corta: los cuatro tipos de análisis económico, la ecuación
-       P(evento) = BSR × sensibilidad × EoA con sus cuatro debilidades, las cifras de CCA
-       (63.387 USD por déficit evitado), CBA (ahorro de 23.189 USD y sus tres puntos de
-       paridad) y CUA cervical, los estudios de datos administrativos a favor y en contra,
-       y el argumento de equipoise (uso real por debajo del 30%).
-     - **cap.43 §43.5 y §43.7** (Holdefer/Skinner) → `C5`: el marco formal de exactitud
-       diagnóstica que le faltaba — test índice y patrón de referencia, las cuatro celdas
-       definidas en clave intraoperatoria, fórmulas de sensibilidad/especificidad/VPP/
-       cociente de verosimilitud, curva ROC y criterio deslizante, el **cambio de señal
-       reversible** con la tasa de cambio >5-10 de Glasziou, la serie de Langeloo y Journée
-       2003, QUADAS-2/GRADE, y el aviso de que exactitud no es eficacia.
-     - **cap.44 §44.1 y §44.5** (Skinner/Holdefer) → `C6`: el error humano como modo de
-       fallo del sistema — diseño indulgente y redundancia, los cinco sesgos cognitivos que
-       arruinan una alarma correcta, checklists y comunicación de riesgo, y la cascada
-       test → interpretación → comunicación → intervención → resultado con sus
-       deceleradores y aceleradores.
-
-   - **Segunda tanda de enriquecimiento (★) terminada: la columna ★ está VACÍA.** Los siete
-     capítulos restantes, volcados en siete temas (`A2`, `A4`, `A6`, `A9`, `B4`, `B7`, `C1`).
-     - **cap.1 (Amassian)** → `A2` y `C1`. La fisiología que había debajo de reglas que se
-       aplicaban de memoria: por qué la onda D es trifásica (teoría del conductor de
-       volumen), los tres factores de su amplitud, el bloqueo del impulso (×5 en la D, ×15,5
-       en la I, cociente I/D triplicado) y por qué eso hace inservible el registro conducido
-       para comparar umbrales D/I, la conversión a monofásico como localizador del nivel
-       lesional, ánodo frente a cátodo y los codos de las fibras, el montaje de 2×2 cm con
-       referencia de 25 cm², **el problema de sumación C3/C4 con sus dos soluciones**, el
-       efecto anestésico con cifras (46% con TES frente a 80% con corteza expuesta), y toda
-       la fisiología de la facilitación temporal que justifica el tren.
-     - **cap.8 (Urriza)** → `A6`. La superexcitabilidad subumbral: cifras de Bostock
-       (28% / 4-9%), metodología completa en mediano y facial, y **por qué el control de la
-       doble estimulación puede fallar** — un tren subumbral activa directamente el facial.
-     - **cap.14 (Arranz Arranz)** → `C1` y `A2`. El síndrome de déficit motor puro: los siete
-       puntos de lesión, la irrigación perforante separada de CST y vía lemniscal, los
-       marcadores neurofisiológicos, **las dos excepciones (síndrome del AMS y paraplejia
-       histérica)** y cuatro casos documentados por nivel.
-     - **cap.18 (Minassian/Hofstoetter)** → `A9`. El reflejo raíz posterior-músculo: latencias
-       y amplitudes con tablas, las tres propiedades compartidas con el reflejo H, la
-       aparición de respuestas ARM al estimular sobre la cauda equina, la dependencia de la
-       posición corporal con las cifras de LCR dorsomedial, y el protocolo de colocación del
-       electrodo epidural.
-     - **cap.20 (Giampiccolo/Sala)** → `B7`. La versión DORMIDA de la craneotomía: abordaje en
-       tres pasos, complementariedad mapeo/monitorización, Penfield frente a tren de cinco con
-       sus cifras (20% de crisis, 63% de falsos negativos), los cuatro escenarios de MEP, la
-       trampa del AMS, y umbrales subcorticales con el límite crítico de 3-5 mA.
-     - **cap.24 (Ulkatan)** → `A4` y `A6`. La evidencia contra el EMG libre en el facial
-       EXTRAcraneal (Meier con su 16%, Grosheva) con su razón anatómica, y el CMAP continuo
-       como competidor del CoMEP: regla de los ≥5 mA, criterios del 50% y del 70%, regla del
-       70% / ratio 1:3, y el falso CMAP del muñón distal por encima de 20 mA.
-     - **cap.39 (Haberl)** → `B4`. Rizotomía dorsal selectiva: t-EMG con tren a 50 Hz de 0,05
-       a 5,0 mA, escala de Phillips y Park de 0 a 4 con su decisión, criterio del 60-70% de
-       raicillas, y DRAP en S1-S3 con división de S2.
-
-   **PUNTO EXACTO DONDE SE QUEDÓ.** Pani eligió **enriquecer temas existentes (★) primero**,
-   y eso ya está terminado: **no queda ningún capítulo ★ pendiente**. Lo siguiente es el
-   territorio ✦ — capítulos con fuente y sin tema donde estudiarlos, que exigen CREAR temas
-   nuevos, no enriquecer:
-
-   - **Primer ✦ resuelto: `B9` Descompresión microvascular de pares craneales**, tema NUEVO
-     desde el cap.33 íntegro. Es el primer tema del proyecto en el que la MIO tiene **dos
-     objetivos separados**: demostrar el ÉXITO quirúrgico en tiempo real (AMR / lateral
-     spread) y evitar complicaciones (PEATC). Incluye las cuatro patologías con su
-     epidemiología y diagnóstico diferencial, las dos hipótesis fisiopatológicas y las dos
-     pruebas neurofisiológicas que apoyan la nuclear, montaje y parámetros del AMR con sus
-     latencias discriminantes (2-4 ms la directa, >8 ms el AMR), la regla de reestablecer el
-     basal de PEATC **en la apertura dural**, las tres firmas de cambio del PEATC, y la
-     secuencia práctica completa de pre a postoperatorio.
-     - **Partido en dos por decisión de Pani**, con el mismo criterio contexto-frente-a-técnica
-       que se acordó para el nudo `B5`/`B6`/`B8`, porque en un solo archivo salían 618 líneas
-       y no cabían en una página de libreta.
-       - `B9` = **contexto quirúrgico** (559 líneas): patologías, fisiopatología, radiología,
-         fases, vasos ofensores, riesgo, posicionamiento, PEATC completo, AN-CAP, EMG libre y
-         estimulado, jerarquía, protocolo de reacción y la secuencia práctica completa. Lleva
-         el AMR en versión OPERATIVA —montaje, parámetros, latencias discriminantes, lectura
-         intraoperatoria y rendimiento— para sostenerse solo.
-       - `A10` = **técnica del AMR / lateral spread** (259 líneas), tema nuevo de bloque A: es
-         la única modalidad del proyecto cuyo objetivo no es evitar una lesión sino DEMOSTRAR
-         el éxito terapéutico. Lleva la discrepancia de polaridad, la facilitación tetánica y
-         por qué sus proponentes la abandonaron, las tres respuestas alternativas (blink R1,
-         onda F y respuesta Z-L) y las series de AMR residual y de toxina botulínica.
-
-   - **Segundo ✦ resuelto: `C7` y `C8`, desde el cap.41 "Safety" íntegro.** Estaba en el
-     índice pero solo se habían usado las pp.590-591 de la mordedura. Partido en dos con el
-     mismo criterio, porque son dos materias distintas: la física del equipo frente a la
-     clínica de cada técnica.
-     - `C7` = **seguridad eléctrica, quemaduras, fuego e infección** (484 líneas): shock y
-       corrientes de fuga con sus cifras y límites normativos, y sobre todo **la curva
-       intensidad-duración como concepto unificador** — corriente, carga y energía son
-       medidas opuestas con tres mecanismos de lesión distintos (electroquímico,
-       excitotóxico y térmico), y la CRONAXIA es la duración de pulso más segura porque
-       minimiza energía con corriente y carga modestas. Más quemaduras por electrocirugía,
-       resonancia y corriente continua, fuego y control de infección.
-     - `C8` = **seguridad por procedimiento y rendimiento esencial** (336 líneas): técnicas
-       invasivas, crisis por estimulación cortical directa (5-20% con los 50-60 Hz frente a
-       menos del 5-6% con los MEP), por qué la subcortical sigue exigiendo 0,5 ms, los cinco
-       problemas de la TES —con el dato de que **todas** las mordeduras publicadas fueron con
-       C3/C4—, SEP, PEATC, PEV, EMG, y el rendimiento esencial de la práctica con sus dos
-       modos de fallo.
-
-   - **Tercer ✦ resuelto: bloque `M` de PPEE, desde Markand cap.5 íntegro.** PPEE no tenía
-     NINGÚN tema de potenciales evocados motores; ahora tiene cuatro, y el bloque `M` es el
-     primero que se crea en esa área desde el inicio del proyecto.
-     - `PE-M1` **Sistema motor central y ondas D e I** (245 líneas, plantilla D): la base que
-       explica todo lo demás — el experimento de Patton y Amassian de 1954, por qué la
-       estimulación cortical va bajo el ÁNODO y no bajo el cátodo, por qué la corriente radial
-       de la eléctrica da ondas D y la tangencial de la magnética da ondas I, y por qué eso
-       obliga a un TREN de pulsos en el paciente anestesiado.
-     - `PE-M2` **Estimulación eléctrica transcraneal** (355 líneas, plantilla E): la crítica
-       completa a la estimulación medular rostral y por qué se abandonó, parámetros con la
-       ecuación de energía y el hallazgo de que 0,2 ms es la duración óptima **que los
-       estimuladores actuales todavía no ofrecen**, las cuatro derivaciones, criterios de
-       alarma, las nueve diferencias entre onda D y PEM muscular, seguridad y comparación con
-       el SEP.
-     - `PE-M3` **Estimulación magnética transcraneal** (255 líneas, plantilla E): CMCT con sus
-       dos métodos de tiempo periférico y la sobreestimación foraminal cuantificada, ratio
-       PEM/M, técnica de triple estimulación, umbrales motores, periodo silente y paradigmas
-       de par de estímulos.
-     - `PE-M4` **Aplicaciones clínicas y terapéuticas** (273 líneas, plantilla F): esclerosis
-       múltiple, ELA con las cuatro series y el dato de que la TST es la medida más sensible,
-       mielopatía cervical con el 98%/98% de Lo 2006, ictus, epilepsia mioclónica juvenil, y
-       rTMS terapéutica.
-     - **Aviso de extracción registrado:** la Tabla 5.5 sale con las columnas descolocadas en
-       `pdftotext`; los hallazgos por patología de `PE-M4` se tomaron del CUERPO del capítulo.
-
-   | ✦ Territorio con fuente y sin tema, pendiente |
-   |---|
-   | cap.30 y 31 — nervio periférico y cirugía de cadera (el §18.6.2 del cap.18 también apunta aquí y quedó sin usar) |
-   | cap.34-38 — trastornos del movimiento, DBS, dolor, espasticidad |
-   | **cap.24 cirugía de la cara**, material sobrante — mapeo transcutáneo preoperatorio, escleroterapia y anatomía de las malformaciones vasculares faciales no caben en `A4` ni en `A6` |
-
-   Los tres ✦ de más peso (cap.33, cap.41 y Markand cap.5) ya están resueltos, en `B9`/`A10`,
-   `C7`/`C8` y el bloque `M` de PPEE respectivamente. Lo que queda es de menor calado.
-
-   **Orden de estudio: las DOS áreas lo tienen ya.** El `ORDEN_TRABAJO` de `build.js` cubría
-   solo IONM; ahora tiene también `PPEE`, y `MAPA_MAESTRO.md` no lista ningún tema aparte en
-   ninguna de las dos.
-
-   `PPEE` va de lo CONCEPTUAL a lo TÉCNICO, después la modalidad desarrollada por completo
-   con su aplicación en quirófano, y cierra con los motores: bloque `A` entero (qué es un
-   potencial evocado, campo cercano frente a lejano, generadores, las tres vías comparadas) →
-   bloque `B` entero (promediado, cadena de registro, parámetros, mediciones, criterios de
-   anormalidad, artefactos) → `V1`-`V9` (el PEV completo, que es la modalidad de referencia
-   del área) → `C1`-`C3` (PEV en quirófano, que depende del bloque `V`) → `M1`-`M4`.
-
-   Criterio de las inserciones que se hicieron en el orden de IONM, por si hay que revisarlo:
-   - `C7` tras `C6`, cerrando el bloque de transversales del equipo y del quirófano
-     (anestesia → relajantes → troubleshooting → seguridad eléctrica), y ya después de `A2`
-     y `A5`, de modo que la curva intensidad-duración cae sobre terreno preparado.
-   - `A10` tras `A9`, con el que comparte el blink R1, y justo después de `A6`, del que
-     hereda el problema de la activación periférica del facial.
-   - `B8` antes de `B5` y `B6`: es la técnica que esos dos contextos aplican.
-   - `B9` tras `B7`, cerrando los contextos craneales, y ya después de `A10` (su técnica) y
-     de `A7` (el PEATC, que es la otra mitad del tema).
-   - `C8` al final del todo: recorre la seguridad técnica por técnica, así que solo rinde
-     cuando ya se conocen todas.
-
-Áreas futuras (EMG, EEG, EEG infantil, EEG UCI): sin fuentes aún en `fuentes/`; no
-empezar hasta que Pani las aporte.
+Criterio de las inserciones que se hicieron en IONM, por si hay que revisarlo: `C7` tras `C6`
+(cierra los transversales de equipo, y cae después de `A2` y `A5` para que la curva
+intensidad-duración llegue sobre terreno preparado) · `A10` tras `A9`, con el que comparte el
+blink R1 · `B8` antes de `B5` y `B6`, porque es la técnica que esos contextos aplican · `B9`
+tras `B7`, cuando ya están vistos `A10` y `A7` · `C8` al final, porque recorre la seguridad
+técnica por técnica.
 
 ## Reglas fundamentales
 
@@ -338,6 +137,15 @@ empezar hasta que Pani las aporte.
    disponibles, escríbelo con `(verificar)` y dilo explícitamente. **Nunca inventes
    cifras, umbrales, latencias ni criterios de alarma**, ni los presentes como si
    vinieran de una guía. Prioriza ASNM/ACNS/ISION/IFCN sobre investigación primaria.
+   - **Antes de dar por bueno cualquier dato, comprueba que su clave de cita está en
+     `INDICE_FUENTES.md`.** Esta regla salió de un destrozo real: de las 13 claves que
+     usaba el bloque `A` de IONM, **solo una correspondía a una fuente que el proyecto
+     tuviera** — y estaba mal escrita. Las otras doce (`Nuwer2012`, `MacDonald2019`,
+     `Legatt2016`, `Sloan2012`, `Téllez2016`, `Ulkatan2017` y demás) apuntaban a guías
+     inexistentes en `fuentes/`, presentando contenido como si viniera de ellas. Ya está
+     saldado, pero el error es fácil de repetir.
+   - Si un dato hace falta en DOS temas, se repite en ambos **con su cita**, nunca se
+     resuelve con una referencia cruzada (ver regla 5).
 5. **Cada tema es AUTOCONTENIDO. No estudia en orden.** Está prohibido escribir un tema
    que remita a otro para un dato ("los parámetros completos están en A5", "ver B8"): si
    abre A7 sin haber leído A1, el tema tiene que sostenerse solo. Repite el dato con su
@@ -349,9 +157,22 @@ empezar hasta que Pani las aporte.
    - Tensión a vigilar: autocontenido + "una página de libreta" tiran en direcciones
      opuestas. Si un tema se hace inabarcable para una página, **se parte en dos temas**
      con códigos propios; no se resuelve recortando información ni volviendo a referenciar.
-   - Deuda conocida: los 23 temas de IONM se escribieron antes de esta regla y están
-     llenos de referencias cruzadas (B5 y B6 son casi solo "ver B8"; el bloque C entero es
-     referencial). Hay un retrofit pendiente, acordado para después de PPEE.
+   - **CÓMO PARTIR: por CONTEXTO frente a TÉCNICA, no por "básico / avanzado".** Un reparto
+     básico/avanzado del mismo asunto es incompatible con esta regla — si el básico tiene
+     que sostenerse solo, acaba conteniendo al avanzado, y entonces ES el avanzado. Separar
+     contexto de técnica sí produce dos temas que se sostienen solos sin ser el mismo tema
+     dos veces. Precedentes ya aplicados: `B5`/`B6` (contextos) frente a `B8` (técnica de
+     mapeo del suelo del IV ventrículo) · `B9` (contexto de la descompresión microvascular)
+     frente a `A10` (técnica del AMR) · `C7` (física del equipo) frente a `C8` (clínica
+     técnica por técnica).
+     - Al partir, el tema de CONTEXTO conserva la técnica en versión OPERATIVA —montaje,
+       parámetros, cómo se lee— para sostenerse solo; el tema de TÉCNICA es el que lleva la
+       profundidad (discrepancias, rendimiento diagnóstico, series).
+   - **Nunca recodificar un tema ya publicado.** Si un tema se parte o cambia de naturaleza,
+     el código original se CONSERVA para no dejar huérfana ninguna página ya dibujada a mano
+     (así se hizo con `B8`, que pasó de contexto a técnica y de plantilla B a A manteniendo
+     su código). Lo que sí puede cambiar es el título y el nombre de archivo, para que el
+     slug coincida con el título nuevo.
 6. **Equipo:** ver arriba (Inomed → Cadwell en octubre de 2026).
 7. **Después de cualquier cambio en `mindmaps/` o `PLANTILLAS.md`, ejecuta el build:**
 
@@ -379,13 +200,29 @@ Lecciones ya pagadas. Respétalas y ahorrarás tiempo y dinero:
   arranca sin contexto y gasta mucho más; en una ocasión consumió ~50 000 tokens en dos
   llamadas antes de empezar. Solo delega si el volumen es realmente grande.
 - **El número de página del PDF NO coincide con el impreso.** En Markand el desfase varía
-  por capítulo (+14 en cap.1, +13 en cap.3, +12 en cap.4). Verifícalo leyendo los
-  encabezados de página y **cita siempre la página IMPRESA**.
-- **`pdftotext` se come los símbolos de grado y de minuto de arco.** Aparecen cosas como
-  "campo de 150" (era 15°) o "cuadros de 40-60" (eran 40-60′). Reconstruye por contexto y
-  comprueba la coherencia interna antes de escribir la cifra.
+  por capítulo (+14 en cap.1, +13 en cap.3, +12 en cap.4, +12 en cap.5). En el Deletis
+  ronda +7 en la mitad del libro y llega a +19 en los primeros capítulos. Verifícalo
+  leyendo los encabezados de página y **cita siempre la página IMPRESA**.
+- **Truco para localizar un capítulo sin ir a ciegas:** `pdftotext` inserta un salto de
+  página (`\f`) entre páginas, así que se puede construir un mapa capítulo → página PDF
+  contando saltos sobre un volcado amplio. Sobre el Deletis esto da la tabla entera en una
+  sola pasada:
+
+  ```
+  awk 'BEGIN{p=100} /\f/{p++} /CHAPTER/{h=NR;hp=p} h && NR==h+2 {gsub(/ /,""); if($0!="") print "PDF " hp " -> CHAPTER " $0}' volcado.txt
+  ```
+
+- **`pdftotext` se come los símbolos de grado y de minuto de arco**, y también la **µ**.
+  Aparecen cosas como "campo de 150" (era 15°), "cuadros de 40-60" (eran 40-60′) o
+  "500 A" donde el original decía 500 µA. Reconstruye por contexto y **comprueba la
+  coherencia interna** antes de escribir la cifra: en el cap.41 del Deletis, por ejemplo,
+  el factor 1:20.000 entre corriente transtorácica e intracardiaca permite verificar que
+  todas las cifras eran µA salvo un "1 A" explícito.
 - **Las tablas salen descolocadas**: las columnas se desalinean y las filas se mezclan.
-  No copies una tabla sin cruzarla con el texto del cuerpo que la explica.
+  No copies una tabla sin cruzarla con el texto del cuerpo que la explica. Casos ya
+  detectados: la **Tabla 5.5 de Markand** (hallazgos de PEM por patología) es inservible
+  tal cual, y la **Tabla 5.2 del mismo capítulo** contradice al texto en la intensidad de
+  TCES (250-750 V frente a 100-500 V) — eso quedó marcado `(verificar)` en `PE-M2`.
 
 ## Front-matter obligatorio de cada mindmap
 
