@@ -4,7 +4,7 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-30T15:53:20.554Z
+Generado: 2026-08-30T16:12:25.636Z
 
 Progreso global: 53 completos · 0 en progreso · 0 esqueletos · 53 temas en 2 área(s).
 
@@ -112,3 +112,7 @@ Visor: `ppee.html` · 26 completos · 0 en progreso · 0 esqueletos · 26 temas.
 | PE-V7 | Estimulación por hemicampos y distribución paradójica | E | Completo | `mindmaps/PE-V7-estimulacion-por-hemicampos-y-distribucion-paradojica.md` |
 | PE-V8 | Flash VEP: indicaciones y limitaciones | E | Completo | `mindmaps/PE-V8-flash-vep-indicaciones-y-limitaciones.md` |
 | PE-V9 | Aplicaciones clínicas del PEV | F | Completo | `mindmaps/PE-V9-aplicaciones-clinicas-del-pev.md` |
+
+### Orden de trabajo sugerido
+
+PE-A1 → PE-A2 → PE-A3 → PE-A4 → PE-B1 → PE-B2 → PE-B3 → PE-B4 → PE-B5 → PE-B6 → PE-V1 → PE-V2 → PE-V3 → PE-V4 → PE-V5 → PE-V6 → PE-V7 → PE-V8 → PE-V9 → PE-C1 → PE-C2 → PE-C3 → PE-M1 → PE-M2 → PE-M3 → PE-M4

@@ -296,9 +296,18 @@ página dibujada a mano con ese código escrito.
    Los tres ✦ de más peso (cap.33, cap.41 y Markand cap.5) ya están resueltos, en `B9`/`A10`,
    `C7`/`C8` y el bloque `M` de PPEE respectivamente. Lo que queda es de menor calado.
 
-   **Orden de estudio actualizado.** El `ORDEN_TRABAJO` de `build.js` ya incluye los cinco
-   temas que estaban sin ubicar (`A10`, `B8`, `B9`, `C7`, `C8`); `MAPA_MAESTRO.md` ya no
-   lista ninguno aparte. Criterio de las inserciones, por si hay que revisarlo:
+   **Orden de estudio: las DOS áreas lo tienen ya.** El `ORDEN_TRABAJO` de `build.js` cubría
+   solo IONM; ahora tiene también `PPEE`, y `MAPA_MAESTRO.md` no lista ningún tema aparte en
+   ninguna de las dos.
+
+   `PPEE` va de lo CONCEPTUAL a lo TÉCNICO, después la modalidad desarrollada por completo
+   con su aplicación en quirófano, y cierra con los motores: bloque `A` entero (qué es un
+   potencial evocado, campo cercano frente a lejano, generadores, las tres vías comparadas) →
+   bloque `B` entero (promediado, cadena de registro, parámetros, mediciones, criterios de
+   anormalidad, artefactos) → `V1`-`V9` (el PEV completo, que es la modalidad de referencia
+   del área) → `C1`-`C3` (PEV en quirófano, que depende del bloque `V`) → `M1`-`M4`.
+
+   Criterio de las inserciones que se hicieron en el orden de IONM, por si hay que revisarlo:
    - `C7` tras `C6`, cerrando el bloque de transversales del equipo y del quirófano
      (anestesia → relajantes → troubleshooting → seguridad eléctrica), y ya después de `A2`
      y `A5`, de modo que la curva intensidad-duración cae sobre terreno preparado.

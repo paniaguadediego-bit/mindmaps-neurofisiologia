@@ -29,6 +29,15 @@ const ORDEN_TRABAJO = {
     'C1', 'C2', 'A1', 'A2', 'A3', 'C5', 'A4', 'A5', 'C3', 'C4', 'C6', 'C7', 'B2', 'B1',
     'B3', 'B4', 'A6', 'A9', 'A10', 'A7', 'B8', 'B5', 'B6', 'B7', 'B9', 'A8', 'C8',
   ],
+  // PPEE va de lo conceptual a lo técnico, después la modalidad desarrollada por completo
+  // (PEV) con su aplicación en quirófano, y cierra con los motores.
+  PPEE: [
+    'PE-A1', 'PE-A2', 'PE-A3', 'PE-A4',
+    'PE-B1', 'PE-B2', 'PE-B3', 'PE-B4', 'PE-B5', 'PE-B6',
+    'PE-V1', 'PE-V2', 'PE-V3', 'PE-V4', 'PE-V5', 'PE-V6', 'PE-V7', 'PE-V8', 'PE-V9',
+    'PE-C1', 'PE-C2', 'PE-C3',
+    'PE-M1', 'PE-M2', 'PE-M3', 'PE-M4',
+  ],
 };
 
 const ESTADO_LABEL = {
