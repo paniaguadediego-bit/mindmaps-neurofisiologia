@@ -185,6 +185,69 @@ Corticobulbares / MEP de pares craneales (CoMEPs)
 │     faciales presentan comportamiento ERRÁTICO, con respuestas distintas en trials
 │     consecutivos — CoMEP normal tras el tren y nada tras el único, luego nada tras el tren
 │     pero sí tras el único, luego respuesta tras ambos
+├─ LA FÍSICA DEL PITFALL 2 — superexcitabilidad subumbral de la membrana axonal
+│  ├─ Por qué esta rama importa tanto: es el mecanismo que explica a la vez POR QUÉ se
+│  │  espera 90 ms antes del estímulo único Y por qué ese control puede fallar. Sin ella,
+│  │  ambas cosas son reglas memorizadas sin razón
+│  ├─ EL FENÓMENO, EN UNA FRASE: estímulos eléctricos SUBUMBRALES o cercanos al umbral
+│  │  aplicados a un nervio periférico AUMENTAN la excitabilidad axonal. Es la "acción
+│  │  integrativa" de la membrana axonal — conocida desde hace décadas y todavía mal
+│  │  entendida, y muy poco explorada en la práctica clínica
+│  ├─ LAS CIFRAS DE BOSTOCK, que son el punto de partida
+│  │  ├─ Si el estímulo condicionante SÍ evoca respuesta, la intensidad que necesita el
+│  │  │  segundo estímulo para volver a despolarizar el axón cae hasta un 28%
+│  │  └─ Y aun cuando el primer estímulo NO llega a despolarizar la membrana, la intensidad
+│  │     que necesita el segundo para generar un potencial de acción cae en torno al 4-9%
+│  ├─ DATO CLAVE PARA MIO: el efecto de superexcitabilidad dura MÁS TIEMPO en los axones
+│  │  del sistema nervioso CENTRAL que en las fibras del nervio periférico
+│  ├─ MECANISMO: es función de dos propiedades de membrana — los efectos electrotónicos
+│  │  PASIVOS de la corriente estimulante sobre la membrana axonal, y el aumento de la
+│  │  respuesta LOCAL de los canales de sodio dependientes de voltaje
+│  ├─ EL EXPERIMENTO QUE LO LLEVA AL QUIRÓFANO (Urriza)
+│  │  ├─ Diseño: en vez de pares de pulsos, TRENES subumbrales repetitivos de 2 a 5
+│  │  │  estímulos con ISI muy cortos, aplicados a nervio MEDIANO y a nervio FACIAL
+│  │  ├─ Sujetos: 6 voluntarios sanos despiertos (12 manos) y 17 pacientes (29 manos)
+│  │  │  durante cirugía de columna torácica baja o lumbar ya monitorizada; y el facial
+│  │  │  extracraneal en 10 pacientes operados de malformaciones vasculares faciales
+│  │  ├─ MEDIANO: electrodos de superficie en muñeca, cátodo DISTAL al ánodo separados 2 cm.
+│  │  │  Máximo cinco pulsos de corriente constante, anchura 0,5 ms, frecuencia de repetición
+│  │  │  del tren 1 Hz, ISI intra-tren de 2 o 4 ms
+│  │  ├─ FACIAL: aguja monopolar de EMG percutánea hacia el agujero estilomastoideo, entre
+│  │  │  el lóbulo de la oreja y la apófisis mastoides, con el ánodo 1 cm proximal al cátodo.
+│  │  │  Máximo cinco pulsos de corriente constante, 0,5 ms, tren a 0,7 Hz, ISI de 2 o 4 ms
+│  │  ├─ DEFINICIONES OPERATIVAS, que son lo que hace el experimento interpretable
+│  │  │  ├─ UMBRAL: la amplitud de estímulo único que obtiene respuesta (CMAP) en al menos
+│  │  │  │  el 80% de 10 intentos
+│  │  │  └─ SUBUMBRAL: esa amplitud REDUCIDA UN 10%, verificando que no produce CMAP en
+│  │  │     ninguno de los 10 intentos
+│  │  ├─ Registro: abductor corto del pulgar para el mediano; nasal, orbicular de los labios
+│  │  │  o mentoniano para el facial. Filtros 1,5-1700 Hz, amplificación ×1000
+│  │  ├─ Condiciones anestésicas: TIVA, relajante solo para la intubación, TOF comprobado, y
+│  │  │  todos los músculos SILENTES —sin descarga de ninguna unidad motora— verificado con
+│  │  │  EMG libre durante el periodo de test
+│  │  └─ RESULTADO: NINGÚN sujeto tuvo CMAP con el pulso único subumbral. Pero con el TREN
+│  │     corto de esa misma intensidad subumbral se evocaron uno o más CMAP pequeños —de
+│  │     unos 50 a 150 µV— en TODOS los sujetos, despiertos y anestesiados
+│  │     └─ Variabilidad: la intensidad y el número de estímulos necesarios variaron entre
+│  │        sujetos, y también la morfología, las latencias, las amplitudes y el número de
+│  │        CMAP evocados
+│  ├─ LA CONSECUENCIA DIRECTA SOBRE EL CONTROL DE LA DOBLE ESTIMULACIÓN
+│  │  ├─ El supuesto sobre el que descansa el control: bajo anestesia, un estímulo único no
+│  │  │  debería generar respuesta de origen cortical —salvo en algunos casos de espasmo
+│  │  │  hemifacial—, de modo que una respuesta facial CoMEP verdadera solo puede venir de un
+│  │  │  tren de alta frecuencia que produzca SUMACIÓN TEMPORAL de ondas D e I
+│  │  ├─ Y aquí está la grieta: un tren de estímulos SUBUMBRALES puede activar DIRECTAMENTE
+│  │  │  el nervio facial en algunos casos, precisamente por esta superexcitabilidad
+│  │  ├─ Es decir: el hecho de que el estímulo único no dé respuesta NO garantiza que el
+│  │  │  tren de la misma intensidad no esté activando el nervio periférico. El control es
+│  │  │  necesario, pero no es infalible
+│  │  └─ Y explica la razón profunda de los 90 ms: se separa el estímulo único del tren lo
+│  │     suficiente como para no entregarlo mientras el axón sigue en su ventana de
+│  │     superexcitabilidad, que en axones centrales dura más que en los periféricos
+│  └─ CONTEXTO HISTÓRICO QUE CIERRA EL ARGUMENTO: los CoMEP fueron descritos primero por
+│     Dong y col., y desde el principio arrastraron un número ALTO de falsos negativos. Fue
+│     para reducirlos por lo que el grupo de Deletis introdujo la secuencia compleja de tren
+│     de 3-5 estímulos de alta frecuencia seguido de un estímulo único 90 ms después
 ├─ VCoMEP — CoMEP vagal y laríngeo
 │  ├─ Por qué TES y no estimulación magnética: la estimulación magnética activa las
 │  │  motoneuronas corticales sobre todo TRANSINÁPTICAMENTE, y no puede usarse de forma
@@ -219,6 +282,98 @@ Corticobulbares / MEP de pares craneales (CoMEPs)
 │  │  poco selectivo (aguja de EEG en vez de hook wire)
 │  └─ Caída de amplitud → avisar y aplicar maniobras de recuperación: pausa quirúrgica e
 │     irrigación con suero caliente
+├─ EL COMPETIDOR DEL CoMEP FUERA DEL CRÁNEO: CMAP CONTINUO DEL FACIAL
+│  ├─ Por qué esta rama está aquí: es la crítica mejor argumentada al CoMEP facial y define
+│  │  exactamente DÓNDE el CoMEP es la herramienta correcta y dónde no lo es
+│  ├─ LAS CINCO METODOLOGÍAS CONTEMPORÁNEAS DE MONITORIZACIÓN DEL FACIAL, que pueden usarse
+│  │  solas o combinadas: EMG libre · mapeo intraoperatorio del facial · CMAP continuo del
+│  │  facial · CoMEP del facial · Blink Reflex
+│  ├─ LA CRÍTICA AL CoMEP, en dos golpes
+│  │  ├─ La anestesia general compromete CUALQUIER metodología que exija activar vías largas
+│  │  │  o circuitos con VARIAS SINAPSIS — y eso incluye tanto el CoMEP facial como el Blink
+│  │  │  Reflex. El CMAP de un nervio periférico no tiene ese problema: informa de la
+│  │  │  integridad de TODOS los axones de ese nervio sin merma por la anestesia
+│  │  └─ Y además el CoMEP facial monitoriza la integridad de un número PEQUEÑO de neuronas
+│  │     faciales, no del conjunto
+│  ├─ DÓNDE SIGUE GANANDO EL CoMEP: en cirugía INTRACRANEAL de fosa posterior el CMAP
+│  │  continuo tiene limitaciones profundas, porque el segmento PROXIMAL del nervio respecto
+│  │  a la lesión es frecuentemente inaccesible para estimular (demasiado cerca del tronco).
+│  │  Fuera del cráneo eso no ocurre nunca: el acceso al tronco del facial para colocar
+│  │  agujas de estimulación continua siempre es posible
+│  ├─ MONTAJE DEL CMAP CONTINUO — dónde y cómo
+│  │  ├─ Dos agujas monopolares de EMG AISLADAS (o un sistema compacto con el par ya
+│  │  │  embebido en plástico) dirigidas hacia el agujero estilomastoideo
+│  │  ├─ Puerta de entrada percutánea: un pequeño triángulo DETRÁS DEL LÓBULO de la oreja,
+│  │  │  limitado por delante por el conducto auditivo externo y por detrás por la apófisis
+│  │  │  mastoides
+│  │  ├─ Las agujas entran a 90 grados, perpendiculares a la piel, ESTIMULANDO ya de forma
+│  │  │  continua, y se avanzan lentamente hasta que se ven CMAP pequeños de todas las ramas.
+│  │  │  En ese punto NO se avanzan más
+│  │  ├─ LA REGLA DE LOS ≥5 mA: se avanza estimulando a 5 mA como máximo (a 1 Hz). Si se
+│  │  │  obtienen CMAP con MENOS de 5 mA, las agujas están a menos de 5 mm del nervio →
+│  │  │  riesgo de lesión iatrógena y de punción de la vena yugular o la carótida en la base
+│  │  │  del cráneo. Siguiendo esta regla, los autores no han tenido ninguna de esas
+│  │  │  complicaciones
+│  │  ├─ Alcanzada la distancia segura, se sube a intensidad SUPRAMÁXIMA (amplitud máxima del
+│  │  │  CMAP; habitualmente por debajo de 30 mA) y se fijan las agujas dobladas con pegamento
+│  │  │  y apósito transparente, a veces incluso grapadas o suturadas a la piel
+│  │  ├─ Las agujas TIENEN que ser aisladas y lo bastante largas: las subdérmicas no aisladas
+│  │  │  o los electrodos adhesivos derivan la corriente en los planos superficiales y no
+│  │  │  penetran lo suficiente para una estimulación estable
+│  │  └─ Basal de amplitud supramáxima ANTES de la incisión — es la referencia de todo lo que
+│  │     venga después
+│  ├─ EL FACTOR EDAD, que cambia la profundidad del objetivo: hasta los 4 años la apófisis
+│  │  mastoides no está formada y el facial queda expuesto detrás de la oreja, muy cerca de
+│  │  la piel; en el adulto la mastoides madura empuja la salida del nervio medialmente, bajo
+│  │  la base del cráneo, y el facial puede estar 5 cm más profundo
+│  ├─ DOS ADVERTENCIAS DE SEGURIDAD
+│  │  ├─ Si la punta del COAGULADOR MONOPOLAR contacta con la aguja de estimulación, el
+│  │  │  tronco del facial puede sufrir una lesión térmica grave
+│  │  └─ En cambio, la estimulación continua supramáxima cerca del nervio durante horas NO
+│  │     aumenta por sí misma el riesgo de lesión. Ese temor heredado viene de un dispositivo
+│  │     antiguo que usaba CORRIENTE CONTINUA en vez de un estímulo de corriente equilibrada;
+│  │     los estimuladores actuales son seguros
+│  ├─ CRITERIOS DE ALARMA — dos umbrales según la reversibilidad de la maniobra
+│  │  ├─ Descenso MAYOR DEL 50% de la amplitud respecto al basal supramáximo durante
+│  │  │  maniobras de ESTIRAMIENTO o COMPRESIÓN → se avisa. Casi todos estos descensos se
+│  │  │  recuperan en minutos con solo liberar el tejido
+│  │  └─ Descenso MAYOR DEL 70% durante maniobras cuyos descensos se consideran
+│  │     IRREVERSIBLES —coagulación bipolar o monopolar, disección, corte— → aviso inmediato
+│  │     para CESAR la acción quirúrgica
+│  ├─ CÓMO SE CONFIRMA Y SE PRONOSTICA UNA LESIÓN DE RAMA
+│  │  ├─ Técnica de INCHING: se mapea la rama palmo a palmo con sonda estéril, incluyendo los
+│  │  │  segmentos proximal y distal al punto sospechoso. La lesión se confirma si hay
+│  │  │  decremento de amplitud entre el segmento proximal y el distal, y el porcentaje estima
+│  │  │  cuántas fibras se han dañado
+│  │  ├─ Las dos comparaciones son equivalentes para graduar la gravedad: proximal frente a
+│  │  │  distal por mapeo, o basal supramáximo frente a post-lesión por estimulación del
+│  │  │  tronco
+│  │  ├─ PRONÓSTICO: decremento ≥70% → parálisis completa de los músculos de esa rama y mala
+│  │  │  recuperación a largo plazo. Entre 50% y 70% → grados variables de parálisis parcial
+│  │  │  pero recuperación a largo plazo relativamente buena
+│  │  └─ LA "REGLA DEL 70%", expresada también como ratio 1:3: preservar al menos el 30% de
+│  │     las fibras de la rama es lo que evita la parálisis postoperatoria completa
+│  ├─ PITFALLS DEL MAPEO EN ESTE TERRITORIO
+│  │  ├─ FIBROSIS por cirugías o escleroterapias previas: rompe la regla general de 1 mA por
+│  │  │  1 mm. Obtener un CMAP a 7 mA NO significa que la rama esté a 7 mm; puede estar mucho
+│  │  │  más cerca, porque el tejido fibrótico, al carecer de agua, actúa como la funda de
+│  │  │  plástico de un cable e impide que la corriente penetre. Ese desajuste entre
+│  │  │  intensidad y distancia es exactamente lo que lleva a lesionar la rama al disecar o
+│  │  │  coagular
+│  │  ├─ La sonda MONOPOLAR es menos específica que la bipolar o la concéntrica y dispersa
+│  │  │  más corriente: al mapear la rama marginal mandibular puede estimularse también la
+│  │  │  rama cervical adyacente y aparecer un CMAP del platisma. Se distinguen por la
+│  │  │  MORFOLOGÍA del CMAP y por la LATENCIA (más larga la del platisma)
+│  │  ├─ Regla de amplitud para decidir si una ramilla importa: si el CMAP obtenido al
+│  │  │  mapearla es MENOR del 30% del basal de esa rama, se considera una ramilla menor
+│  │  └─ EL PITFALL MÁS GRAVE, aprendido de tres casos: en una serie de 445 cirugías de
+│  │     malformación vascular facial hubo 3 lesiones completas del tronco (grado VI de
+│  │     House-Brackmann). En esos casos persistía un CMAP pequeño pese al tronco SECCIONADO
+│  │     — porque con intensidades de estimulación por encima de 20 mA la corriente dispersa
+│  │     alcanza el MUÑÓN DISTAL del nervio cortado y produce una falsa impresión de
+│  │     integridad
+│  └─ MÁXIMA QUE RESUME EL CAPÍTULO: "una monitorización de baja calidad es peor que no
+│     monitorizar"
 ├─ LIMITACIONES
 │  ├─ Sin criterio de alarma consolidado: 50%, 80% o aumento de umbral >20 mA según el autor
 │  ├─ Sensible a la corriente dispersa por el cuero cabelludo, no solo a la vía corticobulbar
@@ -239,7 +394,22 @@ Corticobulbares / MEP de pares craneales (CoMEPs)
       §10.4.3.2 activación periférica confundente, §10.5 VCoMEP y las tres líneas de
       evidencia (Fig. 10.7) · cap.11 (Morota/Deletis/Epstein) §11.1.3 — anatomía del CBT de
       Krieg y por qué el abordaje dorsal lo respeta · cap.17 (Fernández-Conejero/Deletis) —
-      Blink Reflex · cap.9 §9.x — el tren subumbral que activa directamente el facial
+      Blink Reflex · cap.8 (Urriza, "Effects of subthreshold stimuli on the excitability of
+      axonal membrane") pp.113-117 — §8.1 fenómeno de superexcitabilidad subumbral y cifras
+      de Bostock (28% con respuesta previa, 4-9% sin ella) y mayor duración del efecto en
+      axones centrales, §8.2 metodología completa en mediano y facial con las definiciones
+      operativas de umbral y subumbral (Fig. 8.1), §8.3 resultados con CMAP de 50-150 µV en
+      todos los sujetos (Figs. 8.2-8.3), §8.4 mecanismo de membrana y consecuencia sobre el
+      control de la doble estimulación en los CoMEP · cap.24 (Ulkatan y col., "Surgery of
+      the face") pp.319-333 — §24.1 las cinco metodologías de monitorización del facial y la
+      crítica al CoMEP (anestesia y circuitos multisinápticos, número pequeño de neuronas
+      faciales), §24.2 factor edad y profundidad del tronco del facial, §24.3.1 agujas
+      aisladas y material (Figs. 24.5-24.7), §24.4 montaje del CMAP continuo, puerta
+      triangular retroauricular y regla de los ≥5 mA (Figs. 24.10-24.11), seguridad de la
+      estimulación continua, §24.5 pitfalls del mapeo (fibrosis y regla 1 mA : 1 mm, sonda
+      monopolar y platisma, regla del 30% para ramillas), §24.6 criterios del 50% y del 70%,
+      técnica de inching y regla del 70% / ratio 1:3 (Fig. 24.12), §24.7 serie de 445
+      cirugías y el falso CMAP del muñón distal por encima de 20 mA
 ```
 
 ## Ampliación — profundizar

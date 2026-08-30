@@ -31,14 +31,14 @@ sin tema propio.
 
 | Cap. | Título | Relevancia |
 |---|---|---|
-| 1 | Animal and human motor system neurophysiology related to ION (Amassian) | ★ A2, C1 — base del CST |
-| 8 | Effects of subthreshold stimuli on the excitability of axonal membrane | ★ A6 — es el origen del concepto de "hiperexcitabilidad subumbral" que usa la doble estimulación |
-| 12 | Neurophysiological identification of long sensory and motor tracts within the spinal cord (Deletis/Seidel), p.163 — §12.2 mapeo de columna dorsal · §12.3 mapeo del CST | ★★ B3, C1 — **fuente PRIMARIA del mapeo DCM y CST**, que B3 escribió desde el cap.26 |
-| 14 | Clinical and neurophysiologic features of the pure motor deficit syndrome caused by selective upper motor neuron lesion | ★ C1, A2 |
-| 18 | The posterior root-muscle reflex (Minassian/Freundl/Hofstoetter) | ★ A9 |
-| 20 | Surgery of brain tumors asleep | ★ B7 — el complemento dormido de la craneotomía despierta |
-| 24 | Surgery of the face, p.319 | ★ A6, A9 |
-| 29 | Neurophysiological monitoring during endovascular procedures on the spine and the spinal cord (Sala/Niimi), p.395 — §29.1 **vascularización e isquemia medular** | ★★ B1, B3, B4 — el mecanismo isquémico que esos temas citan sin fuente propia |
+| 1 | Animal and human motor system neurophysiology related to ION (Amassian) | ✔ HECHO — §1.2 y §1.3 en A2, §1.2.1 en C1. ★ A2, C1 — base del CST |
+| 8 | Effects of subthreshold stimuli on the excitability of axonal membrane | ✔ HECHO — capítulo íntegro en A6. ★ A6 — es el origen del concepto de "hiperexcitabilidad subumbral" que usa la doble estimulación |
+| 12 | Neurophysiological identification of long sensory and motor tracts within the spinal cord (Deletis/Seidel), p.163 — §12.2 mapeo de columna dorsal · §12.3 mapeo del CST | ✔ HECHO — B3 reescrito. ★★ B3, C1 — **fuente PRIMARIA del mapeo DCM y CST**, que B3 escribió desde el cap.26 |
+| 14 | Clinical and neurophysiologic features of the pure motor deficit syndrome caused by selective upper motor neuron lesion | ✔ HECHO — capítulo íntegro en C1, y §14.3.3 y §14.5.2 en A2. ★ C1, A2 |
+| 18 | The posterior root-muscle reflex (Minassian/Freundl/Hofstoetter) | ✔ HECHO — §18.3 a §18.6.1 en A9. ★ A9 |
+| 20 | Surgery of brain tumors asleep | ✔ HECHO — §20.2 a §20.4 en B7. ★ B7 — el complemento dormido de la craneotomía despierta |
+| 24 | Surgery of the face, p.319 | ✔ HECHO — §24.1 y §24.2 en A4; §24.1 y §24.3 a §24.7 en A6. Queda material sin usar (mapeo transcutáneo preoperatorio, escleroterapia, anatomía de las malformaciones vasculares faciales): candidato a tema propio. ★ A4, A6 |
+| 29 | Neurophysiological monitoring during endovascular procedures on the spine and the spinal cord (Sala/Niimi), p.395 — §29.1 **vascularización e isquemia medular** | ✔ HECHO — §29.1 y §29.2 volcados en B1, B3 y B4. ★★ B1, B3, B4 — el mecanismo isquémico que esos temas citan sin fuente propia |
 | 30 | Intraoperative neurophysiology of the peripheral nervous system (Happel/Kline), p.413 | ✦ sin tema propio |
 | 31 | ION method for testing functional integrity of the lower extremity peripheral nerves during hip surgery (Climent et al.), p.431 | ✦ sin tema propio |
 | 33 | ION during microvascular decompression of cranial nerves (Ferreira/Thirumala/Crammond/Sekula/Balzer), p.457 | ✦✦ **espasmo hemifacial y neuralgia del trigémino: contexto quirúrgico entero sin tema**, aunque A4, A7 y A9 ya citan fenómenos de MVD |
@@ -47,10 +47,10 @@ sin tema propio.
 | 36 | Deep brain stimulation in vegetative state and minimally conscious state, p.515 | ✦ sin tema propio |
 | 37 | Neuromonitoring for spinal cord stimulation placement under general anesthesia (Shils et al.), p.523 | ✦ sin tema propio |
 | 38 | Neurosurgical lesioning procedures in spinal cord and DREZ for pain (Sindou et al.), p.535 | ✦ sin tema propio |
-| 39 | Selective dorsal rhizotomy, p.551 | ★ B4 — ya se usa su serie de DRAP, pero solo eso |
-| 42 | Costs and benefits of ION in spinal surgeries (Ney), p.597 | ★ B1, B2 — el debate de indicación |
-| 43 | Evidence-based medicine and intraoperative neurophysiology — §43.5 "How accurate are my SEPs and MEPs?" · §43.7 glosario de términos de contingencia | ★★ C5 — marco de falsos positivos y negativos |
-| 44 | The intraoperative neurophysiological monitoring team — incl. §44.5 medical error avoidance | ★ C6 |
+| 39 | Selective dorsal rhizotomy, p.551 | ✔ HECHO — capítulo íntegro en B4. ★ B4 — ya se usa su serie de DRAP, pero solo eso |
+| 42 | Costs and benefits of ION in spinal surgeries (Ney), p.597 | ✔ HECHO — §42.2-42.5 en B2 completo y en B1 resumido. ★ B1, B2 — el debate de indicación |
+| 43 | Evidence-based medicine and intraoperative neurophysiology — §43.5 "How accurate are my SEPs and MEPs?" · §43.7 glosario de términos de contingencia | ✔ HECHO — §43.5 y §43.7 en C5. ★★ C5 — marco de falsos positivos y negativos |
+| 44 | The intraoperative neurophysiological monitoring team — incl. §44.5 medical error avoidance | ✔ HECHO — §44.1 y §44.5 en C6. ★ C6 |
 
 Además, **`Deletis` cap.41 "Safety"** sí está en la tabla de arriba pero solo se ha
 explotado pp.590-591 (lesión por mordedura). Sus secciones §41.2 seguridad eléctrica,

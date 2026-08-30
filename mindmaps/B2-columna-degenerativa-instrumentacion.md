@@ -32,6 +32,125 @@ Columna — degenerativa / instrumentación
 │  │  cirujano debe entender el contexto del cambio y si existe una solución estructural
 │  └─ Aviso sobre la literatura: hay sesgo considerable según la formación y las opiniones
 │     académicas de quien la produce, y el asunto tiene implicaciones legales significativas
+├─ COSTE-EFECTIVIDAD — la evidencia económica que ordena el debate de indicación
+│  ├─ Por qué este tema y no otro: en columna degenerativa e instrumentación es donde la
+│  │  indicación se discute de verdad, y donde la presión de los pagos "empaquetados" —que
+│  │  incluyen todos los servicios asociados a la cirugía— va a llevar a suprimir lo que no
+│  │  se considere necesario para hacer la operación
+│  ├─ EL VOCABULARIO, PORQUE LOS CUATRO TIPOS DE ANÁLISIS NO SON INTERCAMBIABLES
+│  │  ├─ ANÁLISIS DE COSTE-EFECTIVIDAD (CEA): marco general. Diferencia de costes dividida
+│  │  │  entre diferencia de resultados en salud, entre la intervención y su comparador
+│  │  ├─ COSTE-CONSECUENCIA (CCA): compara el coste con la capacidad de aportar UN beneficio
+│  │  │  concreto o evitar UN resultado adverso concreto. Es análogo a un número necesario a
+│  │  │  tratar, expresado como coste monetario por unidad de beneficio. Muy específico, pero
+│  │  │  inútil para comparar intervenciones con beneficios distintos
+│  │  ├─ COSTE-BENEFICIO (CBA): igual estructura, pero MONETIZA el beneficio en salud —
+│  │  │  costes sanitarios directos evitados, más indirectos como salarios y prestaciones
+│  │  │  perdidos, absentismo, presentismo, cuidadores y desplazamientos. El resultado es un
+│  │  │  coste (positivo) o un ahorro (negativo) frente al comparador
+│  │  └─ COSTE-UTILIDAD (CUA): mide el beneficio en UTILIDAD de salud, escala de 0 (muerte) a
+│  │     1 (salud perfecta), multiplicada por tiempo → AVAC (año de vida ajustado por
+│  │     calidad, QALY). Es lo que permite comparar iniciativas de gasto entre patologías
+│  │     distintas, y lo que usa el NICE británico
+│  │     └─ Umbral de disposición a pagar de referencia: 20.000-30.000 libras por AVAC en el
+│  │        Reino Unido, 50.000 dólares por AVAC en EEUU
+│  ├─ CÓMO SE CONSTRUYE UN MODELO Y POR QUÉ LA MIO ENCAJA EN ÁRBOL DE DECISIÓN
+│  │  ├─ ÁRBOL DE DECISIÓN: nodo de decisión inicial (usar MIO o no) → nodos de azar → nodos
+│  │  │  terminales donde se acumulan los costes. Bueno con pocos eventos y horizontes cortos
+│  │  ├─ MODELO DE MARKOV: representa transiciones entre estados de salud (normal, enfermo,
+│  │  │  muerte), bidireccionales, con información actuarial de esperanza de vida. Bueno para
+│  │  │  horizontes largos, hasta toda la vida del paciente
+│  │  ├─ La MIO es una intervención PUNTUAL en el tiempo, lo que la hace idónea para el árbol
+│  │  │  en el postoperatorio inmediato; se le añaden nodos de Markov para proyectar a largo
+│  │  │  plazo
+│  │  ├─ La PERSPECTIVA y el HORIZONTE TEMPORAL cambian el resultado: el hospital y el
+│  │  │  cirujano miran el postoperatorio inmediato, la aseguradora 2-3 años (lo que dura la
+│  │  │  póliza), y el paciente y el gestor de políticas miran toda la vida
+│  │  └─ La incertidumbre se testa con análisis de sensibilidad probabilístico (simulación de
+│  │     Monte Carlo), que da "intervalos de incertidumbre" análogos a los intervalos de
+│  │     confianza
+│  ├─ LA ECUACIÓN DE EFECTIVIDAD, que es el esqueleto de todo modelo de MIO
+│  │  ├─ P(evento adverso) = riesgo basal de la cirugía (BSR) × sensibilidad de la MIO ×
+│  │  │  efectividad de las acciones tomadas tras la alerta (EoA)
+│  │  ├─ Debilidad 1 — el BSR es difícil de cuantificar: la revisión sistemática de Fehlings
+│  │  │  sobre series con MIO multimodal daba un 5%, sustancialmente MÁS ALTO que las grandes
+│  │  │  series de cirujanos y que los datos administrativos. La definición de "déficit"
+│  │  │  abarca desde adormecimiento hasta parálisis, y las bases retrospectivas
+│  │  │  infranotifican complicaciones
+│  │  ├─ Debilidad 2 — se asume MIO multimodal, cuando en la práctica la preferencia del
+│  │  │  cirujano, la anestesia sin bloqueo neuromuscular o las dificultades técnicas pueden
+│  │  │  impedir obtener MEP, bajando la sensibilidad real
+│  │  ├─ Debilidad 3 — los falsos positivos NO tienen consecuencia en el modelo, porque no
+│  │  │  hay evidencia de que causen complicaciones neurológicas; pero interrumpir el caso
+│  │  │  para troubleshooting o incluso abortarlo sí tiene coste para el paciente
+│  │  └─ Debilidad 4 — el EoA descansa en UN SOLO estudio alemán: de 84 cirugías con alerta,
+│  │     la mitad fueron atendidas por el equipo y de esas 22 de 42 no tuvieron déficit,
+│  │     frente al 100% de déficit en las 42 sin respuesta a la alerta. Mezclaba columna con
+│  │     intracraneal y evaluaba SEP y respuestas auditivas de tronco, no MEP ni EMG — pero
+│  │     sigue siendo el único estudio prospectivo con comparador sobre qué se gana actuando
+│  ├─ LAS CIFRAS DE LOS MODELOS
+│  │  ├─ CCA: coste de evitar UN déficit neurológico en cirugía electiva genérica de columna
+│  │  │  = 63.387 dólares (USD 2009; IU 95% 61.939-64.836), con riesgo basal en torno al 5% y
+│  │  │  un coste de MIO de 1.535 dólares por cirugía. Los parámetros más influyentes fueron
+│  │  │  el riesgo basal y la tasa de prevención tras la alerta, NO el coste de la MIO
+│  │  ├─ CBA con horizonte de por vida: 35.325 dólares de coste medio con MIO frente a 58.514
+│  │  │  sin ella → AHORRO medio de 23.189 dólares. Tres puntos de paridad de coste: riesgo
+│  │  │  basal del 0,3%, tasa de prevención tras alerta del 14,2%, o coste de MIO de 8.793
+│  │  │  dólares
+│  │  └─ CUA en columna CERVICAL, con riesgo basal del 0,3% tomado de una serie de más de
+│  │     4.000 casos en 10 años y caso base de tetraparesia C5-C8 en un paciente de 50 años:
+│  │     la MIO resultó NEUTRA en coste a lo largo de la vida (−23 dólares), con ganancia
+│  │     significativa de utilidad (+0,009) y un coste por AVAC de −2.507 dólares. Todas las
+│  │     réplicas quedaron por debajo del umbral de 50.000 dólares por AVAC
+│  ├─ LOS ESTUDIOS DE "BIG DATA" — por qué se contradicen entre sí
+│  │  ├─ Su promesa: con muestras de miles o millones, los datos administrativos pueden
+│  │  │  detectar diferencias en desenlaces muy raros, por debajo del 1%, y con datos del
+│  │  │  mundo real en lugar de un ensayo
+│  │  ├─ Sus límites estructurales: la identificación de la cohorte depende de una
+│  │  │  codificación diagnóstica y de procedimiento exacta, que no puede validarse contra la
+│  │  │  historia porque los datos vienen anonimizados; solo se puede ajustar por la variación
+│  │  │  OBSERVADA, sin tensión arterial ni radiología; y falta granularidad para saber la
+│  │  │  calidad real de la monitorización o la cualificación de quien la hizo
+│  │  ├─ LOS QUE NO ENCONTRARON BENEFICIO
+│  │  │  ├─ Base MarketScan, cirugía de un solo nivel: sin reducción de complicaciones
+│  │  │  │  neurológicas durante el ingreso y con 2.859-3.842 dólares MÁS de gasto. El
+│  │  │  │  emparejamiento por propensión excluyó a la mayoría de los controles y los
+│  │  │  │  subanálisis redujeron aún más la potencia
+│  │  │  ├─ Nationwide Inpatient Sample 2007-2011: eligió como desenlace la lesión iatrógena
+│  │  │  │  de raíz, que apareció solo 20 veces en más de 400.000 cirugías — es decir, 1 de
+│  │  │  │  cada 20.000. El estudio no tenía potencia para eso
+│  │  │  └─ 15.395 discectomías cervicales anteriores con fusión (2007-2014): sin diferencia
+│  │  │     en la tasa BRUTA de lesión neurológica a 30 días entre los 2.627 con MIO y el
+│  │  │     resto (0,23% frente a 0,27%) — pero sin ninguna regresión ni ajuste estadístico
+│  │  └─ LOS QUE SÍ
+│  │     ├─ NIS 2007-2012, cirugía electiva no compleja: la MIO se asoció a reducción global
+│  │     │  de complicaciones neurológicas codificadas al alta (0,8% frente a 1,4%), robusta
+│  │     │  en regresión logística multivariable (OR 0,6; IC 95% 0,47-0,76). Los cargos
+│  │     │  hospitalarios fueron un 9% mayores con MIO, pero la estancia se redujo un 10%
+│  │     │  (0,3 días)
+│  │     └─ El más granular: columna cervical de un nivel a lo largo de 4 años, controlando
+│  │        mielopatía preoperatoria y servicios auxiliares del hospital, con seguimiento a un
+│  │        año → coste MAYOR en el ingreso índice (+1.229 dólares) pero MENOR en el año
+│  │        siguiente (−1.615), con un neto de −387 dólares no significativo; reducción
+│  │        RELATIVA del 80% de complicaciones neurológicas (0,4% absoluto al año), reducción
+│  │        de reingresos (2,1% a 30 días) y de uso de opioides (1,7% al año)
+│  │        └─ Hipótesis de los autores, que es la lectura interesante: la MIO es uno de un
+│  │           conjunto de servicios intrahospitalarios que en bloque suben el coste, pero
+│  │           solo ella se asocia a mejor resultado. Y alargar el horizonte captura déficits
+│  │           como la radiculopatía C5 iatrógena o la lesión del recurrente laríngeo, que
+│  │           pueden no codificarse bien al alta
+│  └─ LA EQUIPOISE — por qué no hay ensayos aleatorizados y por qué el argumento ético cojea
+│     ├─ La ausencia de ensayos aleatorizados sigue siendo el obstáculo mayor para determinar
+│     │  la eficacia de la MIO
+│     ├─ La objeción ética habitual —crear un grupo control privado de un servicio que puede
+│     │  hacer la cirugía más segura— queda DESMENTIDA por la práctica real: en ninguno de los
+│     │  estudios de datos administrativos el uso de MIO superó el 30% de las cirugías
+│     │  elegibles
+│     ├─ Los ensayos clínicos PRAGMÁTICOS pueden ser el camino para resolver lo más espinoso:
+│     │  la capacidad real de prevenir déficits dada una alerta
+│     └─ Lo que además haría falta medir y hoy no se mide: el efecto de los falsos positivos
+│        en prolongar o abortar cirugías, el efecto de la MIO sobre la responsabilidad civil
+│        del cirujano, y la contribución por separado de cada modalidad (EMG, SEP y MEP)
 ├─ MODALIDADES COMBINADAS
 │  ├─ SEP + MEP transcraneal + EMG libre y estimulado — el mismo estándar multimodal que en
 │  │  cirugía de deformidad
@@ -219,7 +338,15 @@ Columna — degenerativa / instrumentación
       con su contradicción interna, umbral óseo laminar de 25 mA, shunting por humedad y
       argumento a favor del voltaje constante (Figs. 10.8-10.10), cirugía percutánea ·
       cap.13 (Toleikis) pp.182-186 — argumento opuesto a favor de la corriente constante,
-      montaje cátodo/ánodo, y falsos negativos por relajación y shunting
+      montaje cátodo/ánodo, y falsos negativos por relajación y shunting · Deletis cap.42
+      (Ney/van der Goes, "Costs and benefits of ION in spinal surgeries") §42.2 pp.597-599 —
+      tipos de análisis económico (CCA, CBA, CUA), utilidad y AVAC, umbrales de disposición
+      a pagar, árbol de decisión frente a modelo de Markov (Fig. 42.1), perspectiva y
+      horizonte temporal, análisis de sensibilidad probabilístico · §42.3 pp.599-601 —
+      ecuación de efectividad y sus cuatro debilidades, riesgo basal de Fehlings, estudio
+      alemán, cifras del CCA, del CBA y del CUA cervical (Fig. 42.2) · §42.4 pp.601-603 —
+      estudios de datos administrativos a favor y en contra y sus límites (Fig. 42.3) ·
+      §42.5 p.603 — ensayos pragmáticos y equipoise
 ```
 
 ## Ampliación — profundizar

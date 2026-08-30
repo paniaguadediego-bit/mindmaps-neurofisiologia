@@ -151,20 +151,87 @@ página dibujada a mano con ese código escrito.
      respuesta muscular al estimular la médula expuesta **también se obtiene estimulando
      columna dorsal** — no prueba que se esté tocando el CST.
 
-   **PUNTO EXACTO DONDE SE QUEDÓ: falta que Pani elija dirección.** El repaso se bifurca en
-   dos trabajos distintos y no está decidido cuál va primero:
+   - **Primera tanda de enriquecimiento (★) terminada:** los cuatro capítulos de más peso
+     de la columna ★, volcados en seis temas. De 1.244 a 2.107 líneas entre los seis.
+     - **cap.29 §29.1 y §29.2** (Sala/Niimi) → `B1`, `B3`, `B4`. Es la anatomía vascular
+       medular que los tres citaban sin fuente propia: ejes ASA/PSA, Adamkiewicz y la cesta
+       anastomótica del cono, 4-8 radiculares anteriores frente a 10-20 posteriores,
+       vascularización segmentaria y punto frágil torácico medio, correspondencia
+       territorio-modalidad (ASA→MEP, PSA→SEP), vasa corona y watershed axial, drenaje
+       venoso, y sobre todo el **gradiente de vulnerabilidad gris/blanca** que explica por
+       qué el MEP muscular detecta la isquemia antes que la onda D. `B4` se lleva además el
+       **protocolo completo del reflejo bulbocavernoso con parámetros** (cátodo proximal,
+       tren de cinco de 0,2-0,5 ms con ISI 4 ms a 2,3 Hz, ≤40 mA, registro por
+       hemiesfínteres), que era un hueco real de ese tema.
+     - **cap.42 completo** (Ney/van der Goes) → `B2` en versión larga y `B1` en versión
+       corta: los cuatro tipos de análisis económico, la ecuación
+       P(evento) = BSR × sensibilidad × EoA con sus cuatro debilidades, las cifras de CCA
+       (63.387 USD por déficit evitado), CBA (ahorro de 23.189 USD y sus tres puntos de
+       paridad) y CUA cervical, los estudios de datos administrativos a favor y en contra,
+       y el argumento de equipoise (uso real por debajo del 30%).
+     - **cap.43 §43.5 y §43.7** (Holdefer/Skinner) → `C5`: el marco formal de exactitud
+       diagnóstica que le faltaba — test índice y patrón de referencia, las cuatro celdas
+       definidas en clave intraoperatoria, fórmulas de sensibilidad/especificidad/VPP/
+       cociente de verosimilitud, curva ROC y criterio deslizante, el **cambio de señal
+       reversible** con la tasa de cambio >5-10 de Glasziou, la serie de Langeloo y Journée
+       2003, QUADAS-2/GRADE, y el aviso de que exactitud no es eficacia.
+     - **cap.44 §44.1 y §44.5** (Skinner/Holdefer) → `C6`: el error humano como modo de
+       fallo del sistema — diseño indulgente y redundancia, los cinco sesgos cognitivos que
+       arruinan una alarma correcta, checklists y comunicación de riesgo, y la cascada
+       test → interpretación → comunicación → intervención → resultado con sus
+       deceleradores y aceleradores.
 
-   | Enriquecer temas existentes (★) | Territorio con fuente y sin tema (✦) |
-   |---|---|
-   | cap.29 §29.1 vascularización e isquemia medular → `B1`, `B3`, `B4` | **cap.33 descompresión microvascular** — espasmo hemifacial y neuralgia del trigémino |
-   | cap.43 §43.5 "how accurate are my SEPs and MEPs?" y §43.7 glosario → `C5` | **cap.41 Safety** completo (§41.2 eléctrica, §41.3 por procedimiento, §41.4 infección, §41.5 rendimiento) |
-   | cap.8 excitabilidad subumbral → `A6` | cap.30 y 31 — nervio periférico y cirugía de cadera |
-   | cap.44 §44.5 evitación de error médico → `C6` | cap.34-38 — trastornos del movimiento, DBS, dolor, espasticidad |
-   | cap.42 costes y beneficios → `B1`, `B2` | **Markand cap.5** — PPEE no tiene ningún tema de PEM |
-   | cap.1, 14, 18, 20, 24, 39 → `A2`, `A9`, `B4`, `B7`, `C1` | |
+   - **Segunda tanda de enriquecimiento (★) terminada: la columna ★ está VACÍA.** Los siete
+     capítulos restantes, volcados en siete temas (`A2`, `A4`, `A6`, `A9`, `B4`, `B7`, `C1`).
+     - **cap.1 (Amassian)** → `A2` y `C1`. La fisiología que había debajo de reglas que se
+       aplicaban de memoria: por qué la onda D es trifásica (teoría del conductor de
+       volumen), los tres factores de su amplitud, el bloqueo del impulso (×5 en la D, ×15,5
+       en la I, cociente I/D triplicado) y por qué eso hace inservible el registro conducido
+       para comparar umbrales D/I, la conversión a monofásico como localizador del nivel
+       lesional, ánodo frente a cátodo y los codos de las fibras, el montaje de 2×2 cm con
+       referencia de 25 cm², **el problema de sumación C3/C4 con sus dos soluciones**, el
+       efecto anestésico con cifras (46% con TES frente a 80% con corteza expuesta), y toda
+       la fisiología de la facilitación temporal que justifica el tren.
+     - **cap.8 (Urriza)** → `A6`. La superexcitabilidad subumbral: cifras de Bostock
+       (28% / 4-9%), metodología completa en mediano y facial, y **por qué el control de la
+       doble estimulación puede fallar** — un tren subumbral activa directamente el facial.
+     - **cap.14 (Arranz Arranz)** → `C1` y `A2`. El síndrome de déficit motor puro: los siete
+       puntos de lesión, la irrigación perforante separada de CST y vía lemniscal, los
+       marcadores neurofisiológicos, **las dos excepciones (síndrome del AMS y paraplejia
+       histérica)** y cuatro casos documentados por nivel.
+     - **cap.18 (Minassian/Hofstoetter)** → `A9`. El reflejo raíz posterior-músculo: latencias
+       y amplitudes con tablas, las tres propiedades compartidas con el reflejo H, la
+       aparición de respuestas ARM al estimular sobre la cauda equina, la dependencia de la
+       posición corporal con las cifras de LCR dorsomedial, y el protocolo de colocación del
+       electrodo epidural.
+     - **cap.20 (Giampiccolo/Sala)** → `B7`. La versión DORMIDA de la craneotomía: abordaje en
+       tres pasos, complementariedad mapeo/monitorización, Penfield frente a tren de cinco con
+       sus cifras (20% de crisis, 63% de falsos negativos), los cuatro escenarios de MEP, la
+       trampa del AMS, y umbrales subcorticales con el límite crítico de 3-5 mA.
+     - **cap.24 (Ulkatan)** → `A4` y `A6`. La evidencia contra el EMG libre en el facial
+       EXTRAcraneal (Meier con su 16%, Grosheva) con su razón anatómica, y el CMAP continuo
+       como competidor del CoMEP: regla de los ≥5 mA, criterios del 50% y del 70%, regla del
+       70% / ratio 1:3, y el falso CMAP del muñón distal por encima de 20 mA.
+     - **cap.39 (Haberl)** → `B4`. Rizotomía dorsal selectiva: t-EMG con tren a 50 Hz de 0,05
+       a 5,0 mA, escala de Phillips y Park de 0 a 4 con su decisión, criterio del 60-70% de
+       raicillas, y DRAP en S1-S3 con división de S2.
 
-   Los dos ✦ con más peso son **cap.33** (contexto quirúrgico entero del que `A4`, `A7` y
-   `A9` ya citan fenómenos sueltos sin tener dónde estudiarlos juntos) y **cap.41**
+   **PUNTO EXACTO DONDE SE QUEDÓ.** Pani eligió **enriquecer temas existentes (★) primero**,
+   y eso ya está terminado: **no queda ningún capítulo ★ pendiente**. Lo siguiente es el
+   territorio ✦ — capítulos con fuente y sin tema donde estudiarlos, que exigen CREAR temas
+   nuevos, no enriquecer:
+
+   | ✦ Territorio con fuente y sin tema |
+   |---|
+   | **cap.33 descompresión microvascular** — espasmo hemifacial y neuralgia del trigémino |
+   | **cap.41 Safety** completo (§41.2 eléctrica, §41.3 por procedimiento, §41.4 infección, §41.5 rendimiento) |
+   | cap.30 y 31 — nervio periférico y cirugía de cadera (el §18.6.2 del cap.18 también apunta aquí y quedó sin usar) |
+   | cap.34-38 — trastornos del movimiento, DBS, dolor, espasticidad |
+   | **Markand cap.5** — PPEE no tiene ningún tema de PEM |
+   | **cap.24 cirugía de la cara**, material sobrante — mapeo transcutáneo preoperatorio, escleroterapia y anatomía de las malformaciones vasculares faciales no caben en `A4` ni en `A6` |
+
+   Los dos ✦ con más peso siguen siendo **cap.33** (contexto quirúrgico entero del que `A4`,
+   `A7` y `A9` ya citan fenómenos sueltos sin tener dónde estudiarlos juntos) y **cap.41**
    (seguridad, hoy explotado solo en las pp.590-591 de la mordedura).
 
 Áreas futuras (EMG, EEG, EEG infantil, EEG UCI): sin fuentes aún en `fuentes/`; no

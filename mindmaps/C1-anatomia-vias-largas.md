@@ -67,6 +67,30 @@ Anatomía funcional de las vías largas
 │        las vías corticoespinales pueden ser mayoritariamente NO CRUZADAS
 │        └─ Lectura para el monitor: en cirugía de deformidad no puede darse por
 │           supuesta la lateralidad estándar del MEP
+├─ EL ESPECTRO DE DIÁMETROS DEL CST — por qué la señal no mide "cuántas fibras quedan"
+│  ├─ El CST de gato, mono y humano contiene un RANGO AMPLIO de diámetros de fibra, y el
+│  │  diámetro determina el umbral. Esa heterogeneidad es anatómica, no técnica, y condiciona
+│  │  todo lo que se registra de la vía
+│  ├─ Consecuencia 1 — el reclutamiento no es ordenado ni uniforme: un estímulo eléctrico en
+│  │  sustancia blanca excita primero las fibras MÁS GRANDES Y MÁS CERCANAS al electrodo, y
+│  │  al subir la intensidad se suman a la vez fibras cercanas de umbral alto y fibras
+│  │  LEJANAS de umbral bajo, estas últimas sujetas a la caída de intensidad por el inverso
+│  │  del cuadrado de la distancia
+│  ├─ Consecuencia 2 — las fibras de umbral más bajo, que son las primeras en excitarse, son
+│  │  también las que aportan los potenciales de acción MÁS GRANDES a la respuesta poblacional
+│  ├─ Consecuencia 3 — la respuesta poblacional solo se aproxima a una sigmoide: teóricamente,
+│  │  con diámetros distribuidos de forma normal debería serlo exactamente (la integral de la
+│  │  distribución normal), y experimentalmente no lo es por lo anterior
+│  └─ CONCLUSIÓN que hay que tener presente al interpretar cualquier registro de esta vía: la
+│     amplitud poblacional mide SOLO APROXIMADAMENTE el número de fibras activas de forma
+│     síncrona. Y como la señal es la suma de potenciales trifásicos, el enlentecimiento de
+│     una parte de la población reduce la amplitud por CANCELACIÓN DE FASE sin que haya
+│     desaparecido ninguna fibra — una caída de amplitud con ENSANCHAMIENTO del componente
+│     negativo indica desincronización, no pérdida axonal
+│     └─ Y al revés: la lesión de la fibra convierte el potencial hacia MONOFÁSICO, de modo
+│        que el desplazamiento hacia la positividad permite identificar funcionalmente el
+│        NIVEL de una lesión traumática medular o de un tumor, comparable con el nivel
+│        radiológico y el neurológico
 ├─ SISTEMA MEDIAL — lo que el TES no interroga bien
 │  ├─ También llamado sistema no específico; es lo que antes se agrupaba como
 │  │  "extrapiramidal"
@@ -158,6 +182,103 @@ Anatomía funcional de las vías largas
 │     activamente: el mapeo de columna dorsal localiza el rafe medio real cuando el
 │     tumor lo ha rotado, y el mapeo del CST lo distingue de la columna dorsal por la
 │     recuperación sináptica de las interneuronas interpuestas
+├─ EL SÍNDROME DE DÉFICIT MOTOR PURO (PMD) — la prueba clínica de que las vías son separables
+│  ├─ Por qué cierra este tema: toda la anatomía anterior dice que motor y sensitivo van por
+│  │  sitios distintos. El PMD es la demostración clínica y neurofisiológica de que esa
+│  │  separación es REAL y de que puede lesionarse una vía dejando la otra intacta — en
+│  │  cualquiera de sus niveles
+│  ├─ DEFINICIÓN ORIGINAL de Fisher y Curry (1965): hemiplejia motora pura es la parálisis,
+│  │  completa o incompleta, de cara, brazo y pierna de un lado, SIN signos sensitivos, SIN
+│  │  defecto campimétrico, SIN disfasia y SIN apractognosia
+│  │  ├─ Y si la lesión es de TRONCO, la hemiplejia debe estar además libre de vértigo,
+│  │  │  hipoacusia, acúfeno, diplopía, ataxia cerebelosa y nistagmo grosero
+│  │  └─ Esa definición clásica solo cubría lesiones supratentoriales y de tronco; el
+│  │     concepto actual la extiende también a la lesión MEDULAR
+│  ├─ LOS SIETE PUNTOS TÍPICOS DE LESIÓN del CST y/o el CBT que dan cuadro de PMD
+│  │  ├─ 1a — lesión cortical con afectación PURA del tracto corticobulbar
+│  │  ├─ 1b — lesión cortical con afectación pura del CST, territorio de BRAZO
+│  │  ├─ 1c — lesión cortical con afectación pura del CST, territorio de PIERNA
+│  │  ├─ 2 — lesión SUBCORTICAL
+│  │  ├─ 3 — lesión CAPSULAR
+│  │  ├─ 4 — lesión de TRONCO
+│  │  └─ 5 — lesión MEDULAR
+│  ├─ EL SUSTRATO VASCULAR, que es lo que hace posible la disociación
+│  │  ├─ El CST y las vías lemniscales tienen aporte sanguíneo DEDICADO Y SEPARADO desde
+│  │  │  arterias perforantes
+│  │  ├─ Por eso una lesión aislada de las ramas perforantes que irrigan la porción CAPSULAR
+│  │  │  del CST produce un PMD de origen capsular: la porción capsular de la vía lemniscal
+│  │  │  no se afecta y los SEP quedan PRESERVADOS
+│  │  ├─ Serie anatomopatológica de Fisher en ictus con hemiplejia motora pura por trombosis
+│  │  │  de pequeño vaso en cápsula interna o base pontina: el vaso implicado es una rama
+│  │  │  PERFORANTE de la cerebral media, la coroidea anterior o la basilar
+│  │  └─ En la médula, el equivalente es la somatotopía del CST y de las columnas dorsales
+│  │     más su irrigación particular, que permite la lesión selectiva de una de las dos vías
+│  ├─ LOS MARCADORES NEUROFISIOLÓGICOS DEL PMD — cómo se documenta
+│  │  ├─ La combinación diagnóstica es: AUSENCIA de MEP del miembro afectado y/o de CoMEP de
+│  │  │  músculos inervados por pares craneales motores, CON PRESENCIA de SEP de ese mismo
+│  │  │  miembro
+│  │  ├─ Herramientas: EMT en el paciente despierto; estimulación eléctrica transcraneal bajo
+│  │  │  anestesia general con onda D registrada de la médula o MEP muscular de extremidades
+│  │  │  o de músculos de par craneal; y SEP de mediano o cubital y de tibial posterior para
+│  │  │  EXCLUIR afectación sensitiva
+│  │  └─ Los marcadores son específicos del PMD y DEPENDEN DEL NIVEL del sistema nervioso
+│  │     donde ocurra la lesión del CST o del CBT
+│  ├─ POR QUÉ ESTO EXPLICA LOS FALSOS NEGATIVOS HISTÓRICOS DEL SEP
+│  │  ├─ En los primeros años de la monitorización medular se publicaron fallos del SEP
+│  │  │  perioperatorio para detectar lesiones iatrógenas que causaban déficit motor
+│  │  ├─ La explicación es exactamente la de arriba: somatotopía separada e irrigación
+│  │  │  particular permiten la lesión selectiva de una vía. El MEP intraoperatorio es lo que
+│  │  │  evita esa confusión
+│  │  └─ En cirugía cerebrovascular pasa lo mismo por otra vía: el SEP avisa de isquemia
+│  │     inminente, pero es incapaz de valorar la isquemia en áreas corticales fuera del
+│  │     territorio vascular de la corteza somatosensorial o de sus vías — de ahí los casos
+│  │     publicados de deterioro motor postoperatorio con SEP intraoperatorio inalterado
+│  ├─ EJEMPLOS DOCUMENTADOS, uno por nivel
+│  │  ├─ CAPSULAR con afectación solo del CBT: varón de 50 años con glioma de bajo grado
+│  │  │  frontal derecho. Por un desplazamiento accidental del marcador de la cara se lesionó
+│  │  │  la región cortical facial → pérdida del CoMEP facial izquierdo con MEP del abductor
+│  │  │  corto del pulgar izquierdo PRESERVADO y SEP de mediano inalterados; clínicamente,
+│  │  │  parálisis facial central izquierda supranuclear
+│  │  ├─ ENDARTERECTOMÍA CAROTÍDEA, pérdida pura de MEP: abolición completa del MEP
+│  │  │  transcraneal contralateral en los primeros 5 minutos tras el clampaje, con SEP de
+│  │  │  mediano estables. Subir la tensión un 30% sobre los valores preoperatorios y
+│  │  │  aumentar la intensidad de estimulación más de un 40% NO logró recuperarlo; el MEP se
+│  │  │  estabilizó en 5 minutos tras colocar el shunt intraarterial, y el paciente no
+│  │  │  desarrolló déficit
+│  │  ├─ TRONCO: niña de 9 años, embolización de una MAV cervical y de partes blandas
+│  │  │  prevertebrales. Pérdida del MEP de extremidades derechas tras la inyección de
+│  │  │  pegamento; la RM posterior mostró isquemia de tronco y cerebelo izquierdos por
+│  │  │  oclusión de la PICA, con SEP de las cuatro extremidades preservados
+│  │  └─ MÉDULA: varón de 63 años, hemangioma vertebral T8 con compresión medular,
+│  │     embolización prequirúrgica y corpectomía T7-T8-T9. Lesión vascular de la arteria
+│  │     radiculomedular T7 derecha (que alimentaba la espinal anterior) → pérdida SÚBITA del
+│  │     MEP de MMII con MEP de MMSS preservado y deterioro solo TRANSITORIO del SEP de MMII,
+│  │     que se recuperó al final de la cirugía. Paraplejia postoperatoria
+│  ├─ LAS DOS EXCEPCIONES QUE NO SON PMD, y que hay que saber descartar
+│  │  ├─ SÍNDROME DEL ÁREA MOTORA SUPLEMENTARIA en fase precoz: la incapacidad de mover imita
+│  │  │  una hemiplejia. El MEP PRESERVADO durante la cirugía y también después distingue con
+│  │  │  facilidad una cosa de la otra
+│  │  │  └─ Con lesión BILATERAL del AMS el paciente queda cuadripléjico con modalidades
+│  │  │     sensitivas conservadas; SEP y MEP preservados son lo que lo diferencia de un PMD
+│  │  └─ PARAPLEJIA HISTÉRICA o cuadriparesia psicógena: la presencia de SEP y MEP descarta
+│  │     el sustrato orgánico
+│  └─ PRONÓSTICO, que es la razón práctica de reconocerlo
+│     ├─ En el ictus, la supervivencia es excelente: solo fallecen en semanas o meses los
+│     │  pacientes de la octava década o con parálisis bilateral, habitualmente por neumonía
+│     ├─ La recuperación de la parálisis también es buena: suele empezar en las DOS PRIMERAS
+│     │  SEMANAS y avanza MÁS DEPRISA EN LA PIERNA que en el brazo
+│     ├─ La excepción es el síndrome de cautiverio (locked-in), donde la mayoría no recupera
+│     │  control motor
+│     ├─ Mecanismos propuestos de recuperación: reversión del daño isquémico local,
+│     │  reabsorción del edema, asunción de la función por corteza vecina, aparición de
+│     │  actividad mediada por neuronas subcorticales, brote sináptico, reclutamiento de
+│     │  sinapsis previamente inefectivas o dormidas, plasticidad subcelular y regeneración
+│     │  neuronal — con evidencia de que el sistema corticoespinal SANO contralateral
+│     │  contribuye de forma importante
+│     └─ Consecuencia clínica: estos pacientes se benefician de tratamiento precoz e
+│        intensivo, porque su desenlace es mejor que el de una lesión motora y sensitiva
+│        combinada. Y el buen pronóstico obliga a segregarlos en cualquier estudio del valor
+│        terapéutico de la fisioterapia o de los anticoagulantes
 ├─ Errores y confusiones frecuentes
 │  ├─ Tratar SEP y MEP como confirmación mutua: son sistemas ortogonales, no una segunda
 │  │  opinión el uno del otro
@@ -187,5 +308,20 @@ Anatomía funcional de las vías largas
       columna dorsal como estructura no-tracto, cuneatus/gracilis, vía de segundo orden,
       núcleo Z, lemnisco medial y VPL, grupo I de MMII por funículo posterolateral,
       sistema anterolateral, Figs. 5.1-5.3 · cap.6 p.96 (serie de Nuwer: 34/51.263
-      falsos negativos, 34/184 = 18.5% de los déficits reales)
+      falsos negativos, 34/184 = 18.5% de los déficits reales) · Deletis cap.14 (Arranz
+      Arranz, "Clinical and neurophysiologic features of the pure motor deficit syndrome
+      caused by selective upper motor neuron lesion") pp.195-204 — §14.1 definición de
+      Fisher y Curry (1965) y su extensión a la médula, §14.2 las diez etiologías,
+      §14.3.3 marcadores neurofisiológicos, excepciones del AMS y de la paraplejia
+      histérica, y explicación de los falsos negativos del SEP, §14.3.4 anatomía patológica
+      de Fisher (ramas perforantes de cerebral media, coroidea anterior y basilar),
+      §14.5.1 los siete puntos típicos de lesión (Fig. 14.3), §14.5.2-14.5.4 casos
+      documentados por nivel — capsular con CoMEP facial (Figs. 14.4-14.5), endarterectomía
+      carotídea (Fig. 14.6), tronco por oclusión de PICA (Figs. 14.7-14.8) y médula por
+      lesión de la radiculomedular T7 (Fig. 14.9) — §14.6 pronóstico y mecanismos de
+      recuperación · cap.1 (Amassian) §1.2.1 pp.3-6 — espectro de diámetros del CST y
+      reclutamiento no uniforme, cancelación de fase frente a pérdida axonal, relación
+      intensidad-respuesta solo aproximadamente sigmoidea (Fig. 1.2), y conversión a
+      potencial monofásico con la lesión de fibra como localizador del nivel lesional
+      (Figs. 1.1 y 1.4)
 ```

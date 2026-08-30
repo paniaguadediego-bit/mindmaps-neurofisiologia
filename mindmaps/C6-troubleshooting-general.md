@@ -240,6 +240,98 @@ Troubleshooting general
 │  └─ Hay que saber DISTINGUIR interferencia eléctrica externa de interferencia de origen
 │     biológico — y para eso hay que estar mirando los potenciales CRUDOS, no solo los
 │     promediados
+├─ EL OTRO TROUBLESHOOTING: EL ERROR HUMANO Y EL SESGO DEL EQUIPO
+│  ├─ Por qué está en este tema y no en otro: un montaje impecable y un quirófano sin
+│  │  interferencia no sirven de nada si tras la alarma nadie actúa. El fallo de decisión
+│  │  es un modo de fallo del sistema tan real como un electrodo suelto, y es el más
+│  │  frecuente de los dos
+│  ├─ EL PUNTO DE PARTIDA: LAS AEROLÍNEAS, OTRA VEZ
+│  │  ├─ Tras el informe del Institute of Medicine que atribuyó hasta 98.000 muertes
+│  │  │  anuales en EEUU a errores médicos, se abrió el foco sobre la causa del error. Hasta
+│  │  │  DOS TERCIOS de todos los errores resultaron nacer de dinámicas de equipo
+│  │  │  disfuncionales, NO de una asistencia incompetente
+│  │  ├─ Datos más recientes en EEUU: 100.000 muertes al año, 19.500 millones de dólares de
+│  │  │  coste anual y 4,6 días más de estancia hospitalaria atribuibles a error médico
+│  │  ├─ Dos décadas antes de ese informe ya se sabía que los accidentes aéreos
+│  │  │  catastróficos venían en gran parte de comunicación defectuosa y decisiones erróneas
+│  │  │  entre tripulantes. La industria abrió la comunicación y APLANÓ las jerarquías de
+│  │  │  decisión en vuelo, con el entrenamiento "crew resource management"
+│  │  ├─ Fórmula concreta que enseña United Airlines, y que sirve igual en quirófano:
+│  │  │  "estoy preocupado, estoy incómodo, esto es inseguro"
+│  │  └─ Las dos precondiciones críticas para reducir errores: CONCIENCIA SITUACIONAL —
+│  │     definida como el diálogo que mantiene a los miembros del equipo al día de qué está
+│  │     pasando y de cómo responderán si la situación cambia— y LENGUAJE CRÍTICO
+│  ├─ LOS DOS MECANISMOS DE DISEÑO QUE YA TIENE LA MIO
+│  │  ├─ DISEÑO INDULGENTE (forgiving design): la reversibilidad de la pérdida de señal tras
+│  │  │  una maniobra quirúrgica de riesgo. El sistema perdona el error si se detecta a
+│  │  │  tiempo
+│  │  └─ REDUNDANCIA DEL SISTEMA: la tasa de error baja cuando se aplican VARIOS tests al
+│  │     MISMO sistema neural. Ejemplo canónico, el suelo del IV ventrículo — el núcleo del
+│  │     facial puede vigilarse por estimulación directa, por MEP corticobulbar y por EMG
+│  │     libre a la vez
+│  ├─ LOS SESGOS COGNITIVOS QUE ARRUINAN UNA ALARMA CORRECTA
+│  │  ├─ CIERRE PREMATURO: el cirujano usa heurísticas (reglas de pulgar) construidas con
+│  │  │  años de experiencia, y habitualmente le funcionan muy bien. Pero bajo el estrés de
+│  │  │  una crisis emergente —hemorragia masiva, lesión medular— aferrarse a la heurística
+│  │  │  puede CORTAR el acceso a toda la paleta de opciones disponibles
+│  │  ├─ HEURÍSTICA DE DISPONIBILIDAD: la decisión del cirujano tras una alarma al cerrar
+│  │  │  una osteotomía puede quedar indebidamente teñida por un informe falso positivo
+│  │  │  RECIENTE del mismo equipo, en vez de por una valoración analítica y probabilística
+│  │  ├─ SESGO DE CONFIRMACIÓN O DE EXPECTATIVA: tendencia a interpretar lo que se oye de
+│  │  │  forma que confirme lo que ya se creía, o a devaluar el dato que choca con lo
+│  │  │  esperado. Formulación clásica del fenómeno: la información neurofisiológica es
+│  │  │  bienvenida mientras tranquiliza al neurocirujano de que todo va bien, y mucho menos
+│  │  │  bienvenida cuando el cambio implicaría detener o incluso abandonar la cirugía
+│  │  ├─ DESPRECIO DE LA PROBABILIDAD (base-rate bias), que afecta a los DOS lados y en
+│  │  │  direcciones opuestas
+│  │  │  ├─ Con riesgo basal muy bajo, el NEUROFISIÓLOGO puede sobrerreaccionar a un cambio
+│  │  │  │  de señal con contexto pobre → informe falso positivo
+│  │  │  └─ Y el CIRUJANO, tras un positivo fuertemente anclado al contexto, puede
+│  │  │     infrarreaccionar → oportunidad perdida de cambiar el manejo y mejorar el
+│  │  │     resultado
+│  │  └─ SESGO AUTOSERVIDOR Y CHIVO EXPIATORIO: la MIO NO es la lectura estática de una
+│  │     imagen radiológica o anatomopatológica que pueda comunicarse impersonalmente por
+│  │     teléfono o a través de un técnico con experiencia limitada; exige análisis con
+│  │     conciencia situacional y retroalimentación proactiva según cambian el contexto
+│  │     quirúrgico y la probabilidad de riesgo minuto a minuto
+│  │     └─ Consecuencia práctica: si el neurofisiólogo está fuera del centro, o dentro pero
+│  │        sin entrar nunca al quirófano, el profesional más capacitado para introducir
+│  │        criterio y análisis de probabilidad en el pensamiento del cirujano queda mal
+│  │        posicionado para hacerlo — y ante un mal resultado se hace más probable la
+│  │        atribución errónea de responsabilidad al colega conectado en remoto
+│  ├─ CÓMO SE MITIGA
+│  │  ├─ CHECKLISTS ESPECÍFICOS DE ALARMA DE MIO: llevan un abordaje analítico preplanificado
+│  │  │  a la decisión en crisis, y su eficacia clínica está demostrada en ensayos
+│  │  │  controlados. Hay checklists publicados tanto por grupos de columna neuroquirúrgicos
+│  │  │  como ortopédicos
+│  │  │  └─ Dentro del checklist ortopédico de Vitale, una de las acciones es CONVOCAR al
+│  │  │     "neurólogo o neurofisiólogo sénior" ante una alarma
+│  │  ├─ PERO EL CHECKLIST SOLO LLEGA HASTA CIERTO PUNTO: Kahneman separó el pensamiento
+│  │  │  "rápido" (heurístico) del "lento" (probabilístico). Ante un positivo anclado al
+│  │  │  contexto, el neurofisiólogo debe pedir explícitamente al cirujano que vaya DESPACIO
+│  │  │  y evalúe la probabilidad revisada de riesgo
+│  │  └─ Y que eso funcione depende de la CREDIBILIDAD PERCIBIDA del neurofisiólogo. Dos
+│  │     ideas de la literatura de comunicación de riesgo que conviene tener presentes
+│  │     ├─ La confianza es fundamental para que el mensaje de riesgo sea eficaz; pero
+│  │     │  cuando la gente está alterada, típicamente NO confía en la autoridad. Por tanto
+│  │     │  la confianza hay que construirla MUCHO ANTES de la crisis
+│  │     └─ Resumen de Covello: "quieren saber que te importa antes de que les importe lo
+│  │        que sabes"
+│  └─ LA CASCADA INTERVENCIONAL Y EL CICLO DE COMUNICACIÓN
+│     ├─ El modelo simple es test → tratamiento → resultado, pero se queda corto
+│     ├─ El modelo real de la MIO es una CASCADA de cinco pasos: test → interpretación →
+│     │  COMUNICACIÓN → intervención → resultado
+│     │  └─ El paso de comunicación es el que enlaza la competencia y el deber de cuidado de
+│     │     cada especialista: el neurofisiólogo registra e interpreta, el cirujano ejecuta
+│     │     la intervención intraoperatoria. Ante una alerta, la comunicación iniciada con
+│     │     eficacia por el neurofisiólogo es CRUCIAL para que el cirujano decida intervenir
+│     ├─ Dentro de la alerta hay además un CICLO: notificación del neurofisiólogo al cirujano
+│     │  → respuesta y acuse de recibo del cirujano → discusión entre ambos si hace falta →
+│     │  decisión del cirujano sobre la intervención
+│     ├─ DECELERADORES del ciclo (lo que frena una buena decisión): el desapego o la
+│     │  distancia del neurofisiólogo, y el sesgo cognitivo del cirujano
+│     └─ ACELERADORES: la familiaridad y la confianza dentro del equipo, y los checklists
+│        específicos de MIO
 ├─ COMUNICACIÓN — parte del troubleshooting, no un extra
 │  ├─ Comunicación frecuente con el cirujano, y también con el equipo de anestesia sobre
 │  │  los agentes usados y las constantes vitales del paciente
@@ -256,8 +348,13 @@ Troubleshooting general
 │  ├─ Confundir relajación neuromuscular no monitorizada con lesión neural real
 │  ├─ Confundir un plano anestésico superficial con patología en el EMG libre
 │  ├─ Mirar solo el promedio y no el trazado crudo, perdiendo la firma de la interferencia
-│  └─ Empezar a adquirir señal solo cuando llega el momento de riesgo, sin margen para
-│     optimizar electrodos o montaje si el basal sale malo
+│  ├─ Empezar a adquirir señal solo cuando llega el momento de riesgo, sin margen para
+│  │  optimizar electrodos o montaje si el basal sale malo
+│  ├─ Dar por terminado el trabajo con la alarma emitida: la cascada tiene cinco pasos y la
+│  │  comunicación es uno de ellos, no un trámite posterior al test
+│  └─ Tratar la MIO como la lectura estática de una imagen, comunicable por teléfono o
+│     delegable en un técnico — pierde exactamente lo que aporta, que es el análisis con
+│     conciencia situacional según cambia el contexto quirúrgico
 ├─ Limitaciones
 │  ├─ La interferencia eléctrica del entorno y del propio cuerpo del paciente NUNCA puede
 │  │  eliminarse por completo: solo reducirse hasta un nivel en que los potenciales sean
@@ -280,5 +377,13 @@ Troubleshooting general
       armónicos, espigas de reguladores de potencia, equipo digital, análisis espectral) ·
       cap.2 pp.16-17 (regla de secuencia: avisar primero, comprobar después) · cap.4
       pp.50-53 (interferencia continua frente a intermitente, electrocoagulación, momento
-      del basal, electrodos de repuesto)
+      del basal, electrodos de repuesto) · Deletis cap.44 (Skinner/Holdefer, "The
+      intraoperative neurophysiological monitoring team") §44.1 pp.623-624 — informe del
+      Institute of Medicine, dos tercios de errores por dinámica de equipo, crew resource
+      management, conciencia situacional y lenguaje crítico · §44.5 pp.627-628 — diseño
+      indulgente y redundancia del sistema, §44.5.1 sesgos entre colegas (cierre prematuro,
+      heurística de disponibilidad, sesgo de confirmación, desprecio de la probabilidad,
+      sesgo autoservidor), §44.5.2 mitigación (checklists de alarma, checklist de Vitale,
+      Kahneman, comunicación de riesgo de Covello), §44.5.3 cascada intervencional y ciclo
+      de comunicación con sus deceleradores y aceleradores (Fig. 44.2)
 ```

@@ -92,6 +92,166 @@ PEM/MEP transcraneal (miogénico)
 │  └─ El cátodo orientado FRONTALMENTE genera preferentemente ondas I, porque con ese
 │     montaje se activan de forma óptima las proyecciones corticocorticales de las
 │     interneuronas verticales; con el cátodo en posición LATERAL esto no ocurre
+├─ LA FÍSICA DE LA ONDA D — de dónde sale su forma y qué mide realmente su amplitud
+│  ├─ POR QUÉ ES TRIFÁSICA, según la teoría clásica del conductor de volumen. Con registro
+│  │  focal referenciado a un electrodo "distante"
+│  │  ├─ La APROXIMACIÓN del impulso por cada fibra del CST se señala como una positividad
+│  │  │  inicial
+│  │  ├─ La transición ISOELÉCTRICA marca la LLEGADA del impulso
+│  │  ├─ La NEGATIVIDAD siguiente resulta de la activación de la fibra bajo el electrodo focal
+│  │  └─ Y la propagación MÁS ALLÁ del electrodo, con recuperación hacia el potencial de
+│  │     reposo, da una positividad final de amplitud baja y larga duración
+│  │     └─ Detalle que distingue el registro humano del animal: en los animales la
+│  │        positividad final apenas se distingue, mientras que en los registros humanos de
+│  │        onda D suele ser MÁS prominente que la positividad inicial, incluso usando un
+│  │        paso de banda adecuado en el extremo de baja frecuencia
+│  ├─ LOS TRES FACTORES DE LOS QUE DEPENDE LA AMPLITUD DE LA ONDA D POBLACIONAL
+│  │  ├─ 1. La SINCRONÍA de los potenciales en cada fibra. Si parte de la población enlentece
+│  │  │  su velocidad de conducción, la amplitud de pico cae por CANCELACIÓN DE FASE
+│  │  │  └─ Signo que hay que saber leer: una amplitud reducida ACOMPAÑADA DE ENSANCHAMIENTO
+│  │  │     del componente negativo indica desincronización, no pérdida de fibras
+│  │  ├─ 2. El NÚMERO de fibras rápidas del CST activadas
+│  │  └─ 3. La amplitud del potencial de acción en cada fibra individual, que puede cambiar
+│  │     por fenómenos fisiológicos —refractariedad, supernormalidad— o por DAÑO
+│  ├─ LO QUE PASA CUANDO EL IMPULSO SE BLOQUEA (y por qué importa aunque no se haga en
+│  │  clínica)
+│  │  ├─ Al insertar un semimicroelectrodo DENTRO del CST, la onda D se vuelve
+│  │  │  sustancialmente MONOFÁSICA y su amplitud aumenta casi ×5
+│  │  ├─ Pero la onda I aumenta mucho más (×15,5), de modo que el cociente I/D se TRIPLICA
+│  │  ├─ Explicación habitual: al convertirse en potenciales monofásicos hay menos
+│  │  │  cancelación de fase entre potenciales trifásicos ligeramente asíncronos — aunque
+│  │  │  probablemente no sea el único factor
+│  │  └─ CONSECUENCIA PRÁCTICA de estar limitados al registro CONDUCIDO (epidural): la
+│  │     amplitud de la onda D conducida sigue siendo una medida VÁLIDA del número de fibras
+│  │     conductoras, limitada solo por la desincronización patológica y por la reducción de
+│  │     amplitud en cada fibra. Pero el cociente I/D queda tan reducido que la actividad
+│  │     conducida NO es técnicamente aceptable para medir umbrales de activación D frente a
+│  │     I, ni para comparar estimulación anódica frente a catódica, ni eléctrica frente a
+│  │     magnética
+│  ├─ LA CONVERSIÓN A MONOFÁSICO COMO LOCALIZADOR DE LESIÓN: la lesión de la fibra convierte
+│  │  el potencial hacia monofásico, lo que permite identificar funcionalmente el SITIO de una
+│  │  lesión traumática medular; un tumor medular produce un desplazamiento similar hacia la
+│  │  positividad
+│  │  └─ Dato experimental que fija el mecanismo: en el gato, una contusión por caída de peso
+│  │     (47 g desde 7,2 cm) produjo un 96% de bloqueo de conducción, y el efecto del impacto
+│  │     ocurrió EN MENOS DE UN SEGUNDO — lo que excluye factores vasculares y edema como
+│  │     causa de esa pérdida de conducción
+│  ├─ RELACIÓN INTENSIDAD-RESPUESTA: es monótona y solo APROXIMADAMENTE sigmoidea
+│  │  ├─ Teóricamente, un grupo de fibras rápidas con diámetros (y por tanto umbrales)
+│  │  │  normalmente distribuidos daría una sigmoide perfecta, que es la integral de la
+│  │  │  distribución normal
+│  │  ├─ No lo es porque el CST contiene un rango AMPLIO de diámetros y el estímulo no afecta
+│  │  │  a las fibras de manera uniforme: primero se excitan las fibras más grandes y más
+│  │  │  cercanas al electrodo, y al subir la intensidad se suman tanto fibras cercanas de
+│  │  │  umbral más alto como fibras lejanas de umbral bajo (sujetas a la reducción de
+│  │  │  intensidad por el inverso del cuadrado)
+│  │  ├─ Y complica más las cosas que las fibras de umbral más bajo, las primeras excitadas,
+│  │  │  son las que aportan los potenciales de acción MÁS GRANDES a la respuesta poblacional
+│  │  └─ Conclusión operativa: la amplitud de la onda D poblacional mide SOLO
+│  │     APROXIMADAMENTE el número de fibras activas de forma síncrona
+│  └─ Con estimulación MAGNÉTICA el artefacto grande impide elicitar una onda D máxima, pero
+│     a intensidades submáximas la onda D crece de forma monótona y "cuasilineal"
+├─ ANODO FRENTE A CÁTODO — la evidencia animal que hay detrás de la regla
+│  ├─ En el mono, la estimulación anódica y la catódica generan la onda D en SITIOS DISTINTOS
+│  │  ├─ Con estimulación CATÓDICA, a una intensidad dada las ondas D son muy VARIABLES,
+│  │  │  porque la activación ocurre cerca de la zona gatillo del potencial (segmento inicial
+│  │  │  y membrana adyacente), sometida a la influencia sináptica
+│  │  └─ Con estimulación ANÓDICA son casi CONSTANTES en amplitud, porque la activación
+│  │     ocurre en un punto de la sustancia blanca electrotónicamente AISLADO de las sinapsis
+│  ├─ Matiz que evita simplificar de más: cuando los estímulos están un poco por encima del
+│  │  umbral (por ejemplo un 50%), CUALQUIERA de las dos polaridades elicita ondas D e I
+│  ├─ Registro intracelular en el gato que lo confirma: el estímulo bipolar umbral genera un
+│  │  impulso D cuando las neuronas del CST están relativamente DESPOLARIZADAS; cuando lo
+│  │  están menos, hace falta excitación transináptica
+│  └─ DÓNDE EXACTAMENTE ACTIVA EL ÁNODO: los estudios de modelado sitúan el punto de umbral
+│     más bajo en los CODOS (bends) de las fibras del CST dentro de la sustancia blanca
+│     └─ Prueba indirecta elegante: la facilitación entre TES anódica y estimulación magnética
+│        a intensidad justo umbral solo ocurre a intervalos muy breves, y se infiere que el
+│        punto de sumación electrotónica de ambos estímulos es ese codo — donde las
+│        direcciones de los dos campos eléctricos ORTOGONALES producen ambas corriente
+│        saliente en el nodo
+├─ MONTAJE DE TES — consecuencias prácticas de la física del cráneo
+│  ├─ El campo eléctrico se desarrolla necesariamente sobre un área AMPLIA de corteza y
+│  │  subcorteza, porque cuanto MENOR es la distancia interpolar, MAYOR es la proporción de
+│  │  corriente derivada por los tejidos superficiales
+│  ├─ Dada la alta resistencia del cráneo, NO hay ninguna ventaja en usar electrodos de
+│  │  superficie pequeña
+│  ├─ Técnica estándar del autor: electrodo focal de scalp de 2×2 cm sobre corteza motora, con
+│  │  electrodo de referencia semicircular grande de 25 cm² y distancia interpolar de unos 6 cm
+│  ├─ Las respuestas musculares durante contracción voluntaria se obtienen con umbral MÁS
+│  │  ALTO con TES catódica focal que con anódica — y el aumento de corriente necesario es
+│  │  mayor de lo que cabría esperar por la diferencia de umbral de la onda D
+│  ├─ Material del electrodo: el acero inoxidable de 25 µm resultó inadecuado porque, si se
+│  │  dobla, deja de adaptarse al scalp. La LÁMINA DE ALUMINIO es un sustituto satisfactorio:
+│  │  se aplana con facilidad y no distorsiona los pulsos eléctricos breves (por ejemplo de
+│  │  0,2 ms)
+│  ├─ Control de calidad recomendado: monitorizar la corriente de estimulación con una sonda
+│  │  inductiva sobre el cable, y estimar las impedancias de electrodo sustituyendo al sujeto
+│  │  por una resistencia de precisión (por ejemplo 1 kΩ) y calculándolas a partir del
+│  │  cociente de corrientes al mismo voltaje de salida
+│  └─ EL PROBLEMA OCULTO DE ESTIMULAR EN C3 Y C4 A LA VEZ, y sus dos soluciones
+│     ├─ A las intensidades habituales hay excitación D en AMBOS sitios, lo que aumenta la
+│     │  onda D del CST por sumación — bueno para la señal, malo para la interpretación
+│     ├─ El riesgo concreto: una caída del x% de la onda D combinada por presión unilateral
+│     │  sobre UN cordón lateral puede corresponder en realidad a un daño del 2x en ese cordón
+│     ├─ Solución 1 (montaje): conectar la salida (−) del estimulador al electrodo de
+│     │  referencia grande posterior y la salida (+) a un conmutador de dos polos y tres
+│     │  posiciones que permita seleccionar ambos ánodos focales, solo el derecho o solo el
+│     │  izquierdo
+│     └─ Solución 2 (temporal): un pulso anódico entregado 1 ms después del primero en el
+│        MISMO sitio cae en periodo refractario; por tanto, estímulos anódicos focales dados
+│        en C3 y C4 separados 1 ms generan ondas D INDEPENDIENTES
+├─ EL EFECTO ANESTÉSICO SOBRE LA ONDA D, CON CIFRAS
+│  ├─ Con isoflurano al 2%, la amplitud de la onda D se redujo al 46% con TES pero solo al
+│  │  80% estimulando la corteza motora EXPUESTA
+│  ├─ Además, aumentar el plano anestésico AUMENTA LA LATENCIA de la respuesta del CST a la
+│  │  TES
+│  └─ Ambos hechos juntos apoyan una hipótesis importante: el SITIO donde la TES activa el
+│     CST se DESPLAZA con el nivel anestésico. Los primeros registros ya indicaban sitios de
+│     excitación cada vez más subcorticales al aumentar la intensidad anódica focal
+├─ POR QUÉ EL MEP MUSCULAR NECESITA UN TREN — la fisiología de la facilitación temporal
+│  ├─ En el sujeto DESPIERTO, un pulso único basta porque la latencia corta de la respuesta
+│  │  refleja activación D y no I: lo crítico es el TAMAÑO de la salva D (facilitación
+│  │  ESPACIAL) y lo cerca que estén del umbral de disparo los potenciales de membrana de las
+│  │  motoneuronas alfa, mantenidos ahí por la actividad voluntaria
+│  ├─ En el paciente ANESTESIADO esa despolarización de fondo desaparece y hay que
+│  │  sustituirla por facilitación TEMPORAL, que es lo que aporta el tren de salvas del CST
+│  ├─ Base celular (Phillips y Porter, registro intracelular en motoneuronas alfa de babuino):
+│  │  la facilitación temporal resulta de la SUMACIÓN de EPSP sucesivos que ascienden hasta el
+│  │  umbral de disparo. La LONGITUD del tren determina si los EPSP llegan a alcanzarlo
+│  │  └─ Demostración por sustracción: enfriar la superficie pial de la corteza motora del
+│  │     mono reduce selectivamente la actividad I MÁS TARDÍA y ABOLE la respuesta muscular
+│  ├─ EL PERIODO ÓPTIMO DEL TREN es un compromiso entre dos fuerzas opuestas
+│  │  ├─ Si el periodo es demasiado LARGO, los EPSP se han disipado antes de que llegue la
+│  │  │  siguiente salva
+│  │  ├─ Si es demasiado CORTO, la refractariedad reduce el tamaño de la salva del CST
+│  │  ├─ La refractariedad ya está ausente a 4 ms, e incluso a periodos más cortos si el pulso
+│  │  │  de TES es de larga duración (por ejemplo 0,5 ms)
+│  │  └─ Y cuanto MÁS PROFUNDA la anestesia, MÁS LARGA es la constante de tiempo de membrana
+│  │     de la motoneurona, por la menor conductancia en reposo. Con una constante de
+│  │     decaimiento que difícilmente baja de 4 ms, un tren a 250 Hz sigue dando facilitación
+│  │     sustancial
+│  ├─ BAJO ANESTESIA LIGERA, con ondas I múltiples, la cuenta cambia: el periodo de la onda I
+│  │  puede ser tan breve como 1,4 ms (probablemente porque los EPSP en la zona gatillo vencen
+│  │  la refractariedad relativa del potencial anterior), y hay activación I en neuronas del
+│  │  CST que NO se habían activado con la D
+│  │  └─ Entonces el ISI óptimo lo determina la duración conjunta de la descarga D más las I
+│  │     múltiples, que probablemente supera los 5 ms. Acortar más el ISI no aporta nada, por
+│  │     OCLUSIÓN entre las ondas D e I y las del estímulo antecedente
+│  ├─ Y bajo anestesia PROFUNDA la facilitación temporal solo puede conseguirse con un tren de
+│  │  salvas D puras, porque la anestesia no solo reduce la actividad I: también reduce el
+│  │  bombardeo facilitatorio tónico de las motoneuronas alfa, y con él las respuestas
+│  │  reflejas a un estímulo sensitivo dado
+│  └─ LA NO LINEALIDAD que explica la sensibilidad del MEP muscular: la relación entre
+│     intensidad de TES y respuesta muscular NO es lineal — en el mono la respuesta muscular
+│     aparece ABRUPTAMENTE con un pequeño incremento de intensidad
+│     ├─ Consecuencia: el MEP muscular es potencialmente MÁS SENSIBLE al daño medular que la
+│     │  respuesta del CST, por dos razones sumadas — la función de transferencia de las salvas
+│     │  del CST a las motoneuronas, y que una reducción de la facilitación tónica reduce aún
+│     │  más la eficacia de esas salvas
+│     └─ Y una implicación técnica poco citada: subir la intensidad durante un tren de TES
+│        recluta fibras presinápticas ADICIONALES, aportando facilitación espacial y
+│        aumentando la eficiencia de la estimulación para una misma carga total administrada
 ├─ ELECCIÓN DE MÚSCULOS — lo que separa un paciente monitorizable de uno que no lo es
 │  ├─ En pacientes con paresia profunda, NO elegir los músculos óptimos puede convertirlos
 │  │  en pacientes "no monitorizables"
@@ -191,6 +351,35 @@ PEM/MEP transcraneal (miogénico)
 │  │     completa de los MEP musculares indica déficit transitorio o permanente
 │  └─ Resultado de aplicar estos criterios: en una serie publicada de 100 cirugías
 │     consecutivas de tumor intramedular NO hubo un solo paciente parapléjico postoperatorio
+├─ LO QUE UN MEP CONSERVADO NO GARANTIZA — y lo que sí descarta
+│  ├─ El marcador neurofisiológico del DÉFICIT MOTOR PURO es la combinación de MEP AUSENTE
+│  │  en el miembro afectado (y/o CoMEP ausente en músculos de par craneal motor) con SEP
+│  │  PRESENTE en ese mismo miembro. Es el patrón que documenta una lesión selectiva del
+│  │  tracto corticoespinal o corticobulbar sin afectación de columnas dorsales ni vía
+│  │  lemniscal
+│  ├─ DOS EXCEPCIONES en las que el MEP conservado NO significa que el paciente vaya a mover
+│  │  ├─ SÍNDROME DEL ÁREA MOTORA SUPLEMENTARIA en fase precoz: la incapacidad de mover imita
+│  │  │  una hemiplejia, pero el MEP está PRESERVADO durante la cirugía y también después. El
+│  │  │  MEP distingue con facilidad las dos situaciones — pero si no se conoce el fenómeno,
+│  │  │  el desenlace parece un falso negativo del MEP y no lo es
+│  │  └─ Con lesión BILATERAL del AMS el paciente queda cuadripléjico con las modalidades
+│  │     sensitivas conservadas, y aun así SEP y MEP están preservados
+│  ├─ Y UNA EN LA QUE EL MEP CONSERVADO SÍ ES CONCLUYENTE: en paraplejia histérica o
+│  │  cuadriparesia psicógena, la presencia de SEP y MEP descarta el sustrato orgánico
+│  ├─ RECOMENDACIÓN TÉCNICA que se deriva de todo esto: para no pasar por alto un déficit
+│  │  motor puro, es recomendable usar MEP elicitados por estimulación DIRECTA de la corteza
+│  │  motora. Esa metodología no permite que la corriente penetre profundamente en la
+│  │  sustancia blanca, y puede ser la modalidad de elección
+│  │  └─ Base fisiológica: se cree que los pulsos anódicos CORTOS, DÉBILES y FOCALES activan
+│  │     las neuronas del CST en sus AXONES, situados en la sustancia blanca
+│  └─ EJEMPLO PROTOTÍPICO DE PÉRDIDA PURA DE MEP: endarterectomía carotídea con abolición
+│     completa del MEP transcraneal contralateral en los primeros 5 minutos tras el clampaje
+│     y SEP de mediano estables
+│     ├─ Subir la tensión arterial un 30% sobre los valores preoperatorios y aumentar la
+│     │  intensidad de estimulación más de un 40% NO consiguió recuperar registros estables
+│     └─ El MEP se estabilizó en 5 minutos tras colocar el shunt intraarterial, y el paciente
+│        no desarrolló déficit postoperatorio — es decir, la modalidad que detectó el
+│        problema fue también la que confirmó que la medida correctora había funcionado
 ├─ EFECTO DE LA ANESTESIA Y LA FISIOLOGÍA
 │  ├─ Es la modalidad más exigente: sensible a halogenados Y a bloqueo neuromuscular (el
 │  │  Grupo 4 de la clasificación farmacológica)
@@ -248,7 +437,25 @@ PEM/MEP transcraneal (miogénico)
       (Fig. 2.17), Tabla 2.1 y serie de 100 cirugías · cap.40 (Sloan & Koht) pp.568-575
       (Grupo 4, MAC, bloqueo parcial y umbral de TES) · cap.41 (MacDonald/Seidel/Shils)
       pp.590-591 (mordedura y montaje) · Moller2011 cap.9 pp.178-181 (anatomía del CST,
-      asimetría, escoliosis)
+      asimetría, escoliosis) · Deletis cap.14 (Arranz Arranz, "Clinical and neurophysiologic
+      features of the pure motor deficit syndrome") §14.3.3 pp.197-198 — marcadores
+      neurofisiológicos del déficit motor puro, excepciones del área motora suplementaria y
+      de la paraplejia histérica, recomendación de la estimulación cortical directa y pulsos
+      anódicos cortos, débiles y focales · §14.5.2 p.200 y Fig. 14.6 — pérdida pura de MEP
+      transcraneal en endarterectomía carotídea con SEP estables (serie multicéntrica de
+      Malcharek y col., 600 pacientes) · Deletis cap.1 (Amassian, "Animal and human motor
+      system neurophysiology related to intraoperative monitoring") pp.3-14 — §1.2.1.1
+      configuración trifásica de la onda D por teoría del conductor de volumen y los tres
+      factores de su amplitud (Fig. 1.1), §1.2.1.2 impulsos bloqueados, ×5 de la D y ×15,5
+      de la I con triplicación del cociente I/D, conversión a monofásico como localizador de
+      lesión y contusión felina con 96% de bloqueo en menos de un segundo (Figs. 1.2-1.4),
+      §1.2.2 sitios de activación anódica y catódica, codos de las fibras del CST, montaje de
+      2×2 cm con referencia de 25 cm² a 6 cm, lámina de aluminio, el problema de la sumación
+      C3/C4 con sus dos soluciones, y el efecto anestésico (46% con TES frente a 80% con
+      corteza expuesta bajo isoflurano al 2%) (Figs. 1.5-1.6), §1.3 facilitación temporal y
+      espacial, sumación de EPSP de Phillips y Porter, enfriamiento pial que abole la
+      respuesta muscular (Fig. 1.11), periodo óptimo del tren, y no linealidad
+      intensidad-respuesta muscular (Fig. 1.12)
 ```
 
 ## Ampliación — profundizar

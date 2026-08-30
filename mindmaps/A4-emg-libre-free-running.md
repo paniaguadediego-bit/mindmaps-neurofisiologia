@@ -145,6 +145,44 @@ EMG libre (free-running)
 │  │  averiguar hasta qué punto el fascículo nervioso está aplanado o incluso dividido
 │  └─ Tras irrigar con suero caliente al terminar una descompresión microvascular es NORMAL
 │     ver disparo sostenido sin significado clínico — no confundirlo con un tren patológico
+├─ DÓNDE EL EMG LIBRE NO VALE: EL FACIAL EXTRACRANEAL
+│  ├─ Hay evidencia sustancial CONTRA la fiabilidad del EMG libre cuando se usa para
+│  │  monitorizar el segmento EXTRACRANEAL del nervio facial — y eso contrasta con su buen
+│  │  rendimiento en el segmento intracraneal, donde sí está respaldado
+│  ├─ LA RAZÓN ANATÓMICA, que es lo que hay que entender de verdad
+│  │  ├─ El segmento del facial que va del tronco al conducto auditivo interno (facial
+│  │  │  INTRACRANEAL) NO tiene una vaina completa de tejido conectivo: solo lo cubre una
+│  │  │  capa fina de piamadre y está directamente bañado en LCR. Es el segmento que se
+│  │  │  expone en cirugía de ángulo pontocerebeloso, es MÁS VULNERABLE a la manipulación
+│  │  │  quirúrgica, y por eso se monitoriza con éxito con EMG libre
+│  │  └─ El segmento EXTRACRANEAL, en cambio, está cubierto por una vaina completa de tres
+│  │     capas —epineuro, perineuro y endoneuro— que lo PROTEGE de la manipulación
+│  │     quirúrgica. Esa protección mecánica es exactamente lo que reduce la capacidad del
+│  │     EMG libre para detectar la lesión: el nervio no "se queja" hasta que ya es tarde
+│  ├─ LOS DOS ESTUDIOS QUE LO CUANTIFICAN
+│  │  ├─ Meier y col., retrospectivo en cirugía extracraneal del facial: solo el 16% de los
+│  │  │  pacientes con lesión postoperatoria del facial presentó patrones anormales de EMG
+│  │  │  libre durante la cirugía — y los que sí los presentaron NO correlacionaron
+│  │  │  significativamente con disfunción postoperatoria ni permanente ni transitoria
+│  │  └─ Grosheva y col., estudio prospectivo controlado: baja fiabilidad del EMG libre en
+│  │     cirugía extracraneal del facial, sin capacidad de predecir el resultado
+│  │     postoperatorio
+│  ├─ POR QUÉ SE SIGUE USANDO IGUAL — tres razones históricas, ninguna fisiológica
+│  │  ├─ El mismo grupo de cirujanos (típicamente ORL) opera todo el espectro —intracraneal,
+│  │  │  temporal y extracraneal— con las MISMAS herramientas de monitorización
+│  │  ├─ El EMG libre no requiere asistencia activa de un neurofisiólogo ni del cirujano: es
+│  │  │  fácil de implementar en quirófano
+│  │  └─ Sus carencias quedan ampliamente compensadas por el MAPEO intraoperatorio, lo que
+│  │     enmascara el problema
+│  └─ La alternativa que existe desde hace cuarenta años: Delgado propuso ya la
+│     monitorización continua por CMAP estimulando el nervio proximalmente a la lesión. No
+│     se adoptó porque en su momento faltaban equipos y competía con un EMG libre más
+│     accesible y práctico
+│     └─ Matiz importante: el CMAP continuo tiene limitaciones profundas en fosa posterior
+│        INTRAcraneal, porque el segmento proximal del nervio respecto a la lesión suele ser
+│        inaccesible para estimular (demasiado cerca del tronco). Fuera del cráneo eso no
+│        pasa: el acceso al tronco del facial para colocar agujas de estimulación continua
+│        siempre es posible
 ├─ CAUSAS DE CAMBIO NO QUIRÚRGICO
 │  ├─ Plano anestésico superficial → actividad tipo unidad motora en TODOS los músculos a la
 │  │  vez → sospechar esto antes que patología
@@ -179,7 +217,13 @@ EMG libre (free-running)
       nervio intermedio · cap.13 (Toleikis) pp.179-181 — patrón fásico frente a tónico en
       raíz espinal · cap.27 (Pasquali/Tramontano/Sala) pp.369-371 · cap.40 (Sloan & Koht)
       p.569 — el EMG libre como la modalidad más vulnerable al bloqueo parcial ·
-      Boaro2026 — EMG libre en tumor intramedular
+      Boaro2026 — EMG libre en tumor intramedular · Deletis cap.24 (Ulkatan y col.,
+      "Surgery of the face") §24.1 pp.319-320 — las cinco metodologías de monitorización del
+      facial, evidencia contra el EMG libre extracraneal (Meier con su 16%, Grosheva), las
+      tres razones históricas de su persistencia y la metodología de CMAP continuo de
+      Delgado · §24.2 pp.320-321 — vaina de tejido conectivo ausente en el segmento
+      intracraneal y completa en el extracraneal, y su consecuencia sobre la sensibilidad
+      del EMG libre
 ```
 
 ## Ampliación — profundizar

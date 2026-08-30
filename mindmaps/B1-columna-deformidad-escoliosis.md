@@ -32,6 +32,57 @@ Columna — deformidad / escoliosis
 │  └─ Marco que conviene tener presente: la MIO, como cualquier otra herramienta quirúrgica
 │     adyuvante, solo puede ayudar tanto como el operador que hay detrás, que analiza la
 │     información y actúa —o no— en consecuencia
+├─ COSTE-EFECTIVIDAD — el otro lado del argumento de indicación
+│  ├─ Por qué importa en deformidad justo ahora: la presión por la contención de costes con
+│  │  pagos "empaquetados" que incluyen todos los servicios asociados a la cirugía de columna
+│  │  va a llevar a suprimir lo que no se considere necesario para hacer la operación. La
+│  │  evaluación económica de la MIO ha dejado de ser un ejercicio académico
+│  ├─ LA ECUACIÓN DE EFECTIVIDAD, que es de donde sale todo lo demás
+│  │  ├─ P(evento adverso) = riesgo basal de la cirugía (BSR) × sensibilidad de la MIO ×
+│  │  │  efectividad de las acciones tomadas tras la alerta (EoA)
+│  │  ├─ Los tres factores son atacables por separado, y los tres son inciertos
+│  │  ├─ Problema del BSR: la revisión sistemática de Fehlings sobre series de columna con
+│  │  │  MIO multimodal daba un 5% de riesgo de compromiso neurológico — sustancialmente MÁS
+│  │  │  ALTO que el de las grandes series publicadas por cirujanos de columna y que el de
+│  │  │  los datos administrativos de facturación
+│  │  │  └─ Explicación probable: la definición de "déficit neurológico postoperatorio" va
+│  │  │     desde el adormecimiento hasta la parálisis, y hay tendencia conocida a
+│  │  │     infranotificar complicaciones en las bases de datos retrospectivas
+│  │  └─ Problema del EoA: descansa en UN SOLO estudio alemán — de 84 cirugías con alerta de
+│  │     MIO, la mitad fueron atendidas por el equipo quirúrgico y de esas 22 de 42 no
+│  │     tuvieron déficit postoperatorio, frente al 100% de déficit en las 42 en que no hubo
+│  │     respuesta a la alerta
+│  │     └─ Sus limitaciones, que hay que decir: mezclaba cirugías de columna e
+│  │        intracraneales, y evaluaba alertas de SEP y de respuestas auditivas de tronco, no
+│  │        de MEP ni de EMG. Aun así sigue siendo el ÚNICO estudio prospectivo con
+│  │        comparador que aborda qué se gana interviniendo tras una alerta
+│  ├─ EL MODELO ESPECÍFICO DE ESCOLIOSIS
+│  │  ├─ Modelo coste-beneficio de Sala para cirugía de escoliosis, asumiendo un riesgo de
+│  │  │  paraplejia del 0,1% en un paciente de 25 años y una efectividad de la MIO del 100%,
+│  │  │  con horizonte temporal de por vida
+│  │  ├─ Resultado: un coste NETO de la MIO de 977 dólares por cirugía (USD de 2006)
+│  │  └─ Advertencia metodológica: no incluía análisis de incertidumbre
+│  ├─ LOS MODELOS GENERALES DE CIRUGÍA DE COLUMNA, QUE SÍ LO INCLUYEN
+│  │  ├─ Coste-consecuencia: coste de evitar UN déficit neurológico postoperatorio en una
+│  │  │  cirugía electiva genérica de columna = 63.387 dólares (USD de 2009; intervalo de
+│  │  │  incertidumbre del 95%, 61.939-64.836), asumiendo un riesgo basal en torno al 5% y un
+│  │  │  coste de MIO de 1.535 dólares por cirugía
+│  │  │  └─ Los parámetros MÁS INFLUYENTES en el análisis de sensibilidad fueron el riesgo
+│  │  │     basal de la cirugía y la tasa de prevención tras la alerta — no el coste de la MIO
+│  │  ├─ Coste-beneficio con horizonte de por vida: coste medio de por vida 35.325 dólares
+│  │  │  con MIO frente a 58.514 sin ella → AHORRO medio de 23.189 dólares
+│  │  └─ Los tres puntos de PARIDAD DE COSTE (el modelo deja de ahorrar por debajo de ellos):
+│  │     riesgo basal de lesión neurológica del 0,3%, tasa de prevención tras alerta del
+│  │     14,2%, o coste de la MIO de 8.793 dólares
+│  └─ EL ARGUMENTO DE LA EQUIPOISE, que zanja la discusión sobre por qué no hay ensayos
+│     ├─ El obstáculo mayor para determinar la eficacia de la MIO sigue siendo la ausencia de
+│     │  ensayos aleatorizados
+│     ├─ La objeción ética habitual —crear un grupo control sin un servicio que puede hacer
+│     │  la cirugía más segura— es DESMENTIDA por la práctica real: en ninguno de los
+│     │  estudios de datos administrativos el uso de MIO superó el 30% de las cirugías
+│     │  elegibles
+│     └─ Dicho de otro modo: la incertidumbre clínica ya existe de hecho en el uso real, así
+│        que el argumento de que aleatorizar sería inmoral se sostiene mal
 ├─ LAS TRES FUENTES DE INFORMACIÓN DEL CIRUJANO, Y EL HUECO QUE LLENA LA MIO
 │  ├─ 1. ANATOMÍA, la primera y más importante: examen visual y a veces táctil del campo.
 │  │  Si un implante está visiblemente mal colocado o la médula visiblemente comprimida, NO
@@ -106,6 +157,93 @@ Columna — deformidad / escoliosis
 │  │  pero sin diferenciación cuantitativa de riesgo entre ellas **(verificar)**
 │  └─ La causa de una caída de señal puede NO ser la maniobra en sí: hay descrito un caso en
 │     el que la causa real fue un hematoma epidural, no la corrección
+├─ LA VASCULARIZACIÓN MEDULAR — la anatomía que hay detrás del mecanismo isquémico
+│  ├─ Por qué hace falta aquí: la mitad del mecanismo de lesión en corrección de deformidad
+│  │  es ISQUÉMICA, y sin esta anatomía no se entiende ni por qué el nivel torácico medio es
+│  │  el más frágil ni por qué el SEP puede seguir normal mientras se infarta la médula
+│  ├─ LOS TRES EJES LONGITUDINALES DEL ADULTO
+│  │  ├─ ARTERIA ESPINAL ANTERIOR (ASA): se extiende casi ininterrumpida desde el bulbo
+│  │  │  hasta el filum terminale. En la unión cervicomedular nace de las DOS arterias
+│  │  │  vertebrales, cerca de la unión vertebrobasilar
+│  │  ├─ Caudalmente, el aporte principal viene de ramas dorsales de las arterias
+│  │  │  intercostales y lumbares. A la altura del engrosamiento cervical, las arterias
+│  │  │  radiculomedulares mayores nacen de la vertebral, la cervical profunda o la cervical
+│  │  │  ascendente
+│  │  ├─ ARTERIA DE ADAMKIEWICZ (arteria radicularis anterior magna): irriga sobre todo el
+│  │  │  territorio TORACOLUMBAR. Nace habitualmente de la 9.ª a la 12.ª intercostal y, en
+│  │  │  aproximadamente el 80% de los casos, del lado IZQUIERDO
+│  │  │  └─ Da una rama ascendente pequeña y una rama descendente grande, que se anastomosa
+│  │  │     con las arterias espinales posteriores formando la "cesta anastomótica" que rodea
+│  │  │     el cono medular
+│  │  └─ ARTERIAS ESPINALES POSTERIORES (PSA), pares: a nivel cervical nacen de las
+│  │     vertebrales o, con menos frecuencia, de las PICA. Caudalmente reciben aferentes
+│  │     radiculopiales de vertebrales, intercostales y lumbares. Discurren por la superficie
+│  │     POSTEROLATERAL de la médula, adyacentes a la zona de entrada de la raíz dorsal
+│  ├─ EL DATO DE DESARROLLO QUE EXPLICA LA ASIMETRÍA: al final del desarrollo no quedan más
+│  │  de 4-8 arterias radiculares ANTERIORES frente a 10-20 POSTERIORES
+│  ├─ POR QUÉ EL TORÁCICO MEDIO ES EL PUNTO FRÁGIL (eje longitudinal)
+│  │  ├─ La vascularización es SEGMENTARIA: cada grupo arterial mayor —cervical, torácico
+│  │  │  alto y Adamkiewicz— irriga su propia porción de médula SIN anastomosis significativas
+│  │  │  entre ellos
+│  │  └─ Consecuencia directa: la médula es típicamente vulnerable a la hipoperfusión en el
+│  │     nivel TORÁCICO MEDIO — que es justo donde se hacen buena parte de las osteotomías y
+│  │     resecciones vertebrales de la cirugía de deformidad
+│  ├─ POR QUÉ EL SISTEMA POSTERIOR AGUANTA MÁS: las numerosas anastomosis del sistema
+│  │  posterior DISMINUYEN el riesgo de isquemia de la médula posterior. El anterior no tiene
+│  │  esa red
+│  ├─ QUÉ IRRIGA CADA UNO, TRADUCIDO A MODALIDADES (eje axial)
+│  │  ├─ La ASA, a través de las arterias sulcocomisurales perforantes, irriga los DOS
+│  │  │  TERCIOS a CUATRO QUINTOS ANTERIORES de la médula: columna anterior de la sustancia
+│  │  │  gris central, tractos corticoespinales anterior y lateral, y tractos espinotalámicos
+│  │  │  anterior y lateral
+│  │  │  └─ Es decir: la ASA da de comer a TODO lo que propaga el MEP desde los generadores
+│  │  │     corticales hasta la motoneurona alfa —CST anterior y lateral y, en menor medida,
+│  │  │     el sistema propioespinal
+│  │  ├─ Las PSA irrigan las astas posteriores de la sustancia gris central y las COLUMNAS
+│  │  │  DORSALES, que son la vía principal de propagación central del SEP
+│  │  └─ Traducción operativa: SEP y MEP no vigilan solo tractos distintos, sino TERRITORIOS
+│  │     VASCULARES distintos. El infarto de la ASA es el ejemplo prototípico de lesión que
+│  │     el SEP no ve
+│  ├─ LA VASA CORONA Y LA ZONA DE ÚLTIMO PRADO AXIAL
+│  │  ├─ Vasos circunferenciales de la ASA se anastomosan con las PSA a través de una red
+│  │  │  pial compleja, la vasa corona, que irriga el reborde periférico de la sustancia
+│  │  │  blanca y constituye una conexión dorsoventral funcionalmente relevante
+│  │  └─ En el plano AXIAL, la zona de último prado (watershed) está en los dos tercios
+│  │     ANTERIORES, en la sustancia blanca ADYACENTE A LAS ASTAS ANTERIORES, donde se
+│  │     encuentran las ramas penetrantes de la ASA y de la PSA en la red pial circunferencial
+│  ├─ LO QUE NO SE PUEDE PREDECIR: la DIRECCIÓN del flujo sanguíneo medular a un nivel dado
+│  │  no se puede anticipar fácilmente, porque depende de cuál sea la arteria espinal
+│  │  dominante —anterior o posterior— para ese segmento concreto
+│  ├─ RETORNO VENOSO, que también importa
+│  │  ├─ Venas sulcales: drenan la porción central de la médula por la fisura mediana
+│  │  │  anterior hacia la vena espinal mediana anterior, que recibe además las venas
+│  │  │  centrales que drenan la sustancia gris central, astas anteriores incluidas
+│  │  ├─ Una vena espinal DORSAL, a menudo MAYOR que la anterior, drena la porción
+│  │  │  posterocentral
+│  │  ├─ Venas radiales o coronales: nacen de capilares en la unión sustancia gris-blanca y
+│  │  │  discurren centrífugamente drenando las regiones anterolateral y dorsal
+│  │  └─ Vía final común: las venas radiculares, que perforan la duramadre para drenar en las
+│  │     venas epidurales. Carecen de válvulas pero se ESTRECHAN en la penetración dural, y
+│  │     ese estrechamiento es lo que impide el flujo venoso retrógrado
+│  └─ POR QUÉ EL MEP MUSCULAR ES EL DETECTOR DE ISQUEMIA, Y NO LA ONDA D
+│     ├─ El MEP MUSCULAR desaparece ANTES y es por tanto MÁS SENSIBLE a la isquemia que el
+│     │  MEP epidural, y esa es la razón de proponerlo para valorar la perfusión medular en
+│     │  cirugía de riesgo isquémico
+│     ├─ Mecanismo: la desaparición precoz del MEP muscular es secundaria a la transmisión
+│     │  POLISINÁPTICA del potencial. Una reducción del flujo medular que afecte a la
+│     │  integridad funcional de las astas anteriores APAGA la transmisión neural a ese nivel
+│     ├─ El MEP registrado epiduralmente es más robusto porque NO hay ninguna sinapsis
+│     │  implicada, y porque la sustancia BLANCA resiste la isquemia mejor que la GRIS
+│     ├─ La prueba experimental más elocuente: en animales parapléjicos 24 horas después de
+│     │  una isquemia medular se registraban MEP espinales PRESENTES con MEP de nervio
+│     │  periférico AUSENTES; la histología mostró daño confinado a la sustancia gris con la
+│     │  sustancia blanca conservada, por donde seguían propagándose las descargas descendentes
+│     ├─ El SEP tiene el problema complementario: la respuesta de columna dorsal a la isquemia
+│     │  es relativamente LENTA, y el SEP puede no detectar la isquemia a tiempo de revertir
+│     │  la lesión antes del daño neuronal irreversible
+│     └─ La isquemia por pinzamiento aórtico empieza en la médula MÁS DISTAL y progresa hacia
+│        arriba, y se previene manteniendo una perfusión aórtica distal adecuada — el daño se
+│        concentra en la sustancia gris de los segmentos caudales
 ├─ POSICIONAMIENTO
 │  ├─ Prono estándar; ejemplo descrito: marco Jackson abierto con tracción craneal de 15 lb
 │  ├─ MIO DE PREPOSICIONAMIENTO ("prepositioning ION")
@@ -247,7 +385,19 @@ Columna — deformidad / escoliosis
       preposicionamiento (Fig. 28.4), §28.4 protocolo de pérdida de señal y Tabla 28.1,
       §28.4.1 caso 1 con DAR y parámetros de registro (Figs. 28.5-28.7) · Moller2011 cap.10
       "Placement of Pedicle Screws for Spinal Fixation" y "Scoliosis Operations" pp.219-224 ·
-      cap.14 pp.281-282 (técnica de colisión de la onda D)
+      cap.14 pp.281-282 (técnica de colisión de la onda D) · Deletis cap.29 (Sala/Niimi)
+      §29.1.1 pp.395-397 — anatomía vascular medular: ejes ASA y PSA, Adamkiewicz y su
+      cesta anastomótica, 4-8 radiculares anteriores frente a 10-20 posteriores,
+      vascularización segmentaria y vulnerabilidad torácica media, territorios de ASA y PSA
+      y su correspondencia con MEP y SEP (Fig. 29.1), vasa corona y watershed axial, drenaje
+      venoso · §29.2.1 pp.397-398 — sensibilidad comparada de MEP muscular, MEP epidural y
+      SEP a la isquemia (Konrad, Laschinger, Reuter, de Haan, Machida) y el argumento
+      sinapsis/sustancia gris · Deletis cap.42 (Ney/van der Goes, "Costs and benefits of
+      ION in spinal surgeries") §42.3 pp.599-601 — ecuación de efectividad, riesgo basal de
+      Fehlings, estudio alemán del efecto de actuar tras la alerta, coste-consecuencia de
+      63.387 USD, coste-beneficio con ahorro de 23.189 USD y sus puntos de paridad, modelo
+      de escoliosis de Sala · §42.5 p.603 — ausencia de ensayos aleatorizados y equipoise
+      (uso real por debajo del 30%)
 ```
 
 ## Ampliación — profundizar

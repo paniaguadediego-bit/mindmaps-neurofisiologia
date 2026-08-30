@@ -107,6 +107,87 @@ Tumores medulares intramedulares (IMSCT)
 │  ├─ Pérdida UNILATERAL de MEP → déficit unilateral, que SIEMPRE se recupera
 │  └─ "Punto vulnerable" focal: redirigir la disección al extremo opuesto donde la
 │     vulnerabilidad funcional puede ser menor
+├─ LA VASCULARIZACIÓN MEDULAR — por qué una caída súbita y simultánea es vascular
+│  ├─ Para qué sirve aquí: el patrón "D-wave y MEP caen a la vez y de golpe" se atribuye a
+│  │  compromiso vascular. Esta rama es la anatomía que sostiene esa lectura, y también la
+│  │  que explica por qué el MEP muscular y la onda D no se deterioran a la misma velocidad
+│  ├─ LOS TRES EJES LONGITUDINALES
+│  │  ├─ ARTERIA ESPINAL ANTERIOR (ASA): casi ininterrumpida desde el bulbo hasta el filum
+│  │  │  terminale. En la unión cervicomedular nace de las DOS vertebrales, cerca de la unión
+│  │  │  vertebrobasilar; caudalmente se alimenta de ramas dorsales de intercostales y
+│  │  │  lumbares. Las radiculomedulares mayores del engrosamiento cervical vienen de la
+│  │  │  vertebral, la cervical profunda o la cervical ascendente
+│  │  ├─ ARTERIA DE ADAMKIEWICZ (radicularis anterior magna): territorio TORACOLUMBAR. Nace
+│  │  │  habitualmente de la 9.ª-12.ª intercostal y en torno al 80% de los casos por la
+│  │  │  IZQUIERDA. Su rama descendente, grande, se anastomosa con las espinales posteriores
+│  │  │  formando la cesta anastomótica del cono medular
+│  │  └─ ARTERIAS ESPINALES POSTERIORES (PSA), pares: a nivel cervical desde las vertebrales
+│  │     o, menos veces, desde las PICA; caudalmente reciben aferentes radiculopiales de
+│  │     vertebrales, intercostales y lumbares. Van por la superficie POSTEROLATERAL,
+│  │     adyacentes a la zona de entrada de la raíz dorsal — es decir, justo por donde se
+│  │     trabaja al abordar la médula
+│  ├─ ASIMETRÍA DE APORTE: al final del desarrollo quedan solo 4-8 arterias radiculares
+│  │  ANTERIORES frente a 10-20 POSTERIORES. Las numerosas anastomosis del sistema posterior
+│  │  DISMINUYEN su riesgo isquémico; el sistema anterior no tiene esa red
+│  ├─ VASCULARIZACIÓN SEGMENTARIA: cada grupo arterial mayor —cervical, torácico alto y
+│  │  Adamkiewicz— irriga su porción de médula SIN anastomosis significativas entre ellos, de
+│  │  modo que la médula es típicamente vulnerable a la hipoperfusión en el nivel TORÁCICO
+│  │  MEDIO
+│  ├─ TERRITORIOS, TRADUCIDOS A MODALIDADES
+│  │  ├─ La ASA, por las arterias sulcocomisurales perforantes, irriga los DOS TERCIOS a
+│  │  │  CUATRO QUINTOS ANTERIORES: columna anterior de la sustancia gris central, tractos
+│  │  │  corticoespinales anterior y lateral, y espinotalámicos anterior y lateral. Es decir,
+│  │  │  todo lo que propaga el MEP hasta la motoneurona alfa, más el sistema propioespinal
+│  │  ├─ Las PSA irrigan las astas posteriores de la sustancia gris y las COLUMNAS DORSALES,
+│  │  │  vía principal de propagación central del SEP
+│  │  ├─ VASA CORONA: vasos circunferenciales de la ASA anastomosados con las PSA por una red
+│  │  │  pial compleja, que irriga el reborde periférico de sustancia blanca y es una conexión
+│  │  │  dorsoventral funcionalmente relevante
+│  │  └─ ZONA DE ÚLTIMO PRADO AXIAL: en los dos tercios ANTERIORES, en la sustancia blanca
+│  │     ADYACENTE A LAS ASTAS ANTERIORES, donde se encuentran las ramas penetrantes de ASA y
+│  │     PSA en esa red pial
+│  ├─ Lo que NO se puede predecir: la DIRECCIÓN del flujo medular a un nivel dado, porque
+│  │  depende de cuál sea la arteria espinal dominante para ese segmento — y se vuelve aún más
+│  │  imprevisible en presencia de una malformación vascular
+│  ├─ GRADIENTE DE VULNERABILIDAD GRIS/BLANCA — la clave que ordena la jerarquía de señales
+│  │  ├─ La sustancia BLANCA resiste la isquemia MEJOR que la sustancia GRIS
+│  │  ├─ El MEP MUSCULAR desaparece ANTES y es MÁS SENSIBLE a la isquemia que el MEP
+│  │  │  epidural, porque su transmisión es POLISINÁPTICA: una caída de flujo que afecte a la
+│  │  │  integridad funcional de las astas anteriores APAGA la transmisión en ese punto
+│  │  ├─ La onda D es más robusta porque NO hay ninguna sinapsis implicada y porque viaja por
+│  │  │  sustancia blanca. Su corolario incómodo: en un escenario puramente isquémico, avisar
+│  │  │  solo con la onda D llega DEMASIADO TARDE para restaurar la perfusión a tiempo
+│  │  ├─ Prueba experimental: animales parapléjicos 24 h después de una isquemia medular
+│  │  │  mostraban MEP espinales PRESENTES con MEP de nervio periférico AUSENTES; la histología
+│  │  │  encontró el daño confinado a la sustancia gris, con la sustancia blanca conservada
+│  │  │  para propagar las descargas descendentes
+│  │  └─ Y el SEP tiene el problema complementario: la respuesta de columna dorsal a la
+│  │     isquemia es relativamente LENTA, y puede no detectarla a tiempo de revertir la lesión
+│  ├─ LA ASIMETRÍA QUE DEFINE ESTE CONTEXTO FRENTE AL ENDOVASCULAR
+│  │  ├─ En cirugía medular abierta es POCO probable dañar la sustancia gris del asta anterior
+│  │  │  dejando intacta la sustancia blanca
+│  │  └─ En la EMBOLIZACIÓN de vasos medulares ocurre justo lo contrario, por la selectividad
+│  │     de la vascularización: por eso allí el MEP muscular es la mejor herramienta y el MEP
+│  │     epidural no basta. Aquí, en cambio, se necesitan LAS DOS —muscular y epidural— para
+│  │     predecir el resultado
+│  └─ EMBOLIZACIÓN PREOPERATORIA DE UN TUMOR MEDULAR — lo que hay que saber si aparece
+│     ├─ Las técnicas endovasculares se usan cada vez más en lesiones hipervascularizadas de
+│     │  la médula y estructuras vecinas: la inyección de material embolizante ha demostrado
+│     │  utilidad para DEVASCULARIZAR tumores medulares
+│     ├─ El riesgo específico: vasoespasmo, u obliteración no reconocida de vasos que
+│     │  alimentan médula NORMAL → isquemia. Si no se detecta a tiempo, déficit permanente
+│     ├─ El estudio angiográfico más la embolización pueden durar varias horas, así que se
+│     │  hacen bajo anestesia general, lo que además optimiza el estudio angiográfico
+│     ├─ El wake-up test como control ya está superado también aquí: alarga el procedimiento,
+│     │  incomoda al paciente y consume demasiado tiempo antes de que las medidas protectoras
+│     │  estén disponibles
+│     ├─ Batería estándar en la sala de angiografía: SEP + MEP MUSCULAR. No se monitorizan MEP
+│     │  epidurales, y por una razón concreta: estos pacientes reciben una cantidad
+│     │  considerable de heparina al final del procedimiento, lo que hace peligrosa la
+│     │  colocación transcutánea de un catéter epidural
+│     └─ Detalle logístico que se olvida: en la sala de angiografía la mesa se desplaza arriba
+│        y abajo y el arco puede rotar sobre su eje, así que los cables de estimulación y
+│        registro deben colocarse previendo ese movimiento para que no se tensen ni estorben
 ├─ MONITORIZACIÓN FRENTE A MAPEO — la distinción que ordena todo lo que sigue
 │  ├─ La MONITORIZACIÓN valora de forma continua la integridad funcional de los tractos de
 │  │  sustancia blanca y de los circuitos sinápticos de sustancia gris, con criterios de
@@ -228,7 +309,17 @@ Tumores medulares intramedulares (IMSCT)
       catéter epidural, amplitudes por nivel, límite T10, desincronización, y Tabla 2.1 de
       interpretación combinada con la serie de 100 cirugías consecutivas · cap.3
       (MacDonald) pp.35-46 — parámetros de SEP y controles periféricos · Boaro2026
-      secciones 1-9
+      secciones 1-9 · cap.29 (Sala/Niimi) §29.1.1 pp.395-397 — anatomía vascular medular
+      (ejes ASA y PSA, Adamkiewicz y cesta anastomótica del cono, 4-8 radiculares anteriores
+      frente a 10-20 posteriores, vascularización segmentaria y punto frágil torácico medio,
+      territorios de ASA y PSA correspondientes a MEP y SEP, vasa corona y watershed axial,
+      Fig. 29.1) · §29.2.1 pp.397-398 — gradiente de vulnerabilidad gris/blanca, por qué el
+      MEP muscular es más sensible a la isquemia que el epidural, animales parapléjicos con
+      MEP espinal presente y periférico ausente, lentitud del SEP, y la asimetría entre
+      cirugía abierta y embolización · §29.2.2 y §29.2.2.1 pp.398-400 — embolización de
+      lesiones hipervascularizadas, riesgo de vasoespasmo y obliteración de vasos normales,
+      batería SEP + MEP muscular sin epidural por la heparinización, y logística de la sala
+      de angiografía
 ```
 
 ## Ampliación — profundizar
