@@ -363,10 +363,10 @@ body { display: flex; }
   <a class="volver" href="index.html">← Todas las áreas</a>
   <h1>PPEE</h1>
   <div class="progreso">
-    22/22 completos (100%) · 0 en progreso · 0 esqueletos
+    26/26 completos (100%) · 0 en progreso · 0 esqueletos
     <div class="progreso-bar"><div class="progreso-fill" style="width:100%"></div></div>
   </div>
-  <div class="progreso" id="estudiado-contador">0/22 estudiados a mano</div>
+  <div class="progreso" id="estudiado-contador">0/26 estudiados a mano</div>
   <div class="progreso"><a class="volver" href="ionm.html">IONM →</a></div>
   <div class="nav-bloque" style="--bloque-color:#3b82f6">
         <div class="nav-bloque-titulo">A — Bases fisiológicas y anatómicas</div>
@@ -391,6 +391,13 @@ body { display: flex; }
 <a href="#PE-C3" class="nav-item estado-completo" data-codigo="PE-C3"><span class="nav-codigo">PE-C3</span><span class="nav-titulo">Mapeo de la vía óptica y monitorización de la vía visual posterior</span></a>
       </div>
 <div class="nav-bloque" style="--bloque-color:#a855f7">
+        <div class="nav-bloque-titulo">M — Potenciales evocados motores</div>
+        <a href="#PE-M1" class="nav-item estado-completo" data-codigo="PE-M1"><span class="nav-codigo">PE-M1</span><span class="nav-titulo">Sistema motor central y ondas D e I</span></a>
+<a href="#PE-M2" class="nav-item estado-completo" data-codigo="PE-M2"><span class="nav-codigo">PE-M2</span><span class="nav-titulo">Estimulación eléctrica transcraneal: técnica y monitorización intraoperatoria</span></a>
+<a href="#PE-M3" class="nav-item estado-completo" data-codigo="PE-M3"><span class="nav-codigo">PE-M3</span><span class="nav-titulo">Estimulación magnética transcraneal: técnica y medidas diagnósticas</span></a>
+<a href="#PE-M4" class="nav-item estado-completo" data-codigo="PE-M4"><span class="nav-codigo">PE-M4</span><span class="nav-titulo">Aplicaciones clínicas y terapéuticas del PEM</span></a>
+      </div>
+<div class="nav-bloque" style="--bloque-color:#ef4444">
         <div class="nav-bloque-titulo">V — Potenciales evocados visuales</div>
         <a href="#PE-V1" class="nav-item estado-completo" data-codigo="PE-V1"><span class="nav-codigo">PE-V1</span><span class="nav-titulo">Anatomía y fisiología de la vía visual</span></a>
 <a href="#PE-V2" class="nav-item estado-completo" data-codigo="PE-V2"><span class="nav-codigo">PE-V2</span><span class="nav-titulo">PEV por damero: técnica y parámetros de registro</span></a>
@@ -1929,9 +1936,538 @@ body { display: flex; }
         </div>
       </details>
 <details class="bloque-seccion" style="--bloque-color:#a855f7" open>
+        <summary class="bloque-titulo">M — Potenciales evocados motores</summary>
+        <div class="bloque-body">
+          <details class="tema" id="PE-M1" style="--bloque-color:#a855f7" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-M1" onclick="event.stopPropagation()" aria-label="Marcar PE-M1 como estudiado">
+              <span class="tema-codigo">PE-M1</span>
+              <h3 class="tema-titulo">Sistema motor central y ondas D e I</h3>
+              <span class="badge estado-completo">Completo</span>
+              <span class="badge plantilla-badge">Plantilla D</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Sistema motor central y ondas D e I</div><div class="mm-node n0" style="--d:0">Definición y alcance</div>
+<div class="mm-node n1" style="--d:1">El potencial evocado motor (PEM) explora la vía motora DESCENDENTE, que es la única de las grandes vías que no se estudia con un potencial evocado sensitivo — y por eso necesita su propia lógica de estimulación y de registro</div>
+<div class="mm-node n1" style="--d:1">Este tema es la base fisiológica: qué se estimula, qué baja por la médula y por qué lo que baja tiene DOS componentes distintos, la onda D y las ondas I</div>
+<div class="mm-node n1" style="--d:1">Sin esa distinción no se entiende ni por qué la estimulación eléctrica sirve en quirófano y la magnética no, ni por qué hace falta un TREN de pulsos en el paciente anestesiado</div>
+<div class="mm-node n1" style="--d:1">Los dos sistemas neuronales que importan —motoneurona superior y motoneurona inferior— son los críticos para la actividad motora voluntaria y son los que tienen el UMBRAL DE EXCITACIÓN MÁS BAJO ante estimulación eléctrica o magnética. Por eso son los que se activan primero</div>
+<div class="mm-node n0" style="--d:0">Sustrato anatómico</div>
+<div class="mm-node n1" style="--d:1">CORTEZA MOTORA PRIMARIA (área 4 de Brodmann), en la circunvolución precentral</div>
+<div class="mm-node n2" style="--d:2">Contiene las CÉLULAS PIRAMIDALES GIGANTES DE BETZ en la capa V, que proyectan directamente a motoneuronas somáticas o alfa de los núcleos motores del tronco y de las astas anteriores de la médula</div>
+<div class="mm-node n2" style="--d:2">La corteza motora proyecta además extensamente a estructuras subcorticales: ganglios basales, tálamo, núcleo rojo, núcleos pontinos y formación reticular</div>
+<div class="mm-node n1" style="--d:1">SOMATOTOPÍA de la corteza precentral, que decide dónde se colocan los electrodos</div>
+<div class="mm-node n2" style="--d:2">El área que controla la CARA es la más LATERAL, cerca de la cisura de Silvio</div>
+<div class="mm-node n2" style="--d:2">Los músculos del MIEMBRO SUPERIOR están más cerca de la mitad de la convexidad</div>
+<div class="mm-node n2" style="--d:2">Las EXTREMIDADES INFERIORES están en el borde y en la cara MEDIAL de la corteza, profundas en la fisura interhemisférica</div>
+<div class="mm-node n2" style="--d:2">Y el dato que explica la elección de músculos: el área que representa las partes DISTALES de los miembros (pulgar, dedos), la lengua y los músculos faciales es proporcionalmente MAYOR que la del tronco. Ésa es una de las razones por las que tantos estudios de PEM registran de músculos DISTALES</div>
+<div class="mm-node n1" style="--d:1">TRACTO CORTICOESPINAL — el recorrido completo</div>
+<div class="mm-node n2" style="--d:2">Corona radiada → BRAZO POSTERIOR de la cápsula interna → porción anterior del tronco en el pedúnculo cerebral → bulbo (pirámide)</div>
+<div class="mm-node n2" style="--d:2">En el bulbo CAUDAL, la mayoría de las fibras —del 75 al 90%— decusan en la llamada decusación motora y forman el tracto corticoespinal LATERAL, que discurre por el cordón lateral de la médula</div>
+<div class="mm-node n2" style="--d:2">Las fibras piramidales NO cruzadas descienden en su mayoría por el corticoespinal ANTERIOR (ventral), con muy pocas descendiendo no cruzadas por el lateral ipsilateral</div>
+<div class="mm-node n2" style="--d:2">Las fibras del corticoespinal anterior decusan a NIVELES SEGMENTARIOS. Sumando todo: el 98% de las fibras de la pirámide bulbar acaba teniendo influencia CRUZADA a nivel medular</div>
+<div class="mm-node n2" style="--d:2">Terminación: las fibras corticoespinales no solo hacen sinapsis directa con las motoneuronas del asta ventral, sino también con INTERNUNCIALES</div>
+<div class="mm-node n2" style="--d:2">REPARTO FUNCIONAL entre los dos tractos</div>
+<div class="mm-node n3" style="--d:3">El corticoespinal LATERAL termina en las motoneuronas que inervan músculos DISTALES de los miembros, y se extiende a lo largo de TODA la médula</div>
+<div class="mm-node n3" style="--d:3">El corticoespinal ANTERIOR inerva la musculatura PROXIMAL y AXIAL, y termina en la médula TORÁCICA MEDIA</div>
+<div class="mm-node n2" style="--d:2">Para los estudios de PEM, el tracto crítico es el corticoespinal LATERAL. Por su cruce casi completo, la estimulación de la corteza motora elicita PEM en los músculos CONTRALATERALES</div>
+<div class="mm-node n3" style="--d:3">EXCEPCIÓN QUE HAY QUE SABER DETECTAR: en pacientes raros las fibras piramidales pueden quedar CONGÉNITAMENTE NO CRUZADAS, lo que exige detectarlo y ajustar la técnica de registro durante la monitorización intraoperatoria</div>
+<div class="mm-node n1" style="--d:1">TRACTO CORTICOBULBAR</div>
+<div class="mm-node n2" style="--d:2">Se origina en el área FACIAL de la corteza motora primaria y desciende junto al corticoespinal, pero por la RODILLA de la cápsula interna —no por el brazo posterior—, el pedúnculo cerebral, la base pontina y el bulbo, SIN extenderse a la médula espinal</div>
+<div class="mm-node n2" style="--d:2">A distintos niveles del tronco, las fibras corticobulbares cruzan y terminan sinápticamente en los núcleos motores craneales: oculomotor, troclear, abducens, trigémino, facial e hipogloso</div>
+<div class="mm-node n2" style="--d:2">Solo ALGUNAS proyectan directamente —las de la cara inferior y la lengua—; la MAYORÍA termina en núcleos RETICULARES antes de inervar los núcleos motores craneales</div>
+<div class="mm-node n2" style="--d:2">Las proyecciones corticobulbares son en gran medida BILATERALES, y eso tiene una consecuencia observable: la estimulación cortical unilateral del área facial produce movimientos BILATERALES de la musculatura craneal, EXCEPTO los movimientos contralaterales de la cara INFERIOR</div>
+<div class="mm-node n1" style="--d:1">OTRAS VÍAS CORTICOFUGAS Y DESCENDENTES, que existen pero apenas cuentan aquí</div>
+<div class="mm-node n2" style="--d:2">La corteza motora y otras áreas proyectan a ganglios basales, tálamo, núcleo rojo, núcleos pontinos, oliva inferior y formación reticular por los tractos corticoestriado, corticotalámico, corticorrúbrico, corticopontino, cortico-olivar y corticorreticular. Las fibras corticopontocerebelosas son un componente GRANDE del sistema corticofugo</div>
+<div class="mm-node n2" style="--d:2">Y hay numerosas vías motoras descendentes INDIRECTAS que empiezan en el tronco y terminan en la médula: rubroespinal, reticuloespinal, vestibuloespinal y tectoespinal. Sus axones terminan sobre todo en internunciales del asta ventral</div>
+<div class="mm-node n2" style="--d:2">Modulan la actividad motora, pero son MENOS RELEVANTES en la generación del PEM</div>
+<div class="mm-node n1" style="--d:1">LOS TRES COMPONENTES QUE GENERAN EL PEM</div>
+<div class="mm-node n2" style="--d:2">MOTONEURONA SUPERIOR: comprende el corticoespinal, el corticobulbar y otras vías descendentes, siendo las dos primeras las importantes. Su lesión da típicamente debilidad, espasticidad e hiperreflexia</div>
+<div class="mm-node n2" style="--d:2">MOTONEURONA INFERIOR: las motoneuronas de la médula y las de los núcleos motores del tronco, que reciben las proyecciones de la superior. Sus axones salen por las raíces anteriores e inervan el músculo esquelético a través de una unión neuromuscular monosináptica</div>
+<div class="mm-node n3" style="--d:3">El axón de una sola motoneurona inferior se divide en muchos terminales que inervan varias fibras musculares. Una UNIDAD MOTORA es la motoneurona inferior, su axón, todos los terminales y las fibras musculares inervadas. La motoneurona inferior es la VÍA FINAL COMÚN de la inervación muscular</div>
+<div class="mm-node n2" style="--d:2">LOS DOS PUNTOS DONDE ACTÚA LA ANESTESIA, y hay que distinguirlos</div>
+<div class="mm-node n3" style="--d:3">La UNIÓN NEUROMUSCULAR es crítica en la generación del PEM porque la transmisión química por acetilcolina se suprime no solo con bloqueantes neuromusculares, sino también EN CIERTO GRADO con los anestésicos gaseosos habituales</div>
+<div class="mm-node n3" style="--d:3">Y las sinapsis CENTRALES entre las fibras de la motoneurona superior y la motoneurona inferior son el sitio donde los anestésicos gaseosos tienen el efecto supresor MÁS SEVERO</div>
+<div class="mm-node n0" style="--d:0">Fundamento fisiológico — EL EXPERIMENTO DE PATTON Y AMASSIAN (1954)</div>
+<div class="mm-node n1" style="--d:1">Diseño: estimulación eléctrica de la corteza motora primaria del mono, con registro DIRECTO desde el tracto piramidal de la secuencia de potenciales resultante</div>
+<div class="mm-node n1" style="--d:1">HALLAZGO 1 — la primera respuesta fue la onda D (&quot;direct activation&quot;), la de UMBRAL MÁS BAJO. Se genera por activación de los AXONES del tracto piramidal, ya sea en el cono axónico o en internodos proximales de la sustancia blanca subcortical</div>
+<div class="mm-node n1" style="--d:1">HALLAZGO 2 — al AUMENTAR la intensidad del estímulo aparecieron varias ondas I (&quot;indirect activation&quot;) DESPUÉS de la D, designadas I1, I2, I3..., cada una separada de la anterior por 1,5 ms. Reflejan la descarga REPETITIVA de las neuronas piramidales tras un ÚNICO estímulo eléctrico</div>
+<div class="mm-node n1" style="--d:1">HALLAZGO 3, el sorprendente — al estimular la corteza PARIETAL o la PREMOTORA también registraron descargas descendentes, pero consistían SOLO en ondas I, SIN onda D</div>
+<div class="mm-node n2" style="--d:2">Interpretación: se estaban activando interneuronas de esas cortezas que proyectan a las neuronas piramidales de la corteza motora primaria</div>
+<div class="mm-node n1" style="--d:1">HALLAZGO 4, el experimento decisivo — ABLARON la corteza motora primaria y estimularon la sustancia blanca expuesta: solo aparecieron ondas D</div>
+<div class="mm-node n1" style="--d:1">LAS DOS CONCLUSIONES</div>
+<div class="mm-node n2" style="--d:2">Las ondas D se deben a la activación DIRECTA de las neuronas piramidales</div>
+<div class="mm-node n2" style="--d:2">Como las D, pero NO las I, persistían tras retirar la corteza y bajo anestesia profunda, las I resultan de la descarga repetitiva de las piramidales provocada por potenciales postsinápticos excitatorios generados en un CIRCUITO NEURAL REVERBERANTE de la corteza motora. Sus latencias más largas y su supresión profunda bajo anestesia confirman que se generan por activación TRANSINÁPTICA de las piramidales</div>
+<div class="mm-node n0" style="--d:0">Parámetros o componentes clave — LAS DOS ONDAS EN EL HUMANO</div>
+<div class="mm-node n1" style="--d:1">Un pulso eléctrico único y fuerte por estimulación eléctrica transcraneal, en una persona DESPIERTA, elicita una onda D seguida de unas POCAS ondas I</div>
+<div class="mm-node n1" style="--d:1">Esas descargas descendentes generan potenciales postsinápticos excitatorios que se SUMAN en las motoneuronas inferiores; si alcanzan el umbral, disparan potenciales de acción y producen finalmente el PEM miogénico</div>
+<div class="mm-node n1" style="--d:1">DÓNDE SE VE CADA COSA: los electrodos EPIDURALES sobre la médula registran las ondas D e I; el MÚSCULO muestra el potencial de acción muscular compuesto, es decir, el PEM muscular</div>
+<div class="mm-node n1" style="--d:1">ONDA D (&quot;directa&quot;): tiene el umbral MÁS BAJO y se debe primariamente a potenciales de acción generados por activación DIRECTA de las neuronas piramidales. La descarga se propaga por los tractos corticoespinal y corticobulbar</div>
+<div class="mm-node n2" style="--d:2">Definición operativa que conviene memorizar: la onda D representa una respuesta motora directa y NO SINÁPTICA</div>
+<div class="mm-node n1" style="--d:1">ONDAS I (&quot;indirectas&quot;): reflejan la activación de interneuronas de la corteza con activación transináptica subsiguiente de las piramidales, que entonces disparan por los tractos motores</div>
+<div class="mm-node n2" style="--d:2">Por qué son MÚLTIPLES: como una interneurona puede activar a su vez a otras interneuronas corticales, se producen varios estallidos de descarga piramidal separados en el tiempo, que generan múltiples ondas I a intervalos aproximadamente iguales</div>
+<div class="mm-node n0" style="--d:0">Cómo se traduce en el registro — POR QUÉ EL ÁNODO Y NO EL CÁTODO</div>
+<div class="mm-node n1" style="--d:1">Con estimulación eléctrica transcraneal, un electrodo es ÁNODO y el otro CÁTODO, y es bajo el ÁNODO donde se estimula la corteza motora</div>
+<div class="mm-node n1" style="--d:1">Eso CONTRASTA con el nervio periférico, donde la estimulación eléctrica inicia los potenciales de acción bajo el CÁTODO: allí la corriente SALIENTE en el cátodo despolariza la membrana axonal de las fibras nerviosas, que es el prerrequisito para generar y propagar potenciales de acción</div>
+<div class="mm-node n1" style="--d:1">EN LA CORTEZA el circuito es al revés: las corrientes radiales fluyen HACIA DENTRO a través de las células piramidales y SALEN en el cono axónico o en uno de los internodos iniciales. Esa corriente saliente es la que despolariza el cono axónico o los internodos iniciales e inicia los potenciales de acción que descienden por las vías corticobulbar y corticoespinal</div>
+<div class="mm-node n2" style="--d:2">Matiz sobre el recorrido: es posible que una corriente anódica suficiente NO atraviese la dendrita apical, por su alta resistencia, y entre en el cuerpo neuronal para salir después en el cono axónico o en el primer o el segundo internodo</div>
+<div class="mm-node n1" style="--d:1">CONSECUENCIA PRÁCTICA INMEDIATA: con el ánodo estimulante en C2 y el cátodo en C1, los PEM se registran de los músculos de las extremidades IZQUIERDAS, y viceversa</div>
+<div class="mm-node n0" style="--d:0">RADIAL FRENTE A TANGENCIAL — la explicación de por qué eléctrica y magnética no son intercambiables</div>
+<div class="mm-node n1" style="--d:1">La estimulación ELÉCTRICA transcraneal induce corrientes dirigidas RADIALMENTE, y las corrientes radiales son más eficaces para estimular DIRECTAMENTE las células piramidales responsables de generar las ondas D</div>
+<div class="mm-node n1" style="--d:1">La estimulación MAGNÉTICA transcraneal genera corrientes predominantemente TANGENCIALES, que estimulan interneuronas de curso HORIZONTAL y generan predominantemente ondas I</div>
+<div class="mm-node n1" style="--d:1">Y ahí está la clave del asunto: las ondas I, al ser de origen POLISINÁPTICO, sufren una supresión mucho más profunda por los anestésicos</div>
+<div class="mm-node n1" style="--d:1">De donde se sigue todo lo demás: la estimulación magnética es poco eficaz para despolarizar el cono axónico de las piramidales, produce sobre todo ondas I, y por eso es inefectiva para monitorización intraoperatoria — su terreno es el paciente DESPIERTO</div>
+<div class="mm-node n0" style="--d:0">Aplicación práctica — POR QUÉ HACE FALTA UN TREN DE PULSOS</div>
+<div class="mm-node n1" style="--d:1">EL PROBLEMA, identificado muy pronto: con estimulación eléctrica transcraneal de PULSO ÚNICO bajo anestesia, el estímulo NO conseguía despolarizar las motoneuronas inferiores, y no se podía registrar ningún potencial en el músculo</div>
+<div class="mm-node n1" style="--d:1">LA RAZÓN: el efecto depresor de la anestesia, que deprime DOS cosas a la vez — las sinapsis corticales, y las sinapsis de las fibras corticobulbares y corticoespinales SOBRE las motoneuronas inferiores</div>
+<div class="mm-node n2" style="--d:2">El resultado era un cuadro característico: solo onda D registrable desde la médula, pero NINGUNA respuesta muscular</div>
+<div class="mm-node n1" style="--d:1">LA SOLUCIÓN (Jones y col., 1996): el tren de pulsos. Produce UNA onda D por CADA pulso, seguida de múltiples ondas I</div>
+<div class="mm-node n1" style="--d:1">La serie de ondas D e I resulta eficaz para causar SUMACIÓN TEMPORAL de los potenciales postsinápticos excitatorios en las motoneuronas inferiores, despolarizándolas y produciendo respuestas musculares robustas y reproducibles INCLUSO BAJO ANESTESIA</div>
+<div class="mm-node n1" style="--d:1">Conclusión que se deriva: tanto las ondas D COMO las I parecen importantes para asegurar una excitación adecuada de las motoneuronas inferiores y que alcancen el umbral</div>
+<div class="mm-node n0" style="--d:0">LA PUREZA MOTORA DE LA RESPUESTA — el argumento que descarta la contaminación sensitiva</div>
+<div class="mm-node n1" style="--d:1">A diferencia de la estimulación medular rostral, la estimulación TRANSCRANEAL genera potenciales —ondas D e I epidurales, o PEM miogénicos— debidos EXCLUSIVAMENTE a la activación ORTODRÓMICA del tracto corticoespinal y al consiguiente disparo de las motoneuronas alfa de la médula</div>
+<div class="mm-node n1" style="--d:1">¿Y la descarga sensitiva ANTIDRÓMICA que también genera el estímulo? Se DISIPA a nivel TALÁMICO, por la sinapsis interpuesta entre las fibras lemniscales y las neuronas talámicas. Esa sinapsis es la que garantiza la pureza motora del registro</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n1" style="--d:1">Aplicar al scalp la regla del nervio periférico y esperar la estimulación bajo el cátodo: en la corteza estimula el ÁNODO</div>
+<div class="mm-node n1" style="--d:1">Suponer que la estimulación magnética y la eléctrica dan lo mismo con distinto aparato: generan corrientes de dirección distinta y por tanto ondas distintas</div>
+<div class="mm-node n1" style="--d:1">Interpretar la ausencia de respuesta muscular con pulso único bajo anestesia como fallo técnico o como lesión, cuando es el comportamiento ESPERADO: la onda D estará ahí y el músculo no responderá</div>
+<div class="mm-node n1" style="--d:1">Dar por supuesta la lateralidad contralateral: en pacientes raros las fibras piramidales quedan congénitamente no cruzadas</div>
+<div class="mm-node n1" style="--d:1">Elegir músculos proximales por comodidad: la representación cortical distal es proporcionalmente mucho mayor, y el corticoespinal lateral termina precisamente en las motoneuronas de los músculos distales</div>
+<div class="mm-node n1" style="--d:1">Olvidar que hay DOS puntos de acción anestésica —la unión neuromuscular y las sinapsis centrales—, y que el efecto más severo de los gaseosos está en las CENTRALES</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n1" style="--d:1">El corticoespinal anterior termina en la médula torácica media, así que por debajo de ese nivel la vía que se explora es esencialmente el lateral</div>
+<div class="mm-node n1" style="--d:1">Las vías descendentes indirectas (rubroespinal, reticuloespinal, vestibuloespinal, tectoespinal) modulan la motricidad pero NO contribuyen de forma relevante al PEM: hay función motora que el PEM simplemente no interroga</div>
+<div class="mm-node n1" style="--d:1">La inervación corticobulbar es en gran medida bilateral, de modo que una lesión unilateral puede quedar compensada en la mayoría de la musculatura craneal — con la excepción de la cara inferior</div>
+<div class="mm-node n1" style="--d:1">El eslabón más frágil de toda la cadena no es la vía sino la unión neuromuscular y las sinapsis centrales, que es donde la anestesia decide si hay respuesta o no</div>
+<div class="mm-node n0" style="--d:0">Referencia</div>
+<div class="mm-node n1" style="--d:1">Markand2020 cap.5 &quot;Motor Evoked Potentials&quot; pp.209-218 — &quot;Anatomic Considerations&quot; pp.210-212 (corteza motora primaria y células de Betz, somatotopía, tracto corticoespinal con el 75-90% de decusación y el 98% de influencia cruzada, tracto corticobulbar y su bilateralidad, otras vías corticofugas, componentes motoneurona superior/inferior y los dos puntos de acción anestésica, Fig. 5.1) · &quot;Different Techniques Utilized for Recording Motor Evoked Potentials&quot; pp.213-214 (el ánodo como electrodo estimulante y su contraste con el nervio periférico, corrientes radiales frente a tangenciales, Fig. 5.2) · &quot;Physiological Considerations: D and I Waves&quot; pp.214-217 (experimento de Patton y Amassian de 1954 con sus cuatro hallazgos, ondas D e I en el humano con el intervalo de 1,5 ms, tren de pulsos de Jones y col. de 1996, y disipación talámica de la descarga antidrómica, Figs. 5.3-5.4)</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-M2" style="--bloque-color:#a855f7" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-M2" onclick="event.stopPropagation()" aria-label="Marcar PE-M2 como estudiado">
+              <span class="tema-codigo">PE-M2</span>
+              <h3 class="tema-titulo">Estimulación eléctrica transcraneal: técnica y monitorización intraoperatoria</h3>
+              <span class="badge estado-completo">Completo</span>
+              <span class="badge plantilla-badge">Plantilla E</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Estimulación eléctrica transcraneal (TCES)</div><div class="mm-node n0" style="--d:0">LAS CUATRO TÉCNICAS DE REGISTRO DE PEM, Y POR QUÉ SOLO UNA SIRVE EN QUIRÓFANO</div>
+<div class="mm-node n1" style="--d:1">1. Estimulación medular ROSTRAL con registro desde nervio periférico</div>
+<div class="mm-node n1" style="--d:1">2. Estimulación MAGNÉTICA transcraneal</div>
+<div class="mm-node n1" style="--d:1">3. Estimulación ELÉCTRICA transcraneal (TCES) — la de este tema</div>
+<div class="mm-node n1" style="--d:1">4. Estimulación eléctrica DIRECTA de la corteza motora, reservada a cirugías próximas a la región perirrolándica</div>
+<div class="mm-node n0" style="--d:0">POR QUÉ SE ABANDONÓ LA ESTIMULACIÓN MEDULAR ROSTRAL — el razonamiento completo</div>
+<div class="mm-node n1" style="--d:1">La introdujo Owen y col. (1988) para monitorizar la integridad de las vías motoras descendentes de la médula, estimulando la médula rostral y registrando de los nervios periféricos de las piernas. Después se demostró que el procedimiento FALLABA en detectar el daño de las vías motoras</div>
+<div class="mm-node n1" style="--d:1">EL PROBLEMA DE FONDO: la estimulación no solo activa ORTODRÓMICAMENTE las vías motoras descendentes, sino también ANTIDRÓMICAMENTE la columna dorsal, es decir la vía sensitiva</div>
+<div class="mm-node n2" style="--d:2">La asimetría que lo decide: las fibras de la columna dorsal son continuación DIRECTA de las fibras sensitivas del nervio periférico, SIN sinapsis interpuesta</div>
+<div class="mm-node n2" style="--d:2">Mientras que las fibras corticoespinales hacen contacto SINÁPTICO con la motoneurona inferior, cuyos axones continúan como fibras motoras en el nervio periférico</div>
+<div class="mm-node n1" style="--d:1">CONSECUENCIA: los llamados &quot;potenciales evocados neurogénicos descendentes&quot; (DNEP) registrados desde el nervio periférico se deben ESENCIALMENTE a la conducción antidrómica por la columna dorsal (Toleikis y col., 2000). Y bajo anestesia, que deprime la transmisión sináptica, la activación del corticoespinal puede no contribuir de forma significativa al potencial registrado</div>
+<div class="mm-node n2" style="--d:2">Confirmación clínica: se publicaron FALSOS NEGATIVOS con estimulación medular rostral —déficits motores desarrollados pese a respuestas preservadas— (Minahan y col., 2001)</div>
+<div class="mm-node n1" style="--d:1">¿Y REGISTRAR DEL MÚSCULO en lugar del nervio? Tampoco resuelve el problema: las motoneuronas espinales reciben input sináptico no solo de las fibras corticoespinales sino también input EXCITATORIO de las aferentes primarias al ascender por las columnas dorsales, de modo que la respuesta muscular puede reflejar ambas cosas (Su y col., 1992)</div>
+<div class="mm-node n1" style="--d:1">LA REGLA QUE SE DEDUCE, y que justifica toda la técnica transcraneal: la ÚNICA forma de monitorizar selectivamente las vías motoras es estimular el neuroeje ROSTRAL a los núcleos sensitivos del bulbo, porque las sinapsis de esos núcleos impiden INEQUÍVOCAMENTE la transmisión retrógrada por la columna dorsal</div>
+<div class="mm-node n1" style="--d:1">MATIZ HONESTO: la popularidad de la estimulación medular rostral ha caído mucho, pero algunos la siguen usando registrando sobre el ciático en la fosa poplítea con buen resultado postquirúrgico (Emerson, 2012). Sus dos argumentos</div>
+<div class="mm-node n2" style="--d:2">Permite el BLOQUEO NEUROMUSCULAR, lo que mejora la calidad del SEP</div>
+<div class="mm-node n2" style="--d:2">Y aunque SEP y DNEP monitoricen vías espinales similares, miden señales DISTINTAS con electrodos distintos, lo que aporta cierto grado de REDUNDANCIA</div>
+<div class="mm-node n0" style="--d:0">Fisiología de la respuesta — lo imprescindible para manejar los parámetros</div>
+<div class="mm-node n1" style="--d:1">La TCES por electrodos C1 y C2 del sistema 10-20 genera corrientes orientadas RADIALMENTE, que estimulan preferentemente las células piramidales de la corteza motora y producen así una activación eficaz de las fibras corticoespinales y corticobulbares descendentes</div>
+<div class="mm-node n1" style="--d:1">El ÁNODO es el electrodo bajo el que se estimula la corteza —al revés que en el nervio periférico, donde estimula el cátodo—, y en las derivaciones que se escriben abajo el PRIMER electrodo es siempre el ánodo</div>
+<div class="mm-node n1" style="--d:1">Cada pulso genera una onda D (activación DIRECTA, no sináptica, de las piramidales) seguida de ondas I (activación indirecta, transináptica, vía interneuronas corticales)</div>
+<div class="mm-node n1" style="--d:1">POR QUÉ HACE FALTA UN TREN: bajo anestesia, un pulso único no logra despolarizar la motoneurona inferior, porque la anestesia deprime tanto las sinapsis corticales como las sinapsis de las fibras corticoespinales sobre esa motoneurona. El resultado es onda D registrable en la médula y NINGUNA respuesta muscular</div>
+<div class="mm-node n2" style="--d:2">El tren produce una onda D por cada pulso, seguida de múltiples ondas I, y esa serie consigue la SUMACIÓN TEMPORAL de potenciales postsinápticos excitatorios que despolariza la motoneurona inferior</div>
+<div class="mm-node n1" style="--d:1">Y la respuesta es MOTORA PURA: la descarga sensitiva antidrómica que también genera el estímulo se disipa a nivel TALÁMICO, en la sinapsis entre las fibras lemniscales y las neuronas talámicas</div>
+<div class="mm-node n0" style="--d:0">ANESTESIA — el requisito previo a cualquier parámetro</div>
+<div class="mm-node n1" style="--d:1">La anestesia TOTAL INTRAVENOSA es la más apropiada y el patrón oro para registrar PEM musculares: infusiones de propofol y opioide, evitando bolos en lo posible</div>
+<div class="mm-node n1" style="--d:1">Los agentes INHALATORIOS son subóptimos por cuatro razones encadenadas: causan mayor supresión de la transmisión sináptica, reducen la excitabilidad de la motoneurona inferior, producen variabilidad marcada del PEM muscular, y obligan habitualmente a estimulación de alta intensidad</div>
+<div class="mm-node n2" style="--d:2">Y esa gran variabilidad de respuesta lleva a mayor incidencia de cambios FALSOS POSITIVOS</div>
+<div class="mm-node n1" style="--d:1">Aviso que se pasa por alto: incluso dosis PEQUEÑAS de anestésico gaseoso usadas en la INDUCCIÓN pueden dar PEM musculares pobres durante un tiempo inusualmente largo, antes de que su efecto se disipe y las respuestas se hagan consistentes de trial a trial</div>
+<div class="mm-node n1" style="--d:1">BLOQUEO NEUROMUSCULAR: debe omitirse por completo. Algunos prefieren un bloqueo PARCIAL para &quot;limpiar&quot; el SEP monitorizado a la vez, pero un nivel de bloqueo parcial es muy difícil de mantener — y la calidad del SEP debería ser óptima incluso sin relajantes si se emplean técnicas adecuadas</div>
+<div class="mm-node n0" style="--d:0">Estimulación: parámetros</div>
+<div class="mm-node n1" style="--d:1">NÚMERO DE PULSOS: típicamente de 3 a 9, y un buen punto de partida son CINCO</div>
+<div class="mm-node n2" style="--d:2">En pacientes con déficit motor puede hacer falta un número MAYOR</div>
+<div class="mm-node n2" style="--d:2">Y en algunos bastan TRES, particularmente para los PEM corticobulbares</div>
+<div class="mm-node n1" style="--d:1">INTERVALO INTERESTÍMULO (ISI): ha variado entre 1 y 5 ms, y el compromiso tiene dos extremos malos</div>
+<div class="mm-node n2" style="--d:2">Si es demasiado CORTO, las ondas D posteriores al primer pulso se ATENÚAN por el periodo REFRACTARIO de las fibras corticoespinales, y además hace falta una intensidad de estímulo mucho más alta</div>
+<div class="mm-node n3" style="--d:3">Contrapunto que hay que conocer: la amplitud del PEM muscular es, sin embargo, MAYOR con estimulación de alta intensidad e ISI corto</div>
+<div class="mm-node n2" style="--d:2">Si es demasiado LARGO, se impide una sumación temporal eficaz en la motoneurona inferior</div>
+<div class="mm-node n2" style="--d:2">ÓPTIMO PRÁCTICO: un ISI de 3-4 ms parece el mejor en la mayoría de procedimientos, y asegura PEM musculares consistentes con menor intensidad de estímulo</div>
+<div class="mm-node n1" style="--d:1">DURACIÓN DE PULSO — donde la práctica va por detrás de la evidencia</div>
+<div class="mm-node n2" style="--d:2">En Estados Unidos los estimuladores usan 0,05 ms o 0,075 ms (50 o 75 microsegundos), como en el trabajo original de Merton y Morton (1980). Algunos han usado pulsos más largos, de 0,5 ms</div>
+<div class="mm-node n2" style="--d:2">El compromiso: los pulsos CORTOS exigen corriente de intensidad mucho mayor; los LARGOS requieren intensidad relativamente menor para obtener PEM musculares fiables</div>
+<div class="mm-node n2" style="--d:2">El objetivo último es usar parámetros que entreguen la MENOR ENERGÍA necesaria para generar PEM consistentes, siendo la energía E = I² × D × R (I corriente, D duración, R resistencia)</div>
+<div class="mm-node n2" style="--d:2">Abalkhail y col. (2017) demostraron experimentalmente que la energía entregada es MÍNIMA con una duración de pulso de 0,2 ms y un ISI de 3 o 4 ms</div>
+<div class="mm-node n2" style="--d:2">Y aquí está el desfase: 0,2 ms TODAVÍA NO está disponible en los estimuladores actuales de monitorización intraoperatoria, aunque hay trabajo en curso sobre nueva instrumentación que ampliará las opciones</div>
+<div class="mm-node n1" style="--d:1">INTENSIDAD DE ESTÍMULO: la TCES se entrega con estimulador de VOLTAJE CONSTANTE, y el voltaje necesario varía según la impedancia tisular y la derivación empleada</div>
+<div class="mm-node n2" style="--d:2">Rango que da el texto del capítulo: habitualmente 100-500 V, con intensidad MAYOR necesaria en NIÑOS</div>
+<div class="mm-node n2" style="--d:2">⚠️ DISCREPANCIA INTERNA de la fuente: la Tabla 5.2 del mismo capítulo cifra la intensidad en 250-750 V, mientras que el texto dice 100-500 V. La regla operativa que ambos comparten es la misma —la suficiente para producir PEM consistentes— pero conviene saber que el rango numérico no coincide **(verificar sobre el original)**</div>
+<div class="mm-node n0" style="--d:0">ELECTRODOS Y DERIVACIONES DE ESTIMULACIÓN</div>
+<div class="mm-node n1" style="--d:1">ELECTRODOS: se colocan en el scalp sobre la corteza motora usando el array C3, C1, Cz, C2, C4 y Fz del sistema 10-10</div>
+<div class="mm-node n2" style="--d:2">Otros usan sitios situados 1 cm ANTERIORES a esos, designados M3, M1, Mz, M2 y M4 para especificarlos como sitios MOTORES. Ambas colocaciones son igual de eficaces</div>
+<div class="mm-node n2" style="--d:2">El electrodo ANÓDICO es el sitio de estimulación cortical</div>
+<div class="mm-node n2" style="--d:2">Tipo: copas de EEG, y agujas o SACACORCHOS. Los sacacorchos tienen las impedancias MÁS BAJAS y es improbable que se desprendan durante la cirugía</div>
+<div class="mm-node n1" style="--d:1">(i) HEMISFÉRICA — C3-Cz o C4-Cz, con el primer electrodo como ánodo</div>
+<div class="mm-node n2" style="--d:2">Estimula la corteza motora de UN lado, con PEM registrados en el lado contralateral</div>
+<div class="mm-node n2" style="--d:2">Su utilidad propia: CONFIRMAR LA DECUSACIÓN MOTORA. Si las vías motoras son congénitamente NO cruzadas, se eliciten respuestas IPSILATERALES</div>
+<div class="mm-node n1" style="--d:1">(ii) PARASAGITAL INTERHEMISFÉRICA — C1-C2 o C2-C1</div>
+<div class="mm-node n2" style="--d:2">Es la derivación MÁS USADA en monitorización que requiera PEM de brazo y pierna</div>
+<div class="mm-node n1" style="--d:1">(iii) LATERAL INTERHEMISFÉRICA — C3-C4 o C4-C3</div>
+<div class="mm-node n2" style="--d:2">Permite que pase MÁS corriente por el cerebro y que se derive MENOS por el scalp que con las parasagitales. La corriente llega además más PROFUNDA, hasta la cápsula interna o incluso por debajo con estimulación intensa</div>
+<div class="mm-node n2" style="--d:2">Como se estimulan a la vez las áreas motoras del brazo y de la pierna, se obtienen PEM robustos de músculos de las cuatro extremidades</div>
+<div class="mm-node n2" style="--d:2">PRECIO QUE SE PAGA: se asocia a mayor incidencia de movimientos del paciente, y es la ÚNICA derivación con lesiones por MORDEDURA descritas</div>
+<div class="mm-node n2" style="--d:2">Por eso se recomienda SOLO si la parasagital C1/C2 falla en proporcionar PEM óptimos</div>
+<div class="mm-node n1" style="--d:1">(iv) LÍNEA MEDIA — Cz-Fz</div>
+<div class="mm-node n2" style="--d:2">Elicita PEM simétricos de AMBAS piernas, pero NO consigue respuestas adecuadas de la musculatura de las extremidades superiores</div>
+<div class="mm-node n2" style="--d:2">Puede ser IDEAL para cirugía de fosa posterior realizada en posición SENTADA</div>
+<div class="mm-node n0" style="--d:0">Registro y montaje</div>
+<div class="mm-node n1" style="--d:1">MÚSCULOS: la mayoría usa electrodos de AGUJA en los músculos diana</div>
+<div class="mm-node n2" style="--d:2">Habitualmente NO hace falta promediar, aunque algunos usan unos pocos barridos superpuestos para asegurar que la respuesta es reproducible</div>
+<div class="mm-node n2" style="--d:2">Extremidades SUPERIORES: deltoides, bíceps y tríceps, musculatura del antebrazo y abductor corto del pulgar; como alternativa, primer interóseo dorsal o abductor del meñique</div>
+<div class="mm-node n2" style="--d:2">Extremidades INFERIORES: cuádriceps, tibial anterior, gastrocnemio medial y abductor del hallux</div>
+<div class="mm-node n2" style="--d:2">POR QUÉ SE PREFIEREN LOS DISTALES: la inervación corticoespinal es más PROFUSA para los músculos distales, y además los distales tienden a producir PEM más CONSISTENTES</div>
+<div class="mm-node n1" style="--d:1">PARÁMETROS DE REGISTRO MUSCULAR: tiempo de análisis de 100 ms, filtro de baja frecuencia de 10-100 Hz y filtro de alta frecuencia de 1,5-3,0 kHz</div>
+<div class="mm-node n1" style="--d:1">ONDA D — solo unos pocos centros la monitorizan</div>
+<div class="mm-node n2" style="--d:2">Electrodos EPIDURALES colocados por el cirujano tras la apertura, o por el anestesiólogo antes de la cirugía</div>
+<div class="mm-node n2" style="--d:2">Parámetros típicos: base de tiempos de 10-20 ms, promedios de 5 a 20 barridos, filtro de baja frecuencia de 0,2-2 Hz y de alta frecuencia de 1,5-3 kHz</div>
+<div class="mm-node n0" style="--d:0">Criterios de alarma</div>
+<div class="mm-node n1" style="--d:1">ONDA D — el criterio es sencillo, y conviene entender POR QUÉ lo es</div>
+<div class="mm-node n2" style="--d:2">Tres propiedades la hacen fiable: es NO SINÁPTICA, tiene relación LINEAL con la intensidad del estímulo, y muestra POCA variabilidad intraoperatoria</div>
+<div class="mm-node n2" style="--d:2">De ahí el criterio bien aceptado: caída de amplitud MAYOR DEL 50%</div>
+<div class="mm-node n1" style="--d:1">PEM MUSCULAR — el criterio es difícil, y por las razones inversas</div>
+<div class="mm-node n2" style="--d:2">Son POLISINÁPTICOS (más afectados por anestésicos y factores sistémicos), NO lineales, y muestran variabilidad muy grande durante la monitorización. Por eso es difícil fijar un basal apropiado contra el que valorar el cambio</div>
+<div class="mm-node n2" style="--d:2">CRITERIO DEFINITIVO, en el que todo el mundo coincide: la DESAPARICIÓN TOTAL del PEM muscular</div>
+<div class="mm-node n3" style="--d:3">Y el dato que le da valor: una desaparición PERSISTENTE pese a las medidas correctoras apropiadas —irrigación con suero, subir la tensión arterial, deshacer algún aspecto de la cirugía, papaverina— se CORRELACIONA con el desarrollo de un déficit motor nuevo tras la cirugía</div>
+<div class="mm-node n2" style="--d:2">CRITERIO &quot;BLANDO&quot;: una reducción de amplitud mayor del 80% se ha considerado un criterio posible, pero debe usarse SOLO si excede el grado de variabilidad ESPONTÁNEA observada antes del momento del cambio</div>
+<div class="mm-node n2" style="--d:2">CRITERIO MENOS USADO: una elevación del umbral de 100 V o más. Su problema es que siempre existe alguna variabilidad de umbral, de modo que su uso SÍ aumenta los resultados falsos positivos</div>
+<div class="mm-node n2" style="--d:2">CRITERIO CUESTIONABLE: la simplificación de la morfología del PEM</div>
+<div class="mm-node n0" style="--d:0">ONDA D FRENTE A PEM MUSCULAR — las nueve diferencias que deciden cuál usar</div>
+<div class="mm-node n1" style="--d:1">1. LOGÍSTICA: el registro epidural exige una incisión quirúrgica adicional hecha por el cirujano; los PEM musculares los registra fácilmente el técnico con agujas</div>
+<div class="mm-node n1" style="--d:1">2. ANESTESIA: para el PEM muscular hay que evitar relajantes tras la inducción y se prefiere la anestesia intravenosa total a los halogenados — y con ese régimen los movimientos inducidos son una preocupación que obliga a cronometrar el estímulo. Para la onda D pueden usarse relajantes y las opciones anestésicas son mucho más liberales</div>
+<div class="mm-node n1" style="--d:1">3. ESTÍMULO: el PEM muscular requiere tren de pulsos; para la onda D basta el pulso ÚNICO. Como la onda D es de amplitud relativamente baja, su registro puede requerir unos pocos promedios (20 o menos)</div>
+<div class="mm-node n1" style="--d:1">4. VARIABILIDAD: como la población de motoneuronas espinales activada VARÍA de un tren al siguiente, el PEM muscular muestra gran variabilidad de amplitud y de complejidad — por eso solo una atenuación marcada (la ausencia) se acepta como cambio significativo. La onda D es muy consistente y robusta, y por eso basta un cambio del 50%</div>
+<div class="mm-node n1" style="--d:1">5. LÍMITE ANATÓMICO DE LA ONDA D: su amplitud DECRECE desde la región cervical baja hasta la torácica baja, por la disminución progresiva del número de axones corticoespinales. Por eso suele ser difícil de registrar por debajo de la región torácica media, y la monitorización con onda D es habitualmente INADECUADA por debajo del nivel espinal T10. El PEM muscular no tiene esa limitación</div>
+<div class="mm-node n1" style="--d:1">6. QUÉ EXPLORA CADA UNO: el PEM valora la integridad del tracto corticoespinal, de las motoneuronas espinales Y de estructuras neurales periféricas; la onda D monitoriza SOLO el tracto corticoespinal</div>
+<div class="mm-node n2" style="--d:2">Consecuencia clínica: como las motoneuronas espinales son MÁS SENSIBLES A LA ISQUEMIA que los tractos de fibras, el PEM muscular puede ser más sensible para detectar lesión isquémica de esas motoneuronas. Y además puede mostrar disfunción de raíces y de nervios periféricos</div>
+<div class="mm-node n1" style="--d:1">7. TUMOR MEDULAR: en tumores de la médula la onda D puede ser NO registrable por debajo de la lesión, por conducción ASINCRÓNICA en los tractos corticoespinales, aunque los PEM musculares sigan siendo registrables y permitan monitorizar durante la resección</div>
+<div class="mm-node n1" style="--d:1">8. LATERALIDAD: la onda D epidural NO puede distinguir entre lesión medular unilateral y bilateral, cosa que el PEM muscular sí puede</div>
+<div class="mm-node n1" style="--d:1">9. PREFERENCIA Y COMBINACIÓN: por su facilidad de registro, el PEM muscular es la técnica preferida en Estados Unidos; su desventaja mayor son las limitaciones de relajante y de agente anestésico</div>
+<div class="mm-node n2" style="--d:2">Pocos han usado los DOS métodos juntos para valorar mejor la integridad tanto de las vías piramidales como de las motoneuronas espinales. La monitorización combinada es particularmente útil en la resección de tumor intramedular y en la reparación de aneurisma de aorta descendente, donde la afectación DISOCIADA de las dos respuestas puede aportar información pronóstica valiosa</div>
+<div class="mm-node n0" style="--d:0">Seguridad</div>
+<div class="mm-node n1" style="--d:1">La TCES está establecida como procedimiento SEGURO, y las complicaciones serias son muy raras. El daño cerebral y el fenómeno de kindling son altamente improbables</div>
+<div class="mm-node n1" style="--d:1">CRISIS inducidas por TCES en tren: RARAS, 0,03%, por lo breve del estímulo y por la anestesia</div>
+<div class="mm-node n2" style="--d:2">La historia de epilepsia podría predisponer, pero los estudios NO lo han apoyado</div>
+<div class="mm-node n2" style="--d:2">Generalmente la TCES se considera una contraindicación en epilepsia crónica, pero se ha utilizado en pacientes espinales de muy alto riesgo sin inducir crisis</div>
+<div class="mm-node n1" style="--d:1">MORDEDURAS (laceraciones de lengua o labio, y raras fracturas mandibulares): son la complicación MÁS COMÚN, con incidencia estimada del 0,2%</div>
+<div class="mm-node n2" style="--d:2">Y el dato de montaje: TODOS los casos publicados han ocurrido con la derivación estimulante C3/C4</div>
+<div class="mm-node n2" style="--d:2">Son prevenibles usando bloques de mordida BLANDOS y limitando la estimulación C3/C4 únicamente a cuando sea absolutamente imprescindible</div>
+<div class="mm-node n1" style="--d:1">Arritmia cardiaca rara y despertar intraoperatorio: pueden ser COINCIDENTES</div>
+<div class="mm-node n1" style="--d:1">Quemaduras menores del scalp y complicaciones de los electrodos epidurales: extremadamente raras</div>
+<div class="mm-node n1" style="--d:1">LESIONES POR MOVIMIENTO inducido por el tren: es una preocupación quirúrgica reconocida, aunque no se han publicado eventos adversos. Ante movimientos significativos hay que estimular guiándose por el VÍDEO del campo quirúrgico y por la comunicación con el cirujano</div>
+<div class="mm-node n1" style="--d:1">CONTRAINDICACIONES RELATIVAS: epilepsia, lesiones corticales, defectos craneales de la convexidad, hipertensión intracraneal, cardiopatía, medicación o anestésicos proconvulsivantes, electrodos o shunts intracraneales, marcapasos cardiacos y otros dispositivos biomédicos implantados</div>
+<div class="mm-node n2" style="--d:2">Pero muchos centros han monitorizado con TCES a numerosos pacientes con esas condiciones sin efectos indeseados</div>
+<div class="mm-node n0" style="--d:0">APLICACIÓN INTRAOPERATORIA — cómo se combina con el SEP</div>
+<div class="mm-node n1" style="--d:1">La aplicación mayor de los PEM por TCES es la monitorización durante cirugía espinal y de fosa posterior, para evaluar la integridad de las vías motoras descendentes. En Estados Unidos se aprobó en 2002 y su uso ha crecido de forma continua en las dos décadas siguientes</div>
+<div class="mm-node n1" style="--d:1">LA DIFERENCIA DE CADENCIA, que es lo que hay que interiorizar: el SEP se monitoriza de forma más o menos CONTINUA durante la parte crítica de la cirugía, mientras que los PEM se adquieren PERIÓDICAMENTE, por instrucción y con conocimiento del cirujano</div>
+<div class="mm-node n2" style="--d:2">La razón es evitar cualquier compromiso por movimiento inducido mientras el cirujano está operando activamente</div>
+<div class="mm-node n1" style="--d:1">COMPARACIÓN SEP FRENTE A PEM, punto por punto</div>
+<div class="mm-node n2" style="--d:2">ANESTESIA: el SEP es mucho menos restrictivo; el PEM, mucho más</div>
+<div class="mm-node n2" style="--d:2">BLOQUEO NEUROMUSCULAR: permitido en el SEP —donde incluso puede MEJORAR la calidad—, evitado total o parcialmente en el PEM</div>
+<div class="mm-node n2" style="--d:2">MOVIMIENTO DEL PACIENTE: ninguno con SEP, precisamente por el uso de relajante; posible con TCES</div>
+<div class="mm-node n2" style="--d:2">FRECUENCIA: el SEP puede monitorizar casi continuamente durante las partes críticas; el PEM se usa de forma INTERMITENTE por los posibles movimientos</div>
+<div class="mm-node n2" style="--d:2">CRITERIOS DE ALARMA: muy bien definidos en SEP, MENOS bien definidos en PEM</div>
+<div class="mm-node n2" style="--d:2">TIEMPO POR TEST: 0,5-2 minutos para el SEP, porque requiere de 100 a 500 promedios; MUY RÁPIDO para el PEM, porque no necesita promediar</div>
+<div class="mm-node n2" style="--d:2">VARIABILIDAD ENTRE TRIALS: las respuestas del SEP son altamente consistentes; el PEM tiene mucha variabilidad porque el pool de motoneuronas activado varía de un estímulo al siguiente</div>
+<div class="mm-node n2" style="--d:2">ESTRUCTURAS MONITORIZADAS: SEP el sistema somatosensorial y la columna dorsal; PEM el sistema motor, los tractos corticoespinales y la motoneurona inferior</div>
+<div class="mm-node n1" style="--d:1">POR QUÉ SE USAN JUNTOS, con dos argumentos distintos</div>
+<div class="mm-node n2" style="--d:2">La monitorización combinada valora la función de una porción MAYOR de la médula que la posible con una sola modalidad. Cuando la médula se compromete durante la cirugía se registran cambios significativos en AMBOS, porque los efectos del compromiso quirúrgico se sienten de forma más GLOBAL que limitada a la vía sensitiva o a la motora</div>
+<div class="mm-node n3" style="--d:3">Eso explica, de paso, por qué la monitorización solo con SEP en la era temprana de la cirugía de escoliosis ya se asoció a una reducción significativa de las complicaciones postoperatorias</div>
+<div class="mm-node n2" style="--d:2">Y aportan REDUNDANCIA, muy útil cuando surgen problemas técnicos con uno u otro registro durante la cirugía</div>
+<div class="mm-node n1" style="--d:1">CUÁNDO NO SE PUEDE MONITORIZAR: los déficits neurológicos preexistentes, como una mielopatía, pueden asociarse a daño significativo de las vías sensitivas y motoras que impida su uso óptimo en una pequeña proporción de pacientes</div>
+<div class="mm-node n2" style="--d:2">Dato cuantitativo (Guo y col., 2018): en pacientes con tumor medular, la capacidad de registrar PEM musculares se asoció estrechamente a la función motora previa — con una función motora de 3/5 o MENOS, las respuestas de los músculos de extremidades inferiores eran pobres o irregistrables</div>
+<div class="mm-node n0" style="--d:0">EVIDENCIA DE EFICACIA</div>
+<div class="mm-node n1" style="--d:1">Conclusión basada en la evidencia de Nuwer y col. (2012), tras revisar varios estudios: la monitorización intraoperatoria usando monitorización motora y sensitiva CONJUNTA es efectiva para PREDECIR un riesgo aumentado de desenlace adverso —paraparesia, paraplejia o cuadriplejia— en cirugía espinal</div>
+<div class="mm-node n1" style="--d:1">Y el argumento sobre el paso siguiente: nunca se realizarán estudios humanos plenamente controlados para medir la eficacia, por razones éticas. Pero múltiples estudios controlados en ANIMALES y estudios de casos bien conducidos en humanos sugieren firmemente que las medidas tomadas por el equipo quirúrgico una vez alertado de los cambios SÍ reducen las complicaciones neurológicas serias</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n1" style="--d:1">Usar la derivación C3/C4 por dar respuestas más robustas sin considerar el precio: es la única con mordeduras descritas y la que más movimiento produce. Se reserva para cuando C1/C2 falla</div>
+<div class="mm-node n1" style="--d:1">Fijar un criterio de porcentaje de caída para el PEM muscular como si fuera un SEP: es polisináptico, no lineal y muy variable, y el criterio sólido es la DESAPARICIÓN</div>
+<div class="mm-node n1" style="--d:1">Aplicar el criterio blando del 80% sin haber comprobado antes cuánta variabilidad espontánea tenía ese paciente</div>
+<div class="mm-node n1" style="--d:1">Perseguir una onda D por debajo de T10: su amplitud decrece hacia caudal y ahí la técnica es inadecuada, no es un fallo de montaje</div>
+<div class="mm-node n1" style="--d:1">Interpretar una onda D ausente por debajo de un tumor medular como pérdida de vía, cuando puede deberse a conducción asincrónica</div>
+<div class="mm-node n1" style="--d:1">Aceptar bloqueo neuromuscular parcial &quot;para limpiar el SEP&quot;: es muy difícil de mantener y el SEP debería salir bien sin él</div>
+<div class="mm-node n1" style="--d:1">Registrar solo de músculos proximales, cuando la inervación corticoespinal es más profusa y las respuestas más consistentes en los distales</div>
+<div class="mm-node n1" style="--d:1">Confiar en los DNEP por estimulación medular rostral como monitorización motora: son esencialmente conducción antidrómica por columna dorsal, con falsos negativos publicados</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n1" style="--d:1">Los PEM musculares no permiten monitorización continua: se adquieren de forma intermitente por el movimiento que inducen</div>
+<div class="mm-node n1" style="--d:1">Los criterios de alarma del PEM muscular están MENOS bien definidos que los del SEP, y la gran variabilidad entre trials dificulta fijar un basal</div>
+<div class="mm-node n1" style="--d:1">La onda D es inadecuada por debajo de T10, y no distingue lesión unilateral de bilateral</div>
+<div class="mm-node n1" style="--d:1">La duración de pulso teóricamente óptima (0,2 ms) todavía no está disponible en los estimuladores de monitorización</div>
+<div class="mm-node n1" style="--d:1">En pacientes con déficit motor previo significativo —función 3/5 o menos— puede no haber respuestas registrables en extremidades inferiores</div>
+<div class="mm-node n1" style="--d:1">La evidencia de EFICACIA (no solo de predicción) descansa en animales y en series de casos, porque los ensayos controlados en humanos no se harán por razones éticas</div>
+<div class="mm-node n0" style="--d:0">Referencia</div>
+<div class="mm-node n1" style="--d:1">Markand2020 cap.5 &quot;Motor Evoked Potentials&quot; pp.212-224 — &quot;Different Techniques Utilized for Recording Motor Evoked Potentials&quot; pp.212-214 (las cuatro técnicas, crítica completa de la estimulación medular rostral con Owen 1988, Toleikis 2000, Minahan 2001, Su 1992 y Emerson 2012, y la regla de estimular rostral a los núcleos sensitivos del bulbo) · &quot;Recording Techniques of TCES Monitoring&quot; pp.218-224 y Tabla 5.2 (anestesia, número de pulsos, ISI y su compromiso, duración de pulso con la ecuación de energía y el hallazgo de Abalkhail 2017, intensidad, electrodos y sitios M, las cuatro derivaciones de estimulación, músculos y parámetros de registro, parámetros de onda D, criterios de alarma, las nueve diferencias entre onda D y PEM muscular, y seguridad con el 0,03% de crisis y el 0,2% de mordeduras) · &quot;Applications of TCES&quot; pp.224-225 y Tabla 5.3 (cadencia intermitente del PEM frente al SEP continuo, comparación punto por punto, redundancia, límites por déficit previo con Guo 2018 y Chen 2007, y la conclusión de Nuwer 2012)</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-M3" style="--bloque-color:#a855f7" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-M3" onclick="event.stopPropagation()" aria-label="Marcar PE-M3 como estudiado">
+              <span class="tema-codigo">PE-M3</span>
+              <h3 class="tema-titulo">Estimulación magnética transcraneal: técnica y medidas diagnósticas</h3>
+              <span class="badge estado-completo">Completo</span>
+              <span class="badge plantilla-badge">Plantilla E</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Estimulación magnética transcraneal (TCMS) — laboratorio clínico</div><div class="mm-node n0" style="--d:0">POR QUÉ LA MAGNÉTICA Y NO LA ELÉCTRICA EN EL PACIENTE DESPIERTO</div>
+<div class="mm-node n1" style="--d:1">La estimulación ELÉCTRICA transcraneal se usa rara vez para aplicaciones clínicas por el DOLOR asociado a la estimulación de alta intensidad</div>
+<div class="mm-node n1" style="--d:1">La estimulación MAGNÉTICA, con la técnica adecuada, proporciona una estimulación satisfactoria de la corteza motora con PEM registrables de músculos periféricos en humanos CONSCIENTES y sin dolor significativo</div>
+<div class="mm-node n2" style="--d:2">La razón física: en la estimulación magnética son pulsos de corriente de alta intensidad los que pasan por una bobina cerca de la cabeza; los campos magnéticos inducen corrientes rotatorias que estimulan el cerebro. En último término, lo que activa las vías motoras es una estimulación ELÉCTRICA de la corteza, solo que inducida, y no activa las fibras del dolor del scalp tan intensamente</div>
+<div class="mm-node n1" style="--d:1">SU REVERSO, que explica el reparto de papeles: la TCMS genera corrientes predominantemente TANGENCIALES, que estimulan las interneuronas de curso horizontal y producen predominantemente ondas I. Como las ondas I son POLISINÁPTICAS, quedan muy suprimidas bajo anestesia</div>
+<div class="mm-node n2" style="--d:2">Por eso la TCMS es INEFECTIVA para monitorización intraoperatoria y rara vez se usa en quirófano: su terreno es el diagnóstico y la terapéutica en el paciente despierto</div>
+<div class="mm-node n1" style="--d:1">SITUACIÓN DE USO: se reconoce ampliamente como procedimiento no invasivo importante para la investigación neurofisiológica, pero su uso en Estados Unidos sigue esencialmente limitado a protocolos de investigación. En muchos países fuera de Estados Unidos está disponible como herramienta diagnóstica útil y relevante</div>
+<div class="mm-node n0" style="--d:0">Estimulación: parámetros</div>
+<div class="mm-node n1" style="--d:1">EL OBJETIVO CLÍNICO, que ordena la elección de todo lo demás: evaluar la función de conducción corticomotora, lo que se consigue idealmente eliciendo una respuesta PEM MÁXIMA a la LATENCIA MÁS CORTA</div>
+<div class="mm-node n2" style="--d:2">De ahí que la intensidad deba ser suficientemente alta para estimular TODAS las neuronas corticoespinales de conducción rápida de la corteza motora primaria</div>
+<div class="mm-node n1" style="--d:1">BOBINA: se usa una bobina REDONDA GRANDE, de diámetro externo de 10 cm o más</div>
+<div class="mm-node n2" style="--d:2">La bobina en OCHO da una estimulación más FOCAL que la circular, pero clínicamente solo es útil para condiciones específicas, por ejemplo el MAPEO</div>
+<div class="mm-node n2" style="--d:2">Pulsos MONOFÁSICOS o BIFÁSICOS, y no son equivalentes: difieren en el modo de estimulación cortical — la fase INICIAL es la más relevante en el pulso monofásico, mientras que la SEGUNDA fase, la de reversión, es la más eficaz en el bifásico</div>
+<div class="mm-node n1" style="--d:1">PROTOCOLO DE INTENSIDAD: tras obtener el umbral corticomotor en el músculo diana, suele recomendarse EMPEZAR con una intensidad del 140% de ese umbral e ir subiendo gradualmente hasta obtener la respuesta muscular máxima</div>
+<div class="mm-node n1" style="--d:1">ASIMETRÍA ENTRE MIEMBROS que hay que anticipar: por la localización SUPERFICIAL del área motora de los brazos hace falta MENOS intensidad que para los músculos de las extremidades inferiores, cuya representación cortical es más PROFUNDA</div>
+<div class="mm-node n0" style="--d:0">Registro y montaje</div>
+<div class="mm-node n1" style="--d:1">Los PEM se registran con electrodos de SUPERFICIE sobre los músculos diana — a diferencia de la monitorización intraoperatoria, donde se usan agujas</div>
+<div class="mm-node n1" style="--d:1">Extremidades SUPERIORES: abductor corto del pulgar, primer interóseo dorsal y abductor del meñique</div>
+<div class="mm-node n1" style="--d:1">Extremidades INFERIORES: tibial anterior y abductor del hallux</div>
+<div class="mm-node n1" style="--d:1">La FACILITACIÓN POR CONTRACCIÓN puede ser necesaria para los músculos de extremidades inferiores, o en procesos patológicos que hayan producido debilidad significativa</div>
+<div class="mm-node n0" style="--d:0">MEDIDA 1 — LATENCIA DEL PEM Y TIEMPO DE CONDUCCIÓN MOTORA CENTRAL (CMCT)</div>
+<div class="mm-node n1" style="--d:1">La latencia del PEM registrado en un músculo diana mide la conducción por las vías centrales Y periféricas juntas. Se determina la latencia de inicio MÁS CORTA tras cinco o seis trials</div>
+<div class="mm-node n1" style="--d:1">Como los estudios se hacen para evaluar la integridad de las estructuras CENTRALES, el CMCT es el parámetro más comúnmente evaluado: se calcula RESTANDO de la latencia total de la respuesta muscular el tiempo estimado que tarda la señal en ir de la médula al músculo</div>
+<div class="mm-node n1" style="--d:1">LOS DOS MÉTODOS PARA OBTENER EL TIEMPO PERIFÉRICO</div>
+<div class="mm-node n2" style="--d:2">INDIRECTO, por onda F: tiempo de conducción periférica = 0,5 × (F + M − 1), donde F y M son las latencias de las ondas F y M respectivamente</div>
+<div class="mm-node n3" style="--d:3">Aplicable en gran medida solo a músculos relativamente DISTALES</div>
+<div class="mm-node n2" style="--d:2">DIRECTO, por estimulación radicular: se usa la MISMA bobina magnética para estimular las raíces, colocándola sobre C7/C8 para músculos de extremidad superior y sobre L1/L2 para los de extremidad inferior. Es apropiado para la mayoría de los músculos</div>
+<div class="mm-node n1" style="--d:1">EL SESGO DEL MÉTODO DIRECTO, que hay que conocer y no ignorar</div>
+<div class="mm-node n2" style="--d:2">La estimulación cervical o lumbar activa las raíces espinales a la altura del AGUJERO INTERVERTEBRAL, al menos 3 cm periférico a las motoneuronas espinales — y esa distancia es aún mayor para la médula lumbosacra</div>
+<div class="mm-node n2" style="--d:2">Por tanto la estimulación de raíces SOBREESTIMA el CMCT, porque incluye el tiempo de conducción entre las motoneuronas espinales y el agujero de salida</div>
+<div class="mm-node n2" style="--d:2">CUÁNTO: entre 0,5 y 1,4 ms en extremidades superiores, y entre 3,0 y 4,1 ms en las inferiores</div>
+<div class="mm-node n2" style="--d:2">Y un falso positivo específico: si el CMCT se mide por la técnica foraminal, puede estar prolongado por una lesión RADICULAR INTRAESPINAL que nada tiene que ver con la conducción central</div>
+<div class="mm-node n1" style="--d:1">QUÉ INCLUYE REALMENTE EL CMCT, más allá de la conducción por el tracto: también el tiempo de activar las células piramidales corticales, el tiempo de activación SINÁPTICA, y la SUMACIÓN TEMPORAL necesaria a nivel de las motoneuronas espinales</div>
+<div class="mm-node n2" style="--d:2">Pese a ello, sigue siendo una medida FIABLE del tiempo de conducción por la vía corticoespinal rápida, desde las neuronas piramidales corticales hasta las motoneuronas inferiores de la médula</div>
+<div class="mm-node n1" style="--d:1">FACTORES DEL SUJETO</div>
+<div class="mm-node n2" style="--d:2">MADURACIÓN: el CMCT es 2-3 veces MAYOR en lactantes y disminuye gradualmente con la madurez, alcanzando el valor adulto en torno a los 3-5 AÑOS, tras lo cual permanece estable durante toda la vida adulta</div>
+<div class="mm-node n2" style="--d:2">TALLA: el CMCT a los músculos de extremidad SUPERIOR NO se relaciona con la talla; el de extremidad INFERIOR SÍ</div>
+<div class="mm-node n2" style="--d:2">No hay diferencias significativas por SEXO ni entre LADOS</div>
+<div class="mm-node n0" style="--d:0">MEDIDA 2 — AMPLITUD DEL PEM Y RATIO PEM/M</div>
+<div class="mm-node n1" style="--d:1">La amplitud del PEM es mucho más VARIABLE y significativamente MENOR que la del potencial de acción muscular compuesto (onda M) obtenido por estimulación supramáxima del nervio periférico. Además es más POLIFÁSICO y de mayor DURACIÓN que la onda M</div>
+<div class="mm-node n1" style="--d:1">Se mide PICO-PICO, tomando la respuesta de MAYOR amplitud de entre cinco o seis trazados consecutivos</div>
+<div class="mm-node n1" style="--d:1">LA FACILITACIÓN POR CONTRACCIÓN VOLUNTARIA, que transforma el registro</div>
+<div class="mm-node n2" style="--d:2">Una contracción voluntaria LIGERA (del 5 al 20% del esfuerzo máximo) genera en sujetos normales PEM de latencia MÁS CORTA —entre 1 y 3 ms menos— y de amplitud MUY superior, a menudo varias veces mayor y llegando a igualar la amplitud de la onda M</div>
+<div class="mm-node n2" style="--d:2">SI EL MÚSCULO ESTÁ PARALIZADO O DÉBIL y no puede contraerse voluntariamente, hay cuatro alternativas de facilitación: vibración del músculo, preestimulación de los nervios mixtos que lo inervan, INTENCIÓN de contraerlo (simulación mental), o contracción del músculo HOMÓLOGO del miembro opuesto</div>
+<div class="mm-node n1" style="--d:1">TERMINOLOGÍA: se habla de PEM &quot;contraídos&quot; frente a PEM &quot;relajados&quot;. Los contraídos, por ser los de latencia más corta, son los que se utilizan para medir el CMCT o la latencia</div>
+<div class="mm-node n1" style="--d:1">RATIO PEM/M — la medida de amplitud PREFERIDA</div>
+<div class="mm-node n2" style="--d:2">Se expresa como porcentaje de la amplitud del PEM respecto a la amplitud de la onda M obtenida por estimulación supramáxima del nervio que inerva ese músculo</div>
+<div class="mm-node n2" style="--d:2">Por qué se prefiere a la amplitud absoluta: tiene MENOR variabilidad entre sujetos</div>
+<div class="mm-node n2" style="--d:2">VALOR NORMAL de referencia en el abductor corto del pulgar, en estado contraído: 91,5% ± 7,2% (Uozumi y col., 1991)</div>
+<div class="mm-node n0" style="--d:0">MEDIDA 3 — TÉCNICA DE TRIPLE ESTIMULACIÓN (TST)</div>
+<div class="mm-node n1" style="--d:1">QUÉ HACE: descrita por Magistris y col. (1999), sincroniza mediante DOS COLISIONES las descargas de las motoneuronas espinales inducidas transcranealmente</div>
+<div class="mm-node n1" style="--d:1">EL PROBLEMA QUE RESUELVE, que es la clave para entender su valor</div>
+<div class="mm-node n2" style="--d:2">La amplitud menor del PEM comparada con la onda M se debe SOBRE TODO a CANCELACIÓN DE FASE de los potenciales de acción, causada por la desincronización que ocurre dentro del tracto corticoespinal o a nivel de la motoneurona espinal</div>
+<div class="mm-node n2" style="--d:2">Y la variabilidad de un estímulo a otro entre sujetos normales se debe también, sobre todo, a la variabilidad de esa misma desincronización</div>
+<div class="mm-node n1" style="--d:1">RESULTADO: con TST la amplitud del PEM se aproxima MUCHO a la de la onda M, de modo que la ratio PEM/M es igual a 1 en sujetos normales</div>
+<div class="mm-node n1" style="--d:1">RENDIMIENTO: al permitir una &quot;resincronización&quot; técnica de la descarga motoneuronal, el fallo de conducción de grados diversos se detectó entre DOS Y TRES VECES más a menudo en pacientes con sospecha de disfunción corticoespinal que evaluando PEM convencionales</div>
+<div class="mm-node n1" style="--d:1">SIGNIFICADO FISIOLÓGICO de la ratio TST/M: se relaciona DIRECTAMENTE con el NÚMERO de motoneuronas inferiores activadas — es mejor medida de conducción central que el CMCT</div>
+<div class="mm-node n1" style="--d:1">VEREDICTO: aunque es algo exigente de realizar, se recomienda como método diagnóstico DE ELECCIÓN para los PEM de extremidad superior</div>
+<div class="mm-node n0" style="--d:0">MEDIDA 4 — UMBRAL MOTOR CORTICAL</div>
+<div class="mm-node n1" style="--d:1">UMBRAL MOTOR EN REPOSO: se evalúa durante relajación COMPLETA, y se define como la intensidad de estimulación necesaria para obtener un PEM de 50 µV que aparezca con una probabilidad del 50%</div>
+<div class="mm-node n1" style="--d:1">UMBRAL MOTOR ACTIVO: la intensidad necesaria para obtener un PEM de unos 100-200 µV en un músculo LIGERAMENTE CONTRAÍDO, al 20% del esfuerzo máximo</div>
+<div class="mm-node n1" style="--d:1">SIGNIFICADO FISIOLÓGICO: es una medida de EXCITABILIDAD de las neuronas piramidales y de las interneuronas excitatorias de la corteza motora</div>
+<div class="mm-node n1" style="--d:1">CÓMO USARLO PESE A SU VARIABILIDAD: los valores absolutos son bastante variables entre sujetos, pero los umbrales INTERHEMISFÉRICOS DE UN MISMO INDIVIDUO son bastante similares</div>
+<div class="mm-node n2" style="--d:2">De ahí su aplicación natural: los trastornos que afectan a UN hemisferio, como el ictus</div>
+<div class="mm-node n1" style="--d:1">LIMITACIÓN METODOLÓGICA HONESTA: el método de Rossini y col. (1994) es el habitual, pero varios detalles técnicos siguen SIN estandarizar. Y el umbral no es una medida estática: depende del músculo diana, la edad, el efecto de fármacos, la POSTURA del paciente (tumbado o sentado) y el ciclo vigilia-sueño. Hace falta más trabajo de estandarización para poder usarlo con fines diagnósticos de forma efectiva</div>
+<div class="mm-node n0" style="--d:0">MEDIDA 5 — PERIODO SILENTE (SP)</div>
+<div class="mm-node n1" style="--d:1">QUÉ ES: además de efectos excitatorios, la TCMS elicita efectos INHIBITORIOS. Al estimular la corteza motora mientras el sujeto mantiene una contracción TÓNICA voluntaria de un músculo, tras el PEM evocado sigue una PAUSA en la actividad EMG en curso</div>
+<div class="mm-node n1" style="--d:1">MECANISMO, desconocido pero probablemente multifactorial, con componente segmentario y suprasegmentario</div>
+<div class="mm-node n2" style="--d:2">La pista experimental: el reflejo H —que es segmentario— está DEPRIMIDO durante la fase PRECOZ del periodo silente (los primeros 100 ms), pero NO durante la fase tardía</div>
+<div class="mm-node n2" style="--d:2">Lo que sugiere que la porción INICIAL sería de origen SEGMENTARIO, por reducción de la excitabilidad de la motoneurona espinal</div>
+<div class="mm-node n2" style="--d:2">Y la fase TARDÍA, SUPRASEGMENTARIA, por falta de drive cortical</div>
+<div class="mm-node n1" style="--d:1">EL DATO QUE LO HACE ÚTIL EN EL PACIENTE DÉBIL: tanto en sujetos normales como en pacientes (por ejemplo con espasticidad) es posible registrar un periodo silente EN AUSENCIA de PEM precedente</div>
+<div class="mm-node n2" style="--d:2">Si un músculo está débil, la TCMS puede no elicitar PEM pero SÍ demostrar periodo silente, siempre que el paciente pueda mantener algo de contracción. El periodo silente es un fenómeno fisiológico DISTINTO del PEM, no un apéndice suyo</div>
+<div class="mm-node n1" style="--d:1">CÓMO SE MIDE: la duración desde el INICIO del PEM hasta la reanudación de la actividad EMG sostenida, durante activación voluntaria tónica del músculo diana</div>
+<div class="mm-node n1" style="--d:1">VALORES Y COMPORTAMIENTO</div>
+<div class="mm-node n2" style="--d:2">La duración aumenta LINEALMENTE con la intensidad del estímulo</div>
+<div class="mm-node n2" style="--d:2">Incluso con la salida MÁXIMA del estimulador, la duración en músculos normales de la mano tiene un rango AMPLIO: de 100 a 300 ms</div>
+<div class="mm-node n2" style="--d:2">Pero con baja variabilidad INTRAindividual y alta SIMETRÍA entre lados: menos de 25 ms de diferencia</div>
+<div class="mm-node n1" style="--d:1">SIGNIFICADO: está relacionado tanto con procesos inhibitorios CORTICALES como SEGMENTARIOS, y puede aportar información sobre la inhibición intracortical de la corteza motora primaria</div>
+<div class="mm-node n1" style="--d:1">INHIBICIÓN TRANSCALLOSA, un fenómeno emparentado: un pulso único produce supresión TRANSITORIA de la actividad EMG IPSILATERAL a la estimulación. Se ha usado para evaluar la conectividad y el tiempo de conducción INTERHEMISFÉRICOS</div>
+<div class="mm-node n0" style="--d:0">MEDIDA 6 — PARADIGMAS DE PAR DE ESTÍMULOS (inhibición y facilitación corticales)</div>
+<div class="mm-node n1" style="--d:1">ADVERTENCIA DE ALCANCE: es primariamente una herramienta de INVESTIGACIÓN para entender la base fisiopatológica de los trastornos neurológicos, y hoy tiene poca utilidad clínica</div>
+<div class="mm-node n1" style="--d:1">ESQUEMA COMÚN: un estímulo CONDICIONANTE inicial seguido, tras un intervalo variable, de un estímulo TEST</div>
+<div class="mm-node n1" style="--d:1">INHIBICIÓN INTRACORTICAL DE INTERVALO CORTO (SICI): un condicionante SUBUMBRAL suprime el PEM en respuesta a un test SUPRAUMBRAL posterior entregado a los 2-5 ms</div>
+<div class="mm-node n2" style="--d:2">Lo que demuestra, y es contraintuitivo: un estímulo cortical que NO es lo bastante fuerte como para evocar un PEM puede aun así generar una inhibición intracortical potente</div>
+<div class="mm-node n2" style="--d:2">Es de origen intracortical, posiblemente GABAérgico, y se considera una medida útil para valorar incluso cambios menores de excitabilidad cortical, en condiciones normales y patológicas</div>
+<div class="mm-node n1" style="--d:1">INHIBICIÓN INTRACORTICAL DE INTERVALO LARGO (LICI): un condicionante SUPRAUMBRAL seguido, entre 50 y 200 ms después, de una disminución de la amplitud del PEM test. También es cortical, pero mediado por un conjunto DISTINTO de neuronas inhibitorias que la SICI</div>
+<div class="mm-node n1" style="--d:1">FACILITACIÓN INTRACORTICAL DE INTERVALO CORTO: a intervalos cortos y discretos —1,1-1,5; 2,3-3,0; y 4,1-4,3 ms—, con ambos estímulos cerca del umbral, o con condicionante supraumbral y test subumbral, se observa un efecto FACILITADOR sobre el estímulo test. También por mecanismos intracorticales</div>
+<div class="mm-node n1" style="--d:1">FACILITACIÓN INTRACORTICAL: con el condicionante POR DEBAJO y el test POR ENCIMA del umbral, y un intervalo interestímulo de 8-30 ms, aumenta la amplitud del PEM test respecto al test aislado. Parece deberse a mecanismos intracorticales, posiblemente mediados por GLUTAMATO</div>
+<div class="mm-node n1" style="--d:1">PARADIGMA INTERHEMISFÉRICO: condicionante y test entregados sobre hemisferios OPUESTOS</div>
+<div class="mm-node n2" style="--d:2">Facilitación interhemisférica LEVE con intervalo interestímulo CORTO, de 4-6 ms</div>
+<div class="mm-node n2" style="--d:2">Inhibición interhemisférica POTENTE con intervalos más largos, de 8-50 ms</div>
+<div class="mm-node n0" style="--d:0">Errores y confusiones frecuentes</div>
+<div class="mm-node n1" style="--d:1">Usar la TCMS para monitorización intraoperatoria: produce sobre todo ondas I, que son polisinápticas y quedan suprimidas por la anestesia</div>
+<div class="mm-node n1" style="--d:1">Medir el CMCT con estimulación radicular sin descontar su sobreestimación sistemática (0,5-1,4 ms en MMSS, 3,0-4,1 ms en MMII)</div>
+<div class="mm-node n1" style="--d:1">Atribuir a la vía central un CMCT prolongado obtenido por técnica foraminal, cuando puede deberse a una lesión radicular intraespinal</div>
+<div class="mm-node n1" style="--d:1">Aplicar la fórmula de la onda F para el tiempo periférico en músculos proximales: es aplicable sobre todo a los DISTALES</div>
+<div class="mm-node n1" style="--d:1">Comparar amplitudes absolutas de PEM entre sujetos en lugar de usar la ratio PEM/M, que tiene mucha menos variabilidad intersujeto</div>
+<div class="mm-node n1" style="--d:1">Medir latencias con PEM relajados: los CONTRAÍDOS son los de latencia más corta y son los que se usan para CMCT</div>
+<div class="mm-node n1" style="--d:1">Comparar umbrales motores absolutos entre sujetos como si fueran estables: dependen del músculo, la edad, los fármacos, la postura y el ciclo vigilia-sueño. Lo comparable es el umbral entre HEMISFERIOS del mismo individuo</div>
+<div class="mm-node n1" style="--d:1">Descartar la exploración porque no hay PEM en un músculo débil: el periodo silente puede seguir siendo registrable y es un fenómeno distinto</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n1" style="--d:1">La TCMS no sirve en quirófano, por la supresión anestésica de las ondas I</div>
+<div class="mm-node n1" style="--d:1">El CMCT no es puro tiempo de conducción: incluye activación de las piramidales, tiempo sináptico y sumación temporal en la motoneurona espinal</div>
+<div class="mm-node n1" style="--d:1">El umbral motor cortical no está estandarizado en varios detalles técnicos y no es una medida estática</div>
+<div class="mm-node n1" style="--d:1">El periodo silente tiene un rango normal muy amplio (100-300 ms) en músculos de la mano, y su mecanismo sigue siendo desconocido</div>
+<div class="mm-node n1" style="--d:1">La TST es exigente de realizar, aunque sea el método de elección para extremidad superior</div>
+<div class="mm-node n1" style="--d:1">Los paradigmas de par de estímulos son hoy herramienta de investigación, con poca utilidad clínica establecida</div>
+<div class="mm-node n0" style="--d:0">Referencia</div>
+<div class="mm-node n1" style="--d:1">Markand2020 cap.5 &quot;Motor Evoked Potentials&quot; pp.214 y 225-230 — comparación TCES/TCMS y corrientes radiales frente a tangenciales p.214 y Tabla 5.1 · &quot;Applications of TCMS&quot; p.225 (dolor de la eléctrica, disponibilidad de la magnética) · &quot;Technical Consideration&quot; pp.225-226 (informe del comité de la IFCN de Groppa y col. 2012, bobina redonda de 10 cm, pulsos monofásicos frente a bifásicos, bobina en ocho, protocolo del 140%, asimetría brazo/pierna, músculos de registro) · medidas diagnósticas pp.226-230 y Tabla 5.4 — latencia y CMCT con los dos métodos de tiempo periférico y la sobreestimación foraminal (Fig. 5.5), maduración según Garvey y Mall 2008, amplitud y facilitación por contracción, ratio PEM/M con el valor de Uozumi y col. 1991, triple estimulación de Magistris y col. 1999, umbrales motores en reposo y activo con el método de Rossini y col. 1994, periodo silente e inhibición transcallosa, y paradigmas de par de estímulos (SICI, LICI, facilitación intracortical e interhemisférica)</div></div>
+              
+            </div>
+          </details>
+<details class="tema" id="PE-M4" style="--bloque-color:#a855f7" name="tema">
+            <summary class="tema-header">
+              <input type="checkbox" class="estudiado-check" data-codigo="PE-M4" onclick="event.stopPropagation()" aria-label="Marcar PE-M4 como estudiado">
+              <span class="tema-codigo">PE-M4</span>
+              <h3 class="tema-titulo">Aplicaciones clínicas y terapéuticas del PEM</h3>
+              <span class="badge estado-completo">Completo</span>
+              <span class="badge plantilla-badge">Plantilla F</span>
+            </summary>
+            <div class="tema-body">
+              <div class="mm"><div class="mm-root">Aplicaciones clínicas y terapéuticas del PEM</div><div class="mm-node n0" style="--d:0">Contexto clínico y pregunta que responde</div>
+<div class="mm-node n1" style="--d:1">La pregunta que el PEM responde y ninguna otra prueba responde igual de bien: ¿hay disfunción de la MOTONEURONA SUPERIOR, incluso cuando la exploración clínica no la muestra?</div>
+<div class="mm-node n1" style="--d:1">Ése es el hilo común de casi todas sus indicaciones: detectar lesión SUBCLÍNICA de la vía corticoespinal —en esclerosis múltiple, en enfermedad de motoneurona, en compresión medular—, o cuantificar función residual cuando la clínica ya es evidente, como en el ictus</div>
+<div class="mm-node n1" style="--d:1">La exploración se hace con estimulación MAGNÉTICA transcraneal, porque la eléctrica es demasiado dolorosa en el paciente despierto</div>
+<div class="mm-node n1" style="--d:1">LOS PARÁMETROS QUE SE MANEJAN, en resumen operativo</div>
+<div class="mm-node n2" style="--d:2">TIEMPO DE CONDUCCIÓN MOTORA CENTRAL (CMCT): tiempo de la corteza motora a la motoneurona inferior, obtenido restando de la latencia del PEM el tiempo de tránsito periférico. Es el parámetro diagnósticamente más evaluado</div>
+<div class="mm-node n2" style="--d:2">AMPLITUD y RATIO PEM/M: porcentaje de la amplitud del PEM respecto a la onda M supramáxima. Menos variable entre sujetos que la amplitud absoluta</div>
+<div class="mm-node n2" style="--d:2">TÉCNICA DE TRIPLE ESTIMULACIÓN (TST): &quot;resincroniza&quot; la descarga motoneuronal mediante dos colisiones; la ratio TST/M se relaciona directamente con el NÚMERO de motoneuronas inferiores activadas, y es mejor medida de conducción central que el CMCT</div>
+<div class="mm-node n2" style="--d:2">UMBRAL MOTOR EN REPOSO: intensidad necesaria para un PEM de 50 µV con probabilidad del 50%. Mide la excitabilidad de las piramidales y de las interneuronas excitatorias</div>
+<div class="mm-node n2" style="--d:2">PERIODO SILENTE: pausa del EMG tónico tras el PEM —o incluso sin PEM previo—, relacionada con procesos inhibitorios corticales y segmentarios</div>
+<div class="mm-node n0" style="--d:0">ESCLEROSIS MÚLTIPLE</div>
+<div class="mm-node n1" style="--d:1">EL ESTUDIO DE REFERENCIA (Hess y col., 1987): 83 pacientes, evaluando el CMCT desde el abductor del meñique con estimulación magnética de la corteza motora y estimulación eléctrica en el espacio C7-T1</div>
+<div class="mm-node n2" style="--d:2">CMCT ANORMAL en 60 pacientes, el 72%</div>
+<div class="mm-node n2" style="--d:2">La incidencia fue mayor en quienes tenían debilidad de ese músculo, PERO 7 de 32 brazos con exploración NORMAL tenían el CMCT alterado — es decir, detectó lesiones SUBCLÍNICAS</div>
+<div class="mm-node n2" style="--d:2">La sensibilidad del test fue LIGERAMENTE MEJOR que la del PEV y la del PESS</div>
+<div class="mm-node n1" style="--d:1">LAS CINCO ANOMALÍAS DESCRITAS: CMCT prolongado · latencias del PEM prolongadas · DISPERSIÓN del PEM · amplitud reducida (ratio PEM/M baja) · o AUSENCIA de PEM</div>
+<div class="mm-node n1" style="--d:1">RANGO DE SENSIBILIDAD del CMCT prolongado en la literatura: entre el 56% y el 93% de los pacientes, con sensibilidad MAYOR si se incluyen músculos de extremidades inferiores y si hay déficits motores clínicos</div>
+<div class="mm-node n1" style="--d:1">DOS PARÁMETROS ADICIONALES menos citados</div>
+<div class="mm-node n2" style="--d:2">Umbral AUMENTADO para elicitar PEM en músculos relajados de extremidades superiores e inferiores, en más de DOS TERCIOS de una serie de 34 pacientes (Caramia y col., 1991)</div>
+<div class="mm-node n2" style="--d:2">Aumento de la VARIABILIDAD DE INICIO del PEM, hallado en casi la mitad de los primeros interóseos dorsales testados en 21 pacientes (Britton y col., 1991)</div>
+<div class="mm-node n1" style="--d:1">LA TST ES SUPERIOR: reveló una alta incidencia de anomalías de conducción central en esclerosis múltiple, y resultó superior a la técnica convencional de PEM</div>
+<div class="mm-node n1" style="--d:1">CONCLUSIÓN: las distintas medidas aportan información clínicamente útil sobre el estado funcional de los tractos corticoespinales, incluida la detección de lesiones subclínicas y la posible RECLASIFICACIÓN de la enfermedad</div>
+<div class="mm-node n0" style="--d:0">ESCLEROSIS LATERAL AMIOTRÓFICA Y ENFERMEDAD DE MOTONEURONA</div>
+<div class="mm-node n1" style="--d:1">EL PROBLEMA DIAGNÓSTICO que justifica la prueba: el diagnóstico inequívoco de ELA depende de que haya disfunción de motoneurona superior E inferior a la vez</div>
+<div class="mm-node n2" style="--d:2">La afectación de la motoneurona INFERIOR es fácil de demostrar con EMG convencional</div>
+<div class="mm-node n2" style="--d:2">Pero la degeneración concomitante de la SUPERIOR puede ser elusiva y quedar OSCURECIDA por los propios signos de la inferior. Ahí es donde entra la TCMS</div>
+<div class="mm-node n1" style="--d:1">SERIES SUCESIVAS</div>
+<div class="mm-node n2" style="--d:2">Schriefer y col. (1989): hallazgos anormales en 14 de 22 pacientes. El CMCT prolongado y la AUSENCIA de respuesta a la estimulación cerebral fueron MÁS frecuentes que el PEM de baja amplitud sin CMCT prolongado</div>
+<div class="mm-node n2" style="--d:2">Estudios posteriores: hallazgos anormales en el 50-100% de los pacientes con ELA. Esa variabilidad de sensibilidad se explica por la proporción de pacientes con signos DEFINIDOS de motoneurona superior y por los distintos parámetros diagnósticos usados</div>
+<div class="mm-node n2" style="--d:2">Schulte-Mattler y col. (1999): 39 pacientes —19 con signos definidos de motoneurona superior, 9 probables y 7 sin signos—, con PEM de abductor del meñique y tibial anterior. Criterio de anormalidad: ausencia de respuesta a la estimulación cortical con respuesta periférica presente, o CMCT anormal</div>
+<div class="mm-node n3" style="--d:3">TODOS los pacientes con signos definidos tuvieron hallazgos anormales</div>
+<div class="mm-node n3" style="--d:3">Pero MÁS DE DOS TERCIOS de los que tenían signos probables o AUSENTES también tuvieron estudios anormales</div>
+<div class="mm-node n3" style="--d:3">Conclusión: la TCMS ayuda a establecer el diagnóstico de ELA de forma más FIABLE en los pacientes sin signos definidos de motoneurona superior — que son justamente los difíciles</div>
+<div class="mm-node n1" style="--d:1">LA SERIE MÁS GRANDE (Triggs y col., 1999): 121 pacientes con enfermedad de motoneurona, repartidos en cuatro grupos con su porcentaje de estudios anormales</div>
+<div class="mm-node n2" style="--d:2">ELA DEFINIDA (motoneurona superior + inferior): 41 pacientes, 34 anormales — 83%</div>
+<div class="mm-node n2" style="--d:2">ELA con signos PROBABLES de motoneurona superior: 40 pacientes, 30 anormales — 75%</div>
+<div class="mm-node n2" style="--d:2">Síndrome de motoneurona inferior PURA: 22 pacientes, 6 anormales — 27%</div>
+<div class="mm-node n2" style="--d:2">PARÁLISIS BULBAR PROGRESIVA: 18 pacientes, 14 anormales — 78%</div>
+<div class="mm-node n2" style="--d:2">Y los hallazgos cualitativos de esa serie</div>
+<div class="mm-node n3" style="--d:3">El UMBRAL MOTOR AUMENTADO fue la anomalía MÁS COMÚN. En algunos pacientes era tan alto que no podían elicitarse PEM ni con estimulación máxima</div>
+<div class="mm-node n3" style="--d:3">La DURACIÓN DEL PERIODO SILENTE estaba REDUCIDA en la ELA</div>
+<div class="mm-node n3" style="--d:3">Y un hallazgo con valor práctico: el periodo silente podía elicitarse en algunos pacientes en los que NO era posible registrar PEM ni con la salida máxima del estimulador</div>
+<div class="mm-node n1" style="--d:1">EL ESTUDIO MÁS RECIENTE (Wang y col., 2019): TST, CMCT, latencia del PEM y umbral motor en reposo en 50 pacientes con ELA — 28 CON signos de motoneurona superior y 22 SIN ellos</div>
+<div class="mm-node n2" style="--d:2">En los que SÍ tenían signos, incidencia de anomalía: ratio de amplitud TST 89,3% · umbral motor en reposo 78,6% · CMCT 64,3% · latencia del PEM 64,3%</div>
+<div class="mm-node n2" style="--d:2">En los 22 SIN signos, y aquí está lo relevante: la ratio TST fue anormal en el 27,3%, mientras que los demás parámetros lo fueron solo en el 13,6%</div>
+<div class="mm-node n2" style="--d:2">Conclusión: la TST es la medida MÁS SENSIBLE para detectar el fallo de conducción de la motoneurona superior en ELA, y contribuye al diagnóstico PRECOZ aportando evidencia de disfunción subclínica que permite diagnosticar con mayor confianza</div>
+<div class="mm-node n1" style="--d:1">OTROS PARÁMETROS ÚTILES más allá del CMCT: umbral motor en reposo, PEM pequeños o inobtenibles, latencias prolongadas del PEM, y ratio PEM/M disminuida durante la contracción voluntaria</div>
+<div class="mm-node n1" style="--d:1">ESCLEROSIS LATERAL PRIMARIA: umbral de excitabilidad aumentado y CMCT prolongado en extremidades superiores e inferiores en 3 de 4 pacientes. El único paciente sin anomalías tenía una enfermedad de larga evolución, probablemente una forma leve (Caramia y col., 1991)</div>
+<div class="mm-node n1" style="--d:1">CONCLUSIÓN OPERATIVA: la TCMS es útil para detectar disfunción de motoneurona superior en pacientes que se presentan esencialmente con signos de motoneurona inferior — pero SOLO si se evalúan MÚLTIPLES parámetros: CMCT, umbral de excitación, periodo silente y características del PEM</div>
+<div class="mm-node n0" style="--d:0">MIELOPATÍA Y ESPONDILOSIS CERVICAL</div>
+<div class="mm-node n1" style="--d:1">La espondilosis cervical produce comúnmente radiculopatía, pero su complicación neurológica más grave es la COMPRESIÓN MEDULAR, que puede evaluarse FUNCIONALMENTE con TCMS — mientras la RM la evalúa estructuralmente</div>
+<div class="mm-node n1" style="--d:1">LA CIFRA FUERTE (Lo y col., 2006): 231 pacientes con espondilosis cervical y distintos grados de compresión medular, comparando TCMS con RM como patrón de referencia</div>
+<div class="mm-node n2" style="--d:2">SENSIBILIDAD del 98% y ESPECIFICIDAD del 98% para la anomalía medular</div>
+<div class="mm-node n2" style="--d:2">Conclusión de los autores, honesta sobre su alcance: la TCMS NO es un sustituto de la RM, pero tiene valor como técnica RÁPIDA, BARATA y NO INVASIVA para CRIBAR pacientes espondilóticos antes de la RM</div>
+<div class="mm-node n1" style="--d:1">DETECCIÓN PRECLÍNICA (Travlos y col., 1992): 23 pacientes con radiculopatía cervical, NINGUNO con rasgos mielopáticos manifiestos</div>
+<div class="mm-node n2" style="--d:2">El PEM registrado de músculos de la mano mostró CMCT prolongado y/o ratio PEM/M reducida en el 65%</div>
+<div class="mm-node n2" style="--d:2">Los autores sugirieron que tales hallazgos pueden orientar una intervención quirúrgica MÁS OPORTUNA — es decir, la prueba puede adelantar la decisión</div>
+<div class="mm-node n1" style="--d:1">LESIÓN MEDULAR TRAUMÁTICA: valorar el estado funcional de los tractos corticoespinales y predecir el grado de recuperación con distintas modalidades experimentales de tratamiento es un área de interés intenso, y la TCMS tiene su lugar en los protocolos de investigación</div>
+<div class="mm-node n0" style="--d:0">ICTUS — aquí la pregunta no es diagnóstica sino PRONÓSTICA</div>
+<div class="mm-node n1" style="--d:1">HALLAZGOS SEGÚN LA GRAVEDAD</div>
+<div class="mm-node n2" style="--d:2">En músculos GRAVEMENTE afectados los PEM suelen ser NO registrables</div>
+<div class="mm-node n2" style="--d:2">En músculos menos afectados pueden elicitarse, pero de baja amplitud, latencia prolongada y con umbral de excitabilidad elevado</div>
+<div class="mm-node n1" style="--d:1">LOS DOS PATRONES DE MAL PRONÓSTICO (Trompetto y col., 2000): la AUSENCIA de PEM en el miembro paralizado, y una amplitud AUMENTADA del PEM en el miembro NO afectado al estimular el hemisferio contralateral. Ambos sugieren mala recuperación funcional</div>
+<div class="mm-node n1" style="--d:1">EL PATRÓN FAVORABLE (Hendricks y col., 2003): un PEM REGISTRABLE en el miembro paralizado al estimular el hemisferio afectado</div>
+<div class="mm-node n1" style="--d:1">POR QUÉ MERECE LA PENA HACERLO: la valoración motora por PEM puede ser MÁS SENSIBLE que la exploración clínica para detectar función corticoespinal RESIDUAL, y esa función residual puede ser un parámetro predictivo mejor de la recuperación motora tras el ictus</div>
+<div class="mm-node n0" style="--d:0">TRASTORNOS DEL MOVIMIENTO — el caso en que la prueba enseña pero no diagnostica</div>
+<div class="mm-node n1" style="--d:1">La TCMS ha contribuido a entender mejor la fisiopatología, pero la técnica NO ha alcanzado hasta ahora ninguna aplicación diagnóstica</div>
+<div class="mm-node n1" style="--d:1">El motivo es concreto: en la mayoría de los trastornos del movimiento, los estudios de CMCT y de umbral han sido esencialmente NORMALES</div>
+<div class="mm-node n1" style="--d:1">En cambio SÍ muestran anomalías el periodo silente, la inhibición intracortical de intervalo corto, la de intervalo largo y otros parámetros de los paradigmas de par de estímulos</div>
+<div class="mm-node n1" style="--d:1">LA EXCEPCIÓN CON UTILIDAD PRÁCTICA: los estudios de PEM pueden ayudar a diferenciar la enfermedad de Parkinson CLÁSICA —en la que el CMCT es NORMAL— de los parkinsonismos ATÍPICOS, donde un CMCT prolongado puede aportar evidencia útil de afectación subclínica de motoneurona superior</div>
+<div class="mm-node n0" style="--d:0">EPILEPSIA — excitabilidad cortical, no diagnóstico de crisis</div>
+<div class="mm-node n1" style="--d:1">El umbral a TCMS con pulsos ÚNICOS se ha mostrado como un indicador importante de EXCITABILIDAD CORTICAL</div>
+<div class="mm-node n2" style="--d:2">Los pacientes con epilepsia generalizada NO TRATADA muestran un umbral MÁS BAJO, lo que sugiere excitabilidad cortical aumentada</div>
+<div class="mm-node n2" style="--d:2">En los pacientes TRATADOS, en cambio, el umbral es MÁS ALTO que en las personas normales, por la acción supresora de los antiepilépticos — hay que contar con el fármaco antes de interpretar</div>
+<div class="mm-node n1" style="--d:1">EL PARADIGMA DE PARES EN LA EPILEPSIA MIOCLÓNICA JUVENIL (Caramia y col., 1996)</div>
+<div class="mm-node n2" style="--d:2">El fenómeno normal: un estímulo condicionante SUBUMBRAL suprime el PEM —en músculos de la mano relajados— generado en respuesta a un test SUPRAUMBRAL entregado 1-6 ms después. Esa inhibición es intracortical y está mediada por el sistema GABAérgico</div>
+<div class="mm-node n2" style="--d:2">Lo que hacen los pacientes con epilepsia mioclónica juvenil, distinto del resto de epilepsias generalizadas idiopáticas: NO exhiben supresión del PEM, y muestran un aumento PROGRESIVO de la amplitud del PEM al estímulo test a lo largo de una serie de pares consecutivos</div>
+<div class="mm-node n2" style="--d:2">Lo que hace una persona sana: una ligera DISMINUCIÓN del PEM al test a lo largo de estímulos consecutivos, lo que implica una inhibición progresiva ante la estimulación mantenida</div>
+<div class="mm-node n2" style="--d:2">Interpretación propuesta: la supresión alterada del PEM se debería a PÉRDIDA de la inhibición intracortical</div>
+<div class="mm-node n2" style="--d:2">Control que refuerza la especificidad: NO se encontró esa pérdida de inhibición en pacientes con gran mal esporádico. Los autores concluyeron que un posible MARCADOR de epilepsia mioclónica juvenil sería la pérdida de la inhibición del PEM</div>
+<div class="mm-node n1" style="--d:1">Es, por tanto, una aplicación fisiopatológica y de marcador, no una prueba diagnóstica de epilepsia</div>
+<div class="mm-node n0" style="--d:0">APLICACIONES TERAPÉUTICAS — la TCMS repetitiva (rTMS)</div>
+<div class="mm-node n1" style="--d:1">DEPRESIÓN RESISTENTE, que es la indicación establecida</div>
+<div class="mm-node n2" style="--d:2">La depresión resistente supone un TERCIO de todos los casos de depresión mayor</div>
+<div class="mm-node n2" style="--d:2">PROTOCOLO: la estimulación se entrega en TRENES de pulsos —habitualmente 10 Hz durante 4 segundos— separados por periodos de reposo, usando bobina en OCHO. A eso se le llama TMS repetitiva</div>
+<div class="mm-node n2" style="--d:2">En 2008 la agencia reguladora estadounidense autorizó el primer dispositivo de TMS para tratar la depresión mayor, y hoy hay múltiples dispositivos aprobados. Los metaanálisis y los grandes ensayos aleatorizados han mostrado generalmente efectos beneficiosos</div>
+<div class="mm-node n2" style="--d:2">MECANISMO propuesto: la capacidad de la rTMS de MODULAR la descarga neuronal tanto en circuitos excitatorios como inhibitorios</div>
+<div class="mm-node n2" style="--d:2">DIANA ANATÓMICA: la depresión se ha vinculado a la disfunción de una red de la corteza PREFRONTAL DORSOLATERAL, que es el área a la que se dirige la estimulación</div>
+<div class="mm-node n1" style="--d:1">EXPANSIÓN A OTROS CUADROS: el éxito en depresión ha llevado a un interés creciente en esquizofrenia, trastorno obsesivo-compulsivo, trastorno de estrés postraumático, trastorno por déficit de atención e hiperactividad, trastorno por uso de sustancias, trastorno del espectro autista, trastorno de ansiedad y pánico, trastorno bipolar, e incluso en crisis epilépticas refractarias, también en edad pediátrica</div>
+<div class="mm-node n2" style="--d:2">Con la advertencia explícita de la fuente: la utilidad terapéutica en TODAS esas condiciones está aún POR DEFINIR con claridad</div>
+<div class="mm-node n1" style="--d:1">TRASTORNO CONVERSIVO — un experimento que además es diagnóstico</div>
+<div class="mm-node n2" style="--d:2">El punto de partida esperable (Pillai y col., 1992): PESS normales y PEM y CMCT normales en dos pacientes con parálisis psicógena</div>
+<div class="mm-node n2" style="--d:2">El experimento (Schönfeldt-Lecuona y col., 2006): rTMS en cuatro pacientes con parálisis NO orgánica de un miembro — tres diagnosticados de trastorno conversivo y uno de simulación</div>
+<div class="mm-node n2" style="--d:2">Parámetros: frecuencia 15 Hz, duración del tren 2 segundos, intervalo entre trenes 4 segundos, y un total diario de 4000 estímulos</div>
+<div class="mm-node n2" style="--d:2">RESULTADO: los TRES con trastorno conversivo tuvieron recuperación completa o mejoría marcada en pocas semanas; el SIMULADOR no respondió</div>
+<div class="mm-node n2" style="--d:2">Conclusión de los autores: la rTMS puede tener efecto terapéutico en el trastorno conversivo motor, pero no en la parálisis simulada</div>
+<div class="mm-node n0" style="--d:0">SEGURIDAD DE LA rTMS</div>
+<div class="mm-node n1" style="--d:1">La rTMS es MUY segura. El grado de excitación cortical depende tanto de la FRECUENCIA como de la INTENSIDAD de la estimulación</div>
+<div class="mm-node n1" style="--d:1">LA PREOCUPACIÓN MAYOR es el desencadenamiento de CRISIS en pacientes epilépticos</div>
+<div class="mm-node n2" style="--d:2">Es extremadamente infrecuente con pulsos ÚNICOS o con estimulación de BAJA frecuencia (menos de 1 Hz), que es la que se usa con fines diagnósticos</div>
+<div class="mm-node n2" style="--d:2">Pero con estimulación de ALTA frecuencia, como la que se usa en rTMS terapéutica, la inducción de crisis es una preocupación razonable</div>
+<div class="mm-node n1" style="--d:1">LA MAGNITUD REAL DEL RIESGO: entre DECENAS DE MILES de pacientes sometidos a estimulación magnética transcraneal se han comunicado MENOS DE DIEZ sujetos con crisis inducidas</div>
+<div class="mm-node n1" style="--d:1">Aun siendo una complicación tan rara, existen guías de seguridad sobre frecuencia e intensidad de la rTMS (Wasserman, 1998)</div>
+<div class="mm-node n0" style="--d:0">Errores de interpretación</div>
+<div class="mm-node n1" style="--d:1">Interpretar un CMCT prolongado en un paciente con radiculopatía sin recordar que la técnica de estimulación FORAMINAL puede prolongarlo por lesión radicular intraespinal, no por lesión central</div>
+<div class="mm-node n1" style="--d:1">Descartar disfunción de motoneurona superior en enfermedad de motoneurona por un CMCT normal: en la serie más reciente el CMCT fue anormal solo en el 64,3% de los que SÍ tenían signos, y la TST llegó al 89,3%</div>
+<div class="mm-node n1" style="--d:1">Concluir que no hay nada explorable porque no se obtiene PEM: en la ELA el umbral puede ser tan alto que no haya PEM con salida máxima, y aun así puede registrarse el periodo silente</div>
+<div class="mm-node n1" style="--d:1">Interpretar un umbral motor elevado en un epiléptico como signo de lesión, cuando puede ser el efecto supresor del tratamiento antiepiléptico</div>
+<div class="mm-node n1" style="--d:1">Usar un solo parámetro en enfermedad de motoneurona: la utilidad depende de evaluar CMCT, umbral, periodo silente y características del PEM en conjunto</div>
+<div class="mm-node n1" style="--d:1">Tratar la TCMS como sustituto de la RM en espondilosis cervical: es un cribado previo, aunque su sensibilidad y especificidad sean del 98%</div>
+<div class="mm-node n1" style="--d:1">Esperar utilidad diagnóstica de la TCMS en trastornos del movimiento: CMCT y umbral son esencialmente normales, salvo el matiz del parkinsonismo atípico</div>
+<div class="mm-node n0" style="--d:0">Limitaciones</div>
+<div class="mm-node n1" style="--d:1">En trastornos del movimiento la técnica aporta comprensión fisiopatológica, no diagnóstico</div>
+<div class="mm-node n1" style="--d:1">En epilepsia es un marcador de excitabilidad cortical, no una prueba diagnóstica de crisis</div>
+<div class="mm-node n1" style="--d:1">La sensibilidad en esclerosis múltiple y en enfermedad de motoneurona depende fuertemente de qué parámetros se midan y de cuántos pacientes de la serie tengan ya signos clínicos</div>
+<div class="mm-node n1" style="--d:1">La TST, que es la medida más sensible en varias indicaciones, es exigente de realizar</div>
+<div class="mm-node n1" style="--d:1">En Estados Unidos el uso diagnóstico sigue esencialmente limitado a protocolos de investigación, aunque en muchos otros países esté disponible como herramienta clínica</div>
+<div class="mm-node n1" style="--d:1">La utilidad terapéutica de la rTMS está establecida en depresión resistente, pero sigue por definir en todo el resto de indicaciones neuropsiquiátricas exploradas</div>
+<div class="mm-node n0" style="--d:0">Referencia</div>
+<div class="mm-node n1" style="--d:1">Markand2020 cap.5 &quot;Motor Evoked Potentials&quot; pp.230-235 y Tabla 5.5 — &quot;Clinical Applications&quot;: esclerosis múltiple con Hess y col. 1987, Caramia y col. 1991 y Britton y col. 1991 · esclerosis lateral amiotrófica con Schriefer y col. 1989, Schulte-Mattler y col. 1999, Triggs y col. 1999 y sus cuatro grupos, y Wang y col. 2019 con las cifras de TST · trastornos del movimiento según Cantello 2002 · ictus con Trompetto y col. 2000 y Hendricks y col. 2003 · mielopatía con Lo y col. 2006 y Travlos y col. 1992 · epilepsia y epilepsia mioclónica juvenil con Caramia y col. 1996 · aplicaciones psiquiátricas y rTMS con Garnaat y col. 2018, trastorno conversivo con Pillai y col. 1992 y Schönfeldt-Lecuona y col. 2006, y seguridad con las guías de Wasserman 1998 · las medidas diagnósticas y su significado fisiológico, en pp.226-230 y Tabla 5.4 **(la Tabla 5.5 sale con las columnas descolocadas en la extracción de texto; los hallazgos por patología recogidos aquí se han tomado del CUERPO del capítulo, no de la tabla)**</div></div>
+              
+            </div>
+          </details>
+        </div>
+      </details>
+<details class="bloque-seccion" style="--bloque-color:#ef4444" open>
         <summary class="bloque-titulo">V — Potenciales evocados visuales</summary>
         <div class="bloque-body">
-          <details class="tema" id="PE-V1" style="--bloque-color:#a855f7" name="tema">
+          <details class="tema" id="PE-V1" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V1" onclick="event.stopPropagation()" aria-label="Marcar PE-V1 como estudiado">
               <span class="tema-codigo">PE-V1</span>
@@ -1997,7 +2533,7 @@ body { display: flex; }
               
             </div>
           </details>
-<details class="tema" id="PE-V2" style="--bloque-color:#a855f7" name="tema">
+<details class="tema" id="PE-V2" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V2" onclick="event.stopPropagation()" aria-label="Marcar PE-V2 como estudiado">
               <span class="tema-codigo">PE-V2</span>
@@ -2085,7 +2621,7 @@ body { display: flex; }
               
             </div>
           </details>
-<details class="tema" id="PE-V3" style="--bloque-color:#a855f7" name="tema">
+<details class="tema" id="PE-V3" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V3" onclick="event.stopPropagation()" aria-label="Marcar PE-V3 como estudiado">
               <span class="tema-codigo">PE-V3</span>
@@ -2170,7 +2706,7 @@ body { display: flex; }
               
             </div>
           </details>
-<details class="tema" id="PE-V4" style="--bloque-color:#a855f7" name="tema">
+<details class="tema" id="PE-V4" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V4" onclick="event.stopPropagation()" aria-label="Marcar PE-V4 como estudiado">
               <span class="tema-codigo">PE-V4</span>
@@ -2228,7 +2764,7 @@ body { display: flex; }
               
             </div>
           </details>
-<details class="tema" id="PE-V5" style="--bloque-color:#a855f7" name="tema">
+<details class="tema" id="PE-V5" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V5" onclick="event.stopPropagation()" aria-label="Marcar PE-V5 como estudiado">
               <span class="tema-codigo">PE-V5</span>
@@ -2309,7 +2845,7 @@ body { display: flex; }
               
             </div>
           </details>
-<details class="tema" id="PE-V6" style="--bloque-color:#a855f7" name="tema">
+<details class="tema" id="PE-V6" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V6" onclick="event.stopPropagation()" aria-label="Marcar PE-V6 como estudiado">
               <span class="tema-codigo">PE-V6</span>
@@ -2393,7 +2929,7 @@ body { display: flex; }
               
             </div>
           </details>
-<details class="tema" id="PE-V7" style="--bloque-color:#a855f7" name="tema">
+<details class="tema" id="PE-V7" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V7" onclick="event.stopPropagation()" aria-label="Marcar PE-V7 como estudiado">
               <span class="tema-codigo">PE-V7</span>
@@ -2457,7 +2993,7 @@ body { display: flex; }
               
             </div>
           </details>
-<details class="tema" id="PE-V8" style="--bloque-color:#a855f7" name="tema">
+<details class="tema" id="PE-V8" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V8" onclick="event.stopPropagation()" aria-label="Marcar PE-V8 como estudiado">
               <span class="tema-codigo">PE-V8</span>
@@ -2529,7 +3065,7 @@ body { display: flex; }
               
             </div>
           </details>
-<details class="tema" id="PE-V9" style="--bloque-color:#a855f7" name="tema">
+<details class="tema" id="PE-V9" style="--bloque-color:#ef4444" name="tema">
             <summary class="tema-header">
               <input type="checkbox" class="estudiado-check" data-codigo="PE-V9" onclick="event.stopPropagation()" aria-label="Marcar PE-V9 como estudiado">
               <span class="tema-codigo">PE-V9</span>

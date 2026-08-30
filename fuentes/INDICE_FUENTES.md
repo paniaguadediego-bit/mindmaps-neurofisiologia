@@ -58,5 +58,12 @@ explotado pp.590-591 (lesión por mordedura). Ahora está íntegro en DOS temas 
 fuego, más §41.4 control de infección) y **`C8`** (§41.3 seguridad específica por
 procedimiento y §41.5 rendimiento esencial).
 
-Y **`Markand2020` cap.5 "MEP" pp.209-236** (ondas D e I, p.214) no está citado en ningún
-mindmap: el área PPEE no tiene ningún tema de potenciales evocados motores. ✦
+✔ **`Markand2020` cap.5 "MEP" pp.209-236 — HECHO.** No estaba citado en ningún mindmap y el
+área PPEE no tenía ningún tema de potenciales evocados motores. Ahora está íntegro en el
+**bloque nuevo `M`** de PPEE, repartido en cuatro temas: **`PE-M1`** (anatomía del sistema
+motor y ondas D e I, pp.209-218), **`PE-M2`** (estimulación eléctrica transcraneal y
+monitorización intraoperatoria, pp.212-225 y Tablas 5.2-5.3), **`PE-M3`** (estimulación
+magnética y medidas diagnósticas, pp.225-230 y Tablas 5.1 y 5.4) y **`PE-M4`** (aplicaciones
+clínicas y terapéuticas, pp.230-235 y Tabla 5.5).
+> Aviso de extracción: la **Tabla 5.5** sale con las columnas descolocadas en `pdftotext`;
+> los hallazgos por patología de `PE-M4` se tomaron del CUERPO del capítulo, no de la tabla.

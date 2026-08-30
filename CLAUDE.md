@@ -49,7 +49,7 @@ visor. `index.html` es el portal que las lista; cada área se descubre sola en c
 | Área | Bloques | Estado | Página |
 |---|---|---|---|
 | `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 27 temas, todos completos | `ionm.html` |
-| `PPEE` | A bases fisiológicas/anatómicas · B bases técnicas · C PEV en quirófano · V visuales | 22 temas, todos con contenido | `ppee.html` |
+| `PPEE` | A bases fisiológicas/anatómicas · B bases técnicas · C PEV en quirófano · M motores · V visuales | 26 temas, todos con contenido | `ppee.html` |
 | EMG, EEG, EEG infantil, EEG UCI | — | previstas, aún no creadas | — |
 
 El recuento exacto y actualizado está siempre en `MAPA_MAESTRO.md` (generado): no lo
@@ -262,15 +262,39 @@ página dibujada a mano con ese código escrito.
        C3/C4—, SEP, PEATC, PEV, EMG, y el rendimiento esencial de la práctica con sus dos
        modos de fallo.
 
+   - **Tercer ✦ resuelto: bloque `M` de PPEE, desde Markand cap.5 íntegro.** PPEE no tenía
+     NINGÚN tema de potenciales evocados motores; ahora tiene cuatro, y el bloque `M` es el
+     primero que se crea en esa área desde el inicio del proyecto.
+     - `PE-M1` **Sistema motor central y ondas D e I** (245 líneas, plantilla D): la base que
+       explica todo lo demás — el experimento de Patton y Amassian de 1954, por qué la
+       estimulación cortical va bajo el ÁNODO y no bajo el cátodo, por qué la corriente radial
+       de la eléctrica da ondas D y la tangencial de la magnética da ondas I, y por qué eso
+       obliga a un TREN de pulsos en el paciente anestesiado.
+     - `PE-M2` **Estimulación eléctrica transcraneal** (355 líneas, plantilla E): la crítica
+       completa a la estimulación medular rostral y por qué se abandonó, parámetros con la
+       ecuación de energía y el hallazgo de que 0,2 ms es la duración óptima **que los
+       estimuladores actuales todavía no ofrecen**, las cuatro derivaciones, criterios de
+       alarma, las nueve diferencias entre onda D y PEM muscular, seguridad y comparación con
+       el SEP.
+     - `PE-M3` **Estimulación magnética transcraneal** (255 líneas, plantilla E): CMCT con sus
+       dos métodos de tiempo periférico y la sobreestimación foraminal cuantificada, ratio
+       PEM/M, técnica de triple estimulación, umbrales motores, periodo silente y paradigmas
+       de par de estímulos.
+     - `PE-M4` **Aplicaciones clínicas y terapéuticas** (273 líneas, plantilla F): esclerosis
+       múltiple, ELA con las cuatro series y el dato de que la TST es la medida más sensible,
+       mielopatía cervical con el 98%/98% de Lo 2006, ictus, epilepsia mioclónica juvenil, y
+       rTMS terapéutica.
+     - **Aviso de extracción registrado:** la Tabla 5.5 sale con las columnas descolocadas en
+       `pdftotext`; los hallazgos por patología de `PE-M4` se tomaron del CUERPO del capítulo.
+
    | ✦ Territorio con fuente y sin tema, pendiente |
    |---|
    | cap.30 y 31 — nervio periférico y cirugía de cadera (el §18.6.2 del cap.18 también apunta aquí y quedó sin usar) |
    | cap.34-38 — trastornos del movimiento, DBS, dolor, espasticidad |
-   | **Markand cap.5** — PPEE no tiene ningún tema de PEM |
    | **cap.24 cirugía de la cara**, material sobrante — mapeo transcutáneo preoperatorio, escleroterapia y anatomía de las malformaciones vasculares faciales no caben en `A4` ni en `A6` |
 
-   Los dos ✦ de más peso (cap.33 y cap.41) ya están resueltos, en `B9`/`A10` y `C7`/`C8`
-   respectivamente. Lo que queda es de menor calado.
+   Los tres ✦ de más peso (cap.33, cap.41 y Markand cap.5) ya están resueltos, en `B9`/`A10`,
+   `C7`/`C8` y el bloque `M` de PPEE respectivamente. Lo que queda es de menor calado.
 
    **Orden de estudio actualizado.** El `ORDEN_TRABAJO` de `build.js` ya incluye los cinco
    temas que estaban sin ubicar (`A10`, `B8`, `B9`, `C7`, `C8`); `MAPA_MAESTRO.md` ya no

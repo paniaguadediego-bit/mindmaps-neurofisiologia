@@ -4,9 +4,9 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-30T15:33:14.071Z
+Generado: 2026-08-30T15:53:20.554Z
 
-Progreso global: 49 completos · 0 en progreso · 0 esqueletos · 49 temas en 2 área(s).
+Progreso global: 53 completos · 0 en progreso · 0 esqueletos · 53 temas en 2 área(s).
 
 # Área IONM
 
@@ -60,7 +60,7 @@ C1 → C2 → A1 → A2 → A3 → C5 → A4 → A5 → C3 → C4 → C6 → C7 
 
 # Área PPEE
 
-Visor: `ppee.html` · 22 completos · 0 en progreso · 0 esqueletos · 22 temas.
+Visor: `ppee.html` · 26 completos · 0 en progreso · 0 esqueletos · 26 temas.
 
 ## Bloque A — Bases fisiológicas y anatómicas
 
@@ -89,6 +89,15 @@ Visor: `ppee.html` · 22 completos · 0 en progreso · 0 esqueletos · 22 temas.
 | PE-C1 | PEV intraoperatorio por flash: indicaciones, anestesia y montaje | A | Completo | `mindmaps/PE-C1-pev-intraoperatorio-por-flash-tecnica-y-montaje.md` |
 | PE-C2 | PEV intraoperatorio: interpretación, criterios de alarma y rendimiento | F | Completo | `mindmaps/PE-C2-pev-intraoperatorio-interpretacion-y-criterios-de-alarma.md` |
 | PE-C3 | Mapeo de la vía óptica y monitorización de la vía visual posterior | A | Completo | `mindmaps/PE-C3-mapeo-de-la-via-optica-y-via-visual-posterior.md` |
+
+## Bloque M — Potenciales evocados motores
+
+| Código | Título | Plantilla | Estado | Archivo |
+|---|---|---|---|---|
+| PE-M1 | Sistema motor central y ondas D e I | D | Completo | `mindmaps/PE-M1-sistema-motor-central-y-ondas-d-e-i.md` |
+| PE-M2 | Estimulación eléctrica transcraneal: técnica y monitorización intraoperatoria | E | Completo | `mindmaps/PE-M2-estimulacion-electrica-transcraneal-tecnica-y-monitorizacion-intraoperatoria.md` |
+| PE-M3 | Estimulación magnética transcraneal: técnica y medidas diagnósticas | E | Completo | `mindmaps/PE-M3-estimulacion-magnetica-transcraneal-tecnica-y-medidas-diagnosticas.md` |
+| PE-M4 | Aplicaciones clínicas y terapéuticas del PEM | F | Completo | `mindmaps/PE-M4-aplicaciones-clinicas-y-terapeuticas-del-pem.md` |
 
 ## Bloque V — Potenciales evocados visuales
 
