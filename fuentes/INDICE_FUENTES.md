@@ -52,10 +52,11 @@ sin tema propio.
 | 43 | Evidence-based medicine and intraoperative neurophysiology — §43.5 "How accurate are my SEPs and MEPs?" · §43.7 glosario de términos de contingencia | ✔ HECHO — §43.5 y §43.7 en C5. ★★ C5 — marco de falsos positivos y negativos |
 | 44 | The intraoperative neurophysiological monitoring team — incl. §44.5 medical error avoidance | ✔ HECHO — §44.1 y §44.5 en C6. ★ C6 |
 
-Además, **`Deletis` cap.41 "Safety"** sí está en la tabla de arriba pero solo se ha
-explotado pp.590-591 (lesión por mordedura). Sus secciones §41.2 seguridad eléctrica,
-§41.3 seguridad específica por procedimiento, §41.4 control de infección y §41.5
-rendimiento esencial siguen sin usar. ✦ podría sostener un tema propio de seguridad.
+✔ **`Deletis` cap.41 "Safety" — HECHO.** Estaba en la tabla de arriba pero solo se había
+explotado pp.590-591 (lesión por mordedura). Ahora está íntegro en DOS temas nuevos:
+**`C7`** (§41.2 seguridad eléctrica, incluidas salida peligrosa, quemaduras de electrodo y
+fuego, más §41.4 control de infección) y **`C8`** (§41.3 seguridad específica por
+procedimiento y §41.5 rendimiento esencial).
 
 Y **`Markand2020` cap.5 "MEP" pp.209-236** (ondas D e I, p.214) no está citado en ningún
 mindmap: el área PPEE no tiene ningún tema de potenciales evocados motores. ✦

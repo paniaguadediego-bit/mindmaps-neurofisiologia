@@ -48,7 +48,7 @@ visor. `index.html` es el portal que las lista; cada área se descubre sola en c
 
 | Área | Bloques | Estado | Página |
 |---|---|---|---|
-| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 25 temas, todos completos | `ionm.html` |
+| `IONM` | A modalidades · B contextos quirúrgicos · C transversales | 27 temas, todos completos | `ionm.html` |
 | `PPEE` | A bases fisiológicas/anatómicas · B bases técnicas · C PEV en quirófano · V visuales | 22 temas, todos con contenido | `ppee.html` |
 | EMG, EEG, EEG infantil, EEG UCI | — | previstas, aún no creadas | — |
 
@@ -244,16 +244,39 @@ página dibujada a mano con ese código escrito.
          por qué sus proponentes la abandonaron, las tres respuestas alternativas (blink R1,
          onda F y respuesta Z-L) y las series de AMR residual y de toxina botulínica.
 
+   - **Segundo ✦ resuelto: `C7` y `C8`, desde el cap.41 "Safety" íntegro.** Estaba en el
+     índice pero solo se habían usado las pp.590-591 de la mordedura. Partido en dos con el
+     mismo criterio, porque son dos materias distintas: la física del equipo frente a la
+     clínica de cada técnica.
+     - `C7` = **seguridad eléctrica, quemaduras, fuego e infección** (484 líneas): shock y
+       corrientes de fuga con sus cifras y límites normativos, y sobre todo **la curva
+       intensidad-duración como concepto unificador** — corriente, carga y energía son
+       medidas opuestas con tres mecanismos de lesión distintos (electroquímico,
+       excitotóxico y térmico), y la CRONAXIA es la duración de pulso más segura porque
+       minimiza energía con corriente y carga modestas. Más quemaduras por electrocirugía,
+       resonancia y corriente continua, fuego y control de infección.
+     - `C8` = **seguridad por procedimiento y rendimiento esencial** (336 líneas): técnicas
+       invasivas, crisis por estimulación cortical directa (5-20% con los 50-60 Hz frente a
+       menos del 5-6% con los MEP), por qué la subcortical sigue exigiendo 0,5 ms, los cinco
+       problemas de la TES —con el dato de que **todas** las mordeduras publicadas fueron con
+       C3/C4—, SEP, PEATC, PEV, EMG, y el rendimiento esencial de la práctica con sus dos
+       modos de fallo.
+
    | ✦ Territorio con fuente y sin tema, pendiente |
    |---|
-   | **cap.41 Safety** completo (§41.2 eléctrica, §41.3 por procedimiento, §41.4 infección, §41.5 rendimiento) |
    | cap.30 y 31 — nervio periférico y cirugía de cadera (el §18.6.2 del cap.18 también apunta aquí y quedó sin usar) |
    | cap.34-38 — trastornos del movimiento, DBS, dolor, espasticidad |
    | **Markand cap.5** — PPEE no tiene ningún tema de PEM |
    | **cap.24 cirugía de la cara**, material sobrante — mapeo transcutáneo preoperatorio, escleroterapia y anatomía de las malformaciones vasculares faciales no caben en `A4` ni en `A6` |
 
-   El ✦ con más peso que queda es **cap.41** (seguridad, hoy explotado solo en las
-   pp.590-591 de la mordedura). El cap.33 ya está resuelto en `B9`.
+   Los dos ✦ de más peso (cap.33 y cap.41) ya están resueltos, en `B9`/`A10` y `C7`/`C8`
+   respectivamente. Lo que queda es de menor calado.
+
+   **Pendiente menor que conviene no olvidar:** el `ORDEN_TRABAJO` de `build.js` es un orden
+   de estudio sugerido y NO incluye los temas nuevos, así que `MAPA_MAESTRO.md` los lista
+   aparte como "temas aún sin ubicar en el orden" (hoy `A10`, `B8`, `B9`, `C7`, `C8`). No
+   rompe nada —está diseñado para degradar limpiamente—, pero decidir dónde encaja cada uno
+   en la secuencia de estudio es una decisión de Pani, no técnica.
 
 Áreas futuras (EMG, EEG, EEG infantil, EEG UCI): sin fuentes aún en `fuentes/`; no
 empezar hasta que Pani las aporte.

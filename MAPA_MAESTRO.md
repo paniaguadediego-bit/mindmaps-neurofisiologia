@@ -4,13 +4,13 @@
 > Fuente de verdad: los archivos en `mindmaps/`. Para cambiar algo aquí, edita el
 > `.md` correspondiente y vuelve a ejecutar el build.
 
-Generado: 2026-08-30T15:17:06.739Z
+Generado: 2026-08-30T15:27:58.647Z
 
-Progreso global: 47 completos · 0 en progreso · 0 esqueletos · 47 temas en 2 área(s).
+Progreso global: 49 completos · 0 en progreso · 0 esqueletos · 49 temas en 2 área(s).
 
 # Área IONM
 
-Visor: `ionm.html` · 25 completos · 0 en progreso · 0 esqueletos · 25 temas.
+Visor: `ionm.html` · 27 completos · 0 en progreso · 0 esqueletos · 27 temas.
 
 ## Bloque A — Modalidades de señal
 
@@ -51,12 +51,14 @@ Visor: `ionm.html` · 25 completos · 0 en progreso · 0 esqueletos · 25 temas.
 | C4 | Relajantes musculares en MIO | C | Completo | `mindmaps/C4-relajantes-musculares.md` |
 | C5 | Marco general de criterios de alarma | C | Completo | `mindmaps/C5-criterios-alarma-marco-general.md` |
 | C6 | Troubleshooting general | C | Completo | `mindmaps/C6-troubleshooting-general.md` |
+| C7 | Seguridad eléctrica, quemaduras, fuego e infección | C | Completo | `mindmaps/C7-seguridad-electrica-quemaduras-fuego-e-infeccion.md` |
+| C8 | Seguridad por procedimiento y rendimiento esencial | C | Completo | `mindmaps/C8-seguridad-por-procedimiento-y-rendimiento-esencial.md` |
 
 ### Orden de trabajo sugerido
 
 C1 → C2 → A1 → A2 → A3 → C5 → A4 → A5 → C3 → C4 → C6 → B2 → B1 → B3 → B4 → A6 → A9 → A7 → B5 → B6 → B7 → A8
 
-Temas aún sin ubicar en el orden: A10, B8, B9
+Temas aún sin ubicar en el orden: A10, B8, B9, C7, C8
 
 # Área PPEE
 
